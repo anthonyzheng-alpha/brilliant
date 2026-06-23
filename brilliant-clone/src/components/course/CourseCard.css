@@ -1,0 +1,67 @@
+.course-card {
+  display: block;
+  text-align: left;
+  padding: 1.25rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: var(--bg);
+}
+
+.course-card:hover:not(.course-card--locked) {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.course-card--locked {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.course-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.course-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-h);
+}
+
+.course-card__subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.course-card__desc {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.course-card__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.course-card__progress {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.course-card__badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--border);
+  border-radius: 4px;
+  color: var(--text);
+}

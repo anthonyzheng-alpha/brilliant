@@ -1,0 +1,9 @@
+{
+  "id": "va-u1-l1",
+  "unitId": "va-u1",
+  "title": "What's Next?",
+  "description": "Predict the next term in arithmetic sequences.",
+  "estimatedMinutes": 8,
+  "phase": "M2",
+  "problemIds": ["va-u1-l1-p1", "va-u1-l1-p2"]
+}

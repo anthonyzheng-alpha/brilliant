@@ -1,0 +1,60 @@
+[
+  {
+    "id": "se-u1-l2-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $3x = 15$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 3.",
+      "$x = 15 \\div 3$.",
+      "Enter **5**."
+    ],
+    "explanation": "Divide both sides by 3: $x = 5$."
+  },
+  {
+    "id": "se-u1-l2-p2",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $\\frac{x}{4} = 3$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 12$" },
+          { "id": "b", "label": "$x = 7$" },
+          { "id": "c", "label": "$x = 1$" }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Multiply both sides by 4.",
+      "$x = 3 \\times 4$.",
+      "Select **$x = 12$**."
+    ],
+    "explanation": "Multiply both sides by 4: $x = 12$."
+  },
+  {
+    "id": "se-u1-l2-p3",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2x + 1 = 9$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "First subtract 1 from both sides: $2x = 8$.",
+      "Then divide both sides by 2.",
+      "Enter **4**."
+    ],
+    "explanation": "Subtract 1: $2x = 8$. Divide by 2: $x = 4$."
+  }
+]

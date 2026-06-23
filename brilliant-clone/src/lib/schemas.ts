@@ -1,0 +1,124 @@
+import { z } from 'zod'
+
+const richText = z.string()
+const hints = z.tuple([richText, richText, richText])
+
+const validationRule = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('exact'), value: z.string() }),
+  z.object({
+    type: z.literal('numeric'),
+    value: z.number(),
+    tolerance: z.number().optional(),
+  }),
+  z.object({
+    type: z.literal('numeric-set'),
+    values: z.array(z.number()),
+    tolerance: z.number().optional(),
+  }),
+  z.object({ type: z.literal('expression'), acceptable: z.array(z.string()) }),
+])
+
+const interaction = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('multiple-choice'),
+    data: z.object({
+      options: z.array(z.object({ id: z.string(), label: richText })),
+      correctOptionId: z.string(),
+    }),
+  }),
+  z.object({
+    type: z.literal('drag-drop'),
+    data: z.object({
+      draggables: z.array(z.object({ id: z.string(), label: richText })),
+      dropZones: z.array(
+        z.object({
+          id: z.string(),
+          label: richText.optional(),
+          accepts: z.array(z.string()).optional(),
+        }),
+      ),
+      correctPlacement: z.record(z.string(), z.string()),
+    }),
+  }),
+  z.object({
+    type: z.literal('numeric'),
+    data: z.object({
+      placeholder: z.string().optional(),
+      unit: z.string().optional(),
+      validation: validationRule,
+    }),
+  }),
+  z.object({
+    type: z.literal('slider'),
+    data: z.object({
+      min: z.number(),
+      max: z.number(),
+      step: z.number(),
+      target: z.number(),
+      tolerance: z.number().optional(),
+      label: z.string().optional(),
+    }),
+  }),
+  z.object({
+    type: z.literal('tap-sequence'),
+    data: z.object({
+      cells: z.array(z.object({ id: z.string(), label: richText })),
+      correctCellIds: z.array(z.string()),
+      multiSelect: z.boolean().optional(),
+    }),
+  }),
+])
+
+export const problemSchema = z.object({
+  id: z.string(),
+  type: z.enum([
+    'multiple-choice',
+    'drag-drop',
+    'numeric',
+    'slider',
+    'tap-sequence',
+  ]),
+  prompt: richText,
+  visual: z
+    .object({
+      kind: z.string(),
+      props: z.record(z.string(), z.unknown()),
+    })
+    .optional(),
+  interaction: interaction,
+  hints,
+  explanation: richText,
+  introNotation: z.boolean().optional(),
+})
+
+export const lessonSchema = z.object({
+  id: z.string(),
+  unitId: z.string(),
+  title: z.string(),
+  description: z.string(),
+  estimatedMinutes: z.number(),
+  phase: z.enum(['M0', 'M1', 'M2', 'M3']),
+  problemIds: z.array(z.string()),
+})
+
+export const unitSchema = z.object({
+  id: z.string(),
+  courseId: z.string(),
+  title: z.string(),
+  description: z.string(),
+  order: z.number(),
+  phase: z.enum(['M0', 'M1', 'M2', 'M3']),
+  lessonIds: z.array(z.string()),
+})
+
+export const courseSchema = z.object({
+  id: z.string(),
+  slug: z.string(),
+  title: z.string(),
+  subtitle: z.string(),
+  description: richText,
+  estimatedHours: z.number(),
+  lens: z.enum(['solving-equations', 'visual-algebra', 'real-world-algebra']),
+  unitIds: z.array(z.string()),
+  lockedUntilPhase: z.enum(['M0', 'M2']),
+})

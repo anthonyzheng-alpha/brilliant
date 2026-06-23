@@ -1,0 +1,122 @@
+[
+  {
+    "id": "se-u1-l1-p1",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $x + 7 = 9$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 2$" },
+          { "id": "b", "label": "$x = 16$" },
+          { "id": "c", "label": "$x = -2$" }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "What number plus 7 equals 9?",
+      "Subtract 7 from both sides: $x = 9 - 7$.",
+      "Select **$x = 2$**."
+    ],
+    "explanation": "Subtract 7 from both sides: $x = 9 - 7 = 2$."
+  },
+  {
+    "id": "se-u1-l1-p2",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x - 5 = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 8 }
+      }
+    },
+    "hints": [
+      "Add 5 to both sides to isolate $x$.",
+      "$x = 3 + 5$.",
+      "Enter **8**."
+    ],
+    "explanation": "Add 5 to both sides: $x = 3 + 5 = 8$."
+  },
+  {
+    "id": "se-u1-l1-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $n + 12 = 20$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = 8$" },
+          { "id": "b", "label": "$n = 32$" },
+          { "id": "c", "label": "$n = 6$" }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract 12 from both sides.",
+      "$n = 20 - 12$.",
+      "Select **$n = 8$**."
+    ],
+    "explanation": "$n = 20 - 12 = 8$."
+  },
+  {
+    "id": "se-u1-l1-p4",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x + 4 = 11$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 7 }
+      }
+    },
+    "hints": [
+      "Subtract 4 from both sides.",
+      "$x = 11 - 4$.",
+      "Enter **7**."
+    ],
+    "explanation": "$x = 11 - 4 = 7$."
+  },
+  {
+    "id": "se-u1-l1-p5",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x - 8 = 2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 10 }
+      }
+    },
+    "hints": [
+      "Add 8 to both sides.",
+      "$x = 2 + 8$.",
+      "Enter **10**."
+    ],
+    "explanation": "$x = 2 + 8 = 10$."
+  },
+  {
+    "id": "se-u1-l1-p6",
+    "type": "multiple-choice",
+    "prompt": "Which value of $x$ makes the equation true? $x + 3 = 10$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 7$" },
+          { "id": "b", "label": "$x = 13$" },
+          { "id": "c", "label": "$x = 3$" }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Think: what plus 3 equals 10?",
+      "$x = 10 - 3$.",
+      "Select **$x = 7$**."
+    ],
+    "explanation": "$x + 3 = 10$ means $x = 7$."
+  }
+]

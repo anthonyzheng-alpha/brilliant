@@ -1,0 +1,45 @@
+[
+  {
+    "id": "rw-u1-l1-p1",
+    "type": "multiple-choice",
+    "prompt": "Box A: **12 oz for $3.60**. Box B: **18 oz for $4.50**. Which is the better deal per ounce?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Box A ($0.30/oz)" },
+          { "id": "b", "label": "Box B ($0.25/oz)" },
+          { "id": "c", "label": "Same price per oz" }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Divide price by ounces for each box.",
+      "Box B is $4.50 / 18 = $0.25 per oz.",
+      "Select **Box B**."
+    ],
+    "explanation": "Box B costs $0.25 per ounce versus $0.30 for Box A."
+  },
+  {
+    "id": "rw-u1-l1-p2",
+    "type": "numeric",
+    "prompt": "A taxi charges **$3** plus **$2** per mile. How much for **4** miles?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 11 }
+      }
+    },
+    "hints": [
+      "Cost = base + rate × miles.",
+      "3 + 2 × 4 = ?",
+      "The fare is **$11**."
+    ],
+    "explanation": "3 + 2(4) = 11 dollars."
+  }
+]

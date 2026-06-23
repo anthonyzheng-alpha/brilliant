@@ -1,0 +1,9 @@
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-menu__avatar {
+  border-radius: 50%;
+}

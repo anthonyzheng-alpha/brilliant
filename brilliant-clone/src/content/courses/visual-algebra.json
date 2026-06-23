@@ -1,0 +1,11 @@
+{
+  "id": "visual-algebra",
+  "slug": "visual-algebra",
+  "title": "Visual Algebra",
+  "subtitle": "The Pattern Hunter's Journey",
+  "description": "Discover rules from visual patterns before formal notation.",
+  "estimatedHours": 4,
+  "lens": "visual-algebra",
+  "unitIds": ["va-u1"],
+  "lockedUntilPhase": "M2"
+}

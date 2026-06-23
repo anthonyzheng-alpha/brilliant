@@ -1,0 +1,45 @@
+[
+  {
+    "id": "va-u1-l1-p1",
+    "type": "tap-sequence",
+    "prompt": "What comes next in the pattern? **2, 5, 8, 11, ...**",
+    "visual": { "kind": "sequence-grid", "props": { "terms": [2, 5, 8, 11] } },
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "cells": [
+          { "id": "12", "label": "12" },
+          { "id": "13", "label": "13" },
+          { "id": "14", "label": "14" },
+          { "id": "15", "label": "15" }
+        ],
+        "correctCellIds": ["14"]
+      }
+    },
+    "hints": [
+      "How much does each term increase?",
+      "Each step adds 3.",
+      "Tap **14**."
+    ],
+    "explanation": "This is an arithmetic sequence with common difference 3."
+  },
+  {
+    "id": "va-u1-l1-p2",
+    "type": "multiple-choice",
+    "prompt": "The rule is \"start at 2, add 3 each step.\" What is the **4th** term?",
+    "visual": { "kind": "sequence-grid", "props": { "terms": [2, 5, 8] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "9" },
+          { "id": "b", "label": "11" },
+          { "id": "c", "label": "14" }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": ["Continue adding 3.", "8 + 3 = 11.", "Select **11**."],
+    "explanation": "2, 5, 8, **11** — add 3 each time."
+  }
+]

@@ -1,0 +1,89 @@
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { PageShell } from '../components/layout/PageShell'
+import { LessonRow } from '../components/course/LessonRow'
+import {
+  getCourseBySlug,
+  getUnitsForCourse,
+  getLessonsForUnit,
+  getAllLessonsForCourse,
+} from '../content'
+import { useProgressStore } from '../stores/progressStore'
+import { FEATURES } from '../lib/features'
+import './CoursePage.css'
+
+export function CoursePage() {
+  const { slug } = useParams<{ slug: string }>()
+  const course = slug ? getCourseBySlug(slug) : undefined
+
+  const getPercent = useProgressStore((s) => s.getCoursePercent)
+  const isComplete = useProgressStore((s) => s.isLessonComplete)
+  const isUnlocked = useProgressStore((s) => s.isLessonUnlocked)
+  const courseProgressEntry = useProgressStore((s) =>
+    course ? s.progress.courses[course.id] : undefined,
+  )
+
+  if (!course) {
+    return (
+      <PageShell>
+        <p>Course not found.</p>
+        <Link to="/">Back home</Link>
+      </PageShell>
+    )
+  }
+
+  const locked = course.lockedUntilPhase === 'M2' && !FEATURES.allCourses
+  if (locked) {
+    return <Navigate to="/" replace />
+  }
+
+  const allLessons = getAllLessonsForCourse(course.id)
+  const orderedIds = allLessons.map((l) => l.id)
+  const units = getUnitsForCourse(course.id)
+  const percent = getPercent(course.id, allLessons.length)
+
+  const resumeLessonId = courseProgressEntry?.lastLessonId
+  const resumeIncomplete =
+    resumeLessonId && !isComplete(course.id, resumeLessonId)
+
+  return (
+    <PageShell>
+      <Link to="/" className="back-link">
+        ← All courses
+      </Link>
+      <header className="course-header">
+        <h1>{course.title}</h1>
+        <p className="course-header__sub">{course.subtitle}</p>
+        <p className="course-header__progress">{percent}% complete</p>
+      </header>
+
+      {resumeIncomplete && slug && (
+        <Link
+          to={`/courses/${slug}/lessons/${resumeLessonId}`}
+          className="resume-banner"
+        >
+          Resume lesson
+        </Link>
+      )}
+
+      {units.map((unit) => (
+        <section key={unit.id} className="unit-section">
+          <h2>{unit.title}</h2>
+          <p className="unit-section__desc">{unit.description}</p>
+          {getLessonsForUnit(unit.id).map((lesson) => (
+            <LessonRow
+              key={lesson.id}
+              courseSlug={course.slug}
+              lesson={lesson}
+              locked={
+                FEATURES.sequentialUnlock
+                  ? !isUnlocked(course.id, lesson.id, orderedIds)
+                  : false
+              }
+              completed={isComplete(course.id, lesson.id)}
+            />
+          ))}
+        </section>
+      ))}
+    </PageShell>
+  )
+}

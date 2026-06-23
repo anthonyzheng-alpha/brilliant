@@ -1,0 +1,9 @@
+{
+  "id": "rw-u1-l1",
+  "unitId": "rw-u1",
+  "title": "Best Buy",
+  "description": "Compare unit rates in everyday scenarios.",
+  "estimatedMinutes": 8,
+  "phase": "M2",
+  "problemIds": ["rw-u1-l1-p1", "rw-u1-l1-p2"]
+}

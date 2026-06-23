@@ -1,0 +1,9 @@
+{
+  "id": "se-u1",
+  "courseId": "solving-equations",
+  "title": "One-Step Equations",
+  "description": "Solve linear equations by isolating the variable.",
+  "order": 1,
+  "phase": "M0",
+  "lessonIds": ["se-u1-l1", "se-u1-l2"]
+}

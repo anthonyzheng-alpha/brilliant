@@ -1,0 +1,9 @@
+{
+  "id": "rw-u1",
+  "courseId": "real-world-algebra",
+  "title": "Proportional Reasoning",
+  "description": "Unit rates and best buy.",
+  "order": 1,
+  "phase": "M2",
+  "lessonIds": ["rw-u1-l1"]
+}

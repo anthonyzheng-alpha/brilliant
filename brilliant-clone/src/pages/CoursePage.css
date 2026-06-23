@@ -1,0 +1,52 @@
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.course-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.course-header__sub {
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.course-header__progress {
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 1.5rem;
+}
+
+.resume-banner {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-h);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.unit-section {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.unit-section h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+}
+
+.unit-section__desc {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+}

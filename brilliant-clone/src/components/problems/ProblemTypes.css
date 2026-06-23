@@ -1,0 +1,152 @@
+.problem-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.problem-option {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.problem-option:hover:not(:disabled) {
+  border-color: var(--accent-border);
+}
+
+.problem-option--selected {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.drag-drop__bank {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.drag-tile {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  font-weight: 600;
+  cursor: grab;
+}
+
+.drag-tile--active {
+  outline: 3px solid var(--accent);
+}
+
+.drag-drop__zones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.drop-zone {
+  min-height: 56px;
+  padding: 0.75rem;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.drop-zone__label {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.drop-zone__placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.drag-hint {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.numeric-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.numeric-input {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.numeric-unit {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.slider-problem {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.slider-problem input[type='range'] {
+  width: 100%;
+  max-width: 280px;
+}
+
+.slider-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.tap-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tap-cell {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tap-cell--selected {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}

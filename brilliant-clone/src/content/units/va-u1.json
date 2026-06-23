@@ -1,0 +1,9 @@
+{
+  "id": "va-u1",
+  "courseId": "visual-algebra",
+  "title": "Linear Patterns",
+  "description": "Constant growth per step — find the rule.",
+  "order": 1,
+  "phase": "M2",
+  "lessonIds": ["va-u1-l1"]
+}

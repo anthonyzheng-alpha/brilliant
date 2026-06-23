@@ -1,0 +1,26 @@
+.sequence-grid {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.sequence-grid__cell {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-bg);
+  border: 2px solid var(--accent-border);
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sequence-grid__cell--unknown {
+  border-style: dashed;
+  opacity: 0.7;
+}

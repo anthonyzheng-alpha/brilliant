@@ -1,0 +1,9 @@
+{
+  "id": "se-u1-l2",
+  "unitId": "se-u1",
+  "title": "Multiplication, Division, and Two-Step",
+  "description": "Solve equations like 3x = 15 and 2x + 1 = 9.",
+  "estimatedMinutes": 8,
+  "phase": "M1",
+  "problemIds": ["se-u1-l2-p1", "se-u1-l2-p2", "se-u1-l2-p3"]
+}

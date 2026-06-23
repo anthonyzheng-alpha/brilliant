@@ -1,0 +1,16 @@
+.streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent-bg);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.milestone-icon {
+  color: var(--accent);
+  margin-left: 0.35rem;
+}

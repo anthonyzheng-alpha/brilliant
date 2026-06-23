@@ -1,0 +1,85 @@
+import { courseSchema, lessonSchema, problemSchema, unitSchema } from '../lib/schemas'
+import type { Course, Lesson, Problem, Unit } from '../types/content'
+
+import solvingEquations from './courses/solving-equations.json'
+import visualAlgebra from './courses/visual-algebra.json'
+import realWorldAlgebra from './courses/real-world-algebra.json'
+
+import seU1 from './units/se-u1.json'
+import vaU1 from './units/va-u1.json'
+import rwU1 from './units/rw-u1.json'
+
+import seU1L1 from './lessons/se-u1-l1.json'
+import seU1L2 from './lessons/se-u1-l2.json'
+import vaU1L1 from './lessons/va-u1-l1.json'
+import rwU1L1 from './lessons/rw-u1-l1.json'
+
+import seU1L1Problems from './problems/solving-equations/se-u1-l1.json'
+import seU1L2Problems from './problems/solving-equations/se-u1-l2.json'
+import vaU1L1Problems from './problems/visual-algebra/va-u1-l1.json'
+import rwU1L1Problems from './problems/real-world-algebra/rw-u1-l1.json'
+
+const courseData = [solvingEquations, visualAlgebra, realWorldAlgebra]
+const unitData = [seU1, vaU1, rwU1]
+const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1]
+const problemData = [
+  ...seU1L1Problems,
+  ...seU1L2Problems,
+  ...vaU1L1Problems,
+  ...rwU1L1Problems,
+]
+
+function parseAll<T>(schema: { parse: (v: unknown) => T }, items: unknown[], label: string): T[] {
+  return items.map((item, i) => {
+    try {
+      return schema.parse(item)
+    } catch {
+      throw new Error(`Invalid ${label} at index ${i}`)
+    }
+  })
+}
+
+export const courses: Course[] = parseAll(courseSchema, courseData, 'course')
+export const units: Unit[] = parseAll(unitSchema, unitData, 'unit')
+export const lessons: Lesson[] = parseAll(lessonSchema, lessonData, 'lesson')
+export const problems: Problem[] = parseAll(problemSchema, problemData, 'problem') as Problem[]
+
+export const problemBank: Record<string, Problem> = Object.fromEntries(
+  problems.map((p) => [p.id, p]),
+)
+
+// Validate lesson problem references
+for (const lesson of lessons) {
+  for (const pid of lesson.problemIds) {
+    if (!problemBank[pid]) {
+      throw new Error(`Lesson ${lesson.id} references missing problem ${pid}`)
+    }
+  }
+}
+
+export function getCourseBySlug(slug: string): Course | undefined {
+  return courses.find((c) => c.slug === slug)
+}
+
+export function getUnitsForCourse(courseId: string): Unit[] {
+  return units.filter((u) => u.courseId === courseId).sort((a, b) => a.order - b.order)
+}
+
+export function getLessonsForUnit(unitId: string): Lesson[] {
+  return lessons.filter((l) => l.unitId === unitId)
+}
+
+export function getLessonById(lessonId: string): Lesson | undefined {
+  return lessons.find((l) => l.id === lessonId)
+}
+
+export function getProblemsForLesson(lessonId: string): Problem[] {
+  const lesson = getLessonById(lessonId)
+  if (!lesson) return []
+  return lesson.problemIds.map((id) => problemBank[id])
+}
+
+export function getAllLessonsForCourse(courseId: string): Lesson[] {
+  const courseUnits = getUnitsForCourse(courseId)
+  return courseUnits.flatMap((u) => getLessonsForUnit(u.id))
+}

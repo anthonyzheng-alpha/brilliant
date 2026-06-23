@@ -1,0 +1,16 @@
+{
+  "id": "se-u1-l1",
+  "unitId": "se-u1",
+  "title": "Addition and Subtraction",
+  "description": "Solve one-step equations like x + 7 = 9.",
+  "estimatedMinutes": 10,
+  "phase": "M0",
+  "problemIds": [
+    "se-u1-l1-p1",
+    "se-u1-l1-p2",
+    "se-u1-l1-p3",
+    "se-u1-l1-p4",
+    "se-u1-l1-p5",
+    "se-u1-l1-p6"
+  ]
+}

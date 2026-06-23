@@ -1,0 +1,1158 @@
+================================================================================
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+Brilliant-Style Algebra Learning App (MVP)
+================================================================================
+
+Version: 2.0 (Phased)
+Last updated: June 2026
+Status: Draft
+Output repository: brilliant-clone/ (Vite + React + TypeScript)
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+1.  Product Overview
+2.  Phased Roadmap Summary
+3.  Phase M0: Vertical Slice
+4.  Phase M1: Solving Equations Depth
+5.  Phase M2: Three Lenses Playable
+6.  Phase M3: Full MVP Content
+7.  Phase M4: Polish and Delight
+8.  Gamification: Streaks and Milestones
+9.  Content Architecture: Three Algebra Lenses
+10. Feature Requirements (by phase)
+11. Problem Content Schema
+12. Technical Approach
+13. User Stories (by phase)
+14. Out of Scope and Future Work
+15. Risks and Success Metrics
+
+================================================================================
+1. PRODUCT OVERVIEW
+================================================================================
+
+1.1 Vision
+----------
+
+Build a "learn by doing" algebra learning experience inspired by Brilliant.org's
+pedagogy. Learners solve interactive puzzles and discover algebraic ideas through
+hands-on play before formal notation and vocabulary are introduced. The product
+rolls out in five phases (M0–M4), eventually covering Brilliant's three-lens
+approach to algebra (Solving Equations, Visual Algebra, Real-World Algebra)
+without copying proprietary content, branding, or assets.
+
+Tagline: "Learn algebra by doing."
+
+1.2 Problem Statement
+---------------------
+
+Traditional algebra instruction front-loads notation, definitions, and procedural
+rules. Learners memorize steps without building intuition. They disengage when
+abstract symbols appear before they understand what those symbols represent.
+Video-heavy or lecture-first courses fail learners who need to manipulate,
+experiment, and receive immediate feedback to internalize concepts.
+
+1.3 Solution
+------------
+
+A web-based interactive learning app offering:
+
+- Bite-sized lessons (~6 problems each in M0; 6–10 in later phases)
+- Game-like interactions: drag-and-drop, visual patterns, real-world modeling
+- Instant feedback with progressive hints (unlimited retries; must answer correctly
+  to advance)
+- Intuition-first pedagogy: puzzles before notation, names after mastery
+- Local progress tracking so learners can resume where they left off
+- Duolingo-style motivation: daily streaks and per-lesson mastery milestones
+
+Phased rollout:
+- M0: One playable lesson in Solving Equations; full navigation shell
+- M1–M2: Expand interactions and unlock Visual + Real-World courses
+- M3–M4: Full catalog (~150–250 problems) with animations and badge polish
+
+No user accounts, payments, or AI tutor in the MVP.
+
+1.4 Target Users
+----------------
+
+Primary:
+- Middle school students (grades 6–8) building algebra foundations
+
+Secondary:
+- Self-directed learners who prefer interactive practice over passive video
+
+1.5 User Needs
+--------------
+
+| User need                          | How the product addresses it              |
+|------------------------------------|-------------------------------------------|
+| Understand, not memorize           | Puzzles before formal rules               |
+| Immediate feedback                 | Check answers in-place with explanations  |
+| Low commitment per session         | Short lessons, clear progress indicators  |
+| Resume without setup               | localStorage progress, no login required  |
+| Feel progress and achievement      | Daily streaks + lesson mastery milestones |
+| Multiple ways to see algebra       | Three distinct course lenses (M2+)        |
+| Mobile-friendly practice           | Mobile-first responsive design            |
+
+1.6 Non-Goals (entire MVP)
+--------------------------
+
+Explicitly out of scope across all phases:
+
+- Payments and subscriptions
+- AI tutor or conversational help
+
+Also deferred (may revisit post-MVP):
+
+- User accounts and authentication
+- Native iOS/Android apps
+- Social features (leaderboards, sharing, forums)
+- Teacher dashboards and classroom management
+- Content authoring CMS
+- Backend server, database, or cloud sync
+- Reset progress UI (deferred from M3)
+- Recommended cross-course learning path UI (deferred from M3)
+- About page (deferred from M3)
+- Formal accessibility audit / Lighthouse >= 90 (deferred from M4)
+- Sound effects (deferred from M4)
+- Localization (English only)
+
+================================================================================
+2. PHASED ROADMAP SUMMARY
+================================================================================
+
+2.1 Phase Matrix
+----------------
+
+| Capability                    | M0 | M1 | M2 | M3 | M4 |
+|-------------------------------|----|----|----|----|-----|
+| Homepage + course + lesson nav| X  | X  | X  | X  | X  |
+| Lesson player (Check, hints)  | X  | X  | X  | X  | X  |
+| MCQ + drag-drop + numeric     | X  | X  | X  | X  | X  |
+| Slider + tap-sequence         |    | X  | X  | X  | X  |
+| KaTeX math rendering          |    | X  | X  | X  | X  |
+| BalanceScale widget           |    | X  | X  | X  | X  |
+| Visual Algebra widgets        |    |    | X  | X  | X  |
+| Real-World Algebra widgets    |    |    | X  | X  | X  |
+| Solving Equations content     | 1  | U1-3| U1 | All| All|
+| Visual Algebra content        | -- | -- | U1 | All| All|
+| Real-World Algebra content    | -- | -- | U1 | All| All|
+| Daily streaks                 | X  | X  | X  | X  | X  |
+| Lesson mastery milestones     | X  | X  | X  | X  | X  |
+| Unit/course badges            |    |    |    | X  | X  |
+| Streak history (longest)      |    |    |    | X  | X  |
+| Sequential lesson unlock      |    | X  | X  | X  | X  |
+| Lesson-complete screen        |    |    |    |    |    |
+| Animations (scale, patterns)  |    |    |    |    | X  |
+| "Coming soon" locked courses  | X  |    |    |    |    |
+
+U1-3 = Units 1 through 3. "All" = all units in course (~150–250 problems total).
+
+2.2 Content Volume by Phase
+---------------------------
+
+| Phase | Scope                                           | Problem count |
+|-------|-------------------------------------------------|---------------|
+| M0    | Solving Equations, Lesson 1 only                | ~6            |
+| M1    | Solving Equations, Units 1–3                    | ~30–40        |
+| M2    | + Unit 1 for Visual Algebra and Real-World      | ~60–80        |
+| M3    | All units, all 3 courses                          | ~150–250      |
+| M4    | No new content; polish existing                   | ~150–250      |
+
+2.3 Indicative Timeline (1 developer)
+-------------------------------------
+
+| Phase | Duration | Cumulative |
+|-------|----------|------------|
+| M0    | 2 weeks  | 2 weeks    |
+| M1    | 3 weeks  | 5 weeks    |
+| M2    | 3 weeks  | 8 weeks    |
+| M3    | 5 weeks  | 13 weeks   |
+| M4    | 2 weeks  | 15 weeks   |
+
+Content authoring can parallelize engineering after M0 schema is frozen.
+
+2.4 Core User Journey (all phases)
+----------------------------------
+
+  Landing Page
+       |
+       v
+  Course Catalog (3 cards; 2 locked until M2)
+       |
+       v
+  Course Overview (units, lessons, streak badge)
+       |
+       v
+  Lesson Player (problems 1..N)
+       |
+       +---> Instant Feedback (correct / incorrect)
+       |           |
+       |           +---> Hint / Retry (if incorrect)
+       |           |
+       |           +---> Next Problem (if correct)
+       |
+       v
+  Lesson Milestone earned (all problems correct)
+       |
+       v
+  Streak updated (if first activity today)
+       |
+       v
+  Back to Course Overview
+
+================================================================================
+3. PHASE M0: VERTICAL SLICE
+================================================================================
+
+3.1 Goal
+--------
+
+Prove the core learning loop end-to-end for one course:
+
+  browse -> lesson -> check -> hint -> milestone -> streak
+
+3.2 Features In Scope
+---------------------
+
+Navigation and shell:
+- Routes: /, /courses/:slug, /courses/:slug/lessons/:lessonId
+- Homepage with hero ("Learn algebra by doing") and 3 course cards
+- Solving Equations: fully playable
+- Visual Algebra + Real-World Algebra: visible but locked ("Coming soon")
+- Course overview page for Solving Equations (single unit, single lesson)
+- Top nav: Home, Courses
+
+Lesson player:
+- Progress bar (problem N of M)
+- Prompt area + interaction area
+- Check button (disabled until valid input)
+- Correct: green confirmation + 1–2 sentence explanation + Continue
+- Incorrect: progressive hints (3 tiers); unlimited retries
+- Must answer correctly before advancing to next problem
+
+Problem types (M0 only):
+- multiple-choice
+- drag-drop (generic board; no BalanceScale widget yet)
+- numeric input (integers and simple decimals)
+
+Progress and persistence (localStorage):
+- Resume mid-lesson at saved problem index
+- Mark lesson complete when all problems answered correctly
+- Course progress % on homepage card
+
+Gamification (M0):
+- Daily streak: +1 when learner completes >= 1 problem on a new calendar day
+- Lesson milestone: badge/modal when all problems in lesson answered correctly
+- Streak count visible on homepage header
+
+Design:
+- Mobile-first responsive layout (320px minimum width)
+- Large touch targets (44x44px minimum)
+
+3.3 Features Out of Scope (M0)
+------------------------------
+
+- Playable content in Visual Algebra or Real-World Algebra
+- Slider and tap-sequence problem types
+- BalanceScale, SequenceGrid, CoordinateGraph widgets
+- KaTeX (plain text equations acceptable in M0)
+- Sequential lesson unlock (only 1 lesson exists)
+- Lesson-complete celebration screen (milestone modal is sufficient)
+- Unit/course completion badges
+- Animations beyond basic correct/incorrect feedback
+
+3.4 Content (M0)
+----------------
+
+Course: Solving Equations
+Unit 1: Balance Intuition
+Lesson 1.1: Which side is heavier? (~6 problems)
+
+  Problem mix:
+  - 2x multiple-choice (compare pan weights)
+  - 2x drag-drop (add weights to balance — generic drag board)
+  - 2x numeric (how much weight needed to balance?)
+
+Pedagogy: No variables (x) in M0 lesson. Balance intuition only.
+
+3.5 Exit Criteria (M0)
+----------------------
+
+- [ ] Learner completes Solving Equations Lesson 1.1 end-to-end
+- [ ] Lesson milestone appears on final correct answer
+- [ ] Streak increments when learner returns next calendar day
+- [ ] Progress and streak survive browser refresh
+- [ ] Locked course cards show "Coming soon" and cannot be entered
+- [ ] Layout usable at 375px width
+
+3.6 User Stories (M0)
+---------------------
+
+US-M0-1: As a learner, I can browse the homepage and start the one available
+  lesson in Solving Equations.
+US-M0-2: As a learner, I can solve balance problems with drag-and-drop and
+  numeric input without seeing variable notation.
+US-M0-3: As a learner, I receive progressive hints when wrong so I can retry.
+US-M0-4: As a learner, I earn a lesson milestone when I complete all problems
+  correctly.
+US-M0-5: As a returning learner, I see my daily streak on the homepage.
+US-M0-6: As a learner, I can resume a lesson at the same problem after refresh.
+
+================================================================================
+4. PHASE M1: SOLVING EQUATIONS DEPTH
+================================================================================
+
+4.1 Goal
+--------
+
+Expand the interaction toolkit and ship meaningful Solving Equations content
+(Units 1–3).
+
+4.2 Features In Scope
+---------------------
+
+Problem types (add to M0 set):
+- slider (parameter adjustment)
+- tap-sequence (select cells, terms, or options on a grid)
+
+Math rendering:
+- KaTeX for equations in prompts, hints, and explanations
+
+Widgets:
+- BalanceScale (replaces generic drag-drop for balance unit problems)
+
+Content:
+- Solving Equations Units 1–3 (~30–40 problems)
+  - Unit 1: Balance Intuition (expand to 3 lessons)
+  - Unit 2: Unknowns (mystery boxes -> x)
+  - Unit 3: One-Step Equations
+
+Progression:
+- Sequential lesson unlock (default): complete Lesson N to unlock N+1
+  - First lesson of Unit 1 unlocked by default
+  - Completing last lesson of unit unlocks first lesson of next unit
+  - Locked lessons cannot be entered via URL (redirect + toast)
+
+Lesson player enhancements:
+- All 5 problem types wired through shared ProblemRenderer
+- Hint progression for all types
+
+3.3 Features Out of Scope (M1)
+------------------------------
+
+- Visual Algebra and Real-World Algebra playable content
+- Visual Algebra / Real-World widgets
+- Units 4–6 of Solving Equations
+- Unit/course completion badges
+- Lesson-complete celebration screen (milestone modal still used)
+- Animations (basic feedback only)
+
+4.4 Exit Criteria (M1)
+----------------------
+
+- [ ] All 5 problem types used at least once in Solving Equations
+- [ ] Units 1–3 fully playable with sequential unlock
+- [ ] KaTeX renders in at least one lesson
+- [ ] BalanceScale widget used in Unit 1 lessons
+
+4.5 User Stories (M1)
+---------------------
+
+US-M1-1: As a learner, I unlock the next lesson only after completing the current
+  one.
+US-M1-2: As a learner, I can solve one-step equations using drag-and-drop
+  operations on both sides.
+US-M1-3: As a learner, I see properly formatted math notation in prompts.
+US-M1-4: As a learner, I use a balance scale widget that visually tilts with
+  weight changes.
+
+================================================================================
+5. PHASE M2: THREE LENSES PLAYABLE
+================================================================================
+
+5.1 Goal
+--------
+
+Unlock Visual Algebra and Real-World Algebra with course-specific widgets.
+Deliver Unit 1 for all three courses.
+
+5.2 Features In Scope
+---------------------
+
+Course unlock:
+- Remove "Coming soon" lock from Visual Algebra and Real-World Algebra
+- All 3 course cards fully navigable
+
+Visual Algebra widgets:
+- SequenceGrid (tap next term, fill missing cells)
+- CoordinateGraph (place points on grid)
+- InputOutputMachine (slider input, predict output)
+
+Real-World Algebra widgets:
+- ParameterSlider (adjust rate, base cost, etc.)
+- RateComparison (grocery / best-buy comparison board)
+
+Content:
+- Visual Algebra Unit 1: Linear Patterns (~3 lessons, ~18 problems)
+- Real-World Algebra Unit 1: Proportional Reasoning (~3 lessons, ~18 problems)
+- Solving Equations: Unit 1 remains playable; Units 1–3 from M1 retained
+
+Gamification:
+- Lesson milestones for all new lessons
+- Streaks continue across all courses
+
+5.3 Features Out of Scope (M2)
+------------------------------
+
+- Units 2+ for Visual Algebra and Real-World Algebra
+- Solving Equations Units 4–6
+- Unit/course completion badges
+- Streak history (longest streak display)
+- Recommended learning path UI
+- Animations beyond basic feedback
+
+5.4 Exit Criteria (M2)
+----------------------
+
+- [ ] Unit 1 playable in each of the 3 courses
+- [ ] At least one lesson per new course uses its dedicated widget
+- [ ] Homepage shows progress for all 3 courses
+- [ ] Learner can earn lesson milestones in any course
+
+5.5 User Stories (M2)
+---------------------
+
+US-M2-1: As a learner, I can start Visual Algebra and find the rule in a
+  number pattern before seeing f(x) notation.
+US-M2-2: As a learner, I can compare unit rates in a grocery-style problem.
+US-M2-3: As a learner, I can plot points on a coordinate grid from a pattern.
+US-M2-4: As a learner, I earn lesson milestones in any of the three courses.
+
+================================================================================
+6. PHASE M3: FULL MVP CONTENT
+================================================================================
+
+6.1 Goal
+--------
+
+Ship the complete algebra catalog across all three courses with full gamification
+UI.
+
+6.2 Features In Scope
+---------------------
+
+Content (all remaining units):
+- Solving Equations Units 4–6
+- Visual Algebra Units 2–5
+- Real-World Algebra Units 2–5
+- Total catalog: ~150–250 problems
+
+Gamification expansion:
+- Milestone badge catalog (visual icons per lesson mastered)
+- Unit completion badges (all lessons in unit mastered)
+- Course completion badges (all units mastered)
+- Streak history: current streak + longest streak displayed on homepage
+
+Progress UI:
+- Full progress rings on all course cards
+- Per-lesson checkmarks and milestone icons on course overview
+
+6.3 Features Out of Scope (M3)
+------------------------------
+
+- Reset progress option
+- Recommended cross-course learning path UI
+- About page
+- Animations (M4)
+- Sound effects
+
+6.4 Exit Criteria (M3)
+----------------------
+
+- [ ] Full catalog browsable; every lesson completable
+- [ ] Milestone badges visible for mastered lessons
+- [ ] Unit and course completion badges award correctly
+- [ ] Longest streak displayed alongside current streak
+- [ ] No broken problem references in content JSON
+
+6.5 User Stories (M3)
+---------------------
+
+US-M3-1: As a learner, I can work through the entire Solving Equations course
+  from balance intuition to word problems.
+US-M3-2: As a learner, I earn a unit badge when I master every lesson in a unit.
+US-M3-3: As a learner, I can see my longest streak alongside my current streak.
+US-M3-4: As a learner, I can browse all lessons across three courses and see
+  which I have mastered.
+
+================================================================================
+7. PHASE M4: POLISH AND DELIGHT
+================================================================================
+
+7.1 Goal
+--------
+
+Make interactions feel alive through motion and visual feedback.
+
+7.2 Features In Scope
+---------------------
+
+Animations:
+- BalanceScale: pan tilt animation when weights change
+- SequenceGrid: cells grow/shrink to show pattern progression
+- CoordinateGraph: points plot with motion; line draws between points
+- InputOutputMachine: gear/pipe animation on input change
+- Milestone unlock: badge reveal animation on lesson mastery
+- Streak increment: subtle celebration on daily streak update
+
+Performance:
+- Lazy-load widget components by route/course
+- Code split by course to keep initial bundle small
+- Audit animation jank on mobile devices
+
+7.3 Features Out of Scope (M4)
+------------------------------
+
+- Formal accessibility audit (Lighthouse >= 90)
+- Sound effects and haptic feedback
+- PWA / offline support
+- New content or problem types
+
+7.4 Exit Criteria (M4)
+----------------------
+
+- [ ] BalanceScale tilts smoothly on weight change
+- [ ] Pattern and graph widgets animate without jank on mid-range mobile
+- [ ] Milestone badge reveal animation plays on lesson mastery
+- [ ] No regression in M0–M3 happy paths
+
+7.5 User Stories (M4)
+---------------------
+
+US-M4-1: As a learner, I see the scale tilt when I add weights, reinforcing
+  the balance concept visually.
+US-M4-2: As a learner, I get a satisfying animation when I earn a lesson
+  milestone.
+
+================================================================================
+8. GAMIFICATION: STREAKS AND MILESTONES
+================================================================================
+
+8.1 Design Principles
+---------------------
+
+- Motivate daily return (streaks) and lesson completion (milestones)
+- No punishment for wrong answers; mastery requires eventual correctness
+- All state stored locally (no account required)
+- Duolingo-lite: simpler than spaced repetition or skill decay
+
+8.2 Lesson Mastery (Milestone)
+------------------------------
+
+Definition: A lesson is mastered when the learner has answered every problem
+in that lesson correctly at least once.
+
+Rules:
+- Unlimited retries per problem; must submit correct answer to advance
+- Milestone earned immediately on final correct answer of the lesson
+- Milestone persists in localStorage; replaying a mastered lesson does not
+  revoke the milestone
+- Milestone UI (M0): modal overlay — "You mastered {lesson title}!"
+- Milestone UI (M3+): persistent badge icon on lesson row + modal on first earn
+
+8.3 Daily Streak
+----------------
+
+Definition: Consecutive calendar days on which the learner completed at least
+one problem correctly.
+
+Rules:
+- Completing any problem in any course counts as activity for the day
+- First correct answer of the day triggers streak evaluation:
+  - If lastActiveDate was yesterday: currentStreak += 1
+  - If lastActiveDate was today: no change
+  - If lastActiveDate was before yesterday: currentStreak = 1 (reset)
+- Update longestStreak if currentStreak exceeds it
+- Streak displayed on homepage header (M0+)
+- Longest streak displayed on homepage (M3+)
+
+Timezone: Use learner's local browser timezone for calendar day boundaries.
+
+8.4 Badges (M3+)
+----------------
+
+| Badge ID pattern          | Trigger                              |
+|---------------------------|--------------------------------------|
+| lesson-{lessonId}         | Mastered individual lesson           |
+| unit-{unitId}             | Mastered all lessons in unit         |
+| course-{courseId}         | Mastered all units in course         |
+| streak-7, streak-30, ...  | Optional streak milestone badges     |
+
+8.5 localStorage Schema (Gamification)
+--------------------------------------
+
+Key: algebra-clone-gamification
+
+{
+  "version": 1,
+  "currentStreak": 0,
+  "longestStreak": 0,
+  "lastActiveDate": "YYYY-MM-DD",
+  "lessonMilestones": {
+    "<lessonId>": {
+      "earnedAt": "ISO-8601 datetime"
+    }
+  },
+  "badges": ["lesson-se-u1-l1", "unit-se-u1", "streak-7"]
+}
+
+8.6 Combined Progress Schema
+----------------------------
+
+Key: algebra-clone-progress
+
+{
+  "version": 1,
+  "courses": {
+    "<courseId>": {
+      "completedLessons": ["lesson-id-1"],
+      "lastLessonId": "lesson-id",
+      "lastProblemIndex": 3
+    }
+  }
+}
+
+Note: completedLessons and lessonMilestones should stay in sync (a lesson appears
+in completedLessons when its milestone is earned). Implementation may use a
+single store (Zustand) that writes both keys.
+
+8.7 Edge Cases
+--------------
+
+| Scenario                         | Behavior                                    |
+|----------------------------------|---------------------------------------------|
+| Browser storage cleared          | All progress, streaks, badges reset           |
+| Replay mastered lesson           | Milestone retained; streak counts if new day   |
+| Complete problem at 11:59 PM     | Counts for that calendar day                  |
+| Change device/browser            | Fresh state (no sync in MVP)                  |
+
+================================================================================
+9. CONTENT ARCHITECTURE: THREE ALGEBRA LENSES
+================================================================================
+
+9.1 Hierarchy
+-------------
+
+  Course (Learning Path)
+    └── Unit (thematic chapter)
+          └── Lesson (6–10 problems, one sitting)
+                └── Problem (single interactive item)
+
+9.2 Phase Tags by Unit
+----------------------
+
+Course A: Solving Equations ("The Detective's Path")
+  Unit 1: Balance Intuition          [M0: L1 only | M1: full unit]
+  Unit 2: Unknowns                   [M1]
+  Unit 3: One-Step Equations         [M1]
+  Unit 4: Two-Step Equations         [M3]
+  Unit 5: Multi-Step and Parentheses [M3]
+  Unit 6: Word Problems to Equations [M3]
+
+Course B: Visual Algebra ("The Pattern Hunter's Journey")
+  Unit 1: Linear Patterns            [M2]
+  Unit 2: Rate Comparison              [M3]
+  Unit 3: Rules and Functions        [M3]
+  Unit 4: Graphs from Patterns       [M3]
+  Unit 5: Non-Linear Preview         [M3]
+
+Course C: Real-World Algebra ("The Pragmatist's Route")
+  Unit 1: Proportional Reasoning     [M2]
+  Unit 2: Linear Models                [M3]
+  Unit 3: Systems (Introduction)       [M3]
+  Unit 4: Inequalities in Context    [M3]
+  Unit 5: Model Critique               [M3]
+
+9.3 Course A: Solving Equations — Unit Detail
+---------------------------------------------
+
+Unit 1: Balance Intuition [M0/M1]
+  Topics: Equality as balance; same on both sides
+  Interactions: Drag weights to balance (generic M0; BalanceScale M1+)
+  Lessons: L1.1 Which side is heavier? [M0]
+           L1.2 Add weights to balance [M1]
+           L1.3 Remove weights equally [M1]
+
+Unit 2: Unknowns [M1]
+  Topics: Mystery boxes; introducing x
+  Interactions: Replace boxes with symbols; numeric guess
+  Lessons: L2.1 Number in the box; L2.2 Two boxes; L2.3 Box to letter
+
+Unit 3: One-Step Equations [M1]
+  Topics: Add/subtract/multiply/divide both sides
+  Interactions: Drag operation tiles; numeric answer
+  Lessons: L3.1 x + 3 = 7; L3.2 x - 5 = 2; L3.3 4x = 12
+
+Unit 4: Two-Step Equations [M3]
+  Topics: Order of undoing
+  Interactions: Undo machine; tap-sequence for operation order
+  Lessons: L4.1 2x + 1 = 9; L4.2 3x - 4 = 11; L4.3 (x + 2)/3 = 4
+
+Unit 5: Multi-Step and Parentheses [M3]
+  Topics: Distribution, combining like terms
+  Interactions: Drag-and-drop term grouping
+  Lessons: L5.1 Combine like terms; L5.2 Expand; L5.3 Multi-step solve
+
+Unit 6: Word Problems to Equations [M3]
+  Topics: Translate scenarios into equations
+  Interactions: Build equation from story tiles
+  Lessons: L6.1 Age problem; L6.2 Consecutive integers; L6.3 Perimeter
+
+9.4 Course B: Visual Algebra — Unit Detail
+------------------------------------------
+
+Unit 1: Linear Patterns [M2]
+  Topics: Constant growth; arithmetic sequences
+  Interactions: SequenceGrid tap-to-predict
+  Lessons: L1.1 What's next?; L1.2 Growing stacks; L1.3 Rule in words
+
+Unit 2: Rate Comparison [M3]
+  Topics: Slope as steepness
+  Interactions: Side-by-side pattern comparison
+  Lessons: L2.1 Stairs vs ramp; L2.2 Compare +3 vs +5; L2.3 Graph steepness
+
+Unit 3: Rules and Functions [M3]
+  Topics: Input-output machines
+  Interactions: InputOutputMachine + slider
+  Lessons: L3.1 Double and add 1; L3.2 Rule from table; L3.3 Introduce f(x)
+
+Unit 4: Graphs from Patterns [M3]
+  Topics: Plot points; linear graphs
+  Interactions: CoordinateGraph point placement
+  Lessons: L4.1 Plot points; L4.2 Point on line?; L4.3 Match graph to rule
+
+Unit 5: Non-Linear Preview [M3]
+  Topics: Quadratic/exponential patterns (intro)
+  Interactions: Tap-sequence identify curve type
+  Lessons: L5.1 Squares pattern; L5.2 Doubling; L5.3 Linear vs exponential
+
+9.5 Course C: Real-World Algebra — Unit Detail
+------------------------------------------------
+
+Unit 1: Proportional Reasoning [M2]
+  Topics: Unit rates; best buy
+  Interactions: RateComparison widget
+  Lessons: L1.1 Best cereal deal; L1.2 Miles per gallon; L1.3 Scale a recipe
+
+Unit 2: Linear Models [M3]
+  Topics: Fixed + variable cost; phone plans
+  Interactions: ParameterSlider + graph match
+  Lessons: L2.1 Taxi fare; L2.2 Phone plans; L2.3 Equation from graph
+
+Unit 3: Systems (Introduction) [M3]
+  Topics: Two constraints; intersection
+  Interactions: CoordinateGraph intersection
+  Lessons: L3.1 Equal plans; L3.2 Ticket types; L3.3 Read solution from graph
+
+Unit 4: Inequalities in Context [M3]
+  Topics: Budgets; constraints
+  Interactions: Tap-sequence shade feasible region
+  Lessons: L4.1 Spend at most $50; L4.2 Minimum tickets; L4.3 Graph inequality
+
+Unit 5: Model Critique [M3]
+  Topics: Does the model fit?
+  Interactions: Multiple choice pick correct model
+  Lessons: L5.1 Pick linear model; L5.2 Spot bad model; L5.3 Fix axis/units
+
+9.6 Content Authoring Guidelines
+--------------------------------
+
+Each lesson brief must specify:
+- Target phase (M0, M1, M2, or M3)
+- Learning objective (one sentence, intuition-focused)
+- Prerequisite lesson IDs
+- Problem list with interaction type per problem
+- Whether formal notation appears (default: no until final 1–2 problems)
+- Hint progression per problem (3 tiers minimum)
+- Explanation copy (1–2 sentences, plain language)
+
+Avoid:
+- Lecturing before the first interaction
+- Ambiguous numeric answers without tolerance spec
+- Variables in M0 content
+
+================================================================================
+10. FEATURE REQUIREMENTS (BY PHASE)
+================================================================================
+
+10.1 Landing and Navigation
+---------------------------
+
+| ID     | Requirement                                      | Phase |
+|--------|--------------------------------------------------|-------|
+| FR-1.1 | Homepage hero: "Learn algebra by doing"          | M0    |
+| FR-1.2 | 3 course cards with progress % and streak badge  | M0    |
+| FR-1.3 | Locked courses show "Coming soon" (non-clickable)| M0    |
+| FR-1.4 | Unlock all course cards                          | M2    |
+| FR-1.5 | Top nav: Home, Courses                           | M0    |
+| FR-1.6 | Client-side routing (no full page reload)        | M0    |
+| FR-1.7 | Longest streak display on homepage               | M3    |
+
+10.2 Course and Lesson Browser
+------------------------------
+
+| ID     | Requirement                                      | Phase |
+|--------|--------------------------------------------------|-------|
+| FR-2.1 | Course overview: units, lessons, progress %      | M0    |
+| FR-2.2 | Lesson rows: title, duration, milestone icon     | M0/M3 |
+| FR-2.3 | Sequential lesson unlock                         | M1    |
+| FR-2.4 | Resume deep-link to last problem index           | M0    |
+| FR-2.5 | URL guard on locked lessons                      | M1    |
+
+10.3 Lesson Player
+------------------
+
+| ID     | Requirement                                      | Phase |
+|--------|--------------------------------------------------|-------|
+| FR-3.1 | Progress bar, prompt, Check, Hint buttons        | M0    |
+| FR-3.2 | MCQ, drag-drop, numeric problem types            | M0    |
+| FR-3.3 | Slider, tap-sequence problem types               | M1    |
+| FR-3.4 | Progressive hints (3 tiers); unlimited retries   | M0    |
+| FR-3.5 | Must answer correctly to advance                 | M0    |
+| FR-3.6 | KaTeX math in prompts/explanations                | M1    |
+| FR-3.7 | Keyboard: Enter submits; Tab navigates           | M1    |
+
+10.4 Gamification
+-----------------
+
+| ID     | Requirement                                      | Phase |
+|--------|--------------------------------------------------|-------|
+| FR-4.1 | Lesson milestone modal on lesson mastery         | M0    |
+| FR-4.2 | Daily streak increment and display               | M0    |
+| FR-4.3 | Milestone badge icons on lesson rows             | M3    |
+| FR-4.4 | Unit and course completion badges                | M3    |
+| FR-4.5 | Longest streak tracking and display              | M3    |
+
+10.5 Widgets
+------------
+
+| Widget             | Phase | Used in                          |
+|--------------------|-------|----------------------------------|
+| DragDropBoard      | M0    | Solving Equations (generic)      |
+| BalanceScale       | M1    | Solving Equations Unit 1         |
+| SequenceGrid       | M2    | Visual Algebra Unit 1            |
+| CoordinateGraph    | M2    | Visual Algebra; Real-World M3    |
+| InputOutputMachine | M2    | Visual Algebra Unit 1            |
+| ParameterSlider    | M2    | Real-World Algebra Unit 1        |
+| RateComparison     | M2    | Real-World Algebra Unit 1        |
+
+10.6 Design Principles (all phases)
+---------------------------------
+
+- Mobile-first responsive (320px+)
+- Touch targets >= 44x44px
+- Minimal text per screen; one primary action
+- High contrast; correct/incorrect indicated by icon + color
+- Plain-text math acceptable M0; KaTeX M1+
+
+================================================================================
+11. PROBLEM CONTENT SCHEMA
+================================================================================
+
+11.1 Type Definitions
+---------------------
+
+type RichText = string  // Markdown + inline LaTeX (M1+)
+
+type ProblemType =
+  | 'multiple-choice'   // M0
+  | 'drag-drop'         // M0
+  | 'numeric'           // M0
+  | 'slider'            // M1
+  | 'tap-sequence'      // M1
+
+type VisualKind =
+  | 'none'
+  | 'balance-scale'           // M1
+  | 'sequence-grid'           // M2
+  | 'coordinate-graph'        // M2
+  | 'input-output-machine'    // M2
+  | 'rate-comparison'         // M2
+  | 'scenario-illustration'
+
+type Problem = {
+  id: string
+  type: ProblemType
+  prompt: RichText
+  visual?: { kind: VisualKind; props: Record<string, unknown> }
+  interaction: InteractionConfig  // see prior PRD for per-type shapes
+  hints: [RichText, RichText, RichText]
+  explanation: RichText
+  introNotation?: boolean
+}
+
+type Lesson = {
+  id: string
+  unitId: string
+  title: string
+  estimatedMinutes: number
+  phase: 'M0' | 'M1' | 'M2' | 'M3'
+  problemIds: string[]
+}
+
+type Unit = {
+  id: string
+  courseId: string
+  title: string
+  order: number
+  phase: 'M0' | 'M1' | 'M2' | 'M3'
+  lessonIds: string[]
+}
+
+type Course = {
+  id: string
+  slug: string
+  title: string
+  subtitle: string
+  estimatedHours: number
+  lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra'
+  unitIds: string[]
+  lockedUntilPhase: 'M0' | 'M2'  // M0: only solving-equations unlocked
+}
+
+11.2 File Organization
+----------------------
+
+src/content/
+  courses/
+    solving-equations.json
+    visual-algebra.json
+    real-world-algebra.json
+  problems/
+    solving-equations/
+    visual-algebra/
+    real-world-algebra/
+  index.ts
+
+11.3 Build-Time Validation
+--------------------------
+
+- Every problemId in lessons exists
+- hints.length >= 3 per problem
+- phase tags align with roadmap (M0 problems only in M0 lessons)
+- lockedUntilPhase respected in course config
+
+11.4 Example Problem (M0)
+-------------------------
+
+{
+  "id": "se-u1-l1-p1",
+  "type": "multiple-choice",
+  "prompt": "Which pan is heavier?",
+  "visual": { "kind": "none" },
+  "interaction": {
+    "type": "multiple-choice",
+    "data": {
+      "options": [
+        { "id": "left", "label": "Left pan" },
+        { "id": "right", "label": "Right pan" },
+        { "id": "equal", "label": "They are equal" }
+      ],
+      "correctOptionId": "left"
+    }
+  },
+  "hints": [
+    "Look at how low each pan hangs.",
+    "The left pan is lower, which means it is heavier.",
+    "Select **Left pan**."
+  ],
+  "explanation": "The lower pan holds more weight."
+}
+
+================================================================================
+12. TECHNICAL APPROACH
+================================================================================
+
+12.1 Stack
+----------
+
+| Layer        | Choice                         | First needed |
+|--------------|--------------------------------|--------------|
+| Frontend     | React 19 + TypeScript + Vite   | M0           |
+| Routing      | React Router                   | M0           |
+| State        | Zustand                        | M0           |
+| Persistence  | localStorage (2 keys)          | M0           |
+| Content      | Static JSON in src/content/    | M0           |
+| Math         | KaTeX via react-katex          | M1           |
+| Styling      | CSS Modules                    | M0           |
+| Animations   | CSS transitions; Framer Motion | M4           |
+| Validation   | Zod                            | M0           |
+
+12.2 Routes
+-----------
+
+/                                    HomePage
+/courses/:slug                       CoursePage
+/courses/:slug/lessons/:lessonId    LessonPage
+
+12.3 Folder Structure
+---------------------
+
+brilliant-clone/src/
+  content/
+  components/
+    layout/          Header, Footer, StreakBadge
+    course/          CourseCard, UnitList, LessonRow, MilestoneIcon
+    lesson/          LessonPlayer, ProgressBar, FeedbackPanel, MilestoneModal
+    problems/        ProblemRenderer, per-type components
+    widgets/         BalanceScale, SequenceGrid, etc.
+  pages/
+  hooks/             useProgress, useGamification, useLesson
+  lib/               storage, validation, content, streaks
+  stores/            progressStore, gamificationStore
+  types/
+
+12.4 Key Dependencies by Phase
+------------------------------
+
+M0: react-router-dom, zustand, zod
+M1: katex, react-katex
+M4: framer-motion
+Dev (M1+): vitest, @testing-library/react
+
+12.5 Backend
+------------
+
+None for MVP. Static hosting (Vercel, Netlify, GitHub Pages).
+
+================================================================================
+13. USER STORIES (BY PHASE)
+================================================================================
+
+13.1 M0
+-------
+US-M0-1 through US-M0-6 (see Section 3.6)
+
+13.2 M1
+-------
+US-M1-1 through US-M1-4 (see Section 4.5)
+
+13.3 M2
+-------
+US-M2-1 through US-M2-4 (see Section 5.5)
+
+13.4 M3
+-------
+US-M3-1 through US-M3-4 (see Section 6.5)
+
+13.5 M4
+-------
+US-M4-1 through US-M4-2 (see Section 7.5)
+
+13.6 Cross-Phase
+----------------
+
+US-X-1: As a learner, I can use the app on my phone in portrait mode without
+  horizontal scrolling. [M0]
+US-X-2: As a developer, build fails if content JSON references a missing
+  problem. [M0]
+US-X-3: As a content author, I can add a new MCQ problem via JSON without
+  changing React components. [M0]
+
+================================================================================
+14. OUT OF SCOPE AND FUTURE WORK
+================================================================================
+
+14.1 Explicitly Out (entire MVP)
+--------------------------------
+- Payments and subscriptions
+- AI tutor / chat help
+
+14.2 Deferred from Original PRD
+-------------------------------
+- Reset progress (was M3; deferred)
+- Recommended learning path UI (was M3; deferred)
+- About page (was M3; deferred)
+- Formal a11y audit / Lighthouse >= 90 (was M4; deferred)
+- Lesson-complete celebration screen (milestone modal used instead)
+
+14.3 Post-MVP Backlog
+---------------------
+- User accounts and cross-device sync
+- Quadratics as fourth course
+- Spaced repetition / review mode
+- Adaptive difficulty
+- Offline PWA
+- Localization (Spanish)
+- Teacher dashboard
+- Sound effects and haptic feedback
+- Content CMS
+- Skip problem button
+
+14.4 Open Decision
+------------------
+
+Sequential lesson unlock: ON by default starting M1. All lessons in M0 (only one
+exists). Revisit if user testing shows frustration with gating.
+
+================================================================================
+15. RISKS AND SUCCESS METRICS
+================================================================================
+
+15.1 Success Metrics
+--------------------
+
+| Metric                         | Target              | Phase to measure |
+|--------------------------------|---------------------|------------------|
+| Lesson completion rate         | >= 60%              | M0 pilot         |
+| Time-on-task per session       | 8–15 min            | M0 pilot         |
+| Day-7 return rate              | >= 30%              | M2 pilot         |
+| Streak participation           | >= 40% have streak>1| M2 pilot         |
+| Lesson load time               | < 2s on 4G          | M0               |
+| Interaction feedback latency   | < 100ms             | M0               |
+
+MVP launch (M3 complete):
+1. All three courses fully playable (~150–250 problems)
+2. Streaks and milestones work across courses
+3. All 5 problem types and 7 widgets in production
+4. No broken content references
+
+15.2 Risks and Mitigations
+--------------------------
+
+| Risk                                   | Impact | Mitigation                              |
+|----------------------------------------|--------|-----------------------------------------|
+| Widget build cost                      | High   | P0 generic drag-drop M0; specialized M1+ |
+| Gamification adds M0 scope             | Medium | Simple modal + counter; no badge art M0 |
+| Content authoring bottleneck           | High   | JSON schema frozen at M0; 6-problem slice |
+| Streak timezone edge cases             | Low    | Use local browser date; document rules  |
+| Scope creep (auth, AI, CMS)            | High   | Non-goals section; phase gates          |
+| Shallow pedagogy                       | Medium | Authoring guidelines; no notation in M0 |
+| Mobile drag-drop jank                  | Medium | Real-device testing in M4               |
+
+================================================================================
+APPENDIX A: GLOSSARY
+================================================================================
+
+Lens        — Pedagogical perspective: Solving, Visual, or Real-World algebra.
+Milestone   — Badge earned when all problems in a lesson are answered correctly.
+Streak      — Consecutive calendar days with at least one problem completed.
+Mastery     — Synonym for lesson milestone in this PRD.
+Phase       — Delivery milestone M0–M4; not to be confused with course Unit.
+Widget      — Reusable visual component (BalanceScale, SequenceGrid, etc.).
+
+================================================================================
+APPENDIX B: REFERENCE LINKS
+================================================================================
+
+Brilliant algebra pedagogy:
+  https://blog.brilliant.org/visual-algebra/
+  https://blog.brilliant.org/solving-equations/
+
+Project scaffold: brilliant-clone/ (React 19 + Vite 8 + TypeScript)
+
+================================================================================
+END OF DOCUMENT
+================================================================================

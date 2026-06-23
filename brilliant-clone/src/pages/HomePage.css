@@ -1,0 +1,21 @@
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  margin: 0 0 0.75rem;
+}
+
+.hero__sub {
+  color: var(--text);
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.course-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

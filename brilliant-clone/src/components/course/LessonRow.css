@@ -1,0 +1,40 @@
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-row:hover:not(.lesson-row--locked) {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.lesson-row--locked {
+  opacity: 0.55;
+}
+
+.lesson-row__title {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.lesson-row__meta {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.lesson-row__check {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.lesson-row__lock {
+  font-size: 0.85rem;
+}
