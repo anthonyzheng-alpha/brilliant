@@ -1,0 +1,11 @@
+{
+  "id": "factoring",
+  "slug": "factoring",
+  "title": "Factoring",
+  "subtitle": "Breaking Apart Expressions",
+  "description": "Rewrite quadratics as products of simpler factors using drag-and-drop tiles.",
+  "estimatedHours": 3,
+  "lens": "factoring",
+  "unitIds": ["fa-u1"],
+  "lockedUntilPhase": "M2"
+}

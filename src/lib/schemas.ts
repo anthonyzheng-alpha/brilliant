@@ -77,6 +77,20 @@ const interaction = z.discriminatedUnion('type', [
       tolerance: z.number().optional(),
     }),
   }),
+  z.object({
+    type: z.literal('factoring'),
+    data: z.object({
+      draggables: z.array(z.object({ id: z.string(), label: richText })),
+      dropZones: z.array(
+        z.object({
+          id: z.string(),
+          label: richText.optional(),
+        }),
+      ),
+      correctPlacement: z.record(z.string(), z.string()),
+      acceptCommutative: z.boolean().optional(),
+    }),
+  }),
 ])
 
 export const problemSchema = z.object({
@@ -88,6 +102,7 @@ export const problemSchema = z.object({
     'slider',
     'tap-sequence',
     'line-equation',
+    'factoring',
   ]),
   prompt: richText,
   visual: z
@@ -129,7 +144,7 @@ export const courseSchema = z.object({
   subtitle: z.string(),
   description: richText,
   estimatedHours: z.number(),
-  lens: z.enum(['solving-equations', 'visual-algebra', 'real-world-algebra']),
+  lens: z.enum(['solving-equations', 'visual-algebra', 'real-world-algebra', 'factoring']),
   unitIds: z.array(z.string()),
   lockedUntilPhase: z.enum(['M0', 'M2']),
 })

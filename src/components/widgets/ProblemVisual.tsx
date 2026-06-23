@@ -3,6 +3,7 @@ import { parseNumericInput } from '../../lib/validation'
 import { BalanceScale } from './BalanceScale'
 import { CoordinateGraph, type GraphPoint } from './CoordinateGraph'
 import { SequenceGrid } from './SequenceGrid'
+import { FactoringExpression } from './FactoringExpression'
 
 type Props = {
   problem: Problem
@@ -81,6 +82,10 @@ export function ProblemVisual({ problem, answer }: Props) {
       )
     case 'scenario-illustration':
       return <div className="scenario-card">Real-world scenario</div>
+    case 'factoring-expression': {
+      const expression = String(props.expression ?? '')
+      return <FactoringExpression expression={expression} />
+    }
     default:
       return null
   }

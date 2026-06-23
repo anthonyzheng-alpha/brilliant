@@ -3,13 +3,12 @@ import { getAuth, GoogleAuthProvider, type Auth } from 'firebase/auth'
 import { getFirestore, type Firestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDrbkicoEtQOpjaGcsf3GZFCjxzxO9qTy8",
-  authDomain: "brilliant-clone-b1568.firebaseapp.com",
-  projectId: "brilliant-clone-b1568",
-  storageBucket: "brilliant-clone-b1568.firebasestorage.app",
-  messagingSenderId: "246469955251",
-  appId: "1:246469955251:web:96d561f7862ce4036aaac6",
-  measurementId: "G-2Q0032W03N"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
 export function isFirebaseConfigured(): boolean {

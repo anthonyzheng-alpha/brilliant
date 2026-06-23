@@ -6,6 +6,7 @@ import { NumericProblem } from './NumericProblem'
 import { SliderProblem } from './SliderProblem'
 import { TapSequenceProblem } from './TapSequenceProblem'
 import { LineEquationProblem } from './LineEquationProblem'
+import { FactoringProblem } from './FactoringProblem'
 
 function initialAnswer(problem: Problem): AnswerValue | null {
   switch (problem.interaction.type) {
@@ -24,6 +25,8 @@ function initialAnswer(problem: Problem): AnswerValue | null {
       return { type: 'tap-sequence', selectedIds: [] }
     case 'line-equation':
       return { type: 'line-equation', slope: '', intercept: '' }
+    case 'factoring':
+      return { type: 'factoring', placement: {} }
     default:
       return null
   }
@@ -94,6 +97,15 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: P
             onChange={(slope, intercept) =>
               onAnswerChange({ type: 'line-equation', slope, intercept })
             }
+            disabled={disabled}
+          />
+        )
+      case 'factoring':
+        return (
+          <FactoringProblem
+            data={interaction.data}
+            placement={answer?.type === 'factoring' ? answer.placement : {}}
+            onChange={(placement) => onAnswerChange({ type: 'factoring', placement })}
             disabled={disabled}
           />
         )

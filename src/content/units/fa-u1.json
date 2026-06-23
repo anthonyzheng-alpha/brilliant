@@ -1,0 +1,9 @@
+{
+  "id": "fa-u1",
+  "courseId": "factoring",
+  "title": "Factoring Basics",
+  "description": "Trinomials and difference of squares — build the correct factor pair.",
+  "order": 1,
+  "phase": "M2",
+  "lessonIds": ["fa-u1-l1"]
+}

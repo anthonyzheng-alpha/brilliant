@@ -5,6 +5,7 @@ export type ProblemType =
   | 'slider'
   | 'tap-sequence'
   | 'line-equation'
+  | 'factoring'
 
 export type VisualKind =
   | 'none'
@@ -14,6 +15,7 @@ export type VisualKind =
   | 'input-output-machine'
   | 'rate-comparison'
   | 'scenario-illustration'
+  | 'factoring-expression'
 
 export type RichText = string
 
@@ -63,6 +65,13 @@ export type LineEquationInteraction = {
   tolerance?: number
 }
 
+export type FactoringInteraction = {
+  draggables: { id: string; label: RichText }[]
+  dropZones: { id: string; label?: RichText }[]
+  correctPlacement: Record<string, string>
+  acceptCommutative?: boolean
+}
+
 export type InteractionConfig =
   | { type: 'multiple-choice'; data: MultipleChoiceInteraction }
   | { type: 'drag-drop'; data: DragDropInteraction }
@@ -70,6 +79,7 @@ export type InteractionConfig =
   | { type: 'slider'; data: SliderInteraction }
   | { type: 'tap-sequence'; data: TapSequenceInteraction }
   | { type: 'line-equation'; data: LineEquationInteraction }
+  | { type: 'factoring'; data: FactoringInteraction }
 
 export type Problem = {
   id: string
@@ -109,7 +119,7 @@ export type Course = {
   subtitle: string
   description: RichText
   estimatedHours: number
-  lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra'
+  lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra' | 'factoring'
   unitIds: string[]
   lockedUntilPhase: 'M0' | 'M2'
 }
@@ -141,3 +151,4 @@ export type AnswerValue =
   | { type: 'slider'; value: number }
   | { type: 'tap-sequence'; selectedIds: string[] }
   | { type: 'line-equation'; slope: string; intercept: string }
+  | { type: 'factoring'; placement: Record<string, string> }

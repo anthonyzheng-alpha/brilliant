@@ -1,4 +1,4 @@
-import type { AnswerValue, Problem, ValidationRule } from '../types/content'
+import type { AnswerValue, FactoringInteraction, Problem, ValidationRule } from '../types/content'
 
 function parseNumeric(input: string): number | null {
   const trimmed = input.trim()
@@ -39,6 +39,33 @@ function validateNumericString(input: string, rule: ValidationRule): boolean {
   }
   if (rule.type === 'exact') return input.trim() === rule.value
   return false
+}
+
+function factoringPlacementMatches(
+  placement: Record<string, string>,
+  correct: Record<string, string>,
+  acceptCommutative?: boolean,
+): boolean {
+  const directMatch = Object.keys(correct).every(
+    (zoneId) => placement[zoneId] === correct[zoneId],
+  )
+  if (directMatch) return true
+  if (!acceptCommutative) return false
+
+  const zoneIds = Object.keys(correct)
+  if (zoneIds.length !== 2) return false
+  const [left, right] = zoneIds
+  return (
+    placement[left] === correct[right] &&
+    placement[right] === correct[left]
+  )
+}
+
+function factoringZonesFilled(
+  data: FactoringInteraction,
+  placement: Record<string, string>,
+): boolean {
+  return data.dropZones.every((zone) => Boolean(placement[zone.id]))
 }
 
 export function isAnswerValid(problem: Problem, answer: AnswerValue): boolean {
@@ -84,6 +111,14 @@ export function isAnswerValid(problem: Problem, answer: AnswerValue): boolean {
         Math.abs(b - interaction.data.targetIntercept) <= tol
       )
     }
+    case 'factoring': {
+      if (answer.type !== 'factoring') return false
+      return factoringPlacementMatches(
+        answer.placement,
+        interaction.data.correctPlacement,
+        interaction.data.acceptCommutative,
+      )
+    }
     default:
       return false
   }
@@ -110,6 +145,12 @@ export function hasValidInput(problem: Problem, answer: AnswerValue | null): boo
         answer.type === 'line-equation' &&
         answer.slope.trim() !== '' &&
         answer.intercept.trim() !== ''
+      )
+    case 'factoring':
+      return (
+        answer.type === 'factoring' &&
+        problem.interaction.type === 'factoring' &&
+        factoringZonesFilled(problem.interaction.data, answer.placement)
       )
     default:
       return false

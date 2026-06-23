@@ -1,0 +1,10 @@
+.factoring-expression {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--accent-border);
+  border-radius: 12px;
+  background: var(--accent-bg);
+  font-size: 1.35rem;
+}

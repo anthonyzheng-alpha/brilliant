@@ -1,0 +1,9 @@
+{
+  "id": "fa-u1-l1",
+  "unitId": "fa-u1",
+  "title": "Factor by Tiles",
+  "description": "Drag factor tiles into both slots to match the expression.",
+  "estimatedMinutes": 10,
+  "phase": "M2",
+  "problemIds": ["fa-u1-l1-p1", "fa-u1-l1-p2", "fa-u1-l1-p3", "fa-u1-l1-p4"]
+}

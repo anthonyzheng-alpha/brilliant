@@ -171,3 +171,41 @@
   border-color: var(--accent);
   background: var(--accent-bg);
 }
+
+.factoring {
+  margin-top: 1rem;
+}
+
+.factoring__product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.factoring__slot {
+  min-width: 5rem;
+  min-height: 56px;
+  padding: 0.5rem 0.75rem;
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.factoring__placeholder {
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.factoring__times {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-h);
+}

@@ -4,29 +4,34 @@ import type { Course, Lesson, Problem, Unit } from '../types/content'
 import solvingEquations from './courses/solving-equations.json'
 import visualAlgebra from './courses/visual-algebra.json'
 import realWorldAlgebra from './courses/real-world-algebra.json'
+import factoring from './courses/factoring.json'
 
 import seU1 from './units/se-u1.json'
 import vaU1 from './units/va-u1.json'
 import rwU1 from './units/rw-u1.json'
+import faU1 from './units/fa-u1.json'
 
 import seU1L1 from './lessons/se-u1-l1.json'
 import seU1L2 from './lessons/se-u1-l2.json'
 import vaU1L1 from './lessons/va-u1-l1.json'
 import rwU1L1 from './lessons/rw-u1-l1.json'
+import faU1L1 from './lessons/fa-u1-l1.json'
 
 import seU1L1Problems from './problems/solving-equations/se-u1-l1.json'
 import seU1L2Problems from './problems/solving-equations/se-u1-l2.json'
 import vaU1L1Problems from './problems/visual-algebra/va-u1-l1.json'
 import rwU1L1Problems from './problems/real-world-algebra/rw-u1-l1.json'
+import faU1L1Problems from './problems/factoring/fa-u1-l1.json'
 
-const courseData = [solvingEquations, visualAlgebra, realWorldAlgebra]
-const unitData = [seU1, vaU1, rwU1]
-const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1]
+const courseData = [solvingEquations, visualAlgebra, realWorldAlgebra, factoring]
+const unitData = [seU1, vaU1, rwU1, faU1]
+const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1, faU1L1]
 const problemData = [
   ...seU1L1Problems,
   ...seU1L2Problems,
   ...vaU1L1Problems,
   ...rwU1L1Problems,
+  ...faU1L1Problems,
 ]
 
 function parseAll<T>(schema: { parse: (v: unknown) => T }, items: unknown[], label: string): T[] {
