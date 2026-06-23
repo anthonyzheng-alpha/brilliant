@@ -48,6 +48,7 @@ export function LessonPlayer({
   const [attempts, setAttempts] = useState(0)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
+    | { kind: 'hint'; hint: string }
     | { kind: 'incorrect'; hint: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
     | { kind: 'complete'; lessonTitle: string }
@@ -131,7 +132,7 @@ export function LessonPlayer({
     if (!problem) return
     const hintIndex = Math.min(attempts, 2)
     setAttempts((a) => a + 1)
-    setFeedback({ kind: 'incorrect', hint: problem.hints[hintIndex] })
+    setFeedback({ kind: 'hint', hint: problem.hints[hintIndex] })
   }
 
   const finishLesson = () => {
@@ -188,7 +189,7 @@ export function LessonPlayer({
 
       <FeedbackPanel
         state={
-          feedback.kind === 'milestone'
+          feedback.kind === 'milestone' || feedback.kind === 'complete'
             ? { kind: 'idle' }
             : feedback
         }

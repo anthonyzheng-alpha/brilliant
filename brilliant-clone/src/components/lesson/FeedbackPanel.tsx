@@ -5,6 +5,7 @@ import './LessonPlayer.css'
 
 type FeedbackState =
   | { kind: 'idle' }
+  | { kind: 'hint'; hint: string }
   | { kind: 'incorrect'; hint: string; shake?: boolean }
   | { kind: 'correct'; explanation: string }
   | { kind: 'complete'; lessonTitle: string }
@@ -16,6 +17,17 @@ type Props = {
 
 export function FeedbackPanel({ state, onContinue }: Props) {
   if (state.kind === 'idle') return null
+
+  if (state.kind === 'hint') {
+    return (
+      <div className="feedback feedback--incorrect">
+        <p className="feedback__title">Hint</p>
+        <p className="feedback__body">
+          <RichText text={state.hint} />
+        </p>
+      </div>
+    )
+  }
 
   if (state.kind === 'incorrect') {
     const panel = (
