@@ -46,3 +46,6 @@ export function getFirestoreDb(): Firestore | null {
 }
 
 export const googleProvider = new GoogleAuthProvider()
+googleProvider.addScope('profile')
+googleProvider.addScope('email')
+googleProvider.setCustomParameters({ prompt: 'select_account' })

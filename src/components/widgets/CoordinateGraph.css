@@ -1,0 +1,51 @@
+.coordinate-graph {
+  width: 100%;
+  max-width: 320px;
+  margin: 1rem auto;
+}
+
+.coordinate-graph__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--accent-bg);
+  border: 2px solid var(--accent-border);
+  border-radius: 8px;
+}
+
+.coordinate-graph__grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.coordinate-graph__axis {
+  stroke: var(--text-h);
+  stroke-width: 1.5;
+}
+
+.coordinate-graph__line {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.coordinate-graph__preview-line {
+  stroke: var(--correct, #2e7d32);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 6 4;
+  transition: x1 0.15s ease, y1 0.15s ease, x2 0.15s ease, y2 0.15s ease;
+}
+
+.coordinate-graph__point {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
+
+.coordinate-graph__tick {
+  fill: var(--text);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 600;
+}

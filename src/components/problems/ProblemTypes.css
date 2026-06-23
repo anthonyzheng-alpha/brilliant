@@ -120,10 +120,31 @@
   max-width: 280px;
 }
 
-.slider-value {
-  font-size: 1.25rem;
-  font-weight: 600;
+.line-equation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
   color: var(--text-h);
+}
+
+.line-equation__label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.line-equation__input {
+  width: 4.5rem;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  text-align: center;
 }
 
 .tap-grid {

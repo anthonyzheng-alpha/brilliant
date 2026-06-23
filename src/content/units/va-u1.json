@@ -1,8 +1,8 @@
 {
   "id": "va-u1",
   "courseId": "visual-algebra",
-  "title": "Linear Patterns",
-  "description": "Constant growth per step — find the rule.",
+  "title": "Graphing Lines",
+  "description": "Slope-intercept form — slope as rate of change and the y-intercept.",
   "order": 1,
   "phase": "M2",
   "lessonIds": ["va-u1-l1"]

@@ -386,16 +386,17 @@ Course unlock:
 - All 3 course cards fully navigable
 
 Visual Algebra widgets:
-- SequenceGrid (tap next term, fill missing cells)
-- CoordinateGraph (place points on grid)
+- CoordinateGraph (display line in y = mx + b; read slope and intercept)
 - InputOutputMachine (slider input, predict output)
+- SequenceGrid (tap next term, fill missing cells — Unit 2+)
 
 Real-World Algebra widgets:
 - ParameterSlider (adjust rate, base cost, etc.)
 - RateComparison (grocery / best-buy comparison board)
 
 Content:
-- Visual Algebra Unit 1: Linear Patterns (~3 lessons, ~18 problems)
+- Visual Algebra Unit 1: Graphing Lines (~3 lessons, ~18 problems)
+  L1.1 Graph the Line (slope, y-intercept, match equation, evaluate)
 - Real-World Algebra Unit 1: Proportional Reasoning (~3 lessons, ~18 problems)
 - Solving Equations: Unit 1 remains playable; Units 1–3 from M1 retained
 
@@ -424,10 +425,11 @@ Gamification:
 5.5 User Stories (M2)
 ---------------------
 
-US-M2-1: As a learner, I can start Visual Algebra and find the rule in a
-  number pattern before seeing f(x) notation.
+US-M2-1: As a learner, I can start Visual Algebra and identify slope and
+  y-intercept from a line shown in y = mx + b form.
 US-M2-2: As a learner, I can compare unit rates in a grocery-style problem.
-US-M2-3: As a learner, I can plot points on a coordinate grid from a pattern.
+US-M2-3: As a learner, I can read a line on a coordinate grid from its
+  equation. (Interactive point plotting is M3 Unit 4 scope.)
 US-M2-4: As a learner, I earn lesson milestones in any of the three courses.
 
 ================================================================================
@@ -502,7 +504,8 @@ Make interactions feel alive through motion and visual feedback.
 Animations:
 - BalanceScale: pan tilt animation when weights change
 - SequenceGrid: cells grow/shrink to show pattern progression
-- CoordinateGraph: points plot with motion; line draws between points
+- CoordinateGraph: line display for M2 Unit 1; M3 Unit 4 adds point plot
+  motion and line draw between points
 - InputOutputMachine: gear/pipe animation on input change
 - Milestone unlock: badge reveal animation on lesson mastery
 - Streak increment: subtle celebration on daily streak update
@@ -661,8 +664,8 @@ Course A: Solving Equations ("The Detective's Path")
   Unit 5: Multi-Step and Parentheses [M3]
   Unit 6: Word Problems to Equations [M3]
 
-Course B: Visual Algebra ("The Pattern Hunter's Journey")
-  Unit 1: Linear Patterns            [M2]
+Course B: Visual Algebra ("Lines on the Coordinate Plane")
+  Unit 1: Graphing Lines             [M2]
   Unit 2: Rate Comparison              [M3]
   Unit 3: Rules and Functions        [M3]
   Unit 4: Graphs from Patterns       [M3]
@@ -713,10 +716,12 @@ Unit 6: Word Problems to Equations [M3]
 9.4 Course B: Visual Algebra — Unit Detail
 ------------------------------------------
 
-Unit 1: Linear Patterns [M2]
-  Topics: Constant growth; arithmetic sequences
-  Interactions: SequenceGrid tap-to-predict
-  Lessons: L1.1 What's next?; L1.2 Growing stacks; L1.3 Rule in words
+Unit 1: Graphing Lines [M2]
+  Topics: Slope-intercept form; slope as rate of change; y-intercept
+  Interactions: CoordinateGraph line display and scatter points; line-equation
+    input (enter $m$ and $b$ with live preview line); MCQ and numeric answers
+  Lessons: L1.1 Graph the Line [M2] (slope, intercept, match equation,
+           evaluate); L1.2 Growing stacks [M3]; L1.3 Rule in words [M3]
 
 Unit 2: Rate Comparison [M3]
   Topics: Slope as steepness
@@ -730,6 +735,8 @@ Unit 3: Rules and Functions [M3]
 
 Unit 4: Graphs from Patterns [M3]
   Topics: Plot points; linear graphs
+  Note: Unit 1 introduces reading y = mx + b; Unit 4 adds interactive
+        point plotting and multi-step graph tasks
   Interactions: CoordinateGraph point placement
   Lessons: L4.1 Plot points; L4.2 Point on line?; L4.3 Match graph to rule
 
@@ -842,9 +849,9 @@ Avoid:
 |--------------------|-------|----------------------------------|
 | DragDropBoard      | M0    | Solving Equations (generic)      |
 | BalanceScale       | M1    | Solving Equations Unit 1         |
-| SequenceGrid       | M2    | Visual Algebra Unit 1            |
-| CoordinateGraph    | M2    | Visual Algebra; Real-World M3    |
-| InputOutputMachine | M2    | Visual Algebra Unit 1            |
+| SequenceGrid       | M2    | Visual Algebra Unit 2+             |
+| CoordinateGraph    | M2    | Visual Algebra Unit 1; Real-World M3 |
+| InputOutputMachine | M2    | Visual Algebra Unit 3              |
 | ParameterSlider    | M2    | Real-World Algebra Unit 1        |
 | RateComparison     | M2    | Real-World Algebra Unit 1        |
 

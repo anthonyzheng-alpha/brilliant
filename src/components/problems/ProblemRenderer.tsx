@@ -5,6 +5,7 @@ import { DragDropProblem } from './DragDropProblem'
 import { NumericProblem } from './NumericProblem'
 import { SliderProblem } from './SliderProblem'
 import { TapSequenceProblem } from './TapSequenceProblem'
+import { LineEquationProblem } from './LineEquationProblem'
 
 function initialAnswer(problem: Problem): AnswerValue | null {
   switch (problem.interaction.type) {
@@ -21,6 +22,8 @@ function initialAnswer(problem: Problem): AnswerValue | null {
       }
     case 'tap-sequence':
       return { type: 'tap-sequence', selectedIds: [] }
+    case 'line-equation':
+      return { type: 'line-equation', slope: '', intercept: '' }
     default:
       return null
   }
@@ -79,6 +82,18 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: P
             data={interaction.data}
             selectedIds={answer?.type === 'tap-sequence' ? answer.selectedIds : []}
             onChange={(selectedIds) => onAnswerChange({ type: 'tap-sequence', selectedIds })}
+            disabled={disabled}
+          />
+        )
+      case 'line-equation':
+        return (
+          <LineEquationProblem
+            data={interaction.data}
+            slope={answer?.type === 'line-equation' ? answer.slope : ''}
+            intercept={answer?.type === 'line-equation' ? answer.intercept : ''}
+            onChange={(slope, intercept) =>
+              onAnswerChange({ type: 'line-equation', slope, intercept })
+            }
             disabled={disabled}
           />
         )

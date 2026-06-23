@@ -1,7 +1,10 @@
 import { create } from 'zustand'
 import {
+  browserPopupRedirectResolver,
+  getRedirectResult,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithRedirect,
   signOut as firebaseSignOut,
   type User,
 } from 'firebase/auth'
@@ -31,6 +34,10 @@ export const useAuthStore = create<AuthStore>((set) => ({
       return () => {}
     }
 
+    void getRedirectResult(auth).catch((e) => {
+      console.error('Google redirect sign-in failed', e)
+    })
+
     const unsub = onAuthStateChanged(auth, async (user) => {
       if (user) {
         try {
@@ -56,7 +63,33 @@ export const useAuthStore = create<AuthStore>((set) => ({
     }
     set({ loading: true })
     try {
-      await signInWithPopup(auth, googleProvider)
+      await signInWithPopup(auth, googleProvider, browserPopupRedirectResolver)
+    } catch (e) {
+      const code = e && typeof e === 'object' && 'code' in e ? String(e.code) : ''
+      const userCancelled =
+        code === 'auth/popup-closed-by-user' ||
+        code === 'auth/cancelled-popup-request'
+
+      const tryRedirect =
+        !userCancelled &&
+        (code === 'auth/popup-blocked' ||
+          code === 'auth/internal-error' ||
+          code === 'auth/operation-not-allowed' ||
+          code === 'auth/unauthorized-domain')
+
+      if (tryRedirect) {
+        await signInWithRedirect(auth, googleProvider)
+        return
+      }
+
+      if (userCancelled) return
+
+      console.error('Google sign-in failed', e)
+      const message =
+        e && typeof e === 'object' && 'message' in e
+          ? String(e.message)
+          : 'Sign-in failed. Run `npm run deploy:auth` to enable Google sign-in in Firebase.'
+      alert(message)
     } finally {
       set({ loading: false })
     }

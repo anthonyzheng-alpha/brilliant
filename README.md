@@ -1,15 +1,6 @@
 # Brilliant Clone — Algebra
 
-Interactive algebra learning app (React + Vite + TypeScript).
-
-## Phases implemented
-
-| Phase | Features |
-|-------|----------|
-| **P1** | Lesson player, MCQ / drag-drop / numeric, routing, localStorage progress |
-| **P2** | Firebase Google sign-in, Firestore progress sync |
-| **P3** | Daily streaks, lesson mastery milestones |
-| **P4+** | Slider / tap-sequence, KaTeX, BalanceScale + SequenceGrid widgets, 3 courses, sequential unlock, animations |
+Interactive algebra learning app (React + Vite + TypeScript). Lessons vary from solving for unknowns, graphing, and factoring.
 
 ## Quick start
 

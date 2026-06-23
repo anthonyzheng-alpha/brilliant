@@ -14,6 +14,10 @@ function parseNumeric(input: string): number | null {
   return Number.isFinite(n) ? n : null
 }
 
+export function parseNumericInput(input: string): number | null {
+  return parseNumeric(input)
+}
+
 function numericMatches(value: number, rule: Extract<ValidationRule, { type: 'numeric' }>): boolean {
   const tol = rule.tolerance ?? 0.001
   return Math.abs(value - rule.value) <= tol
@@ -69,6 +73,17 @@ export function isAnswerValid(problem: Problem, answer: AnswerValue): boolean {
       const got = [...answer.selectedIds].sort()
       return expected.length === got.length && expected.every((id, i) => id === got[i])
     }
+    case 'line-equation': {
+      if (answer.type !== 'line-equation') return false
+      const m = parseNumeric(answer.slope)
+      const b = parseNumeric(answer.intercept)
+      if (m === null || b === null) return false
+      const tol = interaction.data.tolerance ?? 0.001
+      return (
+        Math.abs(m - interaction.data.targetSlope) <= tol &&
+        Math.abs(b - interaction.data.targetIntercept) <= tol
+      )
+    }
     default:
       return false
   }
@@ -90,6 +105,12 @@ export function hasValidInput(problem: Problem, answer: AnswerValue | null): boo
       return answer.type === 'slider'
     case 'tap-sequence':
       return answer.type === 'tap-sequence' && answer.selectedIds.length > 0
+    case 'line-equation':
+      return (
+        answer.type === 'line-equation' &&
+        answer.slope.trim() !== '' &&
+        answer.intercept.trim() !== ''
+      )
     default:
       return false
   }

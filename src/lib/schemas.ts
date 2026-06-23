@@ -67,6 +67,16 @@ const interaction = z.discriminatedUnion('type', [
       multiSelect: z.boolean().optional(),
     }),
   }),
+  z.object({
+    type: z.literal('line-equation'),
+    data: z.object({
+      slopePlaceholder: z.string().optional(),
+      interceptPlaceholder: z.string().optional(),
+      targetSlope: z.number(),
+      targetIntercept: z.number(),
+      tolerance: z.number().optional(),
+    }),
+  }),
 ])
 
 export const problemSchema = z.object({
@@ -77,6 +87,7 @@ export const problemSchema = z.object({
     'numeric',
     'slider',
     'tap-sequence',
+    'line-equation',
   ]),
   prompt: richText,
   visual: z

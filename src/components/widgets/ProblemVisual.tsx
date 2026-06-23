@@ -1,5 +1,7 @@
 import type { Problem, AnswerValue } from '../../types/content'
+import { parseNumericInput } from '../../lib/validation'
 import { BalanceScale } from './BalanceScale'
+import { CoordinateGraph, type GraphPoint } from './CoordinateGraph'
 import { SequenceGrid } from './SequenceGrid'
 
 type Props = {
@@ -7,10 +9,23 @@ type Props = {
   answer?: AnswerValue | null
 }
 
+function parseGraphPoints(raw: unknown): GraphPoint[] | undefined {
+  if (!Array.isArray(raw)) return undefined
+  const points = raw
+    .map((item) => {
+      if (!item || typeof item !== 'object') return null
+      const { x, y } = item as { x?: unknown; y?: unknown }
+      if (typeof x !== 'number' || typeof y !== 'number') return null
+      return { x, y }
+    })
+    .filter((point): point is GraphPoint => point !== null)
+  return points.length > 0 ? points : undefined
+}
+
 export function ProblemVisual({ problem, answer }: Props) {
   if (!problem.visual || problem.visual.kind === 'none') return null
 
-  const props = problem.visual.props as Record<string, number | number[] | string[]>
+  const props = problem.visual.props as Record<string, number | number[] | string[] | unknown>
 
   switch (problem.visual.kind) {
     case 'balance-scale': {
@@ -32,6 +47,31 @@ export function ProblemVisual({ problem, answer }: Props) {
     case 'sequence-grid': {
       const terms = (props.terms as number[]) ?? []
       return <SequenceGrid terms={terms} />
+    }
+    case 'coordinate-graph': {
+      let previewSlope: number | undefined
+      let previewIntercept: number | undefined
+      if (answer?.type === 'line-equation') {
+        const m = parseNumericInput(answer.slope)
+        const b = parseNumericInput(answer.intercept)
+        if (m !== null) previewSlope = m
+        if (b !== null) previewIntercept = b
+        else if (m !== null) previewIntercept = 0
+      }
+
+      return (
+        <CoordinateGraph
+          slope={props.slope !== undefined ? Number(props.slope) : undefined}
+          intercept={props.intercept !== undefined ? Number(props.intercept) : undefined}
+          points={parseGraphPoints(props.points)}
+          previewSlope={previewSlope}
+          previewIntercept={previewIntercept}
+          xMin={props.xMin !== undefined ? Number(props.xMin) : undefined}
+          xMax={props.xMax !== undefined ? Number(props.xMax) : undefined}
+          yMin={props.yMin !== undefined ? Number(props.yMin) : undefined}
+          yMax={props.yMax !== undefined ? Number(props.yMax) : undefined}
+        />
+      )
     }
     case 'rate-comparison':
       return (

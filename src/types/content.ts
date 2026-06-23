@@ -4,6 +4,7 @@ export type ProblemType =
   | 'numeric'
   | 'slider'
   | 'tap-sequence'
+  | 'line-equation'
 
 export type VisualKind =
   | 'none'
@@ -54,12 +55,21 @@ export type TapSequenceInteraction = {
   multiSelect?: boolean
 }
 
+export type LineEquationInteraction = {
+  slopePlaceholder?: string
+  interceptPlaceholder?: string
+  targetSlope: number
+  targetIntercept: number
+  tolerance?: number
+}
+
 export type InteractionConfig =
   | { type: 'multiple-choice'; data: MultipleChoiceInteraction }
   | { type: 'drag-drop'; data: DragDropInteraction }
   | { type: 'numeric'; data: NumericInteraction }
   | { type: 'slider'; data: SliderInteraction }
   | { type: 'tap-sequence'; data: TapSequenceInteraction }
+  | { type: 'line-equation'; data: LineEquationInteraction }
 
 export type Problem = {
   id: string
@@ -130,3 +140,4 @@ export type AnswerValue =
   | { type: 'numeric'; value: string }
   | { type: 'slider'; value: number }
   | { type: 'tap-sequence'; selectedIds: string[] }
+  | { type: 'line-equation'; slope: string; intercept: string }
