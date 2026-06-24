@@ -139,7 +139,6 @@ export type Course = {
   title: string
   subtitle: string
   description: RichText
-  estimatedHours: number
   lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra' | 'factoring'
   unitIds: string[]
   lockedUntilPhase: 'M0' | 'M2'
@@ -149,6 +148,7 @@ export type CourseProgress = {
   completedLessons: string[]
   lastLessonId?: string
   lastProblemIndex?: number
+  lessonProgress?: Record<string, number>
 }
 
 export type ProgressState = {
@@ -161,6 +161,7 @@ export type GamificationState = {
   currentStreak: number
   longestStreak: number
   lastActiveDate: string | null
+  activeDates: string[]
   lessonMilestones: Record<string, { earnedAt: string }>
   badges: string[]
 }

@@ -1,0 +1,88 @@
+.streak-cal {
+  width: 16rem;
+}
+.streak-cal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+.streak-cal__nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+.streak-cal__nav:hover {
+  color: var(--text-h);
+  background: var(--border);
+}
+.streak-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.streak-cal__weekday {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text);
+  padding: 0.2rem 0;
+}
+.streak-cal__day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+.streak-cal__day--empty {
+  visibility: hidden;
+}
+/* orange circle for played days */
+.streak-cal__day--active {
+  color: #fff;
+  font-weight: 600;
+}
+.streak-cal__day--active::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 999px;
+  background: var(--progress-done);
+  z-index: 0;
+}
+.streak-cal__day > span {
+  position: relative;
+  z-index: 1;
+}
+/* connector bars between consecutive active days within a row */
+.streak-cal__day--link-left::after,
+.streak-cal__day--link-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30%;
+  background: var(--progress-done);
+  z-index: 0;
+}
+.streak-cal__day--link-left::after {
+  left: -2px;
+  width: 50%;
+}
+.streak-cal__day--link-right::after {
+  right: -2px;
+  width: 50%;
+}
+.streak-cal__day--today {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: 999px;
+}

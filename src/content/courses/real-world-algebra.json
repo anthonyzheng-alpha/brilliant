@@ -4,7 +4,6 @@
   "title": "Real-World Algebra",
   "subtitle": "The Pragmatist's Route",
   "description": "Build models for everyday situations.",
-  "estimatedHours": 4,
   "lens": "real-world-algebra",
   "unitIds": ["rw-u1"],
   "lockedUntilPhase": "M2"

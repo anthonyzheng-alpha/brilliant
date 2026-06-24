@@ -6,6 +6,7 @@
   --accent: #6c3fc5;
   --accent-bg: rgba(108, 63, 197, 0.1);
   --accent-border: rgba(108, 63, 197, 0.45);
+  --progress-done: #f97316;
   --shadow: rgba(26, 22, 37, 0.08) 0 8px 24px;
 
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -26,6 +27,7 @@
     --accent: #a78bfa;
     --accent-bg: rgba(167, 139, 250, 0.12);
     --accent-border: rgba(167, 139, 250, 0.45);
+    --progress-done: #f97316;
     --shadow: rgba(0, 0, 0, 0.35) 0 8px 24px;
   }
 }

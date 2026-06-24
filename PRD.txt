@@ -978,7 +978,6 @@ type Course = {
   slug: string
   title: string
   subtitle: string
-  estimatedHours: number
   lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra'
   unitIds: string[]
   lockedUntilPhase: 'M0' | 'M2'  // M0: only solving-equations unlocked

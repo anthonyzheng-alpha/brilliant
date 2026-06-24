@@ -4,7 +4,6 @@
   "title": "Solving Equations",
   "subtitle": "The Detective's Path",
   "description": "Solve linear equations by isolating the variable.",
-  "estimatedHours": 4,
   "lens": "solving-equations",
   "unitIds": ["se-u1"],
   "lockedUntilPhase": "M0"

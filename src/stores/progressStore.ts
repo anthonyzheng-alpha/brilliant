@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { CourseProgress, ProgressState } from '../types/content'
+import type { CourseProgress, Lesson, ProgressState } from '../types/content'
 import { loadProgress, saveProgress } from '../lib/storage'
 
 type ProgressStore = {
@@ -8,6 +8,8 @@ type ProgressStore = {
   setFromRemote: (state: ProgressState) => void
   getCourseProgress: (courseId: string) => CourseProgress
   getCoursePercent: (courseId: string, totalLessons: number) => number
+  getCourseProblemPercent: (courseId: string, lessons: Lesson[]) => number
+  getLessonProgressCount: (courseId: string, lessonId: string) => number
   isLessonComplete: (courseId: string, lessonId: string) => boolean
   isLessonUnlocked: (
     courseId: string,
@@ -45,6 +47,23 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
     return Math.round((completed / totalLessons) * 100)
   },
 
+  getCourseProblemPercent: (courseId, lessons) => {
+    let total = 0
+    let completed = 0
+    for (const lesson of lessons) {
+      const lessonTotal = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+      const done = get().isLessonComplete(courseId, lesson.id)
+      const count = done ? lessonTotal : get().getLessonProgressCount(courseId, lesson.id)
+      total += lessonTotal
+      completed += Math.min(count, lessonTotal)
+    }
+    return total ? Math.round((completed / total) * 100) : 0
+  },
+
+  getLessonProgressCount: (courseId, lessonId) => {
+    return get().getCourseProgress(courseId).lessonProgress?.[lessonId] ?? 0
+  },
+
   isLessonComplete: (courseId, lessonId) => {
     return get().getCourseProgress(courseId).completedLessons.includes(lessonId)
   },
@@ -61,6 +80,9 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
     const course = { ...(progress.courses[courseId] ?? emptyCourse()) }
     course.lastLessonId = lessonId
     course.lastProblemIndex = problemIndex
+    const lessonProgress = { ...(course.lessonProgress ?? {}) }
+    lessonProgress[lessonId] = Math.max(lessonProgress[lessonId] ?? 0, problemIndex)
+    course.lessonProgress = lessonProgress
     progress.courses[courseId] = course
     saveProgress(progress)
     set({ progress })

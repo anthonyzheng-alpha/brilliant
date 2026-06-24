@@ -1,27 +1,42 @@
 import { Link } from 'react-router-dom'
 import type { Lesson } from '../../types/content'
 import { LessonMilestoneIcon } from '../gamification/LessonMilestoneIcon'
+import { useProgressStore } from '../../stores/progressStore'
+import { computeRoundBoxes } from '../../content'
+import { ProgressBoxes } from './ProgressBoxes'
 import './LessonRow.css'
 
 type Props = {
+  courseId: string
   courseSlug: string
   lesson: Lesson
   locked: boolean
   completed: boolean
 }
 
-export function LessonRow({ courseSlug, lesson, locked, completed }: Props) {
+export function LessonRow({ courseId, courseSlug, lesson, locked, completed }: Props) {
+  const getLessonProgressCount = useProgressStore((s) => s.getLessonProgressCount)
+
+  const total = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+  const count = completed ? total : getLessonProgressCount(courseId, lesson.id)
+  const percent = total ? Math.round((count / total) * 100) : 0
+
+  const roundBoxes = computeRoundBoxes(lesson, count, completed)
+
   const content = (
     <>
-      <span className="lesson-row__title">
-        {lesson.title}
-        <LessonMilestoneIcon lessonId={lesson.id} />
+      <span className="lesson-row__main">
+        <span className="lesson-row__title">
+          {lesson.title}
+          <LessonMilestoneIcon lessonId={lesson.id} />
+        </span>
+        <span className="lesson-row__meta">
+          {lesson.estimatedMinutes} min · {lesson.rounds.length} rounds · {percent}%
+        </span>
+        {completed && <span className="lesson-row__check" aria-label="Completed">✓</span>}
+        {locked && <span className="lesson-row__lock" aria-label="Locked">🔒</span>}
       </span>
-      <span className="lesson-row__meta">
-        {lesson.estimatedMinutes} min · {lesson.rounds.length} rounds
-      </span>
-      {completed && <span className="lesson-row__check" aria-label="Completed">✓</span>}
-      {locked && <span className="lesson-row__lock" aria-label="Locked">🔒</span>}
+      <ProgressBoxes boxes={roundBoxes} className="lesson-row__rounds" />
     </>
   )
 

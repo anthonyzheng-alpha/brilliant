@@ -1,0 +1,18 @@
+.progress-boxes {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.progress-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 2px solid var(--text-h);
+  background: transparent;
+}
+
+.progress-box--done {
+  background: var(--progress-done);
+  border-color: var(--progress-done);
+}

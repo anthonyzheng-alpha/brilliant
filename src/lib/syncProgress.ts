@@ -23,12 +23,17 @@ function mergeCourseProgress(
     remote &&
     local.lastLessonId === remote.lastLessonId &&
     localIdx > remoteIdx
+  const lessonProgress: Record<string, number> = { ...(remote?.lessonProgress ?? {}) }
+  for (const [id, n] of Object.entries(local?.lessonProgress ?? {})) {
+    lessonProgress[id] = Math.max(lessonProgress[id] ?? 0, n)
+  }
   return {
     completedLessons: [...completed],
     lastLessonId: useLocal
       ? local?.lastLessonId
       : remote?.lastLessonId ?? local?.lastLessonId,
     lastProblemIndex: useLocal ? localIdx : Math.max(localIdx, remoteIdx),
+    lessonProgress,
   }
 }
 
@@ -53,11 +58,15 @@ export function mergeGamification(
 ): GamificationState {
   const lessonMilestones = { ...remote.lessonMilestones, ...local.lessonMilestones }
   const badges = [...new Set([...remote.badges, ...local.badges])]
+  const activeDates = [
+    ...new Set([...(local.activeDates ?? []), ...(remote.activeDates ?? [])]),
+  ].sort()
   return {
     version: 1,
     currentStreak: Math.max(local.currentStreak, remote.currentStreak),
     longestStreak: Math.max(local.longestStreak, remote.longestStreak),
     lastActiveDate: local.lastActiveDate ?? remote.lastActiveDate,
+    activeDates,
     lessonMilestones,
     badges,
   }
@@ -116,6 +125,7 @@ export async function syncOnLogin(uid: string): Promise<void> {
       currentStreak: 0,
       longestStreak: 0,
       lastActiveDate: null,
+      activeDates: [],
       lessonMilestones: {},
       badges: [],
     },

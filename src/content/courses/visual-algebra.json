@@ -4,7 +4,6 @@
   "title": "Visual Algebra",
   "subtitle": "Lines on the Coordinate Plane",
   "description": "Read and interpret linear graphs in slope-intercept form $y = mx + b$.",
-  "estimatedHours": 4,
   "lens": "visual-algebra",
   "unitIds": ["va-u1"],
   "lockedUntilPhase": "M2"

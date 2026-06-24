@@ -113,3 +113,21 @@ export function getAllLessonsForCourse(courseId: string): Lesson[] {
   const courseUnits = getUnitsForCourse(courseId)
   return courseUnits.flatMap((u) => getLessonsForUnit(u.id))
 }
+
+export type RoundBox = { id: string; label: string; done: boolean }
+
+export function computeRoundBoxes(
+  lesson: Lesson,
+  count: number,
+  completed: boolean,
+): RoundBox[] {
+  let runningEnd = 0
+  return lesson.rounds.map((round) => {
+    runningEnd += round.problemIds.length
+    return {
+      id: round.id,
+      label: round.label,
+      done: completed || count >= runningEnd,
+    }
+  })
+}

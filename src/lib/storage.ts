@@ -14,6 +14,7 @@ const defaultGamification = (): GamificationState => ({
   currentStreak: 0,
   longestStreak: 0,
   lastActiveDate: null,
+  activeDates: [],
   lessonMilestones: {},
   badges: [],
 })
@@ -41,7 +42,8 @@ export function saveProgress(state: ProgressState): void {
 }
 
 export function loadGamification(): GamificationState {
-  return readJson(GAMIFICATION_KEY, defaultGamification)
+  const g = readJson(GAMIFICATION_KEY, defaultGamification)
+  return { ...defaultGamification(), ...g, activeDates: g.activeDates ?? [] }
 }
 
 export function saveGamification(state: GamificationState): void {

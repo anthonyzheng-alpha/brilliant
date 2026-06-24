@@ -2,11 +2,13 @@ import { PageShell } from '../components/layout/PageShell'
 import { CourseCard } from '../components/course/CourseCard'
 import { courses } from '../content'
 import { useProgressStore } from '../stores/progressStore'
-import { getAllLessonsForCourse } from '../content'
+import { getAllLessonsForCourse, computeRoundBoxes } from '../content'
 import './HomePage.css'
 
 export function HomePage() {
-  const getPercent = useProgressStore((s) => s.getCoursePercent)
+  const isComplete = useProgressStore((s) => s.isLessonComplete)
+  const getLessonProgressCount = useProgressStore((s) => s.getLessonProgressCount)
+  const getCourseProblemPercent = useProgressStore((s) => s.getCourseProblemPercent)
 
   return (
     <PageShell>
@@ -17,13 +19,23 @@ export function HomePage() {
         </p>
       </section>
       <section className="course-grid">
-        {courses.map((course) => (
-          <CourseCard
-            key={course.id}
-            course={course}
-            progressPercent={getPercent(course.id, getAllLessonsForCourse(course.id).length)}
-          />
-        ))}
+        {courses.map((course) => {
+          const lessons = getAllLessonsForCourse(course.id)
+          const boxes = lessons.flatMap((lesson) => {
+            const total = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+            const done = isComplete(course.id, lesson.id)
+            const count = done ? total : getLessonProgressCount(course.id, lesson.id)
+            return computeRoundBoxes(lesson, count, done)
+          })
+          return (
+            <CourseCard
+              key={course.id}
+              course={course}
+              progressPercent={getCourseProblemPercent(course.id, lessons)}
+              boxes={boxes}
+            />
+          )
+        })}
       </section>
     </PageShell>
   )

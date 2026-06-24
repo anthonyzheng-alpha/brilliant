@@ -58,6 +58,10 @@
   font-size: 0.9rem;
 }
 
+.course-card__boxes {
+  margin-top: 0.5rem;
+}
+
 .course-card__badge {
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;

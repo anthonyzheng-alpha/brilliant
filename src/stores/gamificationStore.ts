@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import type { GamificationState } from '../types/content'
 import { loadGamification, saveGamification } from '../lib/storage'
-import { computeStreakUpdate } from '../lib/streaks'
+import { computeStreakUpdate, todayLocal } from '../lib/streaks'
 import {
   awardCourseBadge,
   awardLessonMilestone,
@@ -35,9 +35,14 @@ export const useGamificationStore = create<GamificationStore>((set, get) => ({
 
   recordActivity: () => {
     const g = get().gamification
+    const today = todayLocal()
+    const activeDates = g.activeDates.includes(today)
+      ? g.activeDates
+      : [...g.activeDates, today]
     const updated = {
       ...g,
       ...computeStreakUpdate(g.currentStreak, g.longestStreak, g.lastActiveDate),
+      activeDates,
     }
     saveGamification(updated)
     set({ gamification: updated })

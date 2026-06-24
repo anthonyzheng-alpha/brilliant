@@ -117,7 +117,17 @@ export function MiniLessonView({
       </div>
 
       <div className="mini-lesson__start">
-        <button type="button" className="btn btn--primary" onClick={onStart}>
+        {result !== 'correct' && (
+          <p className="mini-lesson__start-hint">
+            Answer the example correctly to start the round.
+          </p>
+        )}
+        <button
+          type="button"
+          className="btn btn--primary"
+          onClick={onStart}
+          disabled={result !== 'correct'}
+        >
           Start round
         </button>
       </div>

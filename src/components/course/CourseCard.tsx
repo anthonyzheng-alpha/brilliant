@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
 import type { Course } from '../../types/content'
 import { FEATURES } from '../../lib/features'
+import { ProgressBoxes } from './ProgressBoxes'
 import './CourseCard.css'
 
 type Props = {
   course: Course
   progressPercent: number
+  boxes?: { id: string; label: string; done: boolean }[]
   locked?: boolean
 }
 
-export function CourseCard({ course, progressPercent, locked }: Props) {
+export function CourseCard({ course, progressPercent, boxes, locked }: Props) {
   const isLocked = locked ?? (course.lockedUntilPhase === 'M2' && !FEATURES.allCourses)
 
   const inner = (
@@ -24,6 +26,9 @@ export function CourseCard({ course, progressPercent, locked }: Props) {
       </div>
       <p className="course-card__subtitle">{course.subtitle}</p>
       <p className="course-card__desc">{course.description}</p>
+      {!isLocked && boxes && boxes.length > 0 && (
+        <ProgressBoxes boxes={boxes} className="course-card__boxes" />
+      )}
     </>
   )
 

@@ -15,7 +15,7 @@ export function CoursePage() {
   const { slug } = useParams<{ slug: string }>()
   const course = slug ? getCourseBySlug(slug) : undefined
 
-  const getPercent = useProgressStore((s) => s.getCoursePercent)
+  const getCourseProblemPercent = useProgressStore((s) => s.getCourseProblemPercent)
   const isComplete = useProgressStore((s) => s.isLessonComplete)
   const isUnlocked = useProgressStore((s) => s.isLessonUnlocked)
   const courseProgressEntry = useProgressStore((s) =>
@@ -39,7 +39,7 @@ export function CoursePage() {
   const allLessons = getAllLessonsForCourse(course.id)
   const orderedIds = allLessons.map((l) => l.id)
   const units = getUnitsForCourse(course.id)
-  const percent = getPercent(course.id, allLessons.length)
+  const percent = getCourseProblemPercent(course.id, allLessons)
 
   const resumeLessonId = courseProgressEntry?.lastLessonId
   const resumeIncomplete =
@@ -72,6 +72,7 @@ export function CoursePage() {
           {getLessonsForUnit(unit.id).map((lesson) => (
             <LessonRow
               key={lesson.id}
+              courseId={course.id}
               courseSlug={course.slug}
               lesson={lesson}
               locked={
