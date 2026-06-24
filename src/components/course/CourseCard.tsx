@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { Course } from '../../types/content'
 import { FEATURES } from '../../lib/features'
+import { useDebugStore } from '../../stores/debugStore'
 import { ProgressBoxes } from './ProgressBoxes'
 import './CourseCard.css'
 
@@ -21,7 +22,9 @@ export function CourseCard({
   lockedLabel = 'Coming soon',
   lockedHint,
 }: Props) {
-  const isLocked = locked ?? (course.lockedUntilPhase === 'M2' && !FEATURES.allCourses)
+  const unlockAll = useDebugStore((s) => s.unlockAll)
+  const isLocked =
+    locked ?? (course.lockedUntilPhase === 'M2' && !FEATURES.allCourses && !unlockAll)
 
   const inner = (
     <>

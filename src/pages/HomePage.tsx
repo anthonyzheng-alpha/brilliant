@@ -5,6 +5,7 @@ import { useProgressStore } from '../stores/progressStore'
 import { getAllLessonsForCourse, computeRoundBoxes } from '../content'
 import { isCourseUnlocked } from '../lib/courseUnlock'
 import { FEATURES } from '../lib/features'
+import { useDebugStore } from '../stores/debugStore'
 import './HomePage.css'
 
 export function HomePage() {
@@ -12,6 +13,7 @@ export function HomePage() {
   const getLessonProgressCount = useProgressStore((s) => s.getLessonProgressCount)
   const getCourseProblemPercent = useProgressStore((s) => s.getCourseProblemPercent)
   const isCourseComplete = useProgressStore((s) => s.isCourseComplete)
+  const unlockAll = useDebugStore((s) => s.unlockAll)
 
   return (
     <PageShell>
@@ -31,7 +33,9 @@ export function HomePage() {
             return computeRoundBoxes(lesson, count, done)
           })
           const sequentiallyLocked =
-            FEATURES.sequentialUnlock && !isCourseUnlocked(course.id, isCourseComplete)
+            FEATURES.sequentialUnlock &&
+            !unlockAll &&
+            !isCourseUnlocked(course.id, isCourseComplete)
           const prevTitle = index > 0 ? courses[index - 1].title : undefined
           return (
             <CourseCard

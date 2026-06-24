@@ -10,6 +10,7 @@ import {
   getUnitsForCourse,
 } from '../content'
 import { useProgressStore } from '../stores/progressStore'
+import { useDebugStore } from '../stores/debugStore'
 import { FEATURES } from '../lib/features'
 import './LessonPage.css'
 
@@ -20,6 +21,7 @@ export function LessonPage() {
 
   const isUnlocked = useProgressStore((s) => s.isLessonUnlocked)
   const getResume = useProgressStore((s) => s.getResumeProblemIndex)
+  const unlockAll = useDebugStore((s) => s.unlockAll)
 
   if (!course || !lesson || lessonId === undefined) {
     return (
@@ -30,7 +32,8 @@ export function LessonPage() {
     )
   }
 
-  const locked = course.lockedUntilPhase === 'M2' && !FEATURES.allCourses
+  const locked =
+    course.lockedUntilPhase === 'M2' && !FEATURES.allCourses && !unlockAll
   if (locked) {
     return <Navigate to="/" replace />
   }
@@ -38,6 +41,7 @@ export function LessonPage() {
   const orderedIds = getAllLessonsForCourse(course.id).map((l) => l.id)
   if (
     FEATURES.sequentialUnlock &&
+    !unlockAll &&
     !isUnlocked(course.id, lesson.id, orderedIds)
   ) {
     return <Navigate to={`/courses/${slug}`} replace />

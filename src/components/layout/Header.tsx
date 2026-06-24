@@ -6,6 +6,7 @@ import { UserMenu } from '../auth/UserMenu'
 import { FEATURES } from '../../lib/features'
 import { courses } from '../../content'
 import { useProgressStore } from '../../stores/progressStore'
+import { useDebugStore } from '../../stores/debugStore'
 import { isCourseUnlocked } from '../../lib/courseUnlock'
 import './Header.css'
 
@@ -20,6 +21,7 @@ export function Header() {
         <CoursesDropdown />
       </nav>
       <div className="app-header__actions">
+        {import.meta.env.DEV && <DebugUnlockToggle />}
         {FEATURES.gamification && <StreakBadge />}
         {FEATURES.firebase && <AuthSlot />}
       </div>
@@ -32,6 +34,7 @@ function CoursesDropdown() {
   const ref = useRef<HTMLDivElement>(null)
   const closeTimer = useRef<number | null>(null)
   const isCourseComplete = useProgressStore((s) => s.isCourseComplete)
+  const unlockAll = useDebugStore((s) => s.unlockAll)
 
   const clearCloseTimer = () => {
     if (closeTimer.current !== null) {
@@ -90,7 +93,9 @@ function CoursesDropdown() {
       <div className="app-header__dropdown-menu" role="menu">
         {courses.map((course) => {
           const locked =
-            FEATURES.sequentialUnlock && !isCourseUnlocked(course.id, isCourseComplete)
+            FEATURES.sequentialUnlock &&
+            !unlockAll &&
+            !isCourseUnlocked(course.id, isCourseComplete)
           if (locked) {
             return (
               <span
@@ -116,6 +121,22 @@ function CoursesDropdown() {
         })}
       </div>
     </div>
+  )
+}
+
+function DebugUnlockToggle() {
+  const unlockAll = useDebugStore((s) => s.unlockAll)
+  const toggleUnlockAll = useDebugStore((s) => s.toggleUnlockAll)
+
+  return (
+    <label className="app-header__debug-toggle" title="Dev only: unlock all courses and lessons">
+      <input
+        type="checkbox"
+        checked={unlockAll}
+        onChange={toggleUnlockAll}
+      />
+      Unlock all
+    </label>
   )
 }
 
