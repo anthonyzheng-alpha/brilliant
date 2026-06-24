@@ -153,6 +153,21 @@ export function getAllLessonsForCourse(courseId: string): Lesson[] {
   return courseUnits.flatMap((u) => getLessonsForUnit(u.id))
 }
 
+// Random practice set drawn from the entire course pool (every round's full
+// candidate list, not just its sample size), deduped and shuffled.
+export function getReviewProblems(courseId: string, count = 5): Problem[] {
+  const ids = new Set<string>()
+  for (const lesson of getAllLessonsForCourse(courseId)) {
+    for (const round of lesson.rounds) {
+      for (const pid of round.problemIds) ids.add(pid)
+    }
+  }
+  return shuffle([...ids])
+    .map((id) => problemBank[id])
+    .filter(Boolean)
+    .slice(0, count)
+}
+
 export type RoundBox = { id: string; label: string; done: boolean }
 
 export function computeRoundBoxes(

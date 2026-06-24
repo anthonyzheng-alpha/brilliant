@@ -6,7 +6,8 @@ import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from './FeedbackPanel'
 import { MiniLessonView } from './MiniLessonView'
-import { isAnswerValid, hasValidInput, parseNumericInput } from '../../lib/validation'
+import { isAnswerValid, hasValidInput } from '../../lib/validation'
+import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
 import { isMiniLessonSeen, markMiniLessonSeen } from '../../lib/storage'
 import { useProgressStore } from '../../stores/progressStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
@@ -24,53 +25,6 @@ type Props = {
   unitId?: string
   unitLessonIds?: string[]
   initialProblemIndex?: number
-}
-
-// Parse a "y = mx + b" label (e.g. "$y = -2x + 1$", "$y = x$") into slope/intercept.
-function parseLineEquationLabel(label: string): { slope: number; intercept: number } | null {
-  const s = label.replace(/\$/g, '').replace(/\s+/g, '')
-  const match = s.match(/^y=(.+)$/i)
-  if (!match) return null
-  const rhs = match[1]
-  const xMatch = rhs.match(/([+-]?\d*)x/)
-  if (!xMatch) return null
-  const slopeStr = xMatch[1]
-  let slope: number
-  if (slopeStr === '' || slopeStr === '+') slope = 1
-  else if (slopeStr === '-') slope = -1
-  else slope = Number(slopeStr)
-  if (Number.isNaN(slope)) return null
-  const rest = rhs.replace(xMatch[0], '')
-  let intercept = 0
-  if (rest) {
-    const bMatch = rest.match(/^[+-]\d+(?:\.\d+)?$/)
-    if (!bMatch) return null
-    intercept = Number(rest)
-  }
-  return { slope, intercept }
-}
-
-// Determine the line a wrong answer represents, so it can be drawn in red on a graph.
-function resolveWrongLine(
-  problem: Problem,
-  answer: AnswerValue,
-): { slope: number; intercept: number } | null {
-  if (problem.visual?.kind !== 'coordinate-graph') return null
-
-  if (problem.interaction.type === 'line-equation' && answer.type === 'line-equation') {
-    const m = parseNumericInput(answer.slope)
-    const b = parseNumericInput(answer.intercept)
-    return m !== null && b !== null ? { slope: m, intercept: b } : null
-  }
-
-  if (problem.interaction.type === 'multiple-choice' && answer.type === 'multiple-choice') {
-    const selected = problem.interaction.data.options.find(
-      (opt) => opt.id === answer.selectedId,
-    )
-    return selected ? parseLineEquationLabel(selected.label) : null
-  }
-
-  return null
 }
 
 function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
@@ -92,20 +46,6 @@ function getRoundStartIndex(lesson: Lesson, roundIdx: number): number {
 function roundHasUnseenMiniLesson(lesson: Lesson, roundIdx: number): boolean {
   const round = lesson.rounds[roundIdx]
   return Boolean(round?.miniLesson) && !isMiniLessonSeen(round.id)
-}
-
-function resolveWrongReason(problem: Problem, answer: AnswerValue): string {
-  if (
-    problem.interaction.type === 'multiple-choice' &&
-    answer.type === 'multiple-choice'
-  ) {
-    const selected = problem.interaction.data.options.find(
-      (opt) => opt.id === answer.selectedId,
-    )
-    if (selected?.whyWrong) return selected.whyWrong
-  }
-  if (problem.misconception) return problem.misconception
-  return problem.hints[0]
 }
 
 export function LessonPlayer({

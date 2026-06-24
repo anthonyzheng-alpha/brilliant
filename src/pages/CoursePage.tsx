@@ -58,6 +58,9 @@ export function CoursePage() {
   const resumeIncomplete =
     resumeLessonId && !isComplete(course.id, resumeLessonId)
 
+  const courseComplete = isCourseComplete(course.id, orderedIds)
+  const showReview = courseComplete || unlockAll
+
   return (
     <PageShell>
       <Link to="/" className="back-link">
@@ -75,6 +78,12 @@ export function CoursePage() {
           className="resume-banner"
         >
           Resume lesson
+        </Link>
+      )}
+
+      {showReview && slug && (
+        <Link to={`/courses/${slug}/review`} className="resume-banner">
+          Review · 5 random questions
         </Link>
       )}
 
