@@ -36,10 +36,11 @@ type Props = {
   problem: Problem
   answer: AnswerValue | null
   onAnswerChange: (answer: AnswerValue) => void
+  onSubmit?: () => void
   disabled?: boolean
 }
 
-export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: Props) {
+export function ProblemRenderer({ problem, answer, onAnswerChange, onSubmit, disabled }: Props) {
   const body = useMemo(() => {
     const { interaction } = problem
     switch (interaction.type) {
@@ -67,6 +68,7 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: P
             data={interaction.data}
             value={answer?.type === 'numeric' ? answer.value : ''}
             onChange={(value) => onAnswerChange({ type: 'numeric', value })}
+            onSubmit={onSubmit}
             disabled={disabled}
           />
         )
@@ -97,6 +99,7 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: P
             onChange={(slope, intercept) =>
               onAnswerChange({ type: 'line-equation', slope, intercept })
             }
+            onSubmit={onSubmit}
             disabled={disabled}
           />
         )
@@ -112,7 +115,7 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, disabled }: P
       default:
         return null
     }
-  }, [problem, answer, disabled, onAnswerChange])
+  }, [problem, answer, disabled, onAnswerChange, onSubmit])
 
   return <div className="problem-renderer">{body}</div>
 }

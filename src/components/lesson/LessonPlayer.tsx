@@ -328,6 +328,7 @@ export function LessonPlayer({
             problem={problem}
             answer={answer}
             onAnswerChange={handleAnswerChange}
+            onSubmit={handleCheck}
             disabled={inputLocked}
           />
 

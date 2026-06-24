@@ -1,3 +1,4 @@
+import type { KeyboardEvent } from 'react'
 import type { LineEquationInteraction } from '../../types/content'
 import './ProblemTypes.css'
 
@@ -6,10 +7,18 @@ type Props = {
   slope: string
   intercept: string
   onChange: (slope: string, intercept: string) => void
+  onSubmit?: () => void
   disabled?: boolean
 }
 
-export function LineEquationProblem({ data, slope, intercept, onChange, disabled }: Props) {
+export function LineEquationProblem({ data, slope, intercept, onChange, onSubmit, disabled }: Props) {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      onSubmit?.()
+    }
+  }
+
   return (
     <div className="line-equation" aria-label="Enter slope and y-intercept">
       <span className="line-equation__label">y =</span>
@@ -20,6 +29,7 @@ export function LineEquationProblem({ data, slope, intercept, onChange, disabled
         placeholder={data.slopePlaceholder ?? 'm'}
         value={slope}
         onChange={(e) => onChange(e.target.value, intercept)}
+        onKeyDown={handleKeyDown}
         disabled={disabled}
         aria-label="Slope m"
       />
@@ -31,6 +41,7 @@ export function LineEquationProblem({ data, slope, intercept, onChange, disabled
         placeholder={data.interceptPlaceholder ?? 'b'}
         value={intercept}
         onChange={(e) => onChange(slope, e.target.value)}
+        onKeyDown={handleKeyDown}
         disabled={disabled}
         aria-label="Y-intercept b"
       />

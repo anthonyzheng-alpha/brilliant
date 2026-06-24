@@ -5,10 +5,11 @@ type Props = {
   data: NumericInteraction
   value: string
   onChange: (value: string) => void
+  onSubmit?: () => void
   disabled?: boolean
 }
 
-export function NumericProblem({ data, value, onChange, disabled }: Props) {
+export function NumericProblem({ data, value, onChange, onSubmit, disabled }: Props) {
   return (
     <div className="numeric-input-wrap">
       {data.unit && <span className="numeric-unit">{data.unit}</span>}
@@ -19,6 +20,12 @@ export function NumericProblem({ data, value, onChange, disabled }: Props) {
         placeholder={data.placeholder ?? 'Your answer'}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault()
+            onSubmit?.()
+          }
+        }}
         disabled={disabled}
         aria-label="Numeric answer"
       />
