@@ -1,16 +1,20 @@
+import { useMemo } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { PageShell } from '../components/layout/PageShell'
 import { LessonPlayer } from '../components/lesson/LessonPlayer'
 import {
   getCourseBySlug,
   getLessonById,
-  getProblemsForLesson,
+  getProblemsForVariant,
+  chooseLessonVariant,
+  roundSize,
   getAllLessonsForCourse,
   getLessonsForUnit,
   getUnitsForCourse,
 } from '../content'
 import { useProgressStore } from '../stores/progressStore'
 import { useDebugStore } from '../stores/debugStore'
+import { loadVariant, saveVariant } from '../lib/storage'
 import { FEATURES } from '../lib/features'
 import './LessonPage.css'
 
@@ -22,6 +26,22 @@ export function LessonPage() {
   const isUnlocked = useProgressStore((s) => s.isLessonUnlocked)
   const getResume = useProgressStore((s) => s.getResumeProblemIndex)
   const unlockAll = useDebugStore((s) => s.unlockAll)
+
+  // Pick (or reuse) the set of problems for this lesson run. A new selection is
+  // rolled when starting fresh or after completion; mid-lesson resumes reuse the
+  // persisted one so the index-based progress stays valid.
+  const problems = useMemo(() => {
+    if (!course || !lesson) return []
+    const total = lesson.rounds.reduce((n, r) => n + roundSize(r), 0)
+    const resumeIndex = getResume(course.id, lesson.id)
+    let variant = loadVariant(lesson.id)
+    if (!variant || resumeIndex === 0 || resumeIndex >= total) {
+      variant = chooseLessonVariant(lesson)
+      saveVariant(lesson.id, variant)
+    }
+    return getProblemsForVariant(lesson, variant)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [course?.id, lesson?.id])
 
   if (!course || !lesson || lessonId === undefined) {
     return (
@@ -47,7 +67,6 @@ export function LessonPage() {
     return <Navigate to={`/courses/${slug}`} replace />
   }
 
-  const problems = getProblemsForLesson(lesson.id)
   const unit = getUnitsForCourse(course.id).find((u) => u.id === lesson.unitId)
   const unitLessonIds = unit ? getLessonsForUnit(unit.id).map((l) => l.id) : undefined
 

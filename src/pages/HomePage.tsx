@@ -2,7 +2,7 @@ import { PageShell } from '../components/layout/PageShell'
 import { CourseCard } from '../components/course/CourseCard'
 import { courses } from '../content'
 import { useProgressStore } from '../stores/progressStore'
-import { getAllLessonsForCourse, computeRoundBoxes } from '../content'
+import { getAllLessonsForCourse, computeRoundBoxes, roundSize } from '../content'
 import { isCourseUnlocked } from '../lib/courseUnlock'
 import { FEATURES } from '../lib/features'
 import { useDebugStore } from '../stores/debugStore'
@@ -27,7 +27,7 @@ export function HomePage() {
         {courses.map((course, index) => {
           const lessons = getAllLessonsForCourse(course.id)
           const boxes = lessons.flatMap((lesson) => {
-            const total = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+            const total = lesson.rounds.reduce((n, r) => n + roundSize(r), 0)
             const done = isComplete(course.id, lesson.id)
             const count = done ? total : getLessonProgressCount(course.id, lesson.id)
             return computeRoundBoxes(lesson, count, done)

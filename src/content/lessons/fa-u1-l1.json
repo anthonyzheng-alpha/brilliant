@@ -9,7 +9,8 @@
     {
       "id": "fa-u1-l1-r1",
       "label": "Warm-up",
-      "problemIds": ["fa-u1-l1-r1-p1", "fa-u1-l1-r1-p2", "fa-u1-l1-r1-p3", "fa-u1-l1-r1-p4", "fa-u1-l1-r1-p5"],
+      "sampleSize": 5,
+      "problemIds": ["fa-u1-l1-r1-p1", "fa-u1-l1-r1-p2", "fa-u1-l1-r1-p3", "fa-u1-l1-r1-p4", "fa-u1-l1-r1-p5", "fa-u1-l1-r1-p6", "fa-u1-l1-r1-p7", "fa-u1-l1-r1-p8", "fa-u1-l1-r1-p9", "fa-u1-l1-r1-p10"],
       "miniLesson": {
         "title": "Factoring Trinomials",
         "paragraph": "To factor $x^2 + bx + c$, find two numbers that **multiply** to $c$ and **add** to $b$. Those two numbers become the constants inside $(x + \\_)(x + \\_)$. When both $b$ and $c$ are positive, both numbers are positive too.",
@@ -39,7 +40,8 @@
     {
       "id": "fa-u1-l1-r2",
       "label": "Basics",
-      "problemIds": ["fa-u1-l1-r2-p1", "fa-u1-l1-r2-p2", "fa-u1-l1-r2-p3", "fa-u1-l1-r2-p4", "fa-u1-l1-r2-p5"],
+      "sampleSize": 5,
+      "problemIds": ["fa-u1-l1-r2-p1", "fa-u1-l1-r2-p2", "fa-u1-l1-r2-p3", "fa-u1-l1-r2-p4", "fa-u1-l1-r2-p5", "fa-u1-l1-r2-p6", "fa-u1-l1-r2-p7", "fa-u1-l1-r2-p8", "fa-u1-l1-r2-p9", "fa-u1-l1-r2-p10"],
       "miniLesson": {
         "title": "Watching the Signs",
         "paragraph": "The same multiply-and-add trick still works, but now the signs matter. A **positive** constant with a negative middle term means both numbers are negative. A **negative** constant means one number is positive and one is negative, with the larger number carrying the sign of the middle term.",
@@ -70,7 +72,8 @@
     {
       "id": "fa-u1-l1-r3",
       "label": "Building",
-      "problemIds": ["fa-u1-l1-r3-p1", "fa-u1-l1-r3-p2", "fa-u1-l1-r3-p3", "fa-u1-l1-r3-p4", "fa-u1-l1-r3-p5"],
+      "sampleSize": 5,
+      "problemIds": ["fa-u1-l1-r3-p1", "fa-u1-l1-r3-p2", "fa-u1-l1-r3-p3", "fa-u1-l1-r3-p4", "fa-u1-l1-r3-p5", "fa-u1-l1-r3-p6", "fa-u1-l1-r3-p7", "fa-u1-l1-r3-p8", "fa-u1-l1-r3-p9", "fa-u1-l1-r3-p10"],
       "miniLesson": {
         "title": "Difference of Squares",
         "paragraph": "An expression like $x^2 - c$ with **no middle term** and a perfect-square constant is a **difference of squares**. It factors as $(x + \\sqrt{c})(x - \\sqrt{c})$ — one plus and one minus. The matching $+$ and $-$ cancel the middle term when multiplied out.",
@@ -101,7 +104,8 @@
     {
       "id": "fa-u1-l1-r4",
       "label": "Challenge",
-      "problemIds": ["fa-u1-l1-r4-p1", "fa-u1-l1-r4-p2", "fa-u1-l1-r4-p3", "fa-u1-l1-r4-p4", "fa-u1-l1-r4-p5"],
+      "sampleSize": 5,
+      "problemIds": ["fa-u1-l1-r4-p1", "fa-u1-l1-r4-p2", "fa-u1-l1-r4-p3", "fa-u1-l1-r4-p4", "fa-u1-l1-r4-p5", "fa-u1-l1-r4-p6", "fa-u1-l1-r4-p7", "fa-u1-l1-r4-p8", "fa-u1-l1-r4-p9", "fa-u1-l1-r4-p10"],
       "miniLesson": {
         "title": "Bigger Numbers",
         "paragraph": "With larger constants there are more factor pairs to test, so list the pairs of $c$ and check which one **adds** to $b$. Stay alert: the round mixes trinomials and difference-of-squares, so first decide which pattern applies before you start dragging.",
@@ -132,7 +136,8 @@
     {
       "id": "fa-u1-l1-r5",
       "label": "Mastery",
-      "problemIds": ["fa-u1-l1-r5-p1", "fa-u1-l1-r5-p2", "fa-u1-l1-r5-p3", "fa-u1-l1-r5-p4", "fa-u1-l1-r5-p5"],
+      "sampleSize": 5,
+      "problemIds": ["fa-u1-l1-r5-p1", "fa-u1-l1-r5-p2", "fa-u1-l1-r5-p3", "fa-u1-l1-r5-p4", "fa-u1-l1-r5-p5", "fa-u1-l1-r5-p6", "fa-u1-l1-r5-p7", "fa-u1-l1-r5-p8", "fa-u1-l1-r5-p9", "fa-u1-l1-r5-p10"],
       "miniLesson": {
         "title": "Putting It Together",
         "paragraph": "This round blends everything: positive trinomials, sign-mixed trinomials, and difference of squares. For each problem, **identify the pattern first** — is there a middle term? what are the signs of $b$ and $c$? — then apply multiply-and-add or the difference-of-squares rule.",

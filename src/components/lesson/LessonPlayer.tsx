@@ -13,7 +13,7 @@ import { useGamificationStore } from '../../stores/gamificationStore'
 import { useAuthStore } from '../../stores/authStore'
 import { FEATURES } from '../../lib/features'
 import { saveUserProgress, saveUserGamification } from '../../lib/syncProgress'
-import { getAllLessonsForCourse } from '../../content'
+import { getAllLessonsForCourse, roundSize } from '../../content'
 import './LessonPlayer.css'
 
 type Props = {
@@ -76,7 +76,7 @@ function resolveWrongLine(
 function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
   let start = 0
   for (let i = 0; i < lesson.rounds.length; i++) {
-    const size = lesson.rounds[i].problemIds.length
+    const size = roundSize(lesson.rounds[i])
     if (problemIndex >= start && problemIndex < start + size) return i
     start += size
   }
@@ -85,7 +85,7 @@ function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
 
 function getRoundStartIndex(lesson: Lesson, roundIdx: number): number {
   let start = 0
-  for (let i = 0; i < roundIdx; i++) start += lesson.rounds[i].problemIds.length
+  for (let i = 0; i < roundIdx; i++) start += roundSize(lesson.rounds[i])
   return start
 }
 
@@ -153,14 +153,15 @@ export function LessonPlayer({
   const rounds = useMemo(() => {
     let startIndex = 0
     return lesson.rounds.map((round) => {
+      const size = roundSize(round)
       const info = {
         id: round.id,
         label: round.label,
-        size: round.problemIds.length,
+        size,
         startIndex,
-        endIndex: startIndex + round.problemIds.length - 1,
+        endIndex: startIndex + size - 1,
       }
-      startIndex += round.problemIds.length
+      startIndex += size
       return info
     })
   }, [lesson.rounds])

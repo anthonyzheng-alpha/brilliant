@@ -1,5 +1,5 @@
 import { courseSchema, lessonSchema, problemSchema, unitSchema } from '../lib/schemas'
-import type { Course, Lesson, Problem, Unit } from '../types/content'
+import type { Course, Lesson, LessonVariant, Problem, Round, Unit } from '../types/content'
 
 import solvingEquations from './courses/solving-equations.json'
 import visualAlgebra from './courses/visual-algebra.json'
@@ -80,10 +80,48 @@ export function getLessonById(lessonId: string): Lesson | undefined {
   return lessons.find((l) => l.id === lessonId)
 }
 
+// Number of problems shown for a round: the sample size when the round defines a
+// larger candidate pool, otherwise the full list.
+export function roundSize(round: Round): number {
+  return round.sampleSize ?? round.problemIds.length
+}
+
+function shuffle<T>(items: T[]): T[] {
+  const arr = [...items]
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+  return arr
+}
+
+// Randomly pick the round's sampleSize problems from its pool (random order).
+// Rounds without a sampleSize keep all problems in their authored order.
+export function chooseLessonVariant(lesson: Lesson): LessonVariant {
+  const variant: LessonVariant = {}
+  for (const round of lesson.rounds) {
+    const size = roundSize(round)
+    variant[round.id] =
+      size >= round.problemIds.length
+        ? [...round.problemIds]
+        : shuffle(round.problemIds).slice(0, size)
+  }
+  return variant
+}
+
+export function getProblemsForVariant(lesson: Lesson, variant: LessonVariant): Problem[] {
+  return lesson.rounds.flatMap((round) => {
+    const ids = variant[round.id] ?? round.problemIds.slice(0, roundSize(round))
+    return ids.map((id) => problemBank[id]).filter(Boolean)
+  })
+}
+
 export function getProblemsForLesson(lessonId: string): Problem[] {
   const lesson = getLessonById(lessonId)
   if (!lesson) return []
-  return lesson.rounds.flatMap((round) => round.problemIds.map((id) => problemBank[id]))
+  return lesson.rounds.flatMap((round) =>
+    round.problemIds.slice(0, roundSize(round)).map((id) => problemBank[id]),
+  )
 }
 
 export type LessonRoundInfo = {
@@ -98,13 +136,14 @@ export function getRoundsForLesson(lessonId: string): LessonRoundInfo[] {
   if (!lesson) return []
   let startIndex = 0
   return lesson.rounds.map((round) => {
+    const size = roundSize(round)
     const info: LessonRoundInfo = {
       id: round.id,
       label: round.label,
-      size: round.problemIds.length,
+      size,
       startIndex,
     }
-    startIndex += round.problemIds.length
+    startIndex += size
     return info
   })
 }
@@ -123,7 +162,7 @@ export function computeRoundBoxes(
 ): RoundBox[] {
   let runningEnd = 0
   return lesson.rounds.map((round) => {
-    runningEnd += round.problemIds.length
+    runningEnd += roundSize(round)
     return {
       id: round.id,
       label: round.label,

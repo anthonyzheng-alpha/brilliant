@@ -151,6 +151,7 @@ export const lessonSchema = z.object({
         id: z.string(),
         label: z.string(),
         problemIds: z.array(z.string()).min(1),
+        sampleSize: z.number().int().positive().optional(),
         miniLesson: miniLessonSchema.optional(),
       }),
     )

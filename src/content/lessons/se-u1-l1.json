@@ -9,12 +9,18 @@
     {
       "id": "se-u1-l1-r1",
       "label": "Warm-up",
+      "sampleSize": 5,
       "problemIds": [
         "se-u1-l1-r1-p1",
         "se-u1-l1-r1-p2",
         "se-u1-l1-r1-p3",
         "se-u1-l1-r1-p4",
-        "se-u1-l1-r1-p5"
+        "se-u1-l1-r1-p5",
+        "se-u1-l1-r1-p6",
+        "se-u1-l1-r1-p7",
+        "se-u1-l1-r1-p8",
+        "se-u1-l1-r1-p9",
+        "se-u1-l1-r1-p10"
       ],
       "miniLesson": {
         "title": "Inverse Operations",
@@ -39,12 +45,18 @@
     {
       "id": "se-u1-l1-r2",
       "label": "Basics",
+      "sampleSize": 5,
       "problemIds": [
         "se-u1-l1-r2-p1",
         "se-u1-l1-r2-p2",
         "se-u1-l1-r2-p3",
         "se-u1-l1-r2-p4",
-        "se-u1-l1-r2-p5"
+        "se-u1-l1-r2-p5",
+        "se-u1-l1-r2-p6",
+        "se-u1-l1-r2-p7",
+        "se-u1-l1-r2-p8",
+        "se-u1-l1-r2-p9",
+        "se-u1-l1-r2-p10"
       ],
       "miniLesson": {
         "title": "Bigger Numbers",
@@ -65,12 +77,18 @@
     {
       "id": "se-u1-l1-r3",
       "label": "Building",
+      "sampleSize": 5,
       "problemIds": [
         "se-u1-l1-r3-p1",
         "se-u1-l1-r3-p2",
         "se-u1-l1-r3-p3",
         "se-u1-l1-r3-p4",
-        "se-u1-l1-r3-p5"
+        "se-u1-l1-r3-p5",
+        "se-u1-l1-r3-p6",
+        "se-u1-l1-r3-p7",
+        "se-u1-l1-r3-p8",
+        "se-u1-l1-r3-p9",
+        "se-u1-l1-r3-p10"
       ],
       "miniLesson": {
         "title": "Negative Answers",
@@ -95,12 +113,18 @@
     {
       "id": "se-u1-l1-r4",
       "label": "Challenge",
+      "sampleSize": 5,
       "problemIds": [
         "se-u1-l1-r4-p1",
         "se-u1-l1-r4-p2",
         "se-u1-l1-r4-p3",
         "se-u1-l1-r4-p4",
-        "se-u1-l1-r4-p5"
+        "se-u1-l1-r4-p5",
+        "se-u1-l1-r4-p6",
+        "se-u1-l1-r4-p7",
+        "se-u1-l1-r4-p8",
+        "se-u1-l1-r4-p9",
+        "se-u1-l1-r4-p10"
       ],
       "miniLesson": {
         "title": "Decimals and Fractions",
@@ -121,12 +145,18 @@
     {
       "id": "se-u1-l1-r5",
       "label": "Mastery",
+      "sampleSize": 5,
       "problemIds": [
         "se-u1-l1-r5-p1",
         "se-u1-l1-r5-p2",
         "se-u1-l1-r5-p3",
         "se-u1-l1-r5-p4",
-        "se-u1-l1-r5-p5"
+        "se-u1-l1-r5-p5",
+        "se-u1-l1-r5-p6",
+        "se-u1-l1-r5-p7",
+        "se-u1-l1-r5-p8",
+        "se-u1-l1-r5-p9",
+        "se-u1-l1-r5-p10"
       ],
       "miniLesson": {
         "title": "Putting It Together",

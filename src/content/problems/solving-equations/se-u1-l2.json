@@ -503,5 +503,501 @@
     ],
     "explanation": "Subtract 0.5: $3t = 1.5$. Divide by 3: $t = 0.5$.",
     "misconception": "Subtract 0.5 first, then divide by 3; don't divide before subtracting."
+  },
+  {
+    "id": "se-u1-l2-r1-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $8x = 32$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 8.",
+      "$x = 32 \\div 8$.",
+      "Divide to get your value for $x$."
+    ],
+    "explanation": "Divide both sides by 8: $x = 32 \\div 8 = 4$.",
+    "misconception": "To undo multiplication by 8, divide both sides by 8 rather than subtracting 8."
+  },
+  {
+    "id": "se-u1-l2-r1-p7",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $9y = 36$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 9.",
+      "$y = 36 \\div 9$.",
+      "Divide to get your value for $y$."
+    ],
+    "explanation": "Divide both sides by 9: $y = 36 \\div 9 = 4$.",
+    "misconception": "To undo multiplication by 9, divide both sides by 9 rather than subtracting 9."
+  },
+  {
+    "id": "se-u1-l2-r1-p8",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $6n = 30$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = 5$" },
+          { "id": "b", "label": "$n = 24$", "whyWrong": "This subtracts 6 from 30 instead of dividing by it." },
+          { "id": "c", "label": "$n = 36$", "whyWrong": "This adds 6 to 30 instead of dividing by it." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Divide both sides by 6.",
+      "$n = 30 \\div 6$.",
+      "Divide 30 by 6 and choose the matching option."
+    ],
+    "explanation": "Divide both sides by 6: $n = 30 \\div 6 = 5$."
+  },
+  {
+    "id": "se-u1-l2-r1-p9",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $4t = 24$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 4.",
+      "$t = 24 \\div 4$.",
+      "Divide to get your value for $t$."
+    ],
+    "explanation": "Divide both sides by 4: $t = 24 \\div 4 = 6$.",
+    "misconception": "To undo multiplication by 4, divide both sides by 4 rather than subtracting 4."
+  },
+  {
+    "id": "se-u1-l2-r1-p10",
+    "type": "numeric",
+    "prompt": "Solve for $a$: $3a = 21$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of a",
+        "validation": { "type": "numeric", "value": 7 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 3.",
+      "$a = 21 \\div 3$.",
+      "Divide to get your value for $a$."
+    ],
+    "explanation": "Divide both sides by 3: $a = 21 \\div 3 = 7$.",
+    "misconception": "To undo multiplication by 3, divide both sides by 3 rather than subtracting 3."
+  },
+  {
+    "id": "se-u1-l2-r2-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\frac{x}{7} = 4$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 28 }
+      }
+    },
+    "hints": [
+      "Multiply both sides by 7.",
+      "$x = 4 \\times 7$.",
+      "Multiply to get your value for $x$."
+    ],
+    "explanation": "Multiply both sides by 7: $x = 4 \\times 7 = 28$.",
+    "misconception": "To undo division by 7, multiply both sides by 7 rather than dividing."
+  },
+  {
+    "id": "se-u1-l2-r2-p7",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $\\frac{y}{8} = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 24 }
+      }
+    },
+    "hints": [
+      "Multiply both sides by 8.",
+      "$y = 3 \\times 8$.",
+      "Multiply to get your value for $y$."
+    ],
+    "explanation": "Multiply both sides by 8: $y = 3 \\times 8 = 24$.",
+    "misconception": "To undo division by 8, multiply both sides by 8 rather than dividing."
+  },
+  {
+    "id": "se-u1-l2-r2-p8",
+    "type": "multiple-choice",
+    "prompt": "Solve for $a$: $\\frac{a}{3} = 9$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$a = 27$" },
+          { "id": "b", "label": "$a = 12$", "whyWrong": "This adds 3 to 9 instead of multiplying by it." },
+          { "id": "c", "label": "$a = 3$", "whyWrong": "This divides 9 by 3 instead of multiplying by it." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Multiply both sides by 3.",
+      "$a = 9 \\times 3$.",
+      "Multiply 9 by 3 and choose the matching option."
+    ],
+    "explanation": "Multiply both sides by 3: $a = 9 \\times 3 = 27$."
+  },
+  {
+    "id": "se-u1-l2-r2-p9",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $\\frac{t}{4} = 5$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 20 }
+      }
+    },
+    "hints": [
+      "Multiply both sides by 4.",
+      "$t = 5 \\times 4$.",
+      "Multiply to get your value for $t$."
+    ],
+    "explanation": "Multiply both sides by 4: $t = 5 \\times 4 = 20$.",
+    "misconception": "To undo division by 4, multiply both sides by 4 rather than dividing."
+  },
+  {
+    "id": "se-u1-l2-r2-p10",
+    "type": "numeric",
+    "prompt": "Solve for $n$: $\\frac{n}{6} = 5$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of n",
+        "validation": { "type": "numeric", "value": 30 }
+      }
+    },
+    "hints": [
+      "Multiply both sides by 6.",
+      "$n = 5 \\times 6$.",
+      "Multiply to get your value for $n$."
+    ],
+    "explanation": "Multiply both sides by 6: $n = 5 \\times 6 = 30$.",
+    "misconception": "To undo division by 6, multiply both sides by 6 rather than dividing."
+  },
+  {
+    "id": "se-u1-l2-r3-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2x + 3 = 11$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "First subtract 3 from both sides: $2x = 8$.",
+      "Then divide both sides by 2.",
+      "Divide your result by 2 to get $x$."
+    ],
+    "explanation": "Subtract 3: $2x = 8$. Divide by 2: $x = 4$.",
+    "misconception": "Subtract the constant first, then divide by the coefficient; don't divide before subtracting."
+  },
+  {
+    "id": "se-u1-l2-r3-p7",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $4n + 1 = 13$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = 3$" },
+          { "id": "b", "label": "$n = 12$", "whyWrong": "This stops at $4n = 12$ without dividing by 4." },
+          { "id": "c", "label": "$n = \\frac{14}{4}$", "whyWrong": "This adds 1 instead of subtracting it before dividing." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "First subtract 1 from both sides: $4n = 12$.",
+      "Then divide both sides by 4.",
+      "Divide your result by 4 and choose the matching option."
+    ],
+    "explanation": "Subtract 1: $4n = 12$. Divide by 4: $n = 3$."
+  },
+  {
+    "id": "se-u1-l2-r3-p8",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $3y - 2 = 10$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "First add 2 to both sides: $3y = 12$.",
+      "Then divide both sides by 3.",
+      "Divide your result by 3 to get $y$."
+    ],
+    "explanation": "Add 2: $3y = 12$. Divide by 3: $y = 4$.",
+    "misconception": "Add 2 first to undo the subtraction, then divide by 3; don't divide before adding."
+  },
+  {
+    "id": "se-u1-l2-r3-p9",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $5t + 4 = 24$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "First subtract 4 from both sides: $5t = 20$.",
+      "Then divide both sides by 5.",
+      "Divide your result by 5 to get $t$."
+    ],
+    "explanation": "Subtract 4: $5t = 20$. Divide by 5: $t = 4$.",
+    "misconception": "Subtract 4 first, then divide by 5; don't divide before subtracting."
+  },
+  {
+    "id": "se-u1-l2-r3-p10",
+    "type": "multiple-choice",
+    "prompt": "Solve for $a$: $2a - 6 = 8$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$a = 7$" },
+          { "id": "b", "label": "$a = 14$", "whyWrong": "This stops at $2a = 14$ without dividing by 2." },
+          { "id": "c", "label": "$a = 1$", "whyWrong": "This subtracts 6 instead of adding it before dividing." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "First add 6 to both sides: $2a = 14$.",
+      "Then divide both sides by 2.",
+      "Divide your result by 2 and choose the matching option."
+    ],
+    "explanation": "Add 6: $2a = 14$. Divide by 2: $a = 7$."
+  },
+  {
+    "id": "se-u1-l2-r4-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2x + 12 = 6$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": -3 }
+      }
+    },
+    "hints": [
+      "First subtract 12 from both sides: $2x = -6$.",
+      "Then divide both sides by 2.",
+      "Divide your result by 2 to get $x$; it is negative."
+    ],
+    "explanation": "Subtract 12: $2x = -6$. Divide by 2: $x = -3$.",
+    "misconception": "Subtract 12 first to get a negative value, then divide by 2; keep the negative sign."
+  },
+  {
+    "id": "se-u1-l2-r4-p7",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $3n + 4 = -11$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = -5$" },
+          { "id": "b", "label": "$n = 5$", "whyWrong": "This drops the negative sign; $3n = -15$ gives a negative value." },
+          { "id": "c", "label": "$n = -\\frac{7}{3}$", "whyWrong": "This adds 4 instead of subtracting it before dividing." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "First subtract 4 from both sides: $3n = -15$.",
+      "Then divide both sides by 3.",
+      "Divide your result by 3 and choose the negative option."
+    ],
+    "explanation": "Subtract 4: $3n = -15$. Divide by 3: $n = -5$."
+  },
+  {
+    "id": "se-u1-l2-r4-p8",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $-3y + 2 = 14$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": -4 }
+      }
+    },
+    "hints": [
+      "First subtract 2 from both sides: $-3y = 12$.",
+      "Then divide both sides by $-3$.",
+      "Divide your result by $-3$ to get $y$."
+    ],
+    "explanation": "Subtract 2: $-3y = 12$. Divide by $-3$: $y = -4$.",
+    "misconception": "After subtracting 2, divide by $-3$; dividing by a negative flips the sign of the answer."
+  },
+  {
+    "id": "se-u1-l2-r4-p9",
+    "type": "multiple-choice",
+    "prompt": "Solve for $a$: $5a + 20 = 5$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$a = -3$" },
+          { "id": "b", "label": "$a = 3$", "whyWrong": "This drops the negative sign; $5a = -15$ gives a negative value." },
+          { "id": "c", "label": "$a = 5$", "whyWrong": "This adds 20 instead of subtracting it before dividing." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "First subtract 20 from both sides: $5a = -15$.",
+      "Then divide both sides by 5.",
+      "Divide your result by 5 and choose the negative option."
+    ],
+    "explanation": "Subtract 20: $5a = -15$. Divide by 5: $a = -3$."
+  },
+  {
+    "id": "se-u1-l2-r4-p10",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $4t - 2 = -22$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": -5 }
+      }
+    },
+    "hints": [
+      "First add 2 to both sides: $4t = -20$.",
+      "Then divide both sides by 4.",
+      "Divide your result by 4 to get $t$; it is negative."
+    ],
+    "explanation": "Add 2: $4t = -20$. Divide by 4: $t = -5$.",
+    "misconception": "Add 2 first to get $-20$, then divide by 4; keep the negative sign."
+  },
+  {
+    "id": "se-u1-l2-r5-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\frac{x}{4} + 3 = 7$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 16 }
+      }
+    },
+    "hints": [
+      "First subtract 3 from both sides: $\\frac{x}{4} = 4$.",
+      "Then multiply both sides by 4.",
+      "Multiply your result by 4 to get $x$."
+    ],
+    "explanation": "Subtract 3: $\\frac{x}{4} = 4$. Multiply by 4: $x = 16$.",
+    "misconception": "Subtract 3 first, then multiply by 4; don't multiply before subtracting."
+  },
+  {
+    "id": "se-u1-l2-r5-p7",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $2y + 2.5 = 7.5$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 2.5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "First subtract 2.5 from both sides: $2y = 5$.",
+      "Then divide both sides by 2.",
+      "Divide your result by 2 to get $y$."
+    ],
+    "explanation": "Subtract 2.5: $2y = 5$. Divide by 2: $y = 2.5$.",
+    "misconception": "Subtract 2.5 first, then divide by 2; don't divide before subtracting."
+  },
+  {
+    "id": "se-u1-l2-r5-p8",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $0.25n = 5$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = 20$" },
+          { "id": "b", "label": "$n = 1.25$", "whyWrong": "This multiplies 5 by 0.25 instead of dividing by it." },
+          { "id": "c", "label": "$n = 5.25$", "whyWrong": "This adds 0.25 to 5 instead of dividing by it." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Divide both sides by 0.25 (or multiply by 4).",
+      "$n = 5 \\div 0.25$.",
+      "Divide 5 by 0.25 and choose the matching option."
+    ],
+    "explanation": "Divide both sides by 0.25: $n = 5 \\div 0.25 = 20$."
+  },
+  {
+    "id": "se-u1-l2-r5-p9",
+    "type": "numeric",
+    "prompt": "Solve for $a$: $\\frac{a}{3} - 2 = 1$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of a",
+        "validation": { "type": "numeric", "value": 9 }
+      }
+    },
+    "hints": [
+      "First add 2 to both sides: $\\frac{a}{3} = 3$.",
+      "Then multiply both sides by 3.",
+      "Multiply your result by 3 to get $a$."
+    ],
+    "explanation": "Add 2: $\\frac{a}{3} = 3$. Multiply by 3: $a = 9$.",
+    "misconception": "Add 2 first to undo the subtraction, then multiply by 3; don't multiply before adding."
+  },
+  {
+    "id": "se-u1-l2-r5-p10",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $4t + 0.8 = 4$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 0.8, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "First subtract 0.8 from both sides: $4t = 3.2$.",
+      "Then divide both sides by 4.",
+      "Divide your result by 4 to get $t$."
+    ],
+    "explanation": "Subtract 0.8: $4t = 3.2$. Divide by 4: $t = 0.8$.",
+    "misconception": "Subtract 0.8 first, then divide by 4; don't divide before subtracting."
   }
 ]

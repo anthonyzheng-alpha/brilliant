@@ -1,8 +1,9 @@
-import type { ProgressState, GamificationState } from '../types/content'
+import type { ProgressState, GamificationState, LessonVariant } from '../types/content'
 
 const PROGRESS_KEY = 'algebra-clone-progress'
 const GAMIFICATION_KEY = 'algebra-clone-gamification'
 const SEEN_MINI_LESSONS_KEY = 'algebra-clone-seen-minilessons'
+const VARIANTS_KEY = 'algebra-clone-variants'
 const DEBUG_KEY = 'algebra-clone-debug'
 
 type DebugState = {
@@ -82,11 +83,23 @@ export function saveDebug(state: DebugState): void {
   writeJson(DEBUG_KEY, state)
 }
 
+export function loadVariant(lessonId: string): LessonVariant | null {
+  const all = readJson<Record<string, LessonVariant>>(VARIANTS_KEY, () => ({}))
+  return all[lessonId] ?? null
+}
+
+export function saveVariant(lessonId: string, variant: LessonVariant): void {
+  const all = readJson<Record<string, LessonVariant>>(VARIANTS_KEY, () => ({}))
+  all[lessonId] = variant
+  writeJson(VARIANTS_KEY, all)
+}
+
 export function clearAllLocalData(): void {
   localStorage.removeItem(PROGRESS_KEY)
   localStorage.removeItem(GAMIFICATION_KEY)
   localStorage.removeItem(SEEN_MINI_LESSONS_KEY)
   localStorage.removeItem(DEBUG_KEY)
+  localStorage.removeItem(VARIANTS_KEY)
 }
 
 export { PROGRESS_KEY, GAMIFICATION_KEY }

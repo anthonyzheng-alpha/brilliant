@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Lesson } from '../../types/content'
 import { LessonMilestoneIcon } from '../gamification/LessonMilestoneIcon'
 import { useProgressStore } from '../../stores/progressStore'
-import { computeRoundBoxes } from '../../content'
+import { computeRoundBoxes, roundSize } from '../../content'
 import { ProgressBoxes } from './ProgressBoxes'
 import './LessonRow.css'
 
@@ -17,7 +17,7 @@ type Props = {
 export function LessonRow({ courseId, courseSlug, lesson, locked, completed }: Props) {
   const getLessonProgressCount = useProgressStore((s) => s.getLessonProgressCount)
 
-  const total = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+  const total = lesson.rounds.reduce((n, r) => n + roundSize(r), 0)
   const count = completed ? total : getLessonProgressCount(courseId, lesson.id)
   const percent = total ? Math.round((count / total) * 100) : 0
 

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import type { CourseProgress, Lesson, ProgressState } from '../types/content'
 import { loadProgress, saveProgress } from '../lib/storage'
+import { roundSize } from '../content'
 
 type ProgressStore = {
   progress: ProgressState
@@ -52,7 +53,7 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
     let total = 0
     let completed = 0
     for (const lesson of lessons) {
-      const lessonTotal = lesson.rounds.reduce((n, r) => n + r.problemIds.length, 0)
+      const lessonTotal = lesson.rounds.reduce((n, r) => n + roundSize(r), 0)
       const done = get().isLessonComplete(courseId, lesson.id)
       const count = done ? lessonTotal : get().getLessonProgressCount(courseId, lesson.id)
       total += lessonTotal

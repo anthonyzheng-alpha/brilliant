@@ -110,6 +110,7 @@ export type Round = {
   id: string
   label: string
   problemIds: string[]
+  sampleSize?: number
   miniLesson?: MiniLesson
 }
 
@@ -155,6 +156,9 @@ export type ProgressState = {
   version: number
   courses: Record<string, CourseProgress>
 }
+
+// Maps a round id to the problem ids selected for the current lesson run.
+export type LessonVariant = Record<string, string[]>
 
 export type GamificationState = {
   version: number

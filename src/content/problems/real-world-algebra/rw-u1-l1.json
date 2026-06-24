@@ -505,5 +505,507 @@
     ],
     "misconception": "Convert Gym B to a yearly cost first (×12) before subtracting - the units must match.",
     "explanation": "Gym B costs 15 × 12 = $180 per year, which is $180 − $100 = $80 more than Gym A."
+  },
+  {
+    "id": "rw-u1-l1-r1-p6",
+    "type": "numeric",
+    "prompt": "Grapes cost **$6** for **3 lbs**. What is the price per pound?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars per lb",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 2 }
+      }
+    },
+    "hints": [
+      "Divide the total cost by the number of pounds.",
+      "Unit price = total cost ÷ quantity."
+    ],
+    "misconception": "Divide cost by quantity, not quantity by cost - per-pound price is dollars ÷ pounds.",
+    "explanation": "$6 ÷ 3 lbs = $2 per pound."
+  },
+  {
+    "id": "rw-u1-l1-r1-p7",
+    "type": "numeric",
+    "prompt": "A printer makes **90 copies** in **3 minutes**. How many copies per minute?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Copies per minute",
+        "validation": { "type": "numeric", "value": 30 }
+      }
+    },
+    "hints": [
+      "Divide the number of copies by the number of minutes.",
+      "Rate = copies ÷ minutes."
+    ],
+    "explanation": "90 copies ÷ 3 minutes = 30 copies per minute."
+  },
+  {
+    "id": "rw-u1-l1-r1-p8",
+    "type": "multiple-choice",
+    "prompt": "A runner covers **12 miles** in **2 hours**. What is the average speed?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "5 mph", "whyWrong": "Too low - 12 ÷ 2 is 6, not 5." },
+          { "id": "b", "label": "6 mph" },
+          { "id": "c", "label": "8 mph", "whyWrong": "Too high - 8 mph would cover 16 miles in 2 hours." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Divide the distance by the time to get speed.",
+      "Speed = distance ÷ time."
+    ],
+    "explanation": "12 miles ÷ 2 hours = 6 miles per hour."
+  },
+  {
+    "id": "rw-u1-l1-r1-p9",
+    "type": "numeric",
+    "prompt": "An **8 oz** cup of yogurt costs **$1.60**. What is the price per ounce?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars per oz",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 0.2, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Divide the price by the number of ounces.",
+      "Price per ounce = price ÷ ounces."
+    ],
+    "misconception": "Per-ounce price is dollars ÷ ounces, not ounces ÷ dollars.",
+    "explanation": "$1.60 ÷ 8 oz = $0.20 per ounce."
+  },
+  {
+    "id": "rw-u1-l1-r1-p10",
+    "type": "numeric",
+    "prompt": "**5 notebooks** cost **$7.50**. What is the price of one notebook?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 1.5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Divide the total cost by the number of notebooks.",
+      "Unit price = total cost ÷ quantity."
+    ],
+    "misconception": "Divide the total by the number of items - don't multiply the price by 5.",
+    "explanation": "$7.50 ÷ 5 = $1.50 per notebook."
+  },
+  {
+    "id": "rw-u1-l1-r2-p6",
+    "type": "multiple-choice",
+    "prompt": "Bread A: **20 oz for $2.00**. Bread B: **24 oz for $2.88**. Which is the better deal per ounce?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Bread A ($0.10/oz)" },
+          { "id": "b", "label": "Bread B ($0.12/oz)", "whyWrong": "Bread B costs more per ounce - 2.88 ÷ 24 is higher than 2.00 ÷ 20." },
+          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $0.10 vs $0.12 per ounce." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Find each loaf's price per ounce.",
+      "Compare the two per-ounce prices and choose the lower one."
+    ],
+    "explanation": "Bread A costs 2.00 ÷ 20 = $0.10 per ounce versus 2.88 ÷ 24 = $0.12 for Bread B, so A is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r2-p7",
+    "type": "multiple-choice",
+    "prompt": "Pasta A: **16 oz for $1.60**. Pasta B: **32 oz for $2.88**. Which is the better deal per ounce?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Pasta A ($0.10/oz)", "whyWrong": "Pasta A costs more per ounce - 1.60 ÷ 16 is higher than 2.88 ÷ 32." },
+          { "id": "b", "label": "Pasta B ($0.09/oz)" },
+          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $0.10 vs $0.09 per ounce." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Find each box's price per ounce.",
+      "Compare the two per-ounce prices and choose the lower one."
+    ],
+    "explanation": "Pasta B costs 2.88 ÷ 32 = $0.09 per ounce versus 1.60 ÷ 16 = $0.10 for Pasta A, so B is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r2-p8",
+    "type": "multiple-choice",
+    "prompt": "Shampoo A: **8 oz for $4.00**. Shampoo B: **12 oz for $5.40**. Which is the better deal per ounce?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Shampoo A ($0.50/oz)", "whyWrong": "Shampoo A costs more per ounce - 4.00 ÷ 8 is higher than 5.40 ÷ 12." },
+          { "id": "b", "label": "Shampoo B ($0.45/oz)" },
+          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $0.50 vs $0.45 per ounce." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Find each bottle's price per ounce.",
+      "Compare the two per-ounce prices and choose the lower one."
+    ],
+    "explanation": "Shampoo B costs 5.40 ÷ 12 = $0.45 per ounce versus 4.00 ÷ 8 = $0.50 for Shampoo A, so B is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r2-p9",
+    "type": "multiple-choice",
+    "prompt": "Cheese A: **2 lb for $9.00**. Cheese B: **3 lb for $12.00**. Which is the better deal per pound?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Cheese A ($4.50/lb)", "whyWrong": "Cheese A costs more per pound - 9.00 ÷ 2 is higher than 12.00 ÷ 3." },
+          { "id": "b", "label": "Cheese B ($4.00/lb)" },
+          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $4.50 vs $4.00." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Find each block's price per pound.",
+      "Compare the two per-pound prices and choose the lower one."
+    ],
+    "explanation": "Cheese B costs 12.00 ÷ 3 = $4.00 per pound versus 9.00 ÷ 2 = $4.50 for Cheese A, so B is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r2-p10",
+    "type": "multiple-choice",
+    "prompt": "Detergent A: **50 oz for $5.00**. Detergent B: **100 oz for $11.00**. Which is the better deal per ounce?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Detergent A ($0.10/oz)" },
+          { "id": "b", "label": "Detergent B ($0.11/oz)", "whyWrong": "Detergent B costs more per ounce - 11.00 ÷ 100 is higher than 5.00 ÷ 50." },
+          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $0.10 vs $0.11 per ounce." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Find each bottle's price per ounce.",
+      "Compare the two per-ounce prices and choose the lower one - the bigger bottle is not always cheaper per unit."
+    ],
+    "explanation": "Detergent A costs 5.00 ÷ 50 = $0.10 per ounce versus 11.00 ÷ 100 = $0.11 for Detergent B, so A is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r3-p6",
+    "type": "numeric",
+    "prompt": "Oranges cost **$0.80** each. How much do **5 oranges** cost?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Multiply the price per orange by the number of oranges.",
+      "Total cost = price per orange × number of oranges."
+    ],
+    "misconception": "This is a multiplication problem - multiply price by quantity instead of dividing.",
+    "explanation": "$0.80 × 5 = $4.00."
+  },
+  {
+    "id": "rw-u1-l1-r3-p7",
+    "type": "numeric",
+    "prompt": "Gas costs **$4.00** per gallon. How much to fill **9 gallons**?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "gas" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 36 }
+      }
+    },
+    "hints": [
+      "Multiply the price per gallon by the number of gallons.",
+      "Total = price per gallon × gallons."
+    ],
+    "misconception": "Multiply price per gallon by gallons - don't divide or add the two numbers.",
+    "explanation": "$4.00 × 9 gallons = $36.00."
+  },
+  {
+    "id": "rw-u1-l1-r3-p8",
+    "type": "numeric",
+    "prompt": "Pizza slices cost **$3** each. How many slices can you buy with **$18**?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Slices",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Divide your budget by the price of one slice.",
+      "Number you can buy = budget ÷ price."
+    ],
+    "misconception": "Divide budget by price to count items - don't multiply $3 by anything.",
+    "explanation": "$18 ÷ $3 per slice = 6 slices."
+  },
+  {
+    "id": "rw-u1-l1-r3-p9",
+    "type": "numeric",
+    "prompt": "Ribbon costs **$1.20** per yard. How much do **2.5 yards** cost?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 3, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Multiply the price per yard by the number of yards.",
+      "Total = price per yard × yards."
+    ],
+    "misconception": "Multiply the per-yard price by the yards, even when the length is a decimal.",
+    "explanation": "$1.20 × 2.5 yards = $3.00."
+  },
+  {
+    "id": "rw-u1-l1-r3-p10",
+    "type": "multiple-choice",
+    "prompt": "Markers cost **$1.50** each. What is the most whole markers you can buy with **$10**?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "5 markers", "whyWrong": "You can afford more - 5 markers leave $2.50 unspent." },
+          { "id": "b", "label": "6 markers" },
+          { "id": "c", "label": "7 markers", "whyWrong": "7 markers cost $10.50, which is over your $10 budget." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Divide your budget by the price.",
+      "If the result is not a whole number, round down to the nearest whole number."
+    ],
+    "explanation": "$10 ÷ $1.50 ≈ 6.67; you can buy 6 markers for $9.00 (7 would cost $10.50)."
+  },
+  {
+    "id": "rw-u1-l1-r4-p6",
+    "type": "numeric",
+    "prompt": "A taxi charges **$5** plus **$3** per mile. How much for **4** miles?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 17 }
+      }
+    },
+    "hints": [
+      "Add the base fare to the per-mile cost times the miles.",
+      "Cost = base fare + rate × miles."
+    ],
+    "misconception": "Don't forget the fixed base fare - total = base + rate × miles, not just rate × miles.",
+    "explanation": "5 + 3(4) = 5 + 12 = 17 dollars."
+  },
+  {
+    "id": "rw-u1-l1-r4-p7",
+    "type": "numeric",
+    "prompt": "A gym charges a **$30** joining fee plus **$20** per month. What is the total cost for **5 months**?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "gym" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 130 }
+      }
+    },
+    "hints": [
+      "Add the joining fee to the monthly rate times the months.",
+      "Total = joining fee + monthly rate × months."
+    ],
+    "misconception": "Include the one-time joining fee - total = fee + monthly rate × months.",
+    "explanation": "30 + 20(5) = 30 + 100 = 130 dollars."
+  },
+  {
+    "id": "rw-u1-l1-r4-p8",
+    "type": "numeric",
+    "prompt": "A phone plan costs **$15** per month plus **$0.20** per minute. What is the bill for **40 minutes**?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "phone" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 23 }
+      }
+    },
+    "hints": [
+      "Add the base fee to the per-minute rate times the minutes.",
+      "Bill = base fee + per-minute rate × minutes."
+    ],
+    "misconception": "Add the flat monthly fee - total = base + per-minute rate × minutes, not just the minutes cost.",
+    "explanation": "15 + 0.20(40) = 15 + 8 = 23 dollars."
+  },
+  {
+    "id": "rw-u1-l1-r4-p9",
+    "type": "numeric",
+    "prompt": "A car rental costs **$30** plus **$0.50** per mile. How much for **20** miles?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 40 }
+      }
+    },
+    "hints": [
+      "Add the base charge to the per-mile rate times the miles.",
+      "Cost = base charge + rate × miles."
+    ],
+    "misconception": "Don't drop the base charge - total = base + rate × miles.",
+    "explanation": "30 + 0.50(20) = 30 + 10 = 40 dollars."
+  },
+  {
+    "id": "rw-u1-l1-r4-p10",
+    "type": "numeric",
+    "prompt": "A streaming plan costs **$10** per month plus **$2** for each extra screen. What is the cost with **4 extra screens**?",
+    "visual": { "kind": "scenario-illustration", "props": { "type": "streaming" } },
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 18 }
+      }
+    },
+    "hints": [
+      "Add the base price to the per-screen rate times the extra screens.",
+      "Cost = base price + per-screen rate × screens."
+    ],
+    "misconception": "Add the base monthly price - total = base + per-screen rate × extra screens.",
+    "explanation": "10 + 2(4) = 10 + 8 = 18 dollars."
+  },
+  {
+    "id": "rw-u1-l1-r5-p6",
+    "type": "multiple-choice",
+    "prompt": "Plan A: **$40 flat** per month. Plan B: **$20 plus $1 per GB**. For **25 GB**, which plan is cheaper?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "Plan A ($40)" },
+          { "id": "b", "label": "Plan B ($45)", "whyWrong": "Plan B totals $45 at 25 GB, which is more than Plan A's $40." },
+          { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $40 versus $45 for 25 GB." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Compute Plan B's cost: base + rate × GB.",
+      "Compare Plan A's flat fee with Plan B's computed total and pick the lower."
+    ],
+    "explanation": "Plan B costs 20 + 1(25) = $45, which is more than Plan A's flat $40, so Plan A is cheaper."
+  },
+  {
+    "id": "rw-u1-l1-r5-p7",
+    "type": "numeric",
+    "prompt": "Taxi X charges **$6 plus $1 per mile**. Taxi Y charges **$2 plus $3 per mile**. At how many miles do they cost the same?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Miles",
+        "validation": { "type": "numeric", "value": 2 }
+      }
+    },
+    "hints": [
+      "Set the two cost expressions equal: 6 + 1m = 2 + 3m.",
+      "Solve for the number of miles."
+    ],
+    "misconception": "Set the two cost expressions equal and solve for miles - don't just compare the base fees.",
+    "explanation": "6 + 1m = 2 + 3m → 4 = 2m → m = 2. Both cost $8 at 2 miles."
+  },
+  {
+    "id": "rw-u1-l1-r5-p8",
+    "type": "numeric",
+    "prompt": "A **$60** coat is **20% off**. What is the sale price?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 48 }
+      }
+    },
+    "hints": [
+      "20% off means you pay 80% of the price.",
+      "Subtract the discount from the original price (or multiply by 0.80)."
+    ],
+    "misconception": "20% off means subtract the discount (or pay 80%) - don't report the $12 discount as the price.",
+    "explanation": "20% of $60 is $12, so the sale price is $60 − $12 = $48."
+  },
+  {
+    "id": "rw-u1-l1-r5-p9",
+    "type": "multiple-choice",
+    "prompt": "Bulk rice: **4 lb for $10.00** or **6 lb for $13.50**. Which is the better deal per pound?",
+    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "4 lb bag ($2.50/lb)", "whyWrong": "The 4 lb bag costs more per pound - 10.00 ÷ 4 is higher than 13.50 ÷ 6." },
+          { "id": "b", "label": "6 lb bag ($2.25/lb)" },
+          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $2.50 vs $2.25." }
+        ],
+        "correctOptionId": "b"
+      }
+    },
+    "hints": [
+      "Find each bag's price per pound.",
+      "Compare the two per-pound prices and choose the lower one."
+    ],
+    "explanation": "The 6 lb bag is 13.50 ÷ 6 = $2.25 per pound versus 10.00 ÷ 4 = $2.50 for the 4 lb bag, so it is the better deal."
+  },
+  {
+    "id": "rw-u1-l1-r5-p10",
+    "type": "numeric",
+    "prompt": "Gym A costs **$200 per year**. Gym B costs **$20 per month**. How much more does Gym B cost per year?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Dollars",
+        "unit": "$",
+        "validation": { "type": "numeric", "value": 40 }
+      }
+    },
+    "hints": [
+      "First find Gym B's yearly cost.",
+      "Subtract Gym A's yearly cost from Gym B's yearly cost."
+    ],
+    "misconception": "Convert Gym B to a yearly cost first (×12) before subtracting - the units must match.",
+    "explanation": "Gym B costs 20 × 12 = $240 per year, which is $240 − $200 = $40 more than Gym A."
   }
 ]
