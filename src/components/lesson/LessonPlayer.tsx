@@ -140,14 +140,6 @@ export function LessonPlayer({
     if (isAnswerValid(problem, answer)) {
       setInputLocked(true)
       setFeedback({ kind: 'correct', explanation: problem.explanation })
-
-      if (FEATURES.gamification) {
-        recordActivity()
-        if (user) {
-          const g = useGamificationStore.getState().gamification
-          await saveUserGamification(user.uid, g)
-        }
-      }
     } else {
       setWrongLine(resolveWrongLine(problem, answer))
       setFeedback({
@@ -207,6 +199,7 @@ export function LessonPlayer({
       }
 
       if (FEATURES.gamification) {
+        recordActivity()
         const courseLessonIds = getAllLessonsForCourse(courseId).map((l) => l.id)
         onLessonMastered(lesson.id, unitId, unitLessonIds, courseId, courseLessonIds)
         if (user) {
@@ -225,6 +218,12 @@ export function LessonPlayer({
     if (round && nextRound && problemIndex === round.endIndex) {
       await persistProgress(nextIndex)
       setInputLocked(false)
+      if (FEATURES.gamification) {
+        recordActivity()
+        if (user) {
+          await saveUserGamification(user.uid, useGamificationStore.getState().gamification)
+        }
+      }
       setFeedback({
         kind: 'round-complete',
         roundLabel: round.label,

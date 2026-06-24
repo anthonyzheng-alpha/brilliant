@@ -40,7 +40,11 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
   },
 
   getCourseProgress: (courseId) => {
-    return get().progress.courses[courseId] ?? EMPTY_COURSE_PROGRESS
+    const course = get().progress.courses[courseId]
+    if (!course) return EMPTY_COURSE_PROGRESS
+    // Stored/remote course objects may lack `completedLessons` (Firebase RTDB
+    // drops empty arrays), so normalize it to always be an array.
+    return { ...course, completedLessons: course.completedLessons ?? [] }
   },
 
   getCoursePercent: (courseId, totalLessons) => {

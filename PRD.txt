@@ -246,7 +246,7 @@ Progress and persistence (localStorage):
 - Course progress % on homepage card
 
 Gamification (M0):
-- Daily streak: +1 when learner completes >= 1 problem on a new calendar day
+- Daily streak: +1 when learner completes a round (one mini-lesson segment) or review set on a new calendar day
 - Lesson milestone: badge/modal when all problems in lesson answered correctly
 - Streak count visible on homepage header
 
@@ -590,18 +590,18 @@ Rules:
 - Uses the same Check / Hint / feedback flow as lessons; no rounds or mini-lessons
 - Does NOT affect course progress, resume index, lesson mastery, badges, or unlock
   sequencing (pure practice)
-- Correct answers count as daily activity for the streak (see 8.3), consistent
-  with lesson play
+- Completing the review set counts as daily activity for the streak (see 8.3),
+  consistent with lesson play
 
 8.3 Daily Streak
 ----------------
 
 Definition: Consecutive calendar days on which the learner completed at least
-one problem correctly.
+one round (mini-lesson) or review set.
 
 Rules:
-- Completing any problem in any course counts as activity for the day
-- First correct answer of the day triggers streak evaluation:
+- Completing a round (mini-lesson) or a review set in any course counts as activity for the day
+- First round or review-set completion of the day triggers streak evaluation:
   - If lastActiveDate was yesterday: currentStreak += 1
   - If lastActiveDate was today: no change
   - If lastActiveDate was before yesterday: currentStreak = 1 (reset)
@@ -923,7 +923,7 @@ Round structure (difficulty ramp):
 | FR-4a.1| Review button on course page when 100% complete  | M4    |
 | FR-4a.2| Session of 5 random questions from full pool     | M4    |
 | FR-4a.3| Repeatable sessions with end-of-set summary      | M4    |
-| FR-4a.4| Correct answers count toward daily streak        | M4    |
+| FR-4a.4| Completing a round or review set counts toward daily streak | M4    |
 | FR-4a.5| No effect on progress, mastery, or unlock state  | M4    |
 
 10.5 Widgets
@@ -1230,7 +1230,7 @@ APPENDIX A: GLOSSARY
 
 Lens        — Pedagogical perspective: Solving, Visual, Real-World, or Factoring algebra.
 Milestone   — Badge earned when all problems in a lesson are answered correctly.
-Streak      — Consecutive calendar days with at least one problem completed.
+Streak      — Consecutive calendar days with at least one round (mini-lesson) or review set completed.
 Mastery     — Synonym for lesson milestone in this PRD.
 Phase       — Delivery milestone M0–M4; not to be confused with course Unit.
 Widget      — Reusable visual component (BalanceScale, SequenceGrid, etc.).

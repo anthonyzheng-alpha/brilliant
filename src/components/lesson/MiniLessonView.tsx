@@ -77,6 +77,7 @@ export function MiniLessonView({
           problem={exampleProblem}
           answer={answer}
           onAnswerChange={handleAnswerChange}
+          onSubmit={handleCheck}
           disabled={result === 'correct'}
         />
 

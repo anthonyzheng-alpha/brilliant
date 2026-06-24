@@ -55,14 +55,6 @@ export function ReviewPlayer({ courseSlug, problems, onNewSet }: Props) {
       setInputLocked(true)
       setCorrectCount((n) => n + 1)
       setFeedback({ kind: 'correct', explanation: problem.explanation })
-
-      if (FEATURES.gamification) {
-        recordActivity()
-        if (user) {
-          const g = useGamificationStore.getState().gamification
-          await saveUserGamification(user.uid, g)
-        }
-      }
     } else {
       setWrongLine(resolveWrongLine(problem, answer))
       setFeedback({
@@ -77,9 +69,15 @@ export function ReviewPlayer({ courseSlug, problems, onNewSet }: Props) {
     }
   }
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     const nextIndex = problemIndex + 1
     if (nextIndex >= total) {
+      if (FEATURES.gamification) {
+        recordActivity()
+        if (user) {
+          await saveUserGamification(user.uid, useGamificationStore.getState().gamification)
+        }
+      }
       setFinished(true)
       return
     }
