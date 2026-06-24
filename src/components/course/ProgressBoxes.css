@@ -12,7 +12,4 @@
   background: transparent;
 }
 
-.progress-box--done {
-  background: var(--progress-done);
-  border-color: var(--progress-done);
-}
+/* Completed boxes get a position-based warm color applied inline (yellow -> red). */
