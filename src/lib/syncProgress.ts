@@ -1,7 +1,7 @@
 import type { GamificationState, ProgressState, CourseProgress } from '../types/content'
 import { get, ref, set } from 'firebase/database'
 import { getRealtimeDb } from './firebase'
-import { loadProgress, loadGamification, saveProgress, saveGamification } from './storage'
+import { saveProgress, saveGamification } from './storage'
 
 // RTDB rejects `undefined` values; strip them (and any undefined nested fields).
 function stripUndefined<T>(value: T): T {
@@ -110,29 +110,19 @@ export async function saveUserGamification(
 }
 
 export async function syncOnLogin(uid: string): Promise<void> {
-  const localProgress = loadProgress()
-  const localGamification = loadGamification()
   const remote = await fetchUserData(uid)
 
-  const mergedProgress = mergeProgress(
-    localProgress,
-    remote.progress ?? { version: 1, courses: {} },
-  )
-  const mergedGamification = mergeGamification(
-    localGamification,
-    remote.gamification ?? {
-      version: 1,
-      currentStreak: 0,
-      longestStreak: 0,
-      lastActiveDate: null,
-      activeDates: [],
-      lessonMilestones: {},
-      badges: [],
-    },
-  )
+  const progress = remote.progress ?? { version: 1, courses: {} }
+  const gamification = remote.gamification ?? {
+    version: 1,
+    currentStreak: 0,
+    longestStreak: 0,
+    lastActiveDate: null,
+    activeDates: [],
+    lessonMilestones: {},
+    badges: [],
+  }
 
-  await Promise.all([
-    saveUserProgress(uid, mergedProgress),
-    saveUserGamification(uid, mergedGamification),
-  ])
+  saveProgress(progress)
+  saveGamification(gamification)
 }

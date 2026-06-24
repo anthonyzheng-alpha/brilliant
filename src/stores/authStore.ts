@@ -9,6 +9,7 @@ import {
   type User,
 } from 'firebase/auth'
 import { getFirebaseAuth, googleProvider, isFirebaseConfigured } from '../lib/firebase'
+import { clearAllLocalData } from '../lib/storage'
 import { syncOnLogin } from '../lib/syncProgress'
 import { useProgressStore } from './progressStore'
 import { useGamificationStore } from './gamificationStore'
@@ -99,6 +100,9 @@ export const useAuthStore = create<AuthStore>((set) => ({
     const auth = getFirebaseAuth()
     if (!auth) return
     await firebaseSignOut(auth)
+    clearAllLocalData()
+    useProgressStore.getState().hydrate()
+    useGamificationStore.getState().hydrate()
     set({ user: null })
   },
 }))
