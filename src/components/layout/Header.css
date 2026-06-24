@@ -105,6 +105,17 @@
   background: var(--border);
 }
 
+.app-header__dropdown-item--locked {
+  display: block;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: not-allowed;
+}
+
 .app-header__actions {
   display: flex;
   align-items: center;

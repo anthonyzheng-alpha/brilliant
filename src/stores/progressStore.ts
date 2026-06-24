@@ -11,6 +11,7 @@ type ProgressStore = {
   getCourseProblemPercent: (courseId: string, lessons: Lesson[]) => number
   getLessonProgressCount: (courseId: string, lessonId: string) => number
   isLessonComplete: (courseId: string, lessonId: string) => boolean
+  isCourseComplete: (courseId: string, lessonIds: string[]) => boolean
   isLessonUnlocked: (
     courseId: string,
     lessonId: string,
@@ -66,6 +67,11 @@ export const useProgressStore = create<ProgressStore>((set, get) => ({
 
   isLessonComplete: (courseId, lessonId) => {
     return get().getCourseProgress(courseId).completedLessons.includes(lessonId)
+  },
+
+  isCourseComplete: (courseId, lessonIds) => {
+    const completed = get().getCourseProgress(courseId).completedLessons
+    return lessonIds.every((id) => completed.includes(id))
   },
 
   isLessonUnlocked: (courseId, lessonId, orderedLessonIds) => {

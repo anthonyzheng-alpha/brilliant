@@ -5,6 +5,8 @@ import { LoginButton } from '../auth/LoginButton'
 import { UserMenu } from '../auth/UserMenu'
 import { FEATURES } from '../../lib/features'
 import { courses } from '../../content'
+import { useProgressStore } from '../../stores/progressStore'
+import { isCourseUnlocked } from '../../lib/courseUnlock'
 import './Header.css'
 
 export function Header() {
@@ -29,6 +31,7 @@ function CoursesDropdown() {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const closeTimer = useRef<number | null>(null)
+  const isCourseComplete = useProgressStore((s) => s.isCourseComplete)
 
   const clearCloseTimer = () => {
     if (closeTimer.current !== null) {
@@ -85,16 +88,32 @@ function CoursesDropdown() {
         </span>
       </button>
       <div className="app-header__dropdown-menu" role="menu">
-        {courses.map((course) => (
-          <Link
-            key={course.id}
-            to={`/courses/${course.slug}`}
-            role="menuitem"
-            onClick={() => setOpen(false)}
-          >
-            {course.title}
-          </Link>
-        ))}
+        {courses.map((course) => {
+          const locked =
+            FEATURES.sequentialUnlock && !isCourseUnlocked(course.id, isCourseComplete)
+          if (locked) {
+            return (
+              <span
+                key={course.id}
+                className="app-header__dropdown-item--locked"
+                role="menuitem"
+                aria-disabled="true"
+              >
+                {course.title} 🔒
+              </span>
+            )
+          }
+          return (
+            <Link
+              key={course.id}
+              to={`/courses/${course.slug}`}
+              role="menuitem"
+              onClick={() => setOpen(false)}
+            >
+              {course.title}
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

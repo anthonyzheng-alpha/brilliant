@@ -9,9 +9,18 @@ type Props = {
   progressPercent: number
   boxes?: { id: string; label: string; done: boolean }[]
   locked?: boolean
+  lockedLabel?: string
+  lockedHint?: string
 }
 
-export function CourseCard({ course, progressPercent, boxes, locked }: Props) {
+export function CourseCard({
+  course,
+  progressPercent,
+  boxes,
+  locked,
+  lockedLabel = 'Coming soon',
+  lockedHint,
+}: Props) {
   const isLocked = locked ?? (course.lockedUntilPhase === 'M2' && !FEATURES.allCourses)
 
   const inner = (
@@ -19,7 +28,7 @@ export function CourseCard({ course, progressPercent, boxes, locked }: Props) {
       <div className="course-card__header">
         <h2 className="course-card__title">{course.title}</h2>
         {isLocked ? (
-          <span className="course-card__badge">Coming soon</span>
+          <span className="course-card__badge">{lockedLabel}</span>
         ) : (
           <span className="course-card__progress">{progressPercent}%</span>
         )}
@@ -33,7 +42,11 @@ export function CourseCard({ course, progressPercent, boxes, locked }: Props) {
   )
 
   if (isLocked) {
-    return <article className="course-card course-card--locked">{inner}</article>
+    return (
+      <article className="course-card course-card--locked" title={lockedHint}>
+        {inner}
+      </article>
+    )
   }
 
   return (

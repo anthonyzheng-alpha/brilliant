@@ -23,7 +23,7 @@ import vaU1L1Problems from './problems/visual-algebra/va-u1-l1.json'
 import rwU1L1Problems from './problems/real-world-algebra/rw-u1-l1.json'
 import faU1L1Problems from './problems/factoring/fa-u1-l1.json'
 
-const courseData = [solvingEquations, visualAlgebra, realWorldAlgebra, factoring]
+const courseData = [solvingEquations, realWorldAlgebra, visualAlgebra, factoring]
 const unitData = [seU1, vaU1, rwU1, faU1]
 const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1, faU1L1]
 const problemData = [

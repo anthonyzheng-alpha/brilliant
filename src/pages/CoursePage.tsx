@@ -8,6 +8,7 @@ import {
   getAllLessonsForCourse,
 } from '../content'
 import { useProgressStore } from '../stores/progressStore'
+import { isCourseUnlocked } from '../lib/courseUnlock'
 import { FEATURES } from '../lib/features'
 import './CoursePage.css'
 
@@ -18,6 +19,7 @@ export function CoursePage() {
   const getCourseProblemPercent = useProgressStore((s) => s.getCourseProblemPercent)
   const isComplete = useProgressStore((s) => s.isLessonComplete)
   const isUnlocked = useProgressStore((s) => s.isLessonUnlocked)
+  const isCourseComplete = useProgressStore((s) => s.isCourseComplete)
   const courseProgressEntry = useProgressStore((s) =>
     course ? s.progress.courses[course.id] : undefined,
   )
@@ -33,6 +35,10 @@ export function CoursePage() {
 
   const locked = course.lockedUntilPhase === 'M2' && !FEATURES.allCourses
   if (locked) {
+    return <Navigate to="/" replace />
+  }
+
+  if (FEATURES.sequentialUnlock && !isCourseUnlocked(course.id, isCourseComplete)) {
     return <Navigate to="/" replace />
   }
 
