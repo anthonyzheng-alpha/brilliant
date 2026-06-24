@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useRef, useState, type PointerEvent } from 'react'
 import './CoordinateGraph.css'
 
 const SIZE = 320
@@ -109,6 +109,26 @@ export function CoordinateGraph({
   yMax = 5,
 }: CoordinateGraphProps) {
   const clipId = useId()
+  const svgRef = useRef<SVGSVGElement>(null)
+  const [hover, setHover] = useState<{ gx: number; gy: number } | null>(null)
+  const plotWidth = SIZE - 2 * PADDING
+  const plotHeight = SIZE - 2 * PADDING
+
+  const handlePointerMove = (e: PointerEvent<SVGRectElement>) => {
+    const svg = svgRef.current
+    if (!svg) return
+    const rect = svg.getBoundingClientRect()
+    const svgX = ((e.clientX - rect.left) / rect.width) * SIZE
+    const svgY = ((e.clientY - rect.top) / rect.height) * SIZE
+    const dataX = xMin + ((svgX - PADDING) / plotWidth) * (xMax - xMin)
+    const dataY = yMin + ((SIZE - PADDING - svgY) / plotHeight) * (yMax - yMin)
+    const gx = Math.min(xMax, Math.max(xMin, Math.round(dataX)))
+    const gy = Math.min(yMax, Math.max(yMin, Math.round(dataY)))
+    setHover((prev) => (prev && prev.gx === gx && prev.gy === gy ? prev : { gx, gy }))
+  }
+
+  const handlePointerLeave = () => setHover(null)
+
   const line =
     slope !== undefined && intercept !== undefined
       ? clipLineToViewport(slope, intercept, xMin, xMax, yMin, yMax)
@@ -136,6 +156,7 @@ export function CoordinateGraph({
   return (
     <div className="coordinate-graph" aria-label={ariaLabel}>
       <svg
+        ref={svgRef}
         className="coordinate-graph__svg"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
         role="img"
@@ -261,6 +282,73 @@ export function CoordinateGraph({
             </text>
           ),
         )}
+
+        {hover && (
+          <g className="coordinate-graph__hover" aria-hidden>
+            <line
+              className="coordinate-graph__crosshair"
+              x1={toSvgX(hover.gx, xMin, xMax)}
+              y1={PADDING}
+              x2={toSvgX(hover.gx, xMin, xMax)}
+              y2={SIZE - PADDING}
+            />
+            <line
+              className="coordinate-graph__crosshair"
+              x1={PADDING}
+              y1={toSvgY(hover.gy, yMin, yMax)}
+              x2={SIZE - PADDING}
+              y2={toSvgY(hover.gy, yMin, yMax)}
+            />
+            <circle
+              className="coordinate-graph__hover-dot"
+              cx={toSvgX(hover.gx, xMin, xMax)}
+              cy={toSvgY(hover.gy, yMin, yMax)}
+              r={4}
+            />
+            {(() => {
+              const cx = toSvgX(hover.gx, xMin, xMax)
+              const cy = toSvgY(hover.gy, yMin, yMax)
+              const label = `(${hover.gx}, ${hover.gy})`
+              const boxW = label.length * 7 + 12
+              const boxH = 20
+              const placeRight = cx < SIZE - PADDING - boxW - 8
+              const placeAbove = cy > PADDING + boxH + 8
+              const bx = placeRight ? cx + 8 : cx - boxW - 8
+              const by = placeAbove ? cy - boxH - 8 : cy + 8
+              return (
+                <g>
+                  <rect
+                    className="coordinate-graph__hover-label-bg"
+                    x={bx}
+                    y={by}
+                    width={boxW}
+                    height={boxH}
+                    rx={4}
+                  />
+                  <text
+                    className="coordinate-graph__hover-label"
+                    x={bx + boxW / 2}
+                    y={by + boxH / 2 + 4}
+                    textAnchor="middle"
+                  >
+                    {label}
+                  </text>
+                </g>
+              )
+            })()}
+          </g>
+        )}
+
+        <rect
+          className="coordinate-graph__overlay"
+          x={PADDING}
+          y={PADDING}
+          width={plotWidth}
+          height={plotHeight}
+          fill="transparent"
+          onPointerMove={handlePointerMove}
+          onPointerLeave={handlePointerLeave}
+        />
       </svg>
     </div>
   )

@@ -55,3 +55,37 @@
   font-family: inherit;
   font-weight: 600;
 }
+
+.coordinate-graph__overlay {
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.coordinate-graph__crosshair {
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.coordinate-graph__hover-dot {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.coordinate-graph__hover-label-bg {
+  fill: var(--text-h);
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.coordinate-graph__hover-label {
+  fill: var(--bg);
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 700;
+  pointer-events: none;
+}
