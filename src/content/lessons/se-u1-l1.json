@@ -15,7 +15,26 @@
         "se-u1-l1-r1-p3",
         "se-u1-l1-r1-p4",
         "se-u1-l1-r1-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Inverse Operations",
+        "paragraph": "A one-step equation like $x + 7 = 9$ asks: what number plus 7 gives 9? To find $x$, you **undo** the operation attached to it. Since 7 is added, you subtract 7 from **both sides** to keep the equation balanced, giving $x = 9 - 7 = 2$.",
+        "example": {
+          "prompt": "Solve for $x$: $x + 3 = 5$",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$x = 2$" },
+                { "id": "b", "label": "$x = 8$", "whyWrong": "This adds 3 to 5 instead of subtracting it from both sides." },
+                { "id": "c", "label": "$x = 3$", "whyWrong": "This just copies the constant instead of solving." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "Subtract 3 from both sides: $x = 5 - 3 = 2$."
+        }
+      }
     },
     {
       "id": "se-u1-l1-r2",
@@ -26,7 +45,22 @@
         "se-u1-l1-r2-p3",
         "se-u1-l1-r2-p4",
         "se-u1-l1-r2-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Bigger Numbers",
+        "paragraph": "The same rule works no matter how large the numbers get. For $x + 24 = 51$, you still subtract the added number from **both sides**. When the variable has a number subtracted from it, like $n - 38 = 45$, you **add** that number to both sides instead. Take your time with the arithmetic.",
+        "example": {
+          "prompt": "Solve for $x$: $x + 20 = 50$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 30, "tolerance": 0 }
+            }
+          },
+          "explanation": "Subtract 20 from both sides: $x = 50 - 20 = 30$."
+        }
+      }
     },
     {
       "id": "se-u1-l1-r3",
@@ -37,7 +71,26 @@
         "se-u1-l1-r3-p3",
         "se-u1-l1-r3-p4",
         "se-u1-l1-r3-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Negative Answers",
+        "paragraph": "Sometimes the solution is a **negative number**. If you subtract a larger number from a smaller one, like in $x + 8 = 3$, the result goes below zero: $x = 3 - 8 = -5$. Don't drop the negative sign — it is part of the answer.",
+        "example": {
+          "prompt": "Solve for $x$: $x + 5 = 2$",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$x = -3$" },
+                { "id": "b", "label": "$x = 3$", "whyWrong": "This drops the negative sign; $2 - 5$ is negative." },
+                { "id": "c", "label": "$x = 7$", "whyWrong": "This adds 5 to 2 instead of subtracting it from both sides." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "Subtract 5 from both sides: $x = 2 - 5 = -3$."
+        }
+      }
     },
     {
       "id": "se-u1-l1-r4",
@@ -48,7 +101,22 @@
         "se-u1-l1-r4-p3",
         "se-u1-l1-r4-p4",
         "se-u1-l1-r4-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Decimals and Fractions",
+        "paragraph": "Inverse operations work with **decimals and fractions** too. For $x + 1.5 = 4$, line up the decimal points and subtract: $x = 4 - 1.5 = 2.5$. With fractions that share a denominator, just subtract the numerators.",
+        "example": {
+          "prompt": "Solve for $x$: $x + 0.5 = 1$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 0.5, "tolerance": 0.01 }
+            }
+          },
+          "explanation": "Subtract 0.5 from both sides: $x = 1 - 0.5 = 0.5$."
+        }
+      }
     },
     {
       "id": "se-u1-l1-r5",
@@ -59,7 +127,22 @@
         "se-u1-l1-r5-p3",
         "se-u1-l1-r5-p4",
         "se-u1-l1-r5-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "Now you'll mix everything: large numbers, negatives, decimals, and fractions. The strategy never changes — **undo** the operation on the variable by doing the opposite to **both sides**. For $n - 21 = -9$, add 21 to both sides to get $n = -9 + 21 = 12$.",
+        "example": {
+          "prompt": "Solve for $a$: $a - 4 = -6$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of a",
+              "validation": { "type": "numeric", "value": -2, "tolerance": 0 }
+            }
+          },
+          "explanation": "Add 4 to both sides: $a = -6 + 4 = -2$."
+        }
+      }
     }
   ]
 }

@@ -46,7 +46,7 @@ function parseAll<T>(schema: { parse: (v: unknown) => T }, items: unknown[], lab
 
 export const courses: Course[] = parseAll(courseSchema, courseData, 'course')
 export const units: Unit[] = parseAll(unitSchema, unitData, 'unit')
-export const lessons: Lesson[] = parseAll(lessonSchema, lessonData, 'lesson')
+export const lessons: Lesson[] = parseAll(lessonSchema, lessonData, 'lesson') as Lesson[]
 export const problems: Problem[] = parseAll(problemSchema, problemData, 'problem') as Problem[]
 
 export const problemBank: Record<string, Problem> = Object.fromEntries(

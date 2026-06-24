@@ -87,16 +87,30 @@ export type Problem = {
   prompt: RichText
   visual?: { kind: VisualKind; props: Record<string, unknown> }
   interaction: InteractionConfig
-  hints: [RichText, RichText, RichText]
+  hints: RichText[]
   explanation: RichText
   misconception?: RichText
   introNotation?: boolean
+}
+
+export type MiniLessonExample = {
+  prompt: RichText
+  visual?: { kind: VisualKind; props: Record<string, unknown> }
+  interaction: InteractionConfig
+  explanation: RichText
+}
+
+export type MiniLesson = {
+  title?: RichText
+  paragraph: RichText
+  example: MiniLessonExample
 }
 
 export type Round = {
   id: string
   label: string
   problemIds: string[]
+  miniLesson?: MiniLesson
 }
 
 export type Lesson = {

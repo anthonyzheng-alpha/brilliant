@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
 const richText = z.string()
-const hints = z.tuple([richText, richText, richText])
+// Problems may carry 1-3 progressive hints; the UI reveals them by length.
+const hints = z.array(richText).min(1)
 
 const validationRule = z.discriminatedUnion('type', [
   z.object({ type: z.literal('exact'), value: z.string() }),
@@ -95,6 +96,23 @@ const interaction = z.discriminatedUnion('type', [
   }),
 ])
 
+const visualSchema = z
+  .object({
+    kind: z.string(),
+    props: z.record(z.string(), z.unknown()),
+  })
+
+const miniLessonSchema = z.object({
+  title: richText.optional(),
+  paragraph: richText,
+  example: z.object({
+    prompt: richText,
+    visual: visualSchema.optional(),
+    interaction: interaction,
+    explanation: richText,
+  }),
+})
+
 export const problemSchema = z.object({
   id: z.string(),
   type: z.enum([
@@ -133,6 +151,7 @@ export const lessonSchema = z.object({
         id: z.string(),
         label: z.string(),
         problemIds: z.array(z.string()).min(1),
+        miniLesson: miniLessonSchema.optional(),
       }),
     )
     .min(1),

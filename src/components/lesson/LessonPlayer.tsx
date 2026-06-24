@@ -5,7 +5,9 @@ import { RichText } from '../common/RichText'
 import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from './FeedbackPanel'
+import { MiniLessonView } from './MiniLessonView'
 import { isAnswerValid, hasValidInput, parseNumericInput } from '../../lib/validation'
+import { isMiniLessonSeen, markMiniLessonSeen } from '../../lib/storage'
 import { useProgressStore } from '../../stores/progressStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
 import { useAuthStore } from '../../stores/authStore'
@@ -71,6 +73,27 @@ function resolveWrongLine(
   return null
 }
 
+function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
+  let start = 0
+  for (let i = 0; i < lesson.rounds.length; i++) {
+    const size = lesson.rounds[i].problemIds.length
+    if (problemIndex >= start && problemIndex < start + size) return i
+    start += size
+  }
+  return Math.max(0, lesson.rounds.length - 1)
+}
+
+function getRoundStartIndex(lesson: Lesson, roundIdx: number): number {
+  let start = 0
+  for (let i = 0; i < roundIdx; i++) start += lesson.rounds[i].problemIds.length
+  return start
+}
+
+function roundHasUnseenMiniLesson(lesson: Lesson, roundIdx: number): boolean {
+  const round = lesson.rounds[roundIdx]
+  return Boolean(round?.miniLesson) && !isMiniLessonSeen(round.id)
+}
+
 function resolveWrongReason(problem: Problem, answer: AnswerValue): string {
   if (
     problem.interaction.type === 'multiple-choice' &&
@@ -121,6 +144,11 @@ export function LessonPlayer({
   // Furthest problem the learner has reached; persisted progress never drops below this.
   const [maxProblemIndex, setMaxProblemIndex] = useState(initialProblemIndex)
   const maxIndexRef = useRef(initialProblemIndex)
+  // Round index whose mini-lesson is currently shown (null = show problems normally).
+  const [miniLessonRoundIdx, setMiniLessonRoundIdx] = useState<number | null>(() => {
+    const ri = getRoundIndexForProblem(lesson, initialProblemIndex)
+    return roundHasUnseenMiniLesson(lesson, ri) ? ri : null
+  })
 
   const rounds = useMemo(() => {
     let startIndex = 0
@@ -203,10 +231,25 @@ export function LessonPlayer({
       setWrongLine(null)
       setFeedback({ kind: 'idle' })
       setInputLocked(false)
+      // Show the round's mini-lesson the first time the learner lands on its first problem.
+      const newRoundIdx = getRoundIndexForProblem(lesson, nextIndex)
+      if (
+        nextIndex === getRoundStartIndex(lesson, newRoundIdx) &&
+        roundHasUnseenMiniLesson(lesson, newRoundIdx)
+      ) {
+        setMiniLessonRoundIdx(newRoundIdx)
+      }
       await persistProgress(nextIndex)
     },
-    [problems, persistProgress],
+    [problems, persistProgress, lesson],
   )
+
+  const handleStartRound = () => {
+    if (miniLessonRoundIdx !== null) {
+      markMiniLessonSeen(lesson.rounds[miniLessonRoundIdx].id)
+    }
+    setMiniLessonRoundIdx(null)
+  }
 
   const handleContinue = async () => {
     const nextIndex = problemIndex + 1
@@ -279,6 +322,20 @@ export function LessonPlayer({
 
   if (!problem) {
     return <p>Lesson not found.</p>
+  }
+
+  if (miniLessonRoundIdx !== null && lesson.rounds[miniLessonRoundIdx]?.miniLesson) {
+    return (
+      <div className="lesson-player">
+        <MiniLessonView
+          roundLabel={lesson.rounds[miniLessonRoundIdx].label}
+          roundNumber={miniLessonRoundIdx + 1}
+          totalRounds={lesson.rounds.length}
+          miniLesson={lesson.rounds[miniLessonRoundIdx].miniLesson!}
+          onStart={handleStartRound}
+        />
+      </div>
+    )
   }
 
   return (

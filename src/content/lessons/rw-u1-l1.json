@@ -15,7 +15,23 @@
         "rw-u1-l1-r1-p3",
         "rw-u1-l1-r1-p4",
         "rw-u1-l1-r1-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Finding a Unit Rate",
+        "paragraph": "A **unit rate** tells you how much of one thing you get for a single unit of another, like dollars per pound or miles per hour. To find it, **divide** the total by the quantity: $\\text{unit rate} = \\frac{\\text{total}}{\\text{quantity}}$. Keep the order straight - price per pound is dollars $\\div$ pounds, not the other way around.",
+        "example": {
+          "prompt": "**4 oranges** cost **$2**. What is the price per orange?",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Dollars",
+              "unit": "$",
+              "validation": { "type": "numeric", "value": 0.5, "tolerance": 0.01 }
+            }
+          },
+          "explanation": "$2 \\div 4 = \\$0.50$ per orange."
+        }
+      }
     },
     {
       "id": "rw-u1-l1-r2",
@@ -26,7 +42,27 @@
         "rw-u1-l1-r2-p3",
         "rw-u1-l1-r2-p4",
         "rw-u1-l1-r2-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Comparing Two Deals",
+        "paragraph": "To find the **better deal**, you can't just compare totals - the sizes differ. Instead, reduce each option to its **unit price** by dividing price by quantity, then pick the **lower** one. A bigger package is only a better deal if its price *per unit* is smaller.",
+        "example": {
+          "prompt": "Bag A: **2 lb for $4**. Bag B: **3 lb for $4.50**. Which is the better deal per pound?",
+          "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "Bag A ($2.00/lb)", "whyWrong": "Bag A is more per pound - 4 \u00f7 2 = $2.00 beats 4.50 \u00f7 3 = $1.50." },
+                { "id": "b", "label": "Bag B ($1.50/lb)" },
+                { "id": "c", "label": "Same price per lb", "whyWrong": "The unit prices differ - $2.00 vs $1.50 per pound." }
+              ],
+              "correctOptionId": "b"
+            }
+          },
+          "explanation": "Bag B is $4.50 \\div 3 = \\$1.50$ per pound versus $4 \\div 2 = \\$2.00$ for Bag A, so B is cheaper per pound."
+        }
+      }
     },
     {
       "id": "rw-u1-l1-r3",
@@ -37,7 +73,23 @@
         "rw-u1-l1-r3-p3",
         "rw-u1-l1-r3-p4",
         "rw-u1-l1-r3-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Using a Rate",
+        "paragraph": "Once you know a rate, you can scale it up. To find a **total cost**, **multiply** the price per item by how many you buy: $\\text{total} = \\text{rate} \\times \\text{quantity}$. To find **how many you can afford**, do the reverse and **divide** your budget by the price.",
+        "example": {
+          "prompt": "Pencils cost **$0.50** each. How much do **6 pencils** cost?",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Dollars",
+              "unit": "$",
+              "validation": { "type": "numeric", "value": 3 }
+            }
+          },
+          "explanation": "$0.50 \\times 6 = \\$3.00$."
+        }
+      }
     },
     {
       "id": "rw-u1-l1-r4",
@@ -48,7 +100,24 @@
         "rw-u1-l1-r4-p3",
         "rw-u1-l1-r4-p4",
         "rw-u1-l1-r4-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Fixed Fee Plus Rate",
+        "paragraph": "Many real-world prices have **two parts**: a one-time fixed fee plus a rate that grows with use. The pattern is $\\text{total} = \\text{base fee} + \\text{rate} \\times \\text{quantity}$. The most common mistake is forgetting the base fee, so always add it back in at the end.",
+        "example": {
+          "prompt": "A delivery costs **$5** plus **$2** per package. What is the cost for **3 packages**?",
+          "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Dollars",
+              "unit": "$",
+              "validation": { "type": "numeric", "value": 11 }
+            }
+          },
+          "explanation": "$5 + 2 \\times 3 = 5 + 6 = \\$11$."
+        }
+      }
     },
     {
       "id": "rw-u1-l1-r5",
@@ -59,7 +128,27 @@
         "rw-u1-l1-r5-p3",
         "rw-u1-l1-r5-p4",
         "rw-u1-l1-r5-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Comparing Whole Plans",
+        "paragraph": "Now combine every skill: compute each plan's **full cost** before comparing them. A flat plan stays the same, while a two-part plan uses $\\text{base} + \\text{rate} \\times \\text{quantity}$. Make sure both costs cover the **same amount of usage** (and the same time period) before deciding which is cheaper.",
+        "example": {
+          "prompt": "Plan A: **$20 flat**. Plan B: **$5 plus $1 per GB**. For **10 GB**, which plan is cheaper?",
+          "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "Plan A ($20)", "whyWrong": "Plan B totals only $15 at 10 GB, which is less than Plan A's $20." },
+                { "id": "b", "label": "Plan B ($15)" },
+                { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $20 versus $15 for 10 GB." }
+              ],
+              "correctOptionId": "b"
+            }
+          },
+          "explanation": "Plan B costs $5 + 1 \\times 10 = \\$15$, which is less than Plan A's flat $20."
+        }
+      }
     }
   ]
 }

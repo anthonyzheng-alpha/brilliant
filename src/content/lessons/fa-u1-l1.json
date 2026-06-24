@@ -6,10 +6,159 @@
   "estimatedMinutes": 20,
   "phase": "M2",
   "rounds": [
-    { "id": "fa-u1-l1-r1", "label": "Warm-up", "problemIds": ["fa-u1-l1-r1-p1", "fa-u1-l1-r1-p2", "fa-u1-l1-r1-p3", "fa-u1-l1-r1-p4", "fa-u1-l1-r1-p5"] },
-    { "id": "fa-u1-l1-r2", "label": "Basics", "problemIds": ["fa-u1-l1-r2-p1", "fa-u1-l1-r2-p2", "fa-u1-l1-r2-p3", "fa-u1-l1-r2-p4", "fa-u1-l1-r2-p5"] },
-    { "id": "fa-u1-l1-r3", "label": "Building", "problemIds": ["fa-u1-l1-r3-p1", "fa-u1-l1-r3-p2", "fa-u1-l1-r3-p3", "fa-u1-l1-r3-p4", "fa-u1-l1-r3-p5"] },
-    { "id": "fa-u1-l1-r4", "label": "Challenge", "problemIds": ["fa-u1-l1-r4-p1", "fa-u1-l1-r4-p2", "fa-u1-l1-r4-p3", "fa-u1-l1-r4-p4", "fa-u1-l1-r4-p5"] },
-    { "id": "fa-u1-l1-r5", "label": "Mastery", "problemIds": ["fa-u1-l1-r5-p1", "fa-u1-l1-r5-p2", "fa-u1-l1-r5-p3", "fa-u1-l1-r5-p4", "fa-u1-l1-r5-p5"] }
+    {
+      "id": "fa-u1-l1-r1",
+      "label": "Warm-up",
+      "problemIds": ["fa-u1-l1-r1-p1", "fa-u1-l1-r1-p2", "fa-u1-l1-r1-p3", "fa-u1-l1-r1-p4", "fa-u1-l1-r1-p5"],
+      "miniLesson": {
+        "title": "Factoring Trinomials",
+        "paragraph": "To factor $x^2 + bx + c$, find two numbers that **multiply** to $c$ and **add** to $b$. Those two numbers become the constants inside $(x + \\_)(x + \\_)$. When both $b$ and $c$ are positive, both numbers are positive too.",
+        "example": {
+          "prompt": "Drag the correct factors of $x^2 + 4x + 3$ into both slots.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 4x + 3" } },
+          "interaction": {
+            "type": "factoring",
+            "data": {
+              "draggables": [
+                { "id": "a", "label": "$(x+1)$" },
+                { "id": "b", "label": "$(x+3)$" },
+                { "id": "c", "label": "$(x+2)$" }
+              ],
+              "dropZones": [
+                { "id": "left", "label": "First factor" },
+                { "id": "right", "label": "Second factor" }
+              ],
+              "correctPlacement": { "left": "a", "right": "b" },
+              "acceptCommutative": true
+            }
+          },
+          "explanation": "$x^2 + 4x + 3 = (x+1)(x+3)$ because $1 \\times 3 = 3$ and $1 + 3 = 4$."
+        }
+      }
+    },
+    {
+      "id": "fa-u1-l1-r2",
+      "label": "Basics",
+      "problemIds": ["fa-u1-l1-r2-p1", "fa-u1-l1-r2-p2", "fa-u1-l1-r2-p3", "fa-u1-l1-r2-p4", "fa-u1-l1-r2-p5"],
+      "miniLesson": {
+        "title": "Watching the Signs",
+        "paragraph": "The same multiply-and-add trick still works, but now the signs matter. A **positive** constant with a negative middle term means both numbers are negative. A **negative** constant means one number is positive and one is negative, with the larger number carrying the sign of the middle term.",
+        "example": {
+          "prompt": "Drag the correct factors of $x^2 - 3x + 2$ into both slots.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 3x + 2" } },
+          "interaction": {
+            "type": "factoring",
+            "data": {
+              "draggables": [
+                { "id": "a", "label": "$(x-1)$" },
+                { "id": "b", "label": "$(x-2)$" },
+                { "id": "c", "label": "$(x+1)$" },
+                { "id": "d", "label": "$(x+2)$" }
+              ],
+              "dropZones": [
+                { "id": "left", "label": "First factor" },
+                { "id": "right", "label": "Second factor" }
+              ],
+              "correctPlacement": { "left": "a", "right": "b" },
+              "acceptCommutative": true
+            }
+          },
+          "explanation": "$x^2 - 3x + 2 = (x-1)(x-2)$ because $(-1) \\times (-2) = 2$ and $(-1) + (-2) = -3$."
+        }
+      }
+    },
+    {
+      "id": "fa-u1-l1-r3",
+      "label": "Building",
+      "problemIds": ["fa-u1-l1-r3-p1", "fa-u1-l1-r3-p2", "fa-u1-l1-r3-p3", "fa-u1-l1-r3-p4", "fa-u1-l1-r3-p5"],
+      "miniLesson": {
+        "title": "Difference of Squares",
+        "paragraph": "An expression like $x^2 - c$ with **no middle term** and a perfect-square constant is a **difference of squares**. It factors as $(x + \\sqrt{c})(x - \\sqrt{c})$ — one plus and one minus. The matching $+$ and $-$ cancel the middle term when multiplied out.",
+        "example": {
+          "prompt": "Drag the correct factors of $x^2 - 4$ into both slots.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 4" } },
+          "interaction": {
+            "type": "factoring",
+            "data": {
+              "draggables": [
+                { "id": "a", "label": "$(x+2)$" },
+                { "id": "b", "label": "$(x-2)$" },
+                { "id": "c", "label": "$(x+4)$" },
+                { "id": "d", "label": "$(x-4)$" }
+              ],
+              "dropZones": [
+                { "id": "left", "label": "First factor" },
+                { "id": "right", "label": "Second factor" }
+              ],
+              "correctPlacement": { "left": "a", "right": "b" },
+              "acceptCommutative": true
+            }
+          },
+          "explanation": "$x^2 - 4 = (x+2)(x-2)$ — a difference of squares, since $4 = 2^2$."
+        }
+      }
+    },
+    {
+      "id": "fa-u1-l1-r4",
+      "label": "Challenge",
+      "problemIds": ["fa-u1-l1-r4-p1", "fa-u1-l1-r4-p2", "fa-u1-l1-r4-p3", "fa-u1-l1-r4-p4", "fa-u1-l1-r4-p5"],
+      "miniLesson": {
+        "title": "Bigger Numbers",
+        "paragraph": "With larger constants there are more factor pairs to test, so list the pairs of $c$ and check which one **adds** to $b$. Stay alert: the round mixes trinomials and difference-of-squares, so first decide which pattern applies before you start dragging.",
+        "example": {
+          "prompt": "Drag the correct factors of $x^2 + 9x + 18$ into both slots.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 9x + 18" } },
+          "interaction": {
+            "type": "factoring",
+            "data": {
+              "draggables": [
+                { "id": "a", "label": "$(x+3)$" },
+                { "id": "b", "label": "$(x+6)$" },
+                { "id": "c", "label": "$(x+2)$" },
+                { "id": "d", "label": "$(x+9)$" }
+              ],
+              "dropZones": [
+                { "id": "left", "label": "First factor" },
+                { "id": "right", "label": "Second factor" }
+              ],
+              "correctPlacement": { "left": "a", "right": "b" },
+              "acceptCommutative": true
+            }
+          },
+          "explanation": "$x^2 + 9x + 18 = (x+3)(x+6)$ because $3 \\times 6 = 18$ and $3 + 6 = 9$."
+        }
+      }
+    },
+    {
+      "id": "fa-u1-l1-r5",
+      "label": "Mastery",
+      "problemIds": ["fa-u1-l1-r5-p1", "fa-u1-l1-r5-p2", "fa-u1-l1-r5-p3", "fa-u1-l1-r5-p4", "fa-u1-l1-r5-p5"],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "This round blends everything: positive trinomials, sign-mixed trinomials, and difference of squares. For each problem, **identify the pattern first** — is there a middle term? what are the signs of $b$ and $c$? — then apply multiply-and-add or the difference-of-squares rule.",
+        "example": {
+          "prompt": "Drag the correct factors of $x^2 + 6x + 8$ into both slots.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 6x + 8" } },
+          "interaction": {
+            "type": "factoring",
+            "data": {
+              "draggables": [
+                { "id": "a", "label": "$(x+2)$" },
+                { "id": "b", "label": "$(x+4)$" },
+                { "id": "c", "label": "$(x+1)$" },
+                { "id": "d", "label": "$(x+8)$" }
+              ],
+              "dropZones": [
+                { "id": "left", "label": "First factor" },
+                { "id": "right", "label": "Second factor" }
+              ],
+              "correctPlacement": { "left": "a", "right": "b" },
+              "acceptCommutative": true
+            }
+          },
+          "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$ because $2 \\times 4 = 8$ and $2 + 4 = 6$."
+        }
+      }
+    }
   ]
 }

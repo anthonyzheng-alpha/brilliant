@@ -15,7 +15,27 @@
         "va-u1-l1-r1-p3",
         "va-u1-l1-r1-p4",
         "va-u1-l1-r1-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Slope and y-intercept",
+        "paragraph": "Every line in $y = mx + b$ form has two key numbers. The **y-intercept** $b$ is the $y$ value where the line crosses the y-axis (when $x = 0$). The **slope** $m$ tells you how much the line rises for each step of 1 to the right.",
+        "example": {
+          "prompt": "What is the **y-intercept** of the line shown?",
+          "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": 3 } },
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$(0, 3)$" },
+                { "id": "b", "label": "$(3, 0)$", "whyWrong": "This is a point on the x-axis, not where the line crosses the y-axis." },
+                { "id": "c", "label": "$(0, 1)$", "whyWrong": "This uses the slope value as the height instead of the y-axis crossing." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "The line crosses the y-axis at $y = 3$, so the y-intercept is $(0, 3)$."
+        }
+      }
     },
     {
       "id": "va-u1-l1-r2",
@@ -26,7 +46,27 @@
         "va-u1-l1-r2-p3",
         "va-u1-l1-r2-p4",
         "va-u1-l1-r2-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Negative slopes",
+        "paragraph": "When a line goes **down** from left to right, its slope $m$ is **negative**. Step 1 unit to the right and count how far the line falls — that fall (as a negative number) is the slope. The y-intercept $b$ is still read the same way, at the y-axis.",
+        "example": {
+          "prompt": "What is the **slope** $m$ of the line shown?",
+          "visual": { "kind": "coordinate-graph", "props": { "slope": -1, "intercept": 2 } },
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$m = -1$" },
+                { "id": "b", "label": "$m = 1$", "whyWrong": "The sign is wrong — the line falls to the right, so the slope is negative." },
+                { "id": "c", "label": "$m = 2$", "whyWrong": "This is the y-intercept value, not the slope." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "The line drops 1 unit for every 1 unit to the right, so the slope is $m = -1$."
+        }
+      }
     },
     {
       "id": "va-u1-l1-r3",
@@ -37,7 +77,27 @@
         "va-u1-l1-r3-p3",
         "va-u1-l1-r3-p4",
         "va-u1-l1-r3-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Build the equation",
+        "paragraph": "To match a line to its equation, read the two numbers and plug them into $y = mx + b$. First find the slope $m$ (rise per step right), then the y-intercept $b$ (where it crosses the y-axis). A slope of $1$ is written simply as $x$.",
+        "example": {
+          "prompt": "Which equation $y = mx + b$ matches the line shown?",
+          "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": 2 } },
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$y = x + 2$" },
+                { "id": "b", "label": "$y = 2x + 1$", "whyWrong": "This swaps the slope and intercept values." },
+                { "id": "c", "label": "$y = x - 2$", "whyWrong": "The intercept has the wrong sign — the line crosses the y-axis above the origin." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "The slope is $1$ and the y-intercept is $2$, so the equation is $y = x + 2$."
+        }
+      }
     },
     {
       "id": "va-u1-l1-r4",
@@ -48,7 +108,26 @@
         "va-u1-l1-r4-p3",
         "va-u1-l1-r4-p4",
         "va-u1-l1-r4-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Find m and b",
+        "paragraph": "Given a line, you can enter the slope $m$ and y-intercept $b$ yourself. Pick two points one step apart in $x$ and find the **rise** for $m$. Then read where the line crosses the y-axis for $b$. Together they give $y = mx + b$.",
+        "example": {
+          "prompt": "Enter the **slope** $m$ and **y-intercept** $b$ of the line shown.",
+          "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": 2 } },
+          "interaction": {
+            "type": "line-equation",
+            "data": {
+              "slopePlaceholder": "m",
+              "interceptPlaceholder": "b",
+              "targetSlope": 1,
+              "targetIntercept": 2,
+              "tolerance": 0
+            }
+          },
+          "explanation": "The line rises 1 unit per step right, so $m = 1$, and it crosses the y-axis at $2$, so $b = 2$ and $y = x + 2$."
+        }
+      }
     },
     {
       "id": "va-u1-l1-r5",
@@ -59,7 +138,26 @@
         "va-u1-l1-r5-p3",
         "va-u1-l1-r5-p4",
         "va-u1-l1-r5-p5"
-      ]
+      ],
+      "miniLesson": {
+        "title": "Fractional slopes",
+        "paragraph": "Sometimes a line rises slowly, so the slope is a **fraction**. The slope is still rise over run: if $y$ goes up 1 for every 2 steps right, then $m = \\frac{1}{2} = 0.5$. Read the y-intercept $b$ at the y-axis exactly as before.",
+        "example": {
+          "prompt": "Enter the **slope** $m$ and **y-intercept** $b$ of the line shown.",
+          "visual": { "kind": "coordinate-graph", "props": { "slope": 0.5, "intercept": 0 } },
+          "interaction": {
+            "type": "line-equation",
+            "data": {
+              "slopePlaceholder": "m",
+              "interceptPlaceholder": "b",
+              "targetSlope": 0.5,
+              "targetIntercept": 0,
+              "tolerance": 0.01
+            }
+          },
+          "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$, and it passes through the origin, so $b = 0$ and $y = \\frac{1}{2}x$."
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,89 @@
+.mini-lesson {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.mini-lesson__tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mini-lesson__title {
+  margin: 0 0 0.75rem;
+  color: var(--text-h);
+}
+
+.mini-lesson__teach {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.mini-lesson__example {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--accent-bg);
+}
+
+.mini-lesson__example-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.mini-lesson__prompt {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-h);
+  overflow-wrap: break-word;
+}
+
+.mini-lesson__actions {
+  margin-top: 1rem;
+}
+
+.mini-lesson__feedback {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+
+.mini-lesson__feedback--correct {
+  background: rgba(34, 160, 100, 0.12);
+  border: 1px solid rgba(34, 160, 100, 0.4);
+}
+
+.mini-lesson__feedback--incorrect {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.mini-lesson__feedback-title {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.mini-lesson__retry {
+  margin-top: 0.75rem;
+}
+
+.mini-lesson__start {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}

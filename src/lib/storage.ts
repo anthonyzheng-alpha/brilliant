@@ -2,6 +2,7 @@ import type { ProgressState, GamificationState } from '../types/content'
 
 const PROGRESS_KEY = 'algebra-clone-progress'
 const GAMIFICATION_KEY = 'algebra-clone-gamification'
+const SEEN_MINI_LESSONS_KEY = 'algebra-clone-seen-minilessons'
 
 const defaultProgress = (): ProgressState => ({
   version: 1,
@@ -47,9 +48,25 @@ export function saveGamification(state: GamificationState): void {
   writeJson(GAMIFICATION_KEY, state)
 }
 
+export function loadSeenMiniLessons(): string[] {
+  return readJson<string[]>(SEEN_MINI_LESSONS_KEY, () => [])
+}
+
+export function isMiniLessonSeen(roundId: string): boolean {
+  return loadSeenMiniLessons().includes(roundId)
+}
+
+export function markMiniLessonSeen(roundId: string): void {
+  const seen = loadSeenMiniLessons()
+  if (!seen.includes(roundId)) {
+    writeJson(SEEN_MINI_LESSONS_KEY, [...seen, roundId])
+  }
+}
+
 export function clearAllLocalData(): void {
   localStorage.removeItem(PROGRESS_KEY)
   localStorage.removeItem(GAMIFICATION_KEY)
+  localStorage.removeItem(SEEN_MINI_LESSONS_KEY)
 }
 
 export { PROGRESS_KEY, GAMIFICATION_KEY }
