@@ -1,0 +1,73 @@
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(120% 120% at 0% 0%, var(--accent-bg), transparent 55%),
+    radial-gradient(120% 120% at 100% 100%, var(--accent-bg), transparent 55%),
+    var(--bg);
+}
+
+.welcome__panel {
+  width: 100%;
+  max-width: 30rem;
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.welcome__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.welcome__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.85rem, 5vw, 2.4rem);
+  color: var(--text-h);
+}
+
+.welcome__sub {
+  margin: 0 auto 1.5rem;
+  max-width: 26rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.welcome__chips {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.welcome__chip {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.welcome__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+}

@@ -5,6 +5,7 @@ const GAMIFICATION_KEY = 'algebra-clone-gamification'
 const SEEN_MINI_LESSONS_KEY = 'algebra-clone-seen-minilessons'
 const VARIANTS_KEY = 'algebra-clone-variants'
 const DEBUG_KEY = 'algebra-clone-debug'
+const WELCOME_KEY = 'algebra-clone-welcome-seen'
 
 type DebugState = {
   unlockAll: boolean
@@ -75,6 +76,14 @@ export function markMiniLessonSeen(roundId: string): void {
   }
 }
 
+export function hasSeenWelcome(): boolean {
+  return readJson<boolean>(WELCOME_KEY, () => false)
+}
+
+export function markWelcomeSeen(): void {
+  writeJson(WELCOME_KEY, true)
+}
+
 export function loadDebug(): DebugState {
   return { ...defaultDebug(), ...readJson(DEBUG_KEY, defaultDebug) }
 }
@@ -100,6 +109,7 @@ export function clearAllLocalData(): void {
   localStorage.removeItem(SEEN_MINI_LESSONS_KEY)
   localStorage.removeItem(DEBUG_KEY)
   localStorage.removeItem(VARIANTS_KEY)
+  localStorage.removeItem(WELCOME_KEY)
 }
 
 export { PROGRESS_KEY, GAMIFICATION_KEY }
