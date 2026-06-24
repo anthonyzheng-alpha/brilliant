@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header className="app-header">
       <Link to="/" className="app-header__logo">
-        Learn Algebra
+        Algebra Wizard
       </Link>
       <nav className="app-header__nav">
         <Link to="/">Home</Link>

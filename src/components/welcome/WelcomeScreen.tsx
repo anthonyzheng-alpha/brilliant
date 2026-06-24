@@ -47,9 +47,9 @@ export function WelcomeScreen({ onDismiss }: WelcomeScreenProps) {
   const panelProps = animate ? panelMotion : {}
 
   return (
-    <Overlay className="welcome" role="dialog" aria-modal="true" aria-label="Welcome" {...overlayProps}>
+    <Overlay className="welcome" role="dialog" aria-modal="true" aria-label="Welcome to Algebra Wizard" {...overlayProps}>
       <Panel className="welcome__panel" {...panelProps}>
-        <p className="welcome__eyebrow">Welcome to Algebra</p>
+        <p className="welcome__eyebrow">Welcome to Algebra Wizard</p>
         <h1 className="welcome__title">Learn algebra by doing</h1>
         <p className="welcome__sub">
           Interactive puzzles that build intuition before notation. Sign in to save
