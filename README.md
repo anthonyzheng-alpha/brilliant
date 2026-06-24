@@ -11,7 +11,7 @@ npm run dev
 
 Open http://localhost:5173
 
-## Firebase setup (P2)
+## Firebase setup
 
 1. Create a Firebase project and enable **Google** sign-in.
 2. Create a **Firestore** database.
@@ -38,6 +38,8 @@ Edit `src/lib/features.ts` to toggle gamification, Firebase, all courses, etc.
 ## Content
 
 JSON under `src/content/` — courses, units, lessons, problems. Validated with Zod at import time.
+
+Algebra favicon made by [Icons8](https://icons8.com).
 
 ## Scripts
 
