@@ -12,9 +12,8 @@
       }
     },
     "hints": [
-      "Unit price = total cost ÷ quantity.",
-      "Divide $6 by 3 lbs.",
-      "Divide the total cost by the number of pounds."
+      "Divide the total cost by the number of pounds.",
+      "Unit price = total cost ÷ quantity."
     ],
     "misconception": "Divide cost by quantity, not quantity by cost - per-pound price is dollars ÷ pounds.",
     "explanation": "$6 ÷ 3 lbs = $2 per pound."
@@ -35,9 +34,8 @@
       }
     },
     "hints": [
-      "Speed = distance ÷ time.",
-      "Divide 150 miles by 3 hours.",
-      "Divide the distance by the time to get speed."
+      "Divide the distance by the time to get speed.",
+      "Speed = distance ÷ time."
     ],
     "explanation": "150 miles ÷ 3 hours = 50 miles per hour."
   },
@@ -55,8 +53,7 @@
     },
     "hints": [
       "Divide the total cost by the number of apples.",
-      "$2.50 ÷ 5 apples.",
-      "Divide the total cost by the number of apples."
+      "Unit price = total cost ÷ quantity."
     ],
     "misconception": "Divide the total by the number of items - don't multiply the price by 5.",
     "explanation": "$2.50 ÷ 5 = $0.50 per apple."
@@ -74,9 +71,8 @@
       }
     },
     "hints": [
-      "Price per ounce = price ÷ ounces.",
-      "$3.60 ÷ 12 oz.",
-      "Divide the price by the number of ounces."
+      "Divide the price by the number of ounces.",
+      "Price per ounce = price ÷ ounces."
     ],
     "misconception": "Per-ounce price is dollars ÷ ounces, not ounces ÷ dollars.",
     "explanation": "$3.60 ÷ 12 oz = $0.30 per ounce."
@@ -97,9 +93,8 @@
       }
     },
     "hints": [
-      "Rate = words ÷ minutes.",
-      "Divide 200 words by 4 minutes.",
-      "Divide the words by the minutes to get the rate."
+      "Divide the words by the minutes to get the rate.",
+      "Rate = words ÷ minutes."
     ],
     "explanation": "200 words ÷ 4 minutes = 50 words per minute."
   },
@@ -121,10 +116,9 @@
     },
     "hints": [
       "Find each box's price per ounce.",
-      "Box A: 3.60 ÷ 12 = $0.30; Box B: 4.50 ÷ 18 = $0.25.",
       "Compare the two per-ounce prices and pick the lower one."
     ],
-    "explanation": "Box B costs $0.25 per ounce versus $0.30 for Box A, so B is the better deal."
+    "explanation": "Box B costs 4.50 ÷ 18 = $0.25 per ounce versus 3.60 ÷ 12 = $0.30 for Box A, so B is the better deal."
   },
   {
     "id": "rw-u1-l1-r2-p2",
@@ -143,9 +137,8 @@
       }
     },
     "hints": [
-      "Divide each price by the number of ounces.",
-      "Juice A: 4.00 ÷ 32 = $0.125; Juice B: 7.68 ÷ 64 = $0.12.",
-      "Compare the two per-ounce prices and choose the lower one."
+      "Compare the two per-ounce prices and choose the lower one.",
+      "Divide each price by the number of ounces."
     ],
     "explanation": "Juice B costs $0.12 per ounce versus $0.125 for Juice A, so B is the better deal."
   },
@@ -167,10 +160,9 @@
     },
     "hints": [
       "Compute the unit price for each bag.",
-      "Coffee A: 4.50 ÷ 10 = $0.45; Coffee B: 7.84 ÷ 16 = $0.49.",
       "Compare the two per-ounce prices and choose the lower one."
     ],
-    "explanation": "Coffee A costs $0.45 per ounce versus $0.49 for Coffee B, so A is the better deal."
+    "explanation": "Coffee A costs 4.50 ÷ 10 = $0.45 per ounce versus 7.84 ÷ 16 = $0.49 for Coffee B, so A is the better deal."
   },
   {
     "id": "rw-u1-l1-r2-p4",
@@ -190,10 +182,9 @@
     },
     "hints": [
       "Find the price per pound for each bag.",
-      "Rice A: 6.00 ÷ 5 = $1.20; Rice B: 11.00 ÷ 10 = $1.10.",
       "Compare the two per-pound prices and choose the lower one."
     ],
-    "explanation": "Rice B costs $1.10 per pound versus $1.20 for Rice A, so B is the better deal."
+    "explanation": "Rice B costs 11.00 ÷ 10 = $1.10 per pound versus 6.00 ÷ 5 = $1.20 for Rice A, so B is the better deal."
   },
   {
     "id": "rw-u1-l1-r2-p5",
@@ -213,10 +204,9 @@
     },
     "hints": [
       "Divide each pack's price by the number of cans.",
-      "Pack A: 3.00 ÷ 6 = $0.50; Pack B: 5.40 ÷ 12 = $0.45.",
       "Compare the two per-can prices and choose the lower one."
     ],
-    "explanation": "Pack B costs $0.45 per can versus $0.50 for Pack A, so B is the better deal."
+    "explanation": "Pack B costs 5.40 ÷ 12 = $0.45 per can versus 3.00 ÷ 6 = $0.50 for Pack A, so B is the better deal."
   },
   {
     "id": "rw-u1-l1-r3-p1",
@@ -231,9 +221,8 @@
       }
     },
     "hints": [
-      "Total cost = price per apple × number of apples.",
-      "Multiply $1.25 by 8.",
-      "Multiply the price per apple by the number of apples."
+      "Multiply the price per apple by the number of apples.",
+      "Total cost = price per apple × number of apples."
     ],
     "misconception": "This is a multiplication problem - multiply price by quantity instead of dividing.",
     "explanation": "$1.25 × 8 = $10.00."
@@ -252,9 +241,8 @@
       }
     },
     "hints": [
-      "Total = price per gallon × gallons.",
-      "Multiply $3.50 by 12.",
-      "Multiply the price per gallon by the number of gallons."
+      "Multiply the price per gallon by the number of gallons.",
+      "Total = price per gallon × gallons."
     ],
     "misconception": "Multiply price per gallon by gallons - don't divide or add the two numbers.",
     "explanation": "$3.50 × 12 gallons = $42.00."
@@ -272,9 +260,8 @@
       }
     },
     "hints": [
-      "Number you can buy = budget ÷ price.",
-      "Divide $54 by $9.",
-      "Divide your budget by the price of one ticket."
+      "Divide your budget by the price of one ticket.",
+      "Number you can buy = budget ÷ price."
     ],
     "misconception": "Divide budget by price to count items - don't multiply $9 by anything.",
     "explanation": "$54 ÷ $9 per ticket = 6 tickets."
@@ -292,9 +279,8 @@
       }
     },
     "hints": [
-      "Total = price per pound × pounds.",
-      "Multiply $0.60 by 4.5.",
-      "Multiply the price per pound by the number of pounds."
+      "Multiply the price per pound by the number of pounds.",
+      "Total = price per pound × pounds."
     ],
     "misconception": "Multiply the per-pound price by the pounds, even when the pounds is a decimal.",
     "explanation": "$0.60 × 4.5 lbs = $2.70."
@@ -315,9 +301,8 @@
       }
     },
     "hints": [
-      "Divide your budget by the price, then round down.",
-      "20 ÷ 2.40 ≈ 8.33, but you can only buy whole notebooks.",
-      "Divide the budget by the price and round down to a whole number."
+      "Divide your budget by the price.",
+      "If the result is not a whole number, round down to the nearest whole number."
     ],
     "explanation": "$20 ÷ $2.40 ≈ 8.33; you can buy 8 notebooks for $19.20 (9 would cost $21.60)."
   },
@@ -335,9 +320,8 @@
       }
     },
     "hints": [
-      "Cost = base fare + rate × miles.",
-      "3 + 2 × 4 = ?",
-      "Add the base fare to the per-mile cost times the miles."
+      "Add the base fare to the per-mile cost times the miles.",
+      "Cost = base fare + rate × miles."
     ],
     "misconception": "Don't forget the fixed base fare - total = base + rate × miles, not just rate × miles.",
     "explanation": "3 + 2(4) = 11 dollars."
@@ -356,9 +340,8 @@
       }
     },
     "hints": [
-      "Total = joining fee + monthly rate × months.",
-      "25 + 15 × 6 = ?",
-      "Add the joining fee to the monthly rate times the months."
+      "Add the joining fee to the monthly rate times the months.",
+      "Total = joining fee + monthly rate × months."
     ],
     "misconception": "Include the one-time joining fee - total = fee + monthly rate × months.",
     "explanation": "25 + 15(6) = 25 + 90 = 115 dollars."
@@ -377,9 +360,8 @@
       }
     },
     "hints": [
-      "Bill = base fee + per-minute rate × minutes.",
-      "20 + 0.10 × 50 = ?",
-      "Add the base fee to the per-minute rate times the minutes."
+      "Add the base fee to the per-minute rate times the minutes.",
+      "Bill = base fee + per-minute rate × minutes."
     ],
     "misconception": "Add the flat monthly fee - total = base + per-minute rate × minutes, not just the minutes cost.",
     "explanation": "20 + 0.10(50) = 20 + 5 = 25 dollars."
@@ -398,9 +380,8 @@
       }
     },
     "hints": [
-      "Cost = base fare + rate × miles.",
-      "4 + 1.50 × 10 = ?",
-      "Add the base fare to the per-mile rate times the miles."
+      "Add the base fare to the per-mile rate times the miles.",
+      "Cost = base fare + rate × miles."
     ],
     "misconception": "Don't drop the base fare - total = base + rate × miles.",
     "explanation": "4 + 1.50(10) = 4 + 15 = 19 dollars."
@@ -419,9 +400,8 @@
       }
     },
     "hints": [
-      "Cost = base price + per-screen rate × screens.",
-      "8 + 1.25 × 3 = ?",
-      "Add the base price to the per-screen rate times the extra screens."
+      "Add the base price to the per-screen rate times the extra screens.",
+      "Cost = base price + per-screen rate × screens."
     ],
     "misconception": "Add the base monthly price - total = base + per-screen rate × extra screens.",
     "explanation": "8 + 1.25(3) = 8 + 3.75 = 11.75 dollars."
@@ -443,9 +423,8 @@
       }
     },
     "hints": [
-      "Compute Plan B's cost: base + rate × GB.",
-      "Plan B: 10 + 0.50 × 30 = 10 + 15 = $25; Plan A = $30.",
-      "Compare Plan A's flat fee with Plan B's computed total and pick the lower."
+      "Compare Plan A's flat fee with Plan B's computed total and pick the lower.",
+      "Compute Plan B's cost: base + rate × GB."
     ],
     "explanation": "Plan B costs 10 + 0.50(30) = $25, which is less than Plan A's flat $30."
   },
@@ -461,9 +440,8 @@
       }
     },
     "hints": [
-      "Set the two cost expressions equal: 5 + 1.50m = 2 + 2m.",
-      "Subtract: 3 = 0.5m.",
-      "Divide both sides to solve for the number of miles."
+      "Divide both sides to solve for the number of miles.",
+      "Set the two cost expressions equal: 5 + 1.50m = 2 + 2m."
     ],
     "misconception": "Set the two cost expressions equal and solve for miles - don't just compare the base fees.",
     "explanation": "5 + 1.50m = 2 + 2m → 3 = 0.5m → m = 6. Both cost $14 at 6 miles."
@@ -482,7 +460,6 @@
     },
     "hints": [
       "25% off means you pay 75% of the price.",
-      "40 × 0.75 = ? (or subtract 40 × 0.25 = $10).",
       "Subtract the discount from the original price (or multiply by 0.75)."
     ],
     "misconception": "25% off means subtract the discount (or pay 75%) - don't report the $10 discount as the price.",
@@ -506,10 +483,9 @@
     },
     "hints": [
       "Find each bag's price per pound.",
-      "3 lb: 7.50 ÷ 3 = $2.50; 5 lb: 11.25 ÷ 5 = $2.25.",
       "Compare the two per-pound prices and choose the lower one."
     ],
-    "explanation": "The 5 lb bag is $2.25 per pound versus $2.50 for the 3 lb bag, so it is the better deal."
+    "explanation": "The 5 lb bag is 11.25 ÷ 5 = $2.25 per pound versus 7.50 ÷ 3 = $2.50 for the 3 lb bag, so it is the better deal."
   },
   {
     "id": "rw-u1-l1-r5-p5",
@@ -524,8 +500,7 @@
       }
     },
     "hints": [
-      "First find Gym B's yearly cost: $15 × 12 months.",
-      "Gym B = 15 × 12 = $180; Gym A = $100.",
+      "First find Gym B's yearly cost",
       "Subtract Gym A's yearly cost from Gym B's yearly cost."
     ],
     "misconception": "Convert Gym B to a yearly cost first (×12) before subtracting - the units must match.",

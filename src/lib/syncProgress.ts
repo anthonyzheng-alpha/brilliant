@@ -1,7 +1,12 @@
 import type { GamificationState, ProgressState, CourseProgress } from '../types/content'
-import { doc, getDoc, setDoc } from 'firebase/firestore'
-import { getFirestoreDb } from './firebase'
+import { get, ref, set } from 'firebase/database'
+import { getRealtimeDb } from './firebase'
 import { loadProgress, loadGamification, saveProgress, saveGamification } from './storage'
+
+// RTDB rejects `undefined` values; strip them (and any undefined nested fields).
+function stripUndefined<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value)) as T
+}
 
 function mergeCourseProgress(
   local: CourseProgress | undefined,
@@ -62,26 +67,26 @@ export async function fetchUserData(uid: string): Promise<{
   progress: ProgressState | null
   gamification: GamificationState | null
 }> {
-  const db = getFirestoreDb()
+  const db = getRealtimeDb()
   if (!db) return { progress: null, gamification: null }
 
   const [progressSnap, gamificationSnap] = await Promise.all([
-    getDoc(doc(db, 'users', uid, 'data', 'progress')),
-    getDoc(doc(db, 'users', uid, 'data', 'gamification')),
+    get(ref(db, `users/${uid}/progress`)),
+    get(ref(db, `users/${uid}/gamification`)),
   ])
 
   return {
-    progress: progressSnap.exists() ? (progressSnap.data() as ProgressState) : null,
+    progress: progressSnap.exists() ? (progressSnap.val() as ProgressState) : null,
     gamification: gamificationSnap.exists()
-      ? (gamificationSnap.data() as GamificationState)
+      ? (gamificationSnap.val() as GamificationState)
       : null,
   }
 }
 
 export async function saveUserProgress(uid: string, progress: ProgressState): Promise<void> {
-  const db = getFirestoreDb()
+  const db = getRealtimeDb()
   if (!db) return
-  await setDoc(doc(db, 'users', uid, 'data', 'progress'), progress)
+  await set(ref(db, `users/${uid}/progress`), stripUndefined(progress))
   saveProgress(progress)
 }
 
@@ -89,9 +94,9 @@ export async function saveUserGamification(
   uid: string,
   gamification: GamificationState,
 ): Promise<void> {
-  const db = getFirestoreDb()
+  const db = getRealtimeDb()
   if (!db) return
-  await setDoc(doc(db, 'users', uid, 'data', 'gamification'), gamification)
+  await set(ref(db, `users/${uid}/gamification`), stripUndefined(gamification))
   saveGamification(gamification)
 }
 

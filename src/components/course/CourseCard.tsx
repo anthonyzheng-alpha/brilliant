@@ -24,7 +24,6 @@ export function CourseCard({ course, progressPercent, locked }: Props) {
       </div>
       <p className="course-card__subtitle">{course.subtitle}</p>
       <p className="course-card__desc">{course.description}</p>
-      <p className="course-card__meta">~{course.estimatedHours}h</p>
     </>
   )
 
