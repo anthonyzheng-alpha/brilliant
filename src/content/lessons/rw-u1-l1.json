@@ -3,7 +3,63 @@
   "unitId": "rw-u1",
   "title": "Best Buy",
   "description": "Compare unit rates in everyday scenarios.",
-  "estimatedMinutes": 8,
+  "estimatedMinutes": 20,
   "phase": "M2",
-  "problemIds": ["rw-u1-l1-p1", "rw-u1-l1-p2"]
+  "rounds": [
+    {
+      "id": "rw-u1-l1-r1",
+      "label": "Warm-up",
+      "problemIds": [
+        "rw-u1-l1-r1-p1",
+        "rw-u1-l1-r1-p2",
+        "rw-u1-l1-r1-p3",
+        "rw-u1-l1-r1-p4",
+        "rw-u1-l1-r1-p5"
+      ]
+    },
+    {
+      "id": "rw-u1-l1-r2",
+      "label": "Basics",
+      "problemIds": [
+        "rw-u1-l1-r2-p1",
+        "rw-u1-l1-r2-p2",
+        "rw-u1-l1-r2-p3",
+        "rw-u1-l1-r2-p4",
+        "rw-u1-l1-r2-p5"
+      ]
+    },
+    {
+      "id": "rw-u1-l1-r3",
+      "label": "Building",
+      "problemIds": [
+        "rw-u1-l1-r3-p1",
+        "rw-u1-l1-r3-p2",
+        "rw-u1-l1-r3-p3",
+        "rw-u1-l1-r3-p4",
+        "rw-u1-l1-r3-p5"
+      ]
+    },
+    {
+      "id": "rw-u1-l1-r4",
+      "label": "Challenge",
+      "problemIds": [
+        "rw-u1-l1-r4-p1",
+        "rw-u1-l1-r4-p2",
+        "rw-u1-l1-r4-p3",
+        "rw-u1-l1-r4-p4",
+        "rw-u1-l1-r4-p5"
+      ]
+    },
+    {
+      "id": "rw-u1-l1-r5",
+      "label": "Mastery",
+      "problemIds": [
+        "rw-u1-l1-r5-p1",
+        "rw-u1-l1-r5-p2",
+        "rw-u1-l1-r5-p3",
+        "rw-u1-l1-r5-p4",
+        "rw-u1-l1-r5-p5"
+      ]
+    }
+  ]
 }

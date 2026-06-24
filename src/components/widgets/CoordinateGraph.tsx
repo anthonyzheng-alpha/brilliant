@@ -12,6 +12,8 @@ export type CoordinateGraphProps = {
   points?: GraphPoint[]
   previewSlope?: number
   previewIntercept?: number
+  wrongSlope?: number
+  wrongIntercept?: number
   xMin?: number
   xMax?: number
   yMin?: number
@@ -99,6 +101,8 @@ export function CoordinateGraph({
   points,
   previewSlope,
   previewIntercept,
+  wrongSlope,
+  wrongIntercept,
   xMin = -5,
   xMax = 5,
   yMin = -5,
@@ -112,6 +116,10 @@ export function CoordinateGraph({
   const previewLine =
     previewSlope !== undefined && previewIntercept !== undefined
       ? clipLineToViewport(previewSlope, previewIntercept, xMin, xMax, yMin, yMax)
+      : null
+  const wrongLine =
+    wrongSlope !== undefined && wrongIntercept !== undefined
+      ? clipLineToViewport(wrongSlope, wrongIntercept, xMin, xMax, yMin, yMax)
       : null
   const xTicks = integerRange(xMin, xMax)
   const yTicks = integerRange(yMin, yMax)
@@ -203,6 +211,15 @@ export function CoordinateGraph({
               y1={toSvgY(previewLine[0].y, yMin, yMax)}
               x2={toSvgX(previewLine[1].x, xMin, xMax)}
               y2={toSvgY(previewLine[1].y, yMin, yMax)}
+            />
+          )}
+          {wrongLine && (
+            <line
+              className="coordinate-graph__wrong-line"
+              x1={toSvgX(wrongLine[0].x, xMin, xMax)}
+              y1={toSvgY(wrongLine[0].y, yMin, yMax)}
+              x2={toSvgX(wrongLine[1].x, xMin, xMax)}
+              y2={toSvgY(wrongLine[1].y, yMin, yMax)}
             />
           )}
         </g>

@@ -26,7 +26,7 @@ export type ValidationRule =
   | { type: 'expression'; acceptable: string[] }
 
 export type MultipleChoiceInteraction = {
-  options: { id: string; label: RichText }[]
+  options: { id: string; label: RichText; whyWrong?: RichText }[]
   correctOptionId: string
 }
 
@@ -89,7 +89,14 @@ export type Problem = {
   interaction: InteractionConfig
   hints: [RichText, RichText, RichText]
   explanation: RichText
+  misconception?: RichText
   introNotation?: boolean
+}
+
+export type Round = {
+  id: string
+  label: string
+  problemIds: string[]
 }
 
 export type Lesson = {
@@ -99,7 +106,7 @@ export type Lesson = {
   description: string
   estimatedMinutes: number
   phase: 'M0' | 'M1' | 'M2' | 'M3'
-  problemIds: string[]
+  rounds: Round[]
 }
 
 export type Unit = {

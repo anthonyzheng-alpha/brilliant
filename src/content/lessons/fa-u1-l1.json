@@ -3,7 +3,13 @@
   "unitId": "fa-u1",
   "title": "Factor by Tiles",
   "description": "Drag factor tiles into both slots to match the expression.",
-  "estimatedMinutes": 10,
+  "estimatedMinutes": 20,
   "phase": "M2",
-  "problemIds": ["fa-u1-l1-p1", "fa-u1-l1-p2", "fa-u1-l1-p3", "fa-u1-l1-p4"]
+  "rounds": [
+    { "id": "fa-u1-l1-r1", "label": "Warm-up", "problemIds": ["fa-u1-l1-r1-p1", "fa-u1-l1-r1-p2", "fa-u1-l1-r1-p3", "fa-u1-l1-r1-p4", "fa-u1-l1-r1-p5"] },
+    { "id": "fa-u1-l1-r2", "label": "Basics", "problemIds": ["fa-u1-l1-r2-p1", "fa-u1-l1-r2-p2", "fa-u1-l1-r2-p3", "fa-u1-l1-r2-p4", "fa-u1-l1-r2-p5"] },
+    { "id": "fa-u1-l1-r3", "label": "Building", "problemIds": ["fa-u1-l1-r3-p1", "fa-u1-l1-r3-p2", "fa-u1-l1-r3-p3", "fa-u1-l1-r3-p4", "fa-u1-l1-r3-p5"] },
+    { "id": "fa-u1-l1-r4", "label": "Challenge", "problemIds": ["fa-u1-l1-r4-p1", "fa-u1-l1-r4-p2", "fa-u1-l1-r4-p3", "fa-u1-l1-r4-p4", "fa-u1-l1-r4-p5"] },
+    { "id": "fa-u1-l1-r5", "label": "Mastery", "problemIds": ["fa-u1-l1-r5-p1", "fa-u1-l1-r5-p2", "fa-u1-l1-r5-p3", "fa-u1-l1-r5-p4", "fa-u1-l1-r5-p5"] }
+  ]
 }

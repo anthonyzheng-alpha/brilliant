@@ -1,6 +1,6 @@
 [
   {
-    "id": "fa-u1-l1-p1",
+    "id": "fa-u1-l1-r1-p1",
     "type": "factoring",
     "prompt": "Drag the correct factors into both slots.",
     "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 5x + 6" } },
@@ -10,7 +10,7 @@
         "draggables": [
           { "id": "a", "label": "$(x+2)$" },
           { "id": "b", "label": "$(x+3)$" },
-          { "id": "c", "label": "$(x+5)$" },
+          { "id": "c", "label": "$(x+1)$" },
           { "id": "d", "label": "$(x+6)$" }
         ],
         "dropZones": [
@@ -24,12 +24,283 @@
     "hints": [
       "Find two numbers that multiply to **6** and add to **5**.",
       "Those numbers are **2** and **3**.",
-      "Place **$(x+2)$** and **$(x+3)$** in the slots."
+      "Drag the two factors whose numbers you just found into the slots."
     ],
-    "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$ because $2 \\times 3 = 6$ and $2 + 3 = 5$."
+    "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$ because $2 \\times 3 = 6$ and $2 + 3 = 5$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
   },
   {
-    "id": "fa-u1-l1-p2",
+    "id": "fa-u1-l1-r1-p2",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 7x + 12" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+3)$" },
+          { "id": "b", "label": "$(x+4)$" },
+          { "id": "c", "label": "$(x+2)$" },
+          { "id": "d", "label": "$(x+6)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **12** and add to **7**.",
+      "Those numbers are **3** and **4**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 7x + 12 = (x+3)(x+4)$ because $3 \\times 4 = 12$ and $3 + 4 = 7$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r1-p3",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 6x + 8" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+2)$" },
+          { "id": "b", "label": "$(x+4)$" },
+          { "id": "c", "label": "$(x+1)$" },
+          { "id": "d", "label": "$(x+8)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **8** and add to **6**.",
+      "Those numbers are **2** and **4**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$ because $2 \\times 4 = 8$ and $2 + 4 = 6$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r1-p4",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 8x + 15" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+3)$" },
+          { "id": "b", "label": "$(x+5)$" },
+          { "id": "c", "label": "$(x+1)$" },
+          { "id": "d", "label": "$(x+15)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **15** and add to **8**.",
+      "Those numbers are **3** and **5**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 8x + 15 = (x+3)(x+5)$ because $3 \\times 5 = 15$ and $3 + 5 = 8$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r1-p5",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 7x + 10" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+2)$" },
+          { "id": "b", "label": "$(x+5)$" },
+          { "id": "c", "label": "$(x+1)$" },
+          { "id": "d", "label": "$(x+10)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **10** and add to **7**.",
+      "Those numbers are **2** and **5**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 7x + 10 = (x+2)(x+5)$ because $2 \\times 5 = 10$ and $2 + 5 = 7$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r2-p1",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 5x + 6" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-2)$" },
+          { "id": "b", "label": "$(x-3)$" },
+          { "id": "c", "label": "$(x+2)$" },
+          { "id": "d", "label": "$(x+3)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **6** and add to **-5**.",
+      "Those numbers are **-2** and **-3**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 - 5x + 6 = (x-2)(x-3)$ because $(-2) \\times (-3) = 6$ and $(-2) + (-3) = -5$.",
+    "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
+  },
+  {
+    "id": "fa-u1-l1-r2-p2",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + x - 6" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+3)$" },
+          { "id": "b", "label": "$(x-2)$" },
+          { "id": "c", "label": "$(x-3)$" },
+          { "id": "d", "label": "$(x+2)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-6** and add to **1**.",
+      "Those numbers are **3** and **-2**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 + x - 6 = (x+3)(x-2)$ because $3 \\times (-2) = -6$ and $3 + (-2) = 1$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
+  },
+  {
+    "id": "fa-u1-l1-r2-p3",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 2x - 8" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-4)$" },
+          { "id": "b", "label": "$(x+2)$" },
+          { "id": "c", "label": "$(x+4)$" },
+          { "id": "d", "label": "$(x-2)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-8** and add to **-2**.",
+      "Those numbers are **-4** and **2**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 - 2x - 8 = (x-4)(x+2)$ because $(-4) \\times 2 = -8$ and $(-4) + 2 = -2$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
+  },
+  {
+    "id": "fa-u1-l1-r2-p4",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 7x + 12" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-3)$" },
+          { "id": "b", "label": "$(x-4)$" },
+          { "id": "c", "label": "$(x+3)$" },
+          { "id": "d", "label": "$(x+4)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **12** and add to **-7**.",
+      "Those numbers are **-3** and **-4**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$ because $(-3) \\times (-4) = 12$ and $(-3) + (-4) = -7$.",
+    "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
+  },
+  {
+    "id": "fa-u1-l1-r2-p5",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 2x - 15" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+5)$" },
+          { "id": "b", "label": "$(x-3)$" },
+          { "id": "c", "label": "$(x-5)$" },
+          { "id": "d", "label": "$(x+3)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-15** and add to **2**.",
+      "Those numbers are **5** and **-3**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$ because $5 \\times (-3) = -15$ and $5 + (-3) = 2$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
+  },
+  {
+    "id": "fa-u1-l1-r3-p1",
     "type": "factoring",
     "prompt": "This is a difference of squares. Drag the matching factors.",
     "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 9" } },
@@ -52,23 +323,84 @@
     },
     "hints": [
       "$x^2 - 9$ is $x^2$ minus a perfect square.",
-      "$9 = 3^2$, so think $(x + 3)(x - 3)$.",
-      "Place **$(x+3)$** and **$(x-3)$** in the slots."
+      "Since $9 = 3^2$, use $(x + 3)(x - 3)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
-    "explanation": "$x^2 - 9 = (x+3)(x-3)$ — a difference of squares."
+    "explanation": "$x^2 - 9 = (x+3)(x-3)$ — a difference of squares, since $9 = 3^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
   },
   {
-    "id": "fa-u1-l1-p3",
+    "id": "fa-u1-l1-r3-p2",
     "type": "factoring",
-    "prompt": "Drag the factors that multiply to this trinomial.",
-    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - x - 6" } },
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 16" } },
     "interaction": {
       "type": "factoring",
       "data": {
         "draggables": [
-          { "id": "a", "label": "$(x+2)$" },
-          { "id": "b", "label": "$(x-3)$" },
-          { "id": "c", "label": "$(x+3)$" },
+          { "id": "a", "label": "$(x+4)$" },
+          { "id": "b", "label": "$(x-4)$" },
+          { "id": "c", "label": "$(x+8)$" },
+          { "id": "d", "label": "$(x-8)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "$x^2 - 16$ is $x^2$ minus a perfect square.",
+      "Since $16 = 4^2$, use $(x + 4)(x - 4)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
+    ],
+    "explanation": "$x^2 - 16 = (x+4)(x-4)$ — a difference of squares, since $16 = 4^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
+  },
+  {
+    "id": "fa-u1-l1-r3-p3",
+    "type": "factoring",
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 25" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+5)$" },
+          { "id": "b", "label": "$(x-5)$" },
+          { "id": "c", "label": "$(x+25)$" },
+          { "id": "d", "label": "$(x-25)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "$x^2 - 25$ is $x^2$ minus a perfect square.",
+      "Since $25 = 5^2$, use $(x + 5)(x - 5)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
+    ],
+    "explanation": "$x^2 - 25 = (x+5)(x-5)$ — a difference of squares, since $25 = 5^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
+  },
+  {
+    "id": "fa-u1-l1-r3-p4",
+    "type": "factoring",
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 1" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+1)$" },
+          { "id": "b", "label": "$(x-1)$" },
+          { "id": "c", "label": "$(x+2)$" },
           { "id": "d", "label": "$(x-2)$" }
         ],
         "dropZones": [
@@ -80,25 +412,26 @@
       }
     },
     "hints": [
-      "You need numbers that multiply to **-6** and add to **-1**.",
-      "Try **+2** and **-3**.",
-      "Place **$(x+2)$** and **$(x-3)$** in the slots."
+      "$x^2 - 1$ is $x^2$ minus a perfect square.",
+      "Since $1 = 1^2$, use $(x + 1)(x - 1)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
-    "explanation": "$x^2 - x - 6 = (x+2)(x-3)$ because $2 \\times (-3) = -6$ and $2 + (-3) = -1$."
+    "explanation": "$x^2 - 1 = (x+1)(x-1)$ — a difference of squares, since $1 = 1^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
   },
   {
-    "id": "fa-u1-l1-p4",
+    "id": "fa-u1-l1-r3-p5",
     "type": "factoring",
-    "prompt": "Build the correct factor pair.",
-    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 2x - 8" } },
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 49" } },
     "interaction": {
       "type": "factoring",
       "data": {
         "draggables": [
-          { "id": "a", "label": "$(x+4)$" },
-          { "id": "b", "label": "$(x-2)$" },
-          { "id": "c", "label": "$(x+2)$" },
-          { "id": "d", "label": "$(x-4)$" }
+          { "id": "a", "label": "$(x+7)$" },
+          { "id": "b", "label": "$(x-7)$" },
+          { "id": "c", "label": "$(x+49)$" },
+          { "id": "d", "label": "$(x-49)$" }
         ],
         "dropZones": [
           { "id": "left", "label": "First factor" },
@@ -109,10 +442,311 @@
       }
     },
     "hints": [
-      "Find numbers that multiply to **-8** and add to **2**.",
-      "Those numbers are **4** and **-2**.",
-      "Place **$(x+4)$** and **$(x-2)$** in the slots."
+      "$x^2 - 49$ is $x^2$ minus a perfect square.",
+      "Since $49 = 7^2$, use $(x + 7)(x - 7)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
-    "explanation": "$x^2 + 2x - 8 = (x+4)(x-2)$ because $4 \\times (-2) = -8$ and $4 + (-2) = 2$."
+    "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
+  },
+  {
+    "id": "fa-u1-l1-r4-p1",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 11x + 24" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+3)$" },
+          { "id": "b", "label": "$(x+8)$" },
+          { "id": "c", "label": "$(x+4)$" },
+          { "id": "d", "label": "$(x+6)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **24** and add to **11**.",
+      "Those numbers are **3** and **8**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 11x + 24 = (x+3)(x+8)$ because $3 \\times 8 = 24$ and $3 + 8 = 11$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r4-p2",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 13x + 36" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-4)$" },
+          { "id": "b", "label": "$(x-9)$" },
+          { "id": "c", "label": "$(x-6)$" },
+          { "id": "d", "label": "$(x-12)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **36** and add to **-13**.",
+      "Those numbers are **-4** and **-9**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 - 13x + 36 = (x-4)(x-9)$ because $(-4) \\times (-9) = 36$ and $(-4) + (-9) = -13$.",
+    "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
+  },
+  {
+    "id": "fa-u1-l1-r4-p3",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 7x - 30" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+10)$" },
+          { "id": "b", "label": "$(x-3)$" },
+          { "id": "c", "label": "$(x-10)$" },
+          { "id": "d", "label": "$(x+3)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-30** and add to **7**.",
+      "Those numbers are **10** and **-3**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 + 7x - 30 = (x+10)(x-3)$ because $10 \\times (-3) = -30$ and $10 + (-3) = 7$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
+  },
+  {
+    "id": "fa-u1-l1-r4-p4",
+    "type": "factoring",
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 100" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+10)$" },
+          { "id": "b", "label": "$(x-10)$" },
+          { "id": "c", "label": "$(x+20)$" },
+          { "id": "d", "label": "$(x-50)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "$x^2 - 100$ is $x^2$ minus a perfect square.",
+      "Since $100 = 10^2$, use $(x + 10)(x - 10)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
+    ],
+    "explanation": "$x^2 - 100 = (x+10)(x-10)$ — a difference of squares, since $100 = 10^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
+  },
+  {
+    "id": "fa-u1-l1-r4-p5",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 15x + 56" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+7)$" },
+          { "id": "b", "label": "$(x+8)$" },
+          { "id": "c", "label": "$(x+6)$" },
+          { "id": "d", "label": "$(x+14)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **56** and add to **15**.",
+      "Those numbers are **7** and **8**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 15x + 56 = (x+7)(x+8)$ because $7 \\times 8 = 56$ and $7 + 8 = 15$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r5-p1",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 9x + 20" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+4)$" },
+          { "id": "b", "label": "$(x+5)$" },
+          { "id": "c", "label": "$(x+2)$" },
+          { "id": "d", "label": "$(x+10)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **20** and add to **9**.",
+      "Those numbers are **4** and **5**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 + 9x + 20 = (x+4)(x+5)$ because $4 \\times 5 = 20$ and $4 + 5 = 9$.",
+    "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
+  },
+  {
+    "id": "fa-u1-l1-r5-p2",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 3x - 10" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-5)$" },
+          { "id": "b", "label": "$(x+2)$" },
+          { "id": "c", "label": "$(x+5)$" },
+          { "id": "d", "label": "$(x-2)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-10** and add to **-3**.",
+      "Those numbers are **-5** and **2**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 - 3x - 10 = (x-5)(x+2)$ because $(-5) \\times 2 = -10$ and $(-5) + 2 = -3$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
+  },
+  {
+    "id": "fa-u1-l1-r5-p3",
+    "type": "factoring",
+    "prompt": "This is a difference of squares. Drag the matching factors.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 64" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+8)$" },
+          { "id": "b", "label": "$(x-8)$" },
+          { "id": "c", "label": "$(x+16)$" },
+          { "id": "d", "label": "$(x-32)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "$x^2 - 64$ is $x^2$ minus a perfect square.",
+      "Since $64 = 8^2$, use $(x + 8)(x - 8)$.",
+      "Use the matching $+$ and $-$ pair for a difference of squares."
+    ],
+    "explanation": "$x^2 - 64 = (x+8)(x-8)$ — a difference of squares, since $64 = 8^2$.",
+    "misconception": "A difference of squares factors into a $+$ and a $-$ pair, not two plus signs - and there's no middle term."
+  },
+  {
+    "id": "fa-u1-l1-r5-p4",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 14x + 48" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x-6)$" },
+          { "id": "b", "label": "$(x-8)$" },
+          { "id": "c", "label": "$(x-4)$" },
+          { "id": "d", "label": "$(x-12)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **48** and add to **-14**.",
+      "Those numbers are **-6** and **-8**.",
+      "Drag the two factors whose numbers you just found into the slots."
+    ],
+    "explanation": "$x^2 - 14x + 48 = (x-6)(x-8)$ because $(-6) \\times (-8) = 48$ and $(-6) + (-8) = -14$.",
+    "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
+  },
+  {
+    "id": "fa-u1-l1-r5-p5",
+    "type": "factoring",
+    "prompt": "Drag the correct factors into both slots.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 4x - 21" } },
+    "interaction": {
+      "type": "factoring",
+      "data": {
+        "draggables": [
+          { "id": "a", "label": "$(x+7)$" },
+          { "id": "b", "label": "$(x-3)$" },
+          { "id": "c", "label": "$(x-7)$" },
+          { "id": "d", "label": "$(x+3)$" }
+        ],
+        "dropZones": [
+          { "id": "left", "label": "First factor" },
+          { "id": "right", "label": "Second factor" }
+        ],
+        "correctPlacement": { "left": "a", "right": "b" },
+        "acceptCommutative": true
+      }
+    },
+    "hints": [
+      "Find two numbers that multiply to **-21** and add to **4**.",
+      "Those numbers are **7** and **-3**.",
+      "Drag in the $+$ and $-$ pair whose numbers you just found."
+    ],
+    "explanation": "$x^2 + 4x - 21 = (x+7)(x-3)$ because $7 \\times (-3) = -21$ and $7 + (-3) = 4$.",
+    "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
   }
 ]

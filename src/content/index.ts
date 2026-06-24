@@ -55,9 +55,11 @@ export const problemBank: Record<string, Problem> = Object.fromEntries(
 
 // Validate lesson problem references
 for (const lesson of lessons) {
-  for (const pid of lesson.problemIds) {
-    if (!problemBank[pid]) {
-      throw new Error(`Lesson ${lesson.id} references missing problem ${pid}`)
+  for (const round of lesson.rounds) {
+    for (const pid of round.problemIds) {
+      if (!problemBank[pid]) {
+        throw new Error(`Lesson ${lesson.id} references missing problem ${pid}`)
+      }
     }
   }
 }
@@ -81,7 +83,30 @@ export function getLessonById(lessonId: string): Lesson | undefined {
 export function getProblemsForLesson(lessonId: string): Problem[] {
   const lesson = getLessonById(lessonId)
   if (!lesson) return []
-  return lesson.problemIds.map((id) => problemBank[id])
+  return lesson.rounds.flatMap((round) => round.problemIds.map((id) => problemBank[id]))
+}
+
+export type LessonRoundInfo = {
+  id: string
+  label: string
+  size: number
+  startIndex: number
+}
+
+export function getRoundsForLesson(lessonId: string): LessonRoundInfo[] {
+  const lesson = getLessonById(lessonId)
+  if (!lesson) return []
+  let startIndex = 0
+  return lesson.rounds.map((round) => {
+    const info: LessonRoundInfo = {
+      id: round.id,
+      label: round.label,
+      size: round.problemIds.length,
+      startIndex,
+    }
+    startIndex += round.problemIds.length
+    return info
+  })
 }
 
 export function getAllLessonsForCourse(courseId: string): Lesson[] {

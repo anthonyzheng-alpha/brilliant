@@ -5,26 +5,35 @@ import './LessonPlayer.css'
 
 type FeedbackState =
   | { kind: 'idle' }
-  | { kind: 'hint'; hint: string }
-  | { kind: 'incorrect'; hint: string; shake?: boolean }
+  | { kind: 'incorrect'; reason: string; shake?: boolean }
   | { kind: 'correct'; explanation: string }
   | { kind: 'complete'; lessonTitle: string }
+  | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
 
 type Props = {
   state: FeedbackState
   onContinue: () => void
+  onRetryRound?: () => void
 }
 
-export function FeedbackPanel({ state, onContinue }: Props) {
+export function FeedbackPanel({ state, onContinue, onRetryRound }: Props) {
   if (state.kind === 'idle') return null
 
-  if (state.kind === 'hint') {
+  if (state.kind === 'round-complete') {
     return (
-      <div className="feedback feedback--incorrect">
-        <p className="feedback__title">Hint</p>
-        <p className="feedback__body">
-          <RichText text={state.hint} />
-        </p>
+      <div className="feedback feedback--complete">
+        <p className="feedback__title">{state.roundLabel} complete!</p>
+        <p className="feedback__body">Next up: {state.nextLabel}.</p>
+        <div className="feedback__actions">
+          <button type="button" className="btn btn--primary" onClick={onContinue}>
+            Next round
+          </button>
+          {onRetryRound && (
+            <button type="button" className="btn btn--ghost" onClick={onRetryRound}>
+              Practice this round again
+            </button>
+          )}
+        </div>
       </div>
     )
   }
@@ -34,7 +43,7 @@ export function FeedbackPanel({ state, onContinue }: Props) {
       <div className={`feedback feedback--incorrect ${state.shake ? 'feedback--shake' : ''}`}>
         <p className="feedback__title">Not quite</p>
         <p className="feedback__body">
-          <RichText text={state.hint} />
+          <RichText text={state.reason} />
         </p>
       </div>
     )

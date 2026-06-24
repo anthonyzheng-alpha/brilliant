@@ -22,7 +22,9 @@ const interaction = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('multiple-choice'),
     data: z.object({
-      options: z.array(z.object({ id: z.string(), label: richText })),
+      options: z.array(
+        z.object({ id: z.string(), label: richText, whyWrong: richText.optional() }),
+      ),
       correctOptionId: z.string(),
     }),
   }),
@@ -114,6 +116,7 @@ export const problemSchema = z.object({
   interaction: interaction,
   hints,
   explanation: richText,
+  misconception: richText.optional(),
   introNotation: z.boolean().optional(),
 })
 
@@ -124,7 +127,15 @@ export const lessonSchema = z.object({
   description: z.string(),
   estimatedMinutes: z.number(),
   phase: z.enum(['M0', 'M1', 'M2', 'M3']),
-  problemIds: z.array(z.string()),
+  rounds: z
+    .array(
+      z.object({
+        id: z.string(),
+        label: z.string(),
+        problemIds: z.array(z.string()).min(1),
+      }),
+    )
+    .min(1),
 })
 
 export const unitSchema = z.object({

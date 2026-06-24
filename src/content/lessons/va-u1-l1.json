@@ -3,7 +3,63 @@
   "unitId": "va-u1",
   "title": "Graph the Line",
   "description": "Read slope and y-intercept from lines in $y = mx + b$ form.",
-  "estimatedMinutes": 12,
+  "estimatedMinutes": 20,
   "phase": "M2",
-  "problemIds": ["va-u1-l1-p1", "va-u1-l1-p2", "va-u1-l1-p3", "va-u1-l1-p4"]
+  "rounds": [
+    {
+      "id": "va-u1-l1-r1",
+      "label": "Warm-up",
+      "problemIds": [
+        "va-u1-l1-r1-p1",
+        "va-u1-l1-r1-p2",
+        "va-u1-l1-r1-p3",
+        "va-u1-l1-r1-p4",
+        "va-u1-l1-r1-p5"
+      ]
+    },
+    {
+      "id": "va-u1-l1-r2",
+      "label": "Basics",
+      "problemIds": [
+        "va-u1-l1-r2-p1",
+        "va-u1-l1-r2-p2",
+        "va-u1-l1-r2-p3",
+        "va-u1-l1-r2-p4",
+        "va-u1-l1-r2-p5"
+      ]
+    },
+    {
+      "id": "va-u1-l1-r3",
+      "label": "Building",
+      "problemIds": [
+        "va-u1-l1-r3-p1",
+        "va-u1-l1-r3-p2",
+        "va-u1-l1-r3-p3",
+        "va-u1-l1-r3-p4",
+        "va-u1-l1-r3-p5"
+      ]
+    },
+    {
+      "id": "va-u1-l1-r4",
+      "label": "Challenge",
+      "problemIds": [
+        "va-u1-l1-r4-p1",
+        "va-u1-l1-r4-p2",
+        "va-u1-l1-r4-p3",
+        "va-u1-l1-r4-p4",
+        "va-u1-l1-r4-p5"
+      ]
+    },
+    {
+      "id": "va-u1-l1-r5",
+      "label": "Mastery",
+      "problemIds": [
+        "va-u1-l1-r5-p1",
+        "va-u1-l1-r5-p2",
+        "va-u1-l1-r5-p3",
+        "va-u1-l1-r5-p4",
+        "va-u1-l1-r5-p5"
+      ]
+    }
+  ]
 }

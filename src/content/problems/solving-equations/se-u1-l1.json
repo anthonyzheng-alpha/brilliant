@@ -1,6 +1,6 @@
 [
   {
-    "id": "se-u1-l1-p1",
+    "id": "se-u1-l1-r1-p1",
     "type": "multiple-choice",
     "prompt": "Solve for $x$: $x + 7 = 9$",
     "interaction": {
@@ -8,8 +8,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "$x = 2$" },
-          { "id": "b", "label": "$x = 16$" },
-          { "id": "c", "label": "$x = -2$" }
+          { "id": "b", "label": "$x = 16$", "whyWrong": "This adds 7 to 9 instead of subtracting it from both sides." },
+          { "id": "c", "label": "$x = -2$", "whyWrong": "This makes the answer negative; subtracting 7 from 9 gives a positive value." }
         ],
         "correctOptionId": "a"
       }
@@ -17,106 +17,488 @@
     "hints": [
       "What number plus 7 equals 9?",
       "Subtract 7 from both sides: $x = 9 - 7$.",
-      "Select **$x = 2$**."
+      "Subtract 7 from 9 and choose the matching option."
     ],
     "explanation": "Subtract 7 from both sides: $x = 9 - 7 = 2$."
   },
   {
-    "id": "se-u1-l1-p2",
+    "id": "se-u1-l1-r1-p2",
     "type": "numeric",
-    "prompt": "Solve for $x$: $x - 5 = 3$",
+    "prompt": "Solve for $n$: $n - 5 = 3$",
     "interaction": {
       "type": "numeric",
       "data": {
-        "placeholder": "Value of x",
+        "placeholder": "Value of n",
         "validation": { "type": "numeric", "value": 8 }
       }
     },
     "hints": [
-      "Add 5 to both sides to isolate $x$.",
-      "$x = 3 + 5$.",
-      "Enter **8**."
+      "Add 5 to both sides to isolate $n$.",
+      "$n = 3 + 5$.",
+      "Add the two numbers to get your value for $n$."
     ],
-    "explanation": "Add 5 to both sides: $x = 3 + 5 = 8$."
+    "explanation": "Add 5 to both sides: $n = 3 + 5 = 8$.",
+    "misconception": "Since 5 is subtracted from $n$, undo it by adding 5 to both sides rather than subtracting."
   },
   {
-    "id": "se-u1-l1-p3",
+    "id": "se-u1-l1-r1-p3",
     "type": "multiple-choice",
-    "prompt": "Solve for $n$: $n + 12 = 20$",
+    "prompt": "Solve for $y$: $y + 4 = 10$",
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "$n = 8$" },
-          { "id": "b", "label": "$n = 32$" },
-          { "id": "c", "label": "$n = 6$" }
+          { "id": "a", "label": "$y = 6$" },
+          { "id": "b", "label": "$y = 14$", "whyWrong": "This adds 4 to 10 instead of subtracting it from both sides." },
+          { "id": "c", "label": "$y = 5$", "whyWrong": "This subtracts 5 instead of 4 from both sides." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract 4 from both sides.",
+      "$y = 10 - 4$.",
+      "Subtract 4 from 10 and choose the matching option."
+    ],
+    "explanation": "Subtract 4 from both sides: $y = 10 - 4 = 6$."
+  },
+  {
+    "id": "se-u1-l1-r1-p4",
+    "type": "numeric",
+    "prompt": "Solve for $a$: $a - 2 = 6$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of a",
+        "validation": { "type": "numeric", "value": 8 }
+      }
+    },
+    "hints": [
+      "Add 2 to both sides.",
+      "$a = 6 + 2$.",
+      "Add the two numbers to get your value for $a$."
+    ],
+    "explanation": "Add 2 to both sides: $a = 6 + 2 = 8$.",
+    "misconception": "Since 2 is subtracted from $a$, undo it by adding 2 to both sides rather than subtracting."
+  },
+  {
+    "id": "se-u1-l1-r1-p5",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $t + 6 = 9$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract 6 from both sides.",
+      "$t = 9 - 6$.",
+      "Subtract to find your value for $t$."
+    ],
+    "explanation": "Subtract 6 from both sides: $t = 9 - 6 = 3$.",
+    "misconception": "Because 6 is added to $t$, subtract 6 from both sides instead of adding."
+  },
+  {
+    "id": "se-u1-l1-r2-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x + 24 = 51$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 27 }
+      }
+    },
+    "hints": [
+      "Subtract 24 from both sides.",
+      "$x = 51 - 24$.",
+      "Subtract to find your value for $x$."
+    ],
+    "explanation": "Subtract 24 from both sides: $x = 51 - 24 = 27$.",
+    "misconception": "Since 24 is added to $x$, subtract it from both sides rather than adding."
+  },
+  {
+    "id": "se-u1-l1-r2-p2",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $n - 38 = 45$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = 83$" },
+          { "id": "b", "label": "$n = 7$", "whyWrong": "This subtracts 38 from 45 instead of adding it to both sides." },
+          { "id": "c", "label": "$n = 73$", "whyWrong": "This is an addition slip; $45 + 38$ is larger than this." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add 38 to both sides.",
+      "$n = 45 + 38$.",
+      "Add the two numbers and choose the matching option."
+    ],
+    "explanation": "Add 38 to both sides: $n = 45 + 38 = 83$."
+  },
+  {
+    "id": "se-u1-l1-r2-p3",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $y + 56 = 90$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 34 }
+      }
+    },
+    "hints": [
+      "Subtract 56 from both sides.",
+      "$y = 90 - 56$.",
+      "Subtract to find your value for $y$."
+    ],
+    "explanation": "Subtract 56 from both sides: $y = 90 - 56 = 34$.",
+    "misconception": "Since 56 is added to $y$, subtract it from both sides instead of adding."
+  },
+  {
+    "id": "se-u1-l1-r2-p4",
+    "type": "numeric",
+    "prompt": "Solve for $a$: $a - 47 = 29$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of a",
+        "validation": { "type": "numeric", "value": 76 }
+      }
+    },
+    "hints": [
+      "Add 47 to both sides.",
+      "$a = 29 + 47$.",
+      "Add the two numbers to get your value for $a$."
+    ],
+    "explanation": "Add 47 to both sides: $a = 29 + 47 = 76$.",
+    "misconception": "Because 47 is subtracted from $a$, undo it by adding 47 to both sides rather than subtracting."
+  },
+  {
+    "id": "se-u1-l1-r2-p5",
+    "type": "multiple-choice",
+    "prompt": "Solve for $t$: $t + 63 = 120$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$t = 57$" },
+          { "id": "b", "label": "$t = 183$", "whyWrong": "This adds 63 to 120 instead of subtracting it from both sides." },
+          { "id": "c", "label": "$t = 67$", "whyWrong": "This is a subtraction slip; $120 - 63$ is smaller than this." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract 63 from both sides.",
+      "$t = 120 - 63$.",
+      "Subtract 63 from 120 and choose the matching option."
+    ],
+    "explanation": "Subtract 63 from both sides: $t = 120 - 63 = 57$."
+  },
+  {
+    "id": "se-u1-l1-r3-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x + 8 = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": -5 }
+      }
+    },
+    "hints": [
+      "Subtract 8 from both sides.",
+      "$x = 3 - 8$, which is negative.",
+      "Subtract to find your value for $x$; the result is negative."
+    ],
+    "explanation": "Subtract 8 from both sides: $x = 3 - 8 = -5$.",
+    "misconception": "When the constant is larger than the right side, the answer is negative - don't drop the negative sign."
+  },
+  {
+    "id": "se-u1-l1-r3-p2",
+    "type": "multiple-choice",
+    "prompt": "Solve for $n$: $n + 12 = 5$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$n = -7$" },
+          { "id": "b", "label": "$n = 7$", "whyWrong": "This drops the negative sign; $5 - 12$ is negative." },
+          { "id": "c", "label": "$n = 17$", "whyWrong": "This adds 12 to 5 instead of subtracting it from both sides." }
         ],
         "correctOptionId": "a"
       }
     },
     "hints": [
       "Subtract 12 from both sides.",
-      "$n = 20 - 12$.",
-      "Select **$n = 8$**."
+      "$n = 5 - 12$, which is negative.",
+      "Subtract 12 from 5 and choose the negative result."
     ],
-    "explanation": "$n = 20 - 12 = 8$."
+    "explanation": "Subtract 12 from both sides: $n = 5 - 12 = -7$."
   },
   {
-    "id": "se-u1-l1-p4",
+    "id": "se-u1-l1-r3-p3",
     "type": "numeric",
-    "prompt": "Solve for $x$: $x + 4 = 11$",
+    "prompt": "Solve for $y$: $y - 4 = -10$",
     "interaction": {
       "type": "numeric",
       "data": {
-        "placeholder": "Value of x",
-        "validation": { "type": "numeric", "value": 7 }
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": -6 }
       }
     },
     "hints": [
-      "Subtract 4 from both sides.",
-      "$x = 11 - 4$.",
-      "Enter **7**."
+      "Add 4 to both sides.",
+      "$y = -10 + 4$.",
+      "Add 4 to $-10$ to get your value for $y$."
     ],
-    "explanation": "$x = 11 - 4 = 7$."
+    "explanation": "Add 4 to both sides: $y = -10 + 4 = -6$.",
+    "misconception": "Add 4 to both sides; adding to a negative number moves it toward zero but it stays negative here."
   },
   {
-    "id": "se-u1-l1-p5",
-    "type": "numeric",
-    "prompt": "Solve for $x$: $x - 8 = 2$",
-    "interaction": {
-      "type": "numeric",
-      "data": {
-        "placeholder": "Value of x",
-        "validation": { "type": "numeric", "value": 10 }
-      }
-    },
-    "hints": [
-      "Add 8 to both sides.",
-      "$x = 2 + 8$.",
-      "Enter **10**."
-    ],
-    "explanation": "$x = 2 + 8 = 10$."
-  },
-  {
-    "id": "se-u1-l1-p6",
+    "id": "se-u1-l1-r3-p4",
     "type": "multiple-choice",
-    "prompt": "Which value of $x$ makes the equation true? $x + 3 = 10$",
+    "prompt": "Solve for $a$: $a + 15 = 0$",
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "$x = 7$" },
-          { "id": "b", "label": "$x = 13$" },
-          { "id": "c", "label": "$x = 3$" }
+          { "id": "a", "label": "$a = -15$" },
+          { "id": "b", "label": "$a = 15$", "whyWrong": "This drops the negative sign; $0 - 15$ is negative." },
+          { "id": "c", "label": "$a = 0$", "whyWrong": "This leaves $a$ unchanged instead of subtracting 15 from both sides." }
         ],
         "correctOptionId": "a"
       }
     },
     "hints": [
-      "Think: what plus 3 equals 10?",
-      "$x = 10 - 3$.",
-      "Select **$x = 7$**."
+      "Subtract 15 from both sides.",
+      "$a = 0 - 15$.",
+      "Subtract 15 from 0 and choose the negative result."
     ],
-    "explanation": "$x + 3 = 10$ means $x = 7$."
+    "explanation": "Subtract 15 from both sides: $a = 0 - 15 = -15$."
+  },
+  {
+    "id": "se-u1-l1-r3-p5",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $t + 9 = -2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": -11 }
+      }
+    },
+    "hints": [
+      "Subtract 9 from both sides.",
+      "$t = -2 - 9$.",
+      "Subtract 9 from $-2$ to get your value for $t$."
+    ],
+    "explanation": "Subtract 9 from both sides: $t = -2 - 9 = -11$.",
+    "misconception": "Subtracting 9 from a negative number makes it more negative; the answer is not positive."
+  },
+  {
+    "id": "se-u1-l1-r4-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x + 1.5 = 4$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 2.5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Subtract 1.5 from both sides.",
+      "$x = 4 - 1.5$.",
+      "Subtract the decimals to get your value for $x$."
+    ],
+    "explanation": "Subtract 1.5 from both sides: $x = 4 - 1.5 = 2.5$.",
+    "misconception": "Line up the decimal points and subtract 1.5; don't add it."
+  },
+  {
+    "id": "se-u1-l1-r4-p2",
+    "type": "numeric",
+    "prompt": "Solve for $n$: $n - 0.5 = 2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of n",
+        "validation": { "type": "numeric", "value": 2.5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Add 0.5 to both sides.",
+      "$n = 2 + 0.5$.",
+      "Add the decimals to get your value for $n$."
+    ],
+    "explanation": "Add 0.5 to both sides: $n = 2 + 0.5 = 2.5$.",
+    "misconception": "Since 0.5 is subtracted from $n$, add it back to both sides rather than subtracting."
+  },
+  {
+    "id": "se-u1-l1-r4-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve for $a$: $a + \\frac{1}{3} = \\frac{2}{3}$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$a = \\frac{1}{3}$" },
+          { "id": "b", "label": "$a = 1$", "whyWrong": "This adds $\\frac{1}{3}$ to $\\frac{2}{3}$ instead of subtracting it." },
+          { "id": "c", "label": "$a = \\frac{2}{3}$", "whyWrong": "This leaves $a$ equal to the right side without subtracting $\\frac{1}{3}$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract $\\frac{1}{3}$ from both sides.",
+      "$a = \\frac{2}{3} - \\frac{1}{3}$.",
+      "Subtract the fractions and choose the matching option."
+    ],
+    "explanation": "Subtract $\\frac{1}{3}$ from both sides: $a = \\frac{2}{3} - \\frac{1}{3} = \\frac{1}{3}$."
+  },
+  {
+    "id": "se-u1-l1-r4-p4",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $y + 2.3 = 5.1$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 2.8, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Subtract 2.3 from both sides.",
+      "$y = 5.1 - 2.3$.",
+      "Subtract the decimals to get your value for $y$."
+    ],
+    "explanation": "Subtract 2.3 from both sides: $y = 5.1 - 2.3 = 2.8$.",
+    "misconception": "Subtract 2.3 from 5.1 with the decimal points aligned; don't add."
+  },
+  {
+    "id": "se-u1-l1-r4-p5",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $t - 3.75 = 1.25$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Add 3.75 to both sides.",
+      "$t = 1.25 + 3.75$.",
+      "Add the decimals to get your value for $t$."
+    ],
+    "explanation": "Add 3.75 to both sides: $t = 1.25 + 3.75 = 5$.",
+    "misconception": "Since 3.75 is subtracted from $t$, add it back to both sides instead of subtracting."
+  },
+  {
+    "id": "se-u1-l1-r5-p1",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $x + 13 = 20$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 7$" },
+          { "id": "b", "label": "$x = 33$", "whyWrong": "This adds 13 to 20 instead of subtracting it from both sides." },
+          { "id": "c", "label": "$x = -7$", "whyWrong": "This makes the answer negative; $20 - 13$ is positive." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract 13 from both sides.",
+      "$x = 20 - 13$.",
+      "Subtract 13 from 20 and choose the matching option."
+    ],
+    "explanation": "Subtract 13 from both sides: $x = 20 - 13 = 7$."
+  },
+  {
+    "id": "se-u1-l1-r5-p2",
+    "type": "numeric",
+    "prompt": "Solve for $n$: $n - 21 = -9$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of n",
+        "validation": { "type": "numeric", "value": 12 }
+      }
+    },
+    "hints": [
+      "Add 21 to both sides.",
+      "$n = -9 + 21$.",
+      "Add 21 to $-9$ to get your value for $n$."
+    ],
+    "explanation": "Add 21 to both sides: $n = -9 + 21 = 12$.",
+    "misconception": "Add 21 to both sides; $-9 + 21$ is positive, so don't leave the answer negative."
+  },
+  {
+    "id": "se-u1-l1-r5-p3",
+    "type": "numeric",
+    "prompt": "Solve for $y$: $y + 0.6 = 1$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 0.4, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Subtract 0.6 from both sides.",
+      "$y = 1 - 0.6$.",
+      "Subtract the decimals to get your value for $y$."
+    ],
+    "explanation": "Subtract 0.6 from both sides: $y = 1 - 0.6 = 0.4$.",
+    "misconception": "Subtract 0.6 from 1; the answer is a decimal less than 1, not a whole number."
+  },
+  {
+    "id": "se-u1-l1-r5-p4",
+    "type": "multiple-choice",
+    "prompt": "Solve for $a$: $a - 6 = -14$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$a = -8$" },
+          { "id": "b", "label": "$a = 8$", "whyWrong": "This drops the negative sign; $-14 + 6$ is still negative." },
+          { "id": "c", "label": "$a = -20$", "whyWrong": "This subtracts 6 instead of adding it to both sides." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add 6 to both sides.",
+      "$a = -14 + 6$.",
+      "Add 6 to $-14$ and choose the negative result."
+    ],
+    "explanation": "Add 6 to both sides: $a = -14 + 6 = -8$."
+  },
+  {
+    "id": "se-u1-l1-r5-p5",
+    "type": "numeric",
+    "prompt": "Solve for $t$: $t + \\frac{1}{2} = 2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of t",
+        "validation": { "type": "numeric", "value": 1.5, "tolerance": 0.01 }
+      }
+    },
+    "hints": [
+      "Subtract $\\frac{1}{2}$ from both sides.",
+      "$t = 2 - \\frac{1}{2}$.",
+      "Subtract the fraction from 2 to get your value for $t$."
+    ],
+    "explanation": "Subtract $\\frac{1}{2}$ from both sides: $t = 2 - \\frac{1}{2} = \\frac{3}{2} = 1.5$.",
+    "misconception": "Since $\\frac{1}{2}$ is added to $t$, subtract it from both sides rather than adding."
   }
 ]

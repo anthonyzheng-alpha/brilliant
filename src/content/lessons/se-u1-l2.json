@@ -3,7 +3,63 @@
   "unitId": "se-u1",
   "title": "Multiplication, Division, and Two-Step",
   "description": "Solve equations like 3x = 15 and 2x + 1 = 9.",
-  "estimatedMinutes": 8,
+  "estimatedMinutes": 20,
   "phase": "M1",
-  "problemIds": ["se-u1-l2-p1", "se-u1-l2-p2", "se-u1-l2-p3"]
+  "rounds": [
+    {
+      "id": "se-u1-l2-r1",
+      "label": "Warm-up",
+      "problemIds": [
+        "se-u1-l2-r1-p1",
+        "se-u1-l2-r1-p2",
+        "se-u1-l2-r1-p3",
+        "se-u1-l2-r1-p4",
+        "se-u1-l2-r1-p5"
+      ]
+    },
+    {
+      "id": "se-u1-l2-r2",
+      "label": "Basics",
+      "problemIds": [
+        "se-u1-l2-r2-p1",
+        "se-u1-l2-r2-p2",
+        "se-u1-l2-r2-p3",
+        "se-u1-l2-r2-p4",
+        "se-u1-l2-r2-p5"
+      ]
+    },
+    {
+      "id": "se-u1-l2-r3",
+      "label": "Building",
+      "problemIds": [
+        "se-u1-l2-r3-p1",
+        "se-u1-l2-r3-p2",
+        "se-u1-l2-r3-p3",
+        "se-u1-l2-r3-p4",
+        "se-u1-l2-r3-p5"
+      ]
+    },
+    {
+      "id": "se-u1-l2-r4",
+      "label": "Challenge",
+      "problemIds": [
+        "se-u1-l2-r4-p1",
+        "se-u1-l2-r4-p2",
+        "se-u1-l2-r4-p3",
+        "se-u1-l2-r4-p4",
+        "se-u1-l2-r4-p5"
+      ]
+    },
+    {
+      "id": "se-u1-l2-r5",
+      "label": "Mastery",
+      "problemIds": [
+        "se-u1-l2-r5-p1",
+        "se-u1-l2-r5-p2",
+        "se-u1-l2-r5-p3",
+        "se-u1-l2-r5-p4",
+        "se-u1-l2-r5-p5"
+      ]
+    }
+  ]
 }

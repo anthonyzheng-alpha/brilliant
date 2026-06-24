@@ -5,6 +5,91 @@
   padding: 1rem;
 }
 
+.lesson-player__main {
+  min-width: 0;
+}
+
+.lesson-player__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-player__hints {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  border-radius: 10px;
+}
+
+.lesson-player__hints-title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.lesson-player__hints-empty {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.lesson-player__hints-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--text-h);
+  font-size: 0.95rem;
+}
+
+.lesson-player__hints-list li {
+  line-height: 1.4;
+}
+
+@media (min-width: 900px) {
+  .lesson-player {
+    max-width: 860px;
+  }
+
+  .lesson-player__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .lesson-player__side {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .lesson-player__side .lesson-player__hints {
+    margin-top: 0;
+  }
+
+  .lesson-player__hints--empty {
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 480px) {
+  .lesson-player {
+    padding: 0.75rem 0;
+  }
+
+  .lesson-player__actions {
+    gap: 0.5rem;
+  }
+}
+
 .lesson-player__progress {
   position: relative;
   height: 8px;
@@ -33,6 +118,13 @@
   line-height: 1.45;
   color: var(--text-h);
   margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+}
+
+.rich-text .katex {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .lesson-player__actions {
@@ -62,6 +154,14 @@
   background: var(--accent-bg);
   border: 1px solid var(--accent-border);
   text-align: center;
+}
+
+.feedback__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.75rem;
 }
 
 .feedback--shake {

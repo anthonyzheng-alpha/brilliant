@@ -17,7 +17,9 @@ export function LessonRow({ courseSlug, lesson, locked, completed }: Props) {
         {lesson.title}
         <LessonMilestoneIcon lessonId={lesson.id} />
       </span>
-      <span className="lesson-row__meta">{lesson.estimatedMinutes} min</span>
+      <span className="lesson-row__meta">
+        {lesson.estimatedMinutes} min · {lesson.rounds.length} rounds
+      </span>
       {completed && <span className="lesson-row__check" aria-label="Completed">✓</span>}
       {locked && <span className="lesson-row__lock" aria-label="Locked">🔒</span>}
     </>

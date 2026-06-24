@@ -1,8 +1,349 @@
 [
   {
-    "id": "va-u1-l1-p1",
+    "id": "va-u1-l1-r1-p1",
+    "type": "multiple-choice",
+    "prompt": "What is the **y-intercept** of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": 2 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(0, 2)$" },
+          { "id": "b", "label": "$(2, 0)$", "whyWrong": "This is the x-intercept where $y = 0$, not where the line crosses the y-axis." },
+          { "id": "c", "label": "$(0, -2)$", "whyWrong": "Right axis, wrong sign — the line meets the y-axis above the origin, not below." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "The y-intercept is where the line crosses the **y-axis** (when $x = 0$).",
+      "Find the point on the line directly above the origin: $x = 0$.",
+      "Trace the line to where it touches the y-axis and choose that point."
+    ],
+    "explanation": "The line crosses the y-axis at $y = 2$, so the y-intercept is $(0, 2)$."
+  },
+  {
+    "id": "va-u1-l1-r1-p2",
+    "type": "multiple-choice",
+    "prompt": "What is the **slope** $m$ of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 2, "intercept": 1 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$m = 2$" },
+          { "id": "b", "label": "$m = 1$", "whyWrong": "This underestimates the rise — the line climbs more than 1 unit per step to the right." },
+          { "id": "c", "label": "$m = \\frac{1}{2}$", "whyWrong": "A slope of $\\frac{1}{2}$ would rise less than 1 unit per step; this line rises faster." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Slope measures how much $y$ changes when $x$ increases by 1.",
+      "Step one unit to the right and count how far the line rises.",
+      "Count the rise for a single step to the right, and that number is the slope."
+    ],
+    "explanation": "Moving 1 unit right raises the line 2 units, so the slope is $m = 2$."
+  },
+  {
+    "id": "va-u1-l1-r1-p3",
+    "type": "multiple-choice",
+    "prompt": "What is the **y-intercept** of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 3, "intercept": 0 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(0, 0)$" },
+          { "id": "b", "label": "$(0, 3)$", "whyWrong": "This confuses the slope value with the y-intercept; read the height where the line crosses the y-axis." },
+          { "id": "c", "label": "$(3, 0)$", "whyWrong": "This is a point on the x-axis ($y = 0$), not where the line crosses the y-axis." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Look for where the line crosses the **y-axis** ($x = 0$).",
+      "This line passes straight through the origin.",
+      "Find where the line meets the y-axis and choose that point."
+    ],
+    "explanation": "The line passes through the origin, so the y-intercept is $(0, 0)$ and $b = 0$."
+  },
+  {
+    "id": "va-u1-l1-r1-p4",
+    "type": "multiple-choice",
+    "prompt": "What is the **slope** $m$ of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": -2 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$m = 1$" },
+          { "id": "b", "label": "$m = -2$", "whyWrong": "This is the y-intercept value, not the slope, and the line rises rather than falls." },
+          { "id": "c", "label": "$m = 2$", "whyWrong": "The line doesn't climb this steeply — check the rise for a single step to the right." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Slope is the rise over the run: how much $y$ changes per 1 step right.",
+      "Pick two points one unit apart in $x$ and compare their $y$ values.",
+      "Compare the rise to the run for one step right to read off the slope."
+    ],
+    "explanation": "Each step of 1 to the right raises the line by 1, so the slope is $m = 1$."
+  },
+  {
+    "id": "va-u1-l1-r1-p5",
+    "type": "multiple-choice",
+    "prompt": "What is the **y-intercept** of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 2, "intercept": 5 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(0, 5)$" },
+          { "id": "b", "label": "$(5, 0)$", "whyWrong": "This swaps the coordinates — it's a point on the x-axis, not the y-axis crossing." },
+          { "id": "c", "label": "$(0, 2)$", "whyWrong": "This uses the slope value as the height; read where the line actually meets the y-axis." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "The y-intercept is the $y$ value where the line crosses the y-axis ($x = 0$).",
+      "Don't confuse the slope ($2$) with the intercept.",
+      "Read the height where the line crosses the y-axis and select that point."
+    ],
+    "explanation": "The line crosses the y-axis at $y = 5$, so the y-intercept is $(0, 5)$."
+  },
+  {
+    "id": "va-u1-l1-r2-p1",
+    "type": "multiple-choice",
+    "prompt": "What is the **slope** $m$ of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -1, "intercept": 3 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$m = -1$" },
+          { "id": "b", "label": "$m = 1$", "whyWrong": "The sign is wrong — the line falls as it goes right, so the slope is negative." },
+          { "id": "c", "label": "$m = 3$", "whyWrong": "This is the y-intercept value, not the slope." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "When a line goes **down** from left to right, its slope is negative.",
+      "Step 1 unit right and see how far the line falls.",
+      "A line going down to the right has a negative slope — count the fall per step right."
+    ],
+    "explanation": "The line drops 1 unit for every 1 unit to the right, so the slope is $m = -1$."
+  },
+  {
+    "id": "va-u1-l1-r2-p2",
+    "type": "multiple-choice",
+    "prompt": "What is the **slope** $m$ of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -2, "intercept": 1 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$m = -2$" },
+          { "id": "b", "label": "$m = 2$", "whyWrong": "The magnitude is right but the sign is wrong — the line falls, so the slope is negative." },
+          { "id": "c", "label": "$m = -1$", "whyWrong": "This underestimates the steepness; the line drops more than 1 unit per step to the right." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "A downward line has a negative slope.",
+      "Count the vertical change for a 1 unit step to the right.",
+      "Find how far the line drops for one step right, and remember the slope is negative."
+    ],
+    "explanation": "Moving 1 unit right drops the line 2 units, so the slope is $m = -2$."
+  },
+  {
+    "id": "va-u1-l1-r2-p3",
+    "type": "multiple-choice",
+    "prompt": "What is the **y-intercept** of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -3, "intercept": 2 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(0, 2)$" },
+          { "id": "b", "label": "$(0, -3)$", "whyWrong": "This uses the slope value (with the wrong sign) as the height instead of the y-axis crossing." },
+          { "id": "c", "label": "$(2, 0)$", "whyWrong": "This is a point on the x-axis, not where the line crosses the y-axis." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "The y-intercept is read where $x = 0$, even when the slope is negative.",
+      "The slope ($-3$) describes the steepness, not the intercept.",
+      "Read where the line crosses the y-axis, ignoring how steeply it falls."
+    ],
+    "explanation": "Regardless of the negative slope, the line crosses the y-axis at $y = 2$, so the y-intercept is $(0, 2)$."
+  },
+  {
+    "id": "va-u1-l1-r2-p4",
+    "type": "multiple-choice",
+    "prompt": "What is the **slope** $m$ of the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -1, "intercept": -2 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$m = -1$" },
+          { "id": "b", "label": "$m = -2$", "whyWrong": "This is the y-intercept value, not the slope." },
+          { "id": "c", "label": "$m = 1$", "whyWrong": "The sign is wrong — the line falls as it goes right, so the slope is negative." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "The slope is the rise over run; a falling line is negative.",
+      "Ignore the intercept ($-2$) and focus on the steepness.",
+      "Count the fall per step right; the intercept doesn't affect the slope."
+    ],
+    "explanation": "The line falls 1 unit for every 1 unit right, so the slope is $m = -1$ (the $-2$ is the intercept)."
+  },
+  {
+    "id": "va-u1-l1-r2-p5",
+    "type": "numeric",
+    "prompt": "A line has slope $m = -2$ and y-intercept $b = 5$, so $y = -2x + 5$. What is $y$ when $x = 2$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 1 }
+      }
+    },
+    "hints": [
+      "Substitute $x = 2$ into $y = -2x + 5$.",
+      "$y = -2(2) + 5 = -4 + 5$.",
+      "Finish the arithmetic from the previous step and enter that value."
+    ],
+    "explanation": "Substituting $x = 2$: $y = -2(2) + 5 = -4 + 5 = 1$.",
+    "misconception": "Remember to multiply before adding — apply the slope to $x$ first, then add $b$."
+  },
+  {
+    "id": "va-u1-l1-r3-p1",
+    "type": "multiple-choice",
+    "prompt": "Which equation $y = mx + b$ matches the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 2, "intercept": 1 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$y = 2x + 1$" },
+          { "id": "b", "label": "$y = x + 2$", "whyWrong": "This swaps the slope and intercept values." },
+          { "id": "c", "label": "$y = 2x - 1$", "whyWrong": "The slope is right but the intercept has the wrong sign." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Read the slope $m$ and the y-intercept $b$, then build $y = mx + b$.",
+      "The line rises 2 per step right ($m = 2$) and crosses the y-axis at $1$ ($b = 1$).",
+      "Combine the slope you read with the y-intercept into $y = mx + b$."
+    ],
+    "explanation": "The slope is $2$ and the y-intercept is $1$, so the equation is $y = 2x + 1$."
+  },
+  {
+    "id": "va-u1-l1-r3-p2",
+    "type": "multiple-choice",
+    "prompt": "Which equation $y = mx + b$ matches the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -1, "intercept": 4 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$y = -x + 4$" },
+          { "id": "b", "label": "$y = x + 4$", "whyWrong": "This misses the negative sign on the slope — the line falls to the right." },
+          { "id": "c", "label": "$y = -x - 4$", "whyWrong": "The intercept has the wrong sign; the line crosses the y-axis above the origin." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "A falling line means a negative slope.",
+      "The line falls 1 per step right ($m = -1$) and crosses the y-axis at $4$ ($b = 4$).",
+      "Put the negative slope and the y-intercept together as $y = mx + b$."
+    ],
+    "explanation": "The slope is $-1$ and the y-intercept is $4$, so the equation is $y = -x + 4$."
+  },
+  {
+    "id": "va-u1-l1-r3-p3",
+    "type": "multiple-choice",
+    "prompt": "Which equation $y = mx + b$ matches the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 3, "intercept": -2 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$y = 3x - 2$" },
+          { "id": "b", "label": "$y = 3x + 2$", "whyWrong": "The intercept has the wrong sign — the line crosses the y-axis below the origin." },
+          { "id": "c", "label": "$y = -3x - 2$", "whyWrong": "The slope sign is wrong; this line rises to the right, so the slope is positive." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Read the slope first, then the y-intercept.",
+      "The line rises 3 per step right ($m = 3$) and crosses the y-axis at $-2$ ($b = -2$).",
+      "Read the slope and the y-intercept, then assemble $y = mx + b$."
+    ],
+    "explanation": "The slope is $3$ and the y-intercept is $-2$, so the equation is $y = 3x - 2$."
+  },
+  {
+    "id": "va-u1-l1-r3-p4",
+    "type": "multiple-choice",
+    "prompt": "Which equation $y = mx + b$ matches the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": -2, "intercept": 0 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$y = -2x$" },
+          { "id": "b", "label": "$y = 2x$", "whyWrong": "The slope sign is wrong — the line falls to the right, so the slope is negative." },
+          { "id": "c", "label": "$y = -2x + 2$", "whyWrong": "This adds an intercept, but the line passes through the origin where $b = 0$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "When a line passes through the origin, the y-intercept is $b = 0$.",
+      "The line falls 2 per step right ($m = -2$) and crosses the y-axis at $0$.",
+      "With the line through the origin, the intercept term drops out of $y = mx + b$."
+    ],
+    "explanation": "The slope is $-2$ and the y-intercept is $0$, so the equation is $y = -2x$."
+  },
+  {
+    "id": "va-u1-l1-r3-p5",
+    "type": "multiple-choice",
+    "prompt": "Which equation $y = mx + b$ matches the line shown?",
+    "visual": { "kind": "coordinate-graph", "props": { "slope": 1, "intercept": -3 } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$y = x - 3$" },
+          { "id": "b", "label": "$y = x + 3$", "whyWrong": "The intercept has the wrong sign — the line crosses the y-axis below the origin." },
+          { "id": "c", "label": "$y = -x - 3$", "whyWrong": "The slope sign is wrong; this line rises to the right, so the slope is positive." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "A slope of $1$ is written simply as $x$ (no number in front needed).",
+      "The line rises 1 per step right ($m = 1$) and crosses the y-axis at $-3$ ($b = -3$).",
+      "Combine a slope of 1 (written just as $x$) with the y-intercept."
+    ],
+    "explanation": "The slope is $1$ and the y-intercept is $-3$, so the equation is $y = x - 3$."
+  },
+  {
+    "id": "va-u1-l1-r4-p1",
     "type": "line-equation",
-    "prompt": "The points below lie on a line with equation $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "prompt": "The points below lie on a line $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
     "visual": {
       "kind": "coordinate-graph",
       "props": {
@@ -28,51 +369,137 @@
       }
     },
     "hints": [
-      "Slope is the rate of change: how much does $y$ change when $x$ increases by 1?",
-      "From $(0, 1)$ to $(1, 3)$, $y$ increases by 2 when $x$ increases by 1, so $m = 2$.",
-      "The line crosses the y-axis at $(0, 1)$, so $b = 1$. Enter **$m = 2$** and **$b = 1$**."
+      "Slope is how much $y$ changes when $x$ increases by 1.",
+      "From $(0, 1)$ to $(1, 3)$, $y$ rises by 2, so $m = 2$.",
+      "Read the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
     ],
-    "explanation": "The points rise 2 units for every 1 unit right, so $m = 2$. The y-intercept is $(0, 1)$, so $b = 1$ and the equation is $y = 2x + 1$."
+    "explanation": "The points rise 2 units per 1 unit right, so $m = 2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = 2x + 1$.",
+    "misconception": "A common slip is swapping slope and intercept, or reading rise/run backwards."
   },
   {
-    "id": "va-u1-l1-p2",
-    "type": "multiple-choice",
-    "prompt": "What is the **y-intercept** of the line shown?",
-    "visual": { "kind": "coordinate-graph", "props": { "slope": -1, "intercept": 3 } },
-    "interaction": {
-      "type": "multiple-choice",
-      "data": {
-        "options": [
-          { "id": "a", "label": "$(0, 3)$" },
-          { "id": "b", "label": "$(3, 0)$" },
-          { "id": "c", "label": "$(0, -3)$" }
-        ],
-        "correctOptionId": "a"
-      }
-    },
-    "hints": [
-      "The y-intercept is where the line crosses the **y-axis** (when $x = 0$).",
-      "At $x = 0$, the line crosses at $y = 3$.",
-      "Select **$(0, 3)$**."
-    ],
-    "explanation": "The line crosses the y-axis at $y = 3$, so the y-intercept is $(0, 3)$."
-  },
-  {
-    "id": "va-u1-l1-p3",
+    "id": "va-u1-l1-r4-p2",
     "type": "line-equation",
-    "prompt": "Write the equation $y = mx + b$ that matches the line through the points shown.",
+    "prompt": "The points below lie on a line $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
     "visual": {
       "kind": "coordinate-graph",
       "props": {
         "points": [
-          { "x": -1, "y": -4 },
+          { "x": -1, "y": 4 },
+          { "x": 0, "y": 3 },
+          { "x": 1, "y": 2 },
+          { "x": 2, "y": 1 }
+        ],
+        "xMin": -3,
+        "xMax": 4,
+        "yMin": -2,
+        "yMax": 6
+      }
+    },
+    "interaction": {
+      "type": "line-equation",
+      "data": {
+        "slopePlaceholder": "m",
+        "interceptPlaceholder": "b",
+        "targetSlope": -1,
+        "targetIntercept": 3
+      }
+    },
+    "hints": [
+      "The points go down as $x$ increases, so the slope is negative.",
+      "From $(0, 3)$ to $(1, 2)$, $y$ falls by 1, so $m = -1$.",
+      "Use the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+    ],
+    "explanation": "The points fall 1 unit per 1 unit right, so $m = -1$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -x + 3$.",
+    "misconception": "A common slip is dropping the negative sign on a falling slope, or swapping $m$ and $b$."
+  },
+  {
+    "id": "va-u1-l1-r4-p3",
+    "type": "line-equation",
+    "prompt": "The points below lie on a line $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "visual": {
+      "kind": "coordinate-graph",
+      "props": {
+        "points": [
+          { "x": -1, "y": -5 },
           { "x": 0, "y": -2 },
-          { "x": 1, "y": 0 },
-          { "x": 2, "y": 2 }
+          { "x": 1, "y": 1 },
+          { "x": 2, "y": 4 }
         ],
         "xMin": -3,
         "xMax": 4,
         "yMin": -6,
+        "yMax": 6
+      }
+    },
+    "interaction": {
+      "type": "line-equation",
+      "data": {
+        "slopePlaceholder": "m",
+        "interceptPlaceholder": "b",
+        "targetSlope": 3,
+        "targetIntercept": -2
+      }
+    },
+    "hints": [
+      "Compare two points that are 1 apart in $x$ to find the slope.",
+      "From $(0, -2)$ to $(1, 1)$, $y$ rises by 3, so $m = 3$.",
+      "Find the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+    ],
+    "explanation": "The points rise 3 units per 1 unit right, so $m = 3$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = 3x - 2$.",
+    "misconception": "A common slip is swapping slope and intercept, or losing the sign of the intercept."
+  },
+  {
+    "id": "va-u1-l1-r4-p4",
+    "type": "line-equation",
+    "prompt": "The points below lie on a line $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "visual": {
+      "kind": "coordinate-graph",
+      "props": {
+        "points": [
+          { "x": -1, "y": 3 },
+          { "x": 0, "y": 1 },
+          { "x": 1, "y": -1 },
+          { "x": 2, "y": -3 }
+        ],
+        "xMin": -3,
+        "xMax": 4,
+        "yMin": -5,
+        "yMax": 5
+      }
+    },
+    "interaction": {
+      "type": "line-equation",
+      "data": {
+        "slopePlaceholder": "m",
+        "interceptPlaceholder": "b",
+        "targetSlope": -2,
+        "targetIntercept": 1
+      }
+    },
+    "hints": [
+      "The points fall as $x$ increases, so expect a negative slope.",
+      "From $(0, 1)$ to $(1, -1)$, $y$ falls by 2, so $m = -2$.",
+      "Read the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+    ],
+    "explanation": "The points fall 2 units per 1 unit right, so $m = -2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = -2x + 1$.",
+    "misconception": "A common slip is dropping the negative sign on a falling slope, or swapping $m$ and $b$."
+  },
+  {
+    "id": "va-u1-l1-r4-p5",
+    "type": "line-equation",
+    "prompt": "The points below lie on a line $y = mx + b$. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "visual": {
+      "kind": "coordinate-graph",
+      "props": {
+        "points": [
+          { "x": 0, "y": -2 },
+          { "x": 1, "y": -1 },
+          { "x": 2, "y": 0 },
+          { "x": 3, "y": 1 }
+        ],
+        "xMin": -3,
+        "xMax": 5,
+        "yMin": -4,
         "yMax": 4
       }
     },
@@ -81,33 +508,147 @@
       "data": {
         "slopePlaceholder": "m",
         "interceptPlaceholder": "b",
-        "targetSlope": 2,
+        "targetSlope": 1,
         "targetIntercept": -2
       }
     },
     "hints": [
-      "Write the line in slope-intercept form: $y = mx + b$.",
-      "The slope is 2 (each step right increases $y$ by 2). The y-intercept is $-2$.",
-      "Enter **$m = 2$** and **$b = -2$**."
+      "Find how much $y$ changes for each 1 step right.",
+      "From $(0, -2)$ to $(1, -1)$, $y$ rises by 1, so $m = 1$.",
+      "Read the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
     ],
-    "explanation": "Slope $m = 2$ and y-intercept $b = -2$, so the equation is $y = 2x - 2$."
+    "explanation": "The points rise 1 unit per 1 unit right, so $m = 1$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = x - 2$.",
+    "misconception": "A common slip is swapping slope and intercept, or losing the sign of the intercept."
   },
   {
-    "id": "va-u1-l1-p4",
+    "id": "va-u1-l1-r5-p1",
+    "type": "line-equation",
+    "prompt": "The points below lie on a line $y = mx + b$. The slope is a fraction. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "visual": {
+      "kind": "coordinate-graph",
+      "props": {
+        "points": [
+          { "x": -2, "y": 0 },
+          { "x": 0, "y": 1 },
+          { "x": 2, "y": 2 },
+          { "x": 4, "y": 3 }
+        ],
+        "xMin": -4,
+        "xMax": 6,
+        "yMin": -2,
+        "yMax": 5
+      }
+    },
+    "interaction": {
+      "type": "line-equation",
+      "data": {
+        "slopePlaceholder": "m",
+        "interceptPlaceholder": "b",
+        "targetSlope": 0.5,
+        "targetIntercept": 1,
+        "tolerance": 0.01
+      }
+    },
+    "hints": [
+      "When $y$ rises slowly, the slope is a fraction less than 1.",
+      "From $(0, 1)$ to $(2, 2)$, $y$ rises 1 over a run of 2, so $m = \\frac{1}{2} = 0.5$.",
+      "Form the slope as rise over run (it's a fraction here) and read $b$ at the y-axis, then enter both."
+    ],
+    "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = \\frac{1}{2}x + 1$.",
+    "misconception": "A common slip is using only the rise and forgetting to divide by the run, giving a whole-number slope instead of a fraction."
+  },
+  {
+    "id": "va-u1-l1-r5-p2",
     "type": "numeric",
-    "prompt": "For the line $y = 3x + 2$, what is $y$ when $x = 4$?",
+    "prompt": "For the line $y = \\frac{1}{2}x + 3$, what is $y$ when $x = 4$?",
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Value of y",
-        "validation": { "type": "numeric", "value": 14 }
+        "validation": { "type": "numeric", "value": 5 }
       }
     },
     "hints": [
-      "Substitute $x = 4$ into $y = 3x + 2$.",
-      "$y = 3(4) + 2 = 12 + 2$.",
-      "Enter **14**."
+      "Substitute $x = 4$ into $y = \\frac{1}{2}x + 3$.",
+      "$y = \\frac{1}{2}(4) + 3 = 2 + 3$.",
+      "Complete the calculation from the previous step and enter the result."
     ],
-    "explanation": "Substitute $x = 4$: $y = 3(4) + 2 = 14$."
+    "explanation": "Substituting $x = 4$: $y = \\frac{1}{2}(4) + 3 = 2 + 3 = 5$.",
+    "misconception": "Remember to multiply $x$ by the slope before adding $b$, not after."
+  },
+  {
+    "id": "va-u1-l1-r5-p3",
+    "type": "line-equation",
+    "prompt": "The points below lie on a line $y = mx + b$. The slope is a negative fraction. Enter the **slope** $m$ and **y-intercept** $b$.",
+    "visual": {
+      "kind": "coordinate-graph",
+      "props": {
+        "points": [
+          { "x": -2, "y": 3 },
+          { "x": 0, "y": 2 },
+          { "x": 2, "y": 1 },
+          { "x": 4, "y": 0 }
+        ],
+        "xMin": -4,
+        "xMax": 6,
+        "yMin": -2,
+        "yMax": 5
+      }
+    },
+    "interaction": {
+      "type": "line-equation",
+      "data": {
+        "slopePlaceholder": "m",
+        "interceptPlaceholder": "b",
+        "targetSlope": -0.5,
+        "targetIntercept": 2,
+        "tolerance": 0.01
+      }
+    },
+    "hints": [
+      "The points slowly fall, so the slope is a small negative fraction.",
+      "From $(0, 2)$ to $(2, 1)$, $y$ falls 1 over a run of 2, so $m = -\\frac{1}{2} = -0.5$.",
+      "Form the slope as rise over run (a negative fraction here) and read $b$ at the y-axis, then enter both."
+    ],
+    "explanation": "The line falls 1 unit for every 2 units right, so $m = -\\frac{1}{2} = -0.5$. The y-intercept is $(0, 2)$, so $b = 2$ and $y = -\\frac{1}{2}x + 2$.",
+    "misconception": "A common slip is forgetting to divide the rise by the run, or dropping the negative sign on a falling slope."
+  },
+  {
+    "id": "va-u1-l1-r5-p4",
+    "type": "numeric",
+    "prompt": "For the line $y = \\frac{1}{3}x + 2$, what is $y$ when $x = 6$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Substitute $x = 6$ into $y = \\frac{1}{3}x + 2$.",
+      "$y = \\frac{1}{3}(6) + 2 = 2 + 2$.",
+      "Finish the arithmetic from the previous step and enter that value."
+    ],
+    "explanation": "Substituting $x = 6$: $y = \\frac{1}{3}(6) + 2 = 2 + 2 = 4$.",
+    "misconception": "Remember to multiply $x$ by the slope before adding $b$, not after."
+  },
+  {
+    "id": "va-u1-l1-r5-p5",
+    "type": "numeric",
+    "prompt": "For the line $y = \\frac{3}{2}x - 1$, what is $y$ when $x = 4$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Substitute $x = 4$ into $y = \\frac{3}{2}x - 1$.",
+      "$y = \\frac{3}{2}(4) - 1 = 6 - 1$.",
+      "Complete the calculation from the previous step and enter the result."
+    ],
+    "explanation": "Substituting $x = 4$: $y = \\frac{3}{2}(4) - 1 = 6 - 1 = 5$.",
+    "misconception": "Remember to multiply before subtracting — apply the slope to $x$ first, then subtract."
   }
 ]

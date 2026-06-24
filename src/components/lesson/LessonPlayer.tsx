@@ -1,11 +1,11 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Lesson, Problem, AnswerValue } from '../../types/content'
 import { RichText } from '../common/RichText'
 import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from './FeedbackPanel'
-import { isAnswerValid, hasValidInput } from '../../lib/validation'
+import { isAnswerValid, hasValidInput, parseNumericInput } from '../../lib/validation'
 import { useProgressStore } from '../../stores/progressStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
 import { useAuthStore } from '../../stores/authStore'
@@ -22,6 +22,67 @@ type Props = {
   unitId?: string
   unitLessonIds?: string[]
   initialProblemIndex?: number
+}
+
+// Parse a "y = mx + b" label (e.g. "$y = -2x + 1$", "$y = x$") into slope/intercept.
+function parseLineEquationLabel(label: string): { slope: number; intercept: number } | null {
+  const s = label.replace(/\$/g, '').replace(/\s+/g, '')
+  const match = s.match(/^y=(.+)$/i)
+  if (!match) return null
+  const rhs = match[1]
+  const xMatch = rhs.match(/([+-]?\d*)x/)
+  if (!xMatch) return null
+  const slopeStr = xMatch[1]
+  let slope: number
+  if (slopeStr === '' || slopeStr === '+') slope = 1
+  else if (slopeStr === '-') slope = -1
+  else slope = Number(slopeStr)
+  if (Number.isNaN(slope)) return null
+  const rest = rhs.replace(xMatch[0], '')
+  let intercept = 0
+  if (rest) {
+    const bMatch = rest.match(/^[+-]\d+(?:\.\d+)?$/)
+    if (!bMatch) return null
+    intercept = Number(rest)
+  }
+  return { slope, intercept }
+}
+
+// Determine the line a wrong answer represents, so it can be drawn in red on a graph.
+function resolveWrongLine(
+  problem: Problem,
+  answer: AnswerValue,
+): { slope: number; intercept: number } | null {
+  if (problem.visual?.kind !== 'coordinate-graph') return null
+
+  if (problem.interaction.type === 'line-equation' && answer.type === 'line-equation') {
+    const m = parseNumericInput(answer.slope)
+    const b = parseNumericInput(answer.intercept)
+    return m !== null && b !== null ? { slope: m, intercept: b } : null
+  }
+
+  if (problem.interaction.type === 'multiple-choice' && answer.type === 'multiple-choice') {
+    const selected = problem.interaction.data.options.find(
+      (opt) => opt.id === answer.selectedId,
+    )
+    return selected ? parseLineEquationLabel(selected.label) : null
+  }
+
+  return null
+}
+
+function resolveWrongReason(problem: Problem, answer: AnswerValue): string {
+  if (
+    problem.interaction.type === 'multiple-choice' &&
+    answer.type === 'multiple-choice'
+  ) {
+    const selected = problem.interaction.data.options.find(
+      (opt) => opt.id === answer.selectedId,
+    )
+    if (selected?.whyWrong) return selected.whyWrong
+  }
+  if (problem.misconception) return problem.misconception
+  return problem.hints[0]
 }
 
 export function LessonPlayer({
@@ -45,24 +106,56 @@ export function LessonPlayer({
   const [answer, setAnswer] = useState<AnswerValue | null>(() =>
     problems[initialProblemIndex] ? initialAnswer(problems[initialProblemIndex]) : null,
   )
-  const [attempts, setAttempts] = useState(0)
+  const [hintsRevealed, setHintsRevealed] = useState(0)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
-    | { kind: 'hint'; hint: string }
-    | { kind: 'incorrect'; hint: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
     | { kind: 'complete'; lessonTitle: string }
     | { kind: 'milestone'; lessonTitle: string }
+    | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
   >({ kind: 'idle' })
   const [inputLocked, setInputLocked] = useState(false)
   const [showMilestoneModal, setShowMilestoneModal] = useState(false)
+  const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
+  // Furthest problem the learner has reached; persisted progress never drops below this.
+  const [maxProblemIndex, setMaxProblemIndex] = useState(initialProblemIndex)
+  const maxIndexRef = useRef(initialProblemIndex)
+
+  const rounds = useMemo(() => {
+    let startIndex = 0
+    return lesson.rounds.map((round) => {
+      const info = {
+        id: round.id,
+        label: round.label,
+        size: round.problemIds.length,
+        startIndex,
+        endIndex: startIndex + round.problemIds.length - 1,
+      }
+      startIndex += round.problemIds.length
+      return info
+    })
+  }, [lesson.rounds])
+
+  const roundIndexOf = useCallback(
+    (idx: number) => {
+      const found = rounds.findIndex((r) => idx >= r.startIndex && idx <= r.endIndex)
+      return found === -1 ? 0 : found
+    },
+    [rounds],
+  )
 
   const problem = problems[problemIndex]
   const total = problems.length
+  const currentRoundIndex = roundIndexOf(problemIndex)
+  const currentRound = rounds[currentRoundIndex]
 
   const persistProgress = useCallback(
     async (idx: number) => {
-      setResume(courseId, lesson.id, idx)
+      const newMax = Math.max(maxIndexRef.current, idx)
+      maxIndexRef.current = newMax
+      setMaxProblemIndex(newMax)
+      setResume(courseId, lesson.id, newMax)
       if (user) {
         const progress = useProgressStore.getState().progress
         await saveUserProgress(user.uid, progress)
@@ -87,19 +180,42 @@ export function LessonPlayer({
         }
       }
     } else {
-      const hintIndex = Math.min(attempts, 2)
-      setAttempts((a) => a + 1)
+      setWrongLine(resolveWrongLine(problem, answer))
       setFeedback({
         kind: 'incorrect',
-        hint: problem.hints[hintIndex],
+        reason: resolveWrongReason(problem, answer),
         shake: true,
       })
       setTimeout(() => setFeedback((f) => (f.kind === 'incorrect' ? { ...f, shake: false } : f)), 400)
     }
   }
 
+  const handleAnswerChange = useCallback((next: AnswerValue) => {
+    setWrongLine(null)
+    setAnswer(next)
+  }, [])
+
+  const goToProblem = useCallback(
+    async (nextIndex: number) => {
+      setProblemIndex(nextIndex)
+      setAnswer(initialAnswer(problems[nextIndex]))
+      setHintsRevealed(0)
+      setWrongLine(null)
+      setFeedback({ kind: 'idle' })
+      setInputLocked(false)
+      await persistProgress(nextIndex)
+    },
+    [problems, persistProgress],
+  )
+
   const handleContinue = async () => {
     const nextIndex = problemIndex + 1
+    // Reviewing an already-reached problem: just move forward without re-running
+    // checkpoints/mastery (those only fire when advancing the frontier).
+    if (nextIndex <= maxIndexRef.current) {
+      await goToProblem(nextIndex)
+      return
+    }
     if (nextIndex >= total) {
       markComplete(courseId, lesson.id)
       if (user) {
@@ -120,19 +236,41 @@ export function LessonPlayer({
       return
     }
 
-    setProblemIndex(nextIndex)
-    setAnswer(initialAnswer(problems[nextIndex]))
-    setAttempts(0)
-    setFeedback({ kind: 'idle' })
-    setInputLocked(false)
-    await persistProgress(nextIndex)
+    const round = rounds[currentRoundIndex]
+    const nextRound = rounds[currentRoundIndex + 1]
+    if (round && nextRound && problemIndex === round.endIndex) {
+      await persistProgress(nextIndex)
+      setInputLocked(false)
+      setFeedback({
+        kind: 'round-complete',
+        roundLabel: round.label,
+        nextLabel: nextRound.label,
+      })
+      return
+    }
+
+    await goToProblem(nextIndex)
+  }
+
+  const handleRoundContinue = async () => {
+    await goToProblem(problemIndex + 1)
+  }
+
+  const handleBack = async () => {
+    if (problemIndex > 0) await goToProblem(problemIndex - 1)
+  }
+
+  const handleForward = async () => {
+    if (problemIndex < maxIndexRef.current) await goToProblem(problemIndex + 1)
+  }
+
+  const handleRetryRound = async () => {
+    await goToProblem(currentRound ? currentRound.startIndex : 0)
   }
 
   const handleHint = () => {
     if (!problem) return
-    const hintIndex = Math.min(attempts, 2)
-    setAttempts((a) => a + 1)
-    setFeedback({ kind: 'hint', hint: problem.hints[hintIndex] })
+    setHintsRevealed((n) => Math.min(n + 1, problem.hints.length))
   }
 
   const finishLesson = () => {
@@ -151,50 +289,116 @@ export function LessonPlayer({
           style={{ width: `${((problemIndex + 1) / total) * 100}%` }}
         />
         <span className="lesson-player__progress-text">
-          Problem {problemIndex + 1} of {total}
+          {currentRound
+            ? `${currentRound.label} · Round ${currentRoundIndex + 1} of ${rounds.length} · Problem ${
+                problemIndex - currentRound.startIndex + 1
+              } of ${currentRound.size}`
+            : `Problem ${problemIndex + 1} of ${total}`}
         </span>
       </div>
 
-      <div className="lesson-player__prompt">
-        <RichText text={problem.prompt} />
-      </div>
-
-      <ProblemVisual problem={problem} answer={answer} />
-
-      <ProblemRenderer
-        key={problem.id}
-        problem={problem}
-        answer={answer}
-        onAnswerChange={setAnswer}
-        disabled={inputLocked}
-      />
-
-      {feedback.kind !== 'correct' &&
-        feedback.kind !== 'complete' &&
-        feedback.kind !== 'milestone' && (
-          <div className="lesson-player__actions">
-            <button type="button" className="btn btn--ghost" onClick={handleHint}>
-              Hint
-            </button>
+      <div className="lesson-player__layout">
+        <div className="lesson-player__main">
+          <div className="lesson-player__nav">
             <button
               type="button"
-              className="btn btn--primary"
-              onClick={handleCheck}
-              disabled={!hasValidInput(problem, answer)}
+              className="btn btn--ghost btn--sm"
+              onClick={handleBack}
+              disabled={problemIndex === 0}
             >
-              Check
+              ← Previous
             </button>
+            {problemIndex < maxProblemIndex && (
+              <button
+                type="button"
+                className="btn btn--ghost btn--sm"
+                onClick={handleForward}
+              >
+                Next →
+              </button>
+            )}
           </div>
-        )}
 
-      <FeedbackPanel
-        state={
-          feedback.kind === 'milestone' || feedback.kind === 'complete'
-            ? { kind: 'idle' }
-            : feedback
-        }
-        onContinue={handleContinue}
-      />
+          <div className="lesson-player__prompt">
+            <RichText text={problem.prompt} />
+          </div>
+
+          <ProblemVisual problem={problem} answer={answer} wrongLine={wrongLine} />
+
+          <ProblemRenderer
+            key={problem.id}
+            problem={problem}
+            answer={answer}
+            onAnswerChange={handleAnswerChange}
+            disabled={inputLocked}
+          />
+
+          {feedback.kind !== 'correct' &&
+            feedback.kind !== 'complete' &&
+            feedback.kind !== 'milestone' &&
+            feedback.kind !== 'round-complete' && (
+              <div className="lesson-player__actions">
+                <button
+                  type="button"
+                  className="btn btn--ghost"
+                  onClick={handleHint}
+                  disabled={hintsRevealed >= problem.hints.length}
+                >
+                  {hintsRevealed >= problem.hints.length
+                    ? 'No more hints'
+                    : hintsRevealed === 0
+                      ? 'Hint'
+                      : 'Next hint'}
+                </button>
+                <button
+                  type="button"
+                  className="btn btn--primary"
+                  onClick={handleCheck}
+                  disabled={!hasValidInput(problem, answer)}
+                >
+                  Check
+                </button>
+              </div>
+            )}
+
+        </div>
+
+        <div className="lesson-player__side">
+          <aside
+            className={`lesson-player__hints ${
+              hintsRevealed > 0 ? '' : 'lesson-player__hints--empty'
+            }`}
+            aria-live="polite"
+          >
+            <p className="lesson-player__hints-title">Hints</p>
+            {hintsRevealed === 0 ? (
+              <p className="lesson-player__hints-empty">
+                Stuck? Tap <strong>Hint</strong> for a nudge.
+              </p>
+            ) : (
+              <ol className="lesson-player__hints-list">
+                {problem.hints.slice(0, hintsRevealed).map((hint, i) => (
+                  <li key={i}>
+                    <RichText text={hint} />
+                  </li>
+                ))}
+              </ol>
+            )}
+          </aside>
+
+          {(feedback.kind === 'incorrect' ||
+            feedback.kind === 'correct' ||
+            feedback.kind === 'round-complete') && (
+            <FeedbackPanel
+              state={feedback}
+              onContinue={
+                feedback.kind === 'round-complete' ? handleRoundContinue : handleContinue
+              }
+              onRetryRound={feedback.kind === 'round-complete' ? handleRetryRound : undefined}
+            />
+          )}
+        </div>
+      </div>
 
       {showMilestoneModal && FEATURES.gamification && (
         <div className="milestone-modal-overlay" role="dialog" aria-modal="true">

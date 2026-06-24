@@ -833,6 +833,16 @@ Avoid:
 - Ambiguous numeric answers without tolerance spec
 - Variables in M0 content
 
+Round structure (difficulty ramp):
+- Each lesson is authored as 5 difficulty-ramped rounds of 5 problems (25 total),
+  ordered easy to hard. The five rounds use the standard labels:
+  Warm-up, Basics, Building, Challenge, Mastery.
+- The lesson JSON uses a `rounds` array (each round: id, label, problemIds[]) instead
+  of a flat `problemIds` list. Problem IDs follow `<lessonId>-r{n}-p{m}`.
+- A checkpoint appears after each round, offering "Next round" and "Practice this
+  round again" (round retry). Completing the final round triggers lesson mastery
+  (milestone modal + badges); per-round badges/streaks are out of scope.
+
 ================================================================================
 10. FEATURE REQUIREMENTS (BY PHASE)
 ================================================================================

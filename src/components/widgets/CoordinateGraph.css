@@ -37,6 +37,12 @@
   transition: x1 0.15s ease, y1 0.15s ease, x2 0.15s ease, y2 0.15s ease;
 }
 
+.coordinate-graph__wrong-line {
+  stroke: #dc2626;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
 .coordinate-graph__point {
   fill: var(--accent);
   stroke: var(--bg);

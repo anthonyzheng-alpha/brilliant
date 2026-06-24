@@ -8,6 +8,7 @@ import { FactoringExpression } from './FactoringExpression'
 type Props = {
   problem: Problem
   answer?: AnswerValue | null
+  wrongLine?: { slope: number; intercept: number } | null
 }
 
 function parseGraphPoints(raw: unknown): GraphPoint[] | undefined {
@@ -23,7 +24,7 @@ function parseGraphPoints(raw: unknown): GraphPoint[] | undefined {
   return points.length > 0 ? points : undefined
 }
 
-export function ProblemVisual({ problem, answer }: Props) {
+export function ProblemVisual({ problem, answer, wrongLine }: Props) {
   if (!problem.visual || problem.visual.kind === 'none') return null
 
   const props = problem.visual.props as Record<string, number | number[] | string[] | unknown>
@@ -52,7 +53,8 @@ export function ProblemVisual({ problem, answer }: Props) {
     case 'coordinate-graph': {
       let previewSlope: number | undefined
       let previewIntercept: number | undefined
-      if (answer?.type === 'line-equation') {
+      // While a wrong submission is shown, suppress the live preview so only the red line is visible.
+      if (!wrongLine && answer?.type === 'line-equation') {
         const m = parseNumericInput(answer.slope)
         const b = parseNumericInput(answer.intercept)
         if (m !== null) previewSlope = m
@@ -67,6 +69,8 @@ export function ProblemVisual({ problem, answer }: Props) {
           points={parseGraphPoints(props.points)}
           previewSlope={previewSlope}
           previewIntercept={previewIntercept}
+          wrongSlope={wrongLine?.slope}
+          wrongIntercept={wrongLine?.intercept}
           xMin={props.xMin !== undefined ? Number(props.xMin) : undefined}
           xMax={props.xMax !== undefined ? Number(props.xMax) : undefined}
           yMin={props.yMin !== undefined ? Number(props.yMin) : undefined}
