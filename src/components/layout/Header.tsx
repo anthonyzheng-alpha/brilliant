@@ -7,6 +7,7 @@ import { FEATURES } from '../../lib/features'
 import { courses } from '../../content'
 import { useProgressStore } from '../../stores/progressStore'
 import { useDebugStore } from '../../stores/debugStore'
+import { useSettingsStore } from '../../stores/settingsStore'
 import { isCourseUnlocked } from '../../lib/courseUnlock'
 import './Header.css'
 
@@ -22,6 +23,7 @@ export function Header() {
       </nav>
       <div className="app-header__actions">
         {import.meta.env.DEV && <DebugUnlockToggle />}
+        <SettingsMenu />
         {FEATURES.gamification && <StreakBadge />}
         {FEATURES.firebase && <AuthSlot />}
       </div>
@@ -119,6 +121,58 @@ function CoursesDropdown() {
             </Link>
           )
         })}
+      </div>
+    </div>
+  )
+}
+
+function SettingsMenu() {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const aiEnabled = useSettingsStore((s) => s.aiEnabled)
+  const toggleAiEnabled = useSettingsStore((s) => s.toggleAiEnabled)
+
+  useEffect(() => {
+    if (!open) return
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [open])
+
+  return (
+    <div
+      className={`app-header__settings${open ? ' app-header__settings--open' : ''}`}
+      ref={ref}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') setOpen(false)
+      }}
+    >
+      <button
+        type="button"
+        className="app-header__settings-trigger"
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-label="Settings"
+        title="Settings"
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span aria-hidden="true">⚙</span>
+      </button>
+      <div className="app-header__settings-panel" role="menu">
+        <p className="app-header__settings-title">Settings</p>
+        <label className="app-header__settings-toggle">
+          <input type="checkbox" checked={aiEnabled} onChange={toggleAiEnabled} />
+          AI-powered practice
+        </label>
+        {!aiEnabled && (
+          <p className="app-header__settings-warning" role="alert">
+            AI is off. The diversity of problems presented by the overall review will decrease.
+          </p>
+        )}
       </div>
     </div>
   )

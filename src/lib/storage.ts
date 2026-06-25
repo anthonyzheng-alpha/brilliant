@@ -6,6 +6,7 @@ const STRUGGLES_KEY = 'algebra-clone-struggles'
 const SEEN_MINI_LESSONS_KEY = 'algebra-clone-seen-minilessons'
 const VARIANTS_KEY = 'algebra-clone-variants'
 const DEBUG_KEY = 'algebra-clone-debug'
+const SETTINGS_KEY = 'algebra-clone-settings'
 const WELCOME_KEY = 'algebra-clone-welcome-seen'
 
 type DebugState = {
@@ -14,6 +15,14 @@ type DebugState = {
 
 const defaultDebug = (): DebugState => ({
   unlockAll: false,
+})
+
+type SettingsState = {
+  aiEnabled: boolean
+}
+
+const defaultSettings = (): SettingsState => ({
+  aiEnabled: true,
 })
 
 const defaultProgress = (): ProgressState => ({
@@ -107,6 +116,14 @@ export function saveDebug(state: DebugState): void {
   writeJson(DEBUG_KEY, state)
 }
 
+export function loadSettings(): SettingsState {
+  return { ...defaultSettings(), ...readJson(SETTINGS_KEY, defaultSettings) }
+}
+
+export function saveSettings(state: SettingsState): void {
+  writeJson(SETTINGS_KEY, state)
+}
+
 export function loadVariant(lessonId: string): LessonVariant | null {
   const all = readJson<Record<string, LessonVariant>>(VARIANTS_KEY, () => ({}))
   return all[lessonId] ?? null
@@ -129,4 +146,4 @@ export function clearAllLocalData(): void {
 }
 
 export { PROGRESS_KEY, GAMIFICATION_KEY, STRUGGLES_KEY }
-export type { DebugState }
+export type { DebugState, SettingsState }

@@ -34,6 +34,9 @@ export type GenerateRequest = {
   // repeating or lightly rewording them so the learner never sees the same
   // problem back-to-back.
   avoidPrompts?: string[]
+  // When false, skip AI generation entirely and serve authored problems. Lets
+  // the user turn off AI presence (less diverse, recycles questions more).
+  useAi?: boolean
 }
 
 // Collapse whitespace + lowercase so trivially-different prompts compare equal.
@@ -287,7 +290,7 @@ export function fallbackProblem(
 export async function generateReviewProblem(
   req: GenerateRequest,
 ): Promise<GeneratedProblem> {
-  const model = getModel()
+  const model = req.useAi === false ? null : getModel()
   if (model) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {

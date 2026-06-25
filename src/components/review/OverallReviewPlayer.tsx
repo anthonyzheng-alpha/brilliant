@@ -9,6 +9,7 @@ import { isAnswerValid, hasValidInput } from '../../lib/validation'
 import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
 import { useAuthStore } from '../../stores/authStore'
 import { useStruggleStore } from '../../stores/struggleStore'
+import { useSettingsStore } from '../../stores/settingsStore'
 import {
   generateReviewProblem,
   normalizePrompt,
@@ -65,6 +66,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const recordAttempt = useStruggleStore((s) => s.recordAttempt)
   const getWeakSkills = useStruggleStore((s) => s.getWeakSkills)
   const getAttemptedSkills = useStruggleStore((s) => s.getAttemptedSkills)
+  const aiEnabled = useSettingsStore((s) => s.aiEnabled)
 
   const [problem, setProblem] = useState<GeneratedProblem | null>(null)
   const [answer, setAnswer] = useState<AnswerValue | null>(null)
@@ -156,8 +158,9 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
       difficultyLabel,
       difficultyNote,
       examples,
+      useAi: aiEnabled,
     }
-  }, [coveredLessonIds, getWeakSkills, getAttemptedSkills])
+  }, [coveredLessonIds, getWeakSkills, getAttemptedSkills, aiEnabled])
 
   // Generate a problem that is not a repeat of the last few shown. Retries with a
   // fresh target a couple of times, then accepts the last candidate regardless.
