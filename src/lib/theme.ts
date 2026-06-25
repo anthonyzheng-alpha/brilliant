@@ -7,7 +7,7 @@ export type ThemeOption = {
 }
 
 export const THEMES: ThemeOption[] = [
-  { id: 'light', label: 'Light', swatch: '#6c3fc5' },
+  { id: 'light', label: 'Light', swatch: '#cccccc' },
   { id: 'dark', label: 'Dark', swatch: '#a78bfa' },
   { id: 'midnight', label: 'Midnight', swatch: '#60a5fa' },
   { id: 'forest', label: 'Forest', swatch: '#34d399' },
