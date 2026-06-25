@@ -148,6 +148,7 @@ export function ReviewPlayer({ courseSlug, problems, onNewSet }: Props) {
             problem={problem}
             answer={answer}
             onAnswerChange={handleAnswerChange}
+            onSubmit={handleCheck}
             disabled={inputLocked}
           />
 
