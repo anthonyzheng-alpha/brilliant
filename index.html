@@ -8,8 +8,10 @@
     <script>
       // Apply the saved theme before paint to avoid a flash. Defaults to dark.
       try {
+        var themes = ['light', 'dark', 'midnight', 'forest', 'sunset', 'ocean'];
         var s = JSON.parse(localStorage.getItem('algebra-clone-settings') || '{}');
-        document.documentElement.setAttribute('data-theme', s.theme === 'light' ? 'light' : 'dark');
+        var theme = themes.indexOf(s.theme) !== -1 ? s.theme : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
         document.documentElement.setAttribute('data-theme', 'dark');
       }

@@ -1,4 +1,5 @@
 import type { ProgressState, GamificationState, LessonVariant, StruggleState } from '../types/content'
+import { DEFAULT_THEME, isTheme, type Theme } from './theme'
 
 const PROGRESS_KEY = 'algebra-clone-progress'
 const GAMIFICATION_KEY = 'algebra-clone-gamification'
@@ -19,12 +20,12 @@ const defaultDebug = (): DebugState => ({
 
 type SettingsState = {
   aiEnabled: boolean
-  theme: 'light' | 'dark'
+  theme: Theme
 }
 
 const defaultSettings = (): SettingsState => ({
   aiEnabled: true,
-  theme: 'dark',
+  theme: DEFAULT_THEME,
 })
 
 const defaultProgress = (): ProgressState => ({
@@ -119,7 +120,11 @@ export function saveDebug(state: DebugState): void {
 }
 
 export function loadSettings(): SettingsState {
-  return { ...defaultSettings(), ...readJson(SETTINGS_KEY, defaultSettings) }
+  const merged = { ...defaultSettings(), ...readJson(SETTINGS_KEY, defaultSettings) }
+  if (!isTheme(merged.theme)) {
+    merged.theme = DEFAULT_THEME
+  }
+  return merged
 }
 
 export function saveSettings(state: SettingsState): void {

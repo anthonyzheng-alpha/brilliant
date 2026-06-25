@@ -9,6 +9,7 @@ import { useProgressStore } from '../../stores/progressStore'
 import { useDebugStore } from '../../stores/debugStore'
 import { useSettingsStore } from '../../stores/settingsStore'
 import { isCourseUnlocked } from '../../lib/courseUnlock'
+import { THEMES } from '../../lib/theme'
 import './Header.css'
 
 export function Header() {
@@ -132,7 +133,7 @@ function SettingsMenu() {
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
   const toggleAiEnabled = useSettingsStore((s) => s.toggleAiEnabled)
   const theme = useSettingsStore((s) => s.theme)
-  const toggleTheme = useSettingsStore((s) => s.toggleTheme)
+  const setTheme = useSettingsStore((s) => s.setTheme)
 
   useEffect(() => {
     if (!open) return
@@ -166,10 +167,28 @@ function SettingsMenu() {
       </button>
       <div className="app-header__settings-panel" role="menu">
         <p className="app-header__settings-title">Settings</p>
-        <label className="app-header__settings-toggle">
-          <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
-          Dark mode
-        </label>
+        <div className="app-header__settings-group">
+          <span className="app-header__settings-label">Theme</span>
+          <div
+            className="app-header__theme-picker"
+            role="radiogroup"
+            aria-label="Theme"
+          >
+            {THEMES.map((t) => (
+              <button
+                key={t.id}
+                type="button"
+                role="radio"
+                aria-checked={theme === t.id}
+                aria-label={t.label}
+                title={t.label}
+                className={`app-header__theme-swatch${theme === t.id ? ' is-active' : ''}`}
+                style={{ background: t.swatch }}
+                onClick={() => setTheme(t.id)}
+              />
+            ))}
+          </div>
+        </div>
         <label className="app-header__settings-toggle">
           <input type="checkbox" checked={aiEnabled} onChange={toggleAiEnabled} />
           AI-powered practice

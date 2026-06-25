@@ -159,16 +159,46 @@ function shuffle<T>(items: T[]): T[] {
   return arr
 }
 
+// Stable identity of "the same question" for de-duping. Two problems with
+// different ids but identical content (e.g. the factoring bank reuses the same
+// expression across rounds) collapse to one signature. The prompt covers cases
+// where the question text carries the math (solving-equations), while the visual
+// covers cases where the prompt is generic but the figure differs (factoring
+// expressions, coordinate graphs).
+function problemSignature(p: Problem): string {
+  const prompt = p.prompt.trim().replace(/\s+/g, ' ').toLowerCase()
+  const visual = p.visual ? JSON.stringify(p.visual) : ''
+  return `${prompt}|${visual}`
+}
+
 // Randomly pick the round's sampleSize problems from its pool (random order).
-// Rounds without a sampleSize keep all problems in their authored order.
+// Rounds are processed in order while sharing a `seen` set of content
+// signatures, so a single lesson run never shows the same question twice — even
+// when different problem ids across rounds carry identical content. If a round
+// can't fill its sample size with fresh content, it backfills from its remaining
+// ids so every round still shows its full count.
 export function chooseLessonVariant(lesson: Lesson): LessonVariant {
   const variant: LessonVariant = {}
+  const seen = new Set<string>()
   for (const round of lesson.rounds) {
     const size = roundSize(round)
-    variant[round.id] =
-      size >= round.problemIds.length
-        ? [...round.problemIds]
-        : shuffle(round.problemIds).slice(0, size)
+    const candidates = shuffle(round.problemIds).filter((id) => problemBank[id])
+    const chosen: string[] = []
+    for (const id of candidates) {
+      if (chosen.length >= size) break
+      const sig = problemSignature(problemBank[id])
+      if (seen.has(sig)) continue
+      seen.add(sig)
+      chosen.push(id)
+    }
+    if (chosen.length < size) {
+      for (const id of candidates) {
+        if (chosen.length >= size) break
+        if (chosen.includes(id)) continue
+        chosen.push(id)
+      }
+    }
+    variant[round.id] = chosen
   }
   return variant
 }
@@ -233,13 +263,19 @@ export function getReviewProblems(
     }
   }
   const exclude = new Set(excludeIds)
-  const available = [...ids].filter((id) => problemBank[id])
-  const fresh = available.filter((id) => !exclude.has(id))
-  const pool = fresh.length >= count ? fresh : available
-  return shuffle(pool)
-    .map((id) => problemBank[id])
-    .filter(Boolean)
-    .slice(0, count)
+  // Shuffle first, then keep one id per content signature so a set never
+  // contains two problems that read identically (different ids, same content).
+  const seenSig = new Set<string>()
+  const unique: string[] = []
+  for (const id of shuffle([...ids].filter((id) => problemBank[id]))) {
+    const sig = problemSignature(problemBank[id])
+    if (seenSig.has(sig)) continue
+    seenSig.add(sig)
+    unique.push(id)
+  }
+  const fresh = unique.filter((id) => !exclude.has(id))
+  const pool = fresh.length >= count ? fresh : unique
+  return pool.map((id) => problemBank[id]).slice(0, count)
 }
 
 export type RoundBox = { id: string; label: string; done: boolean }

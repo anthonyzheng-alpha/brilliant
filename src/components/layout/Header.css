@@ -178,6 +178,41 @@
   opacity: 0.7;
 }
 
+.app-header__settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.app-header__settings-label {
+  font-size: 0.9rem;
+  color: var(--text-h);
+}
+
+.app-header__theme-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.app-header__theme-swatch {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  outline-offset: 2px;
+}
+
+.app-header__theme-swatch:hover {
+  transform: scale(1.1);
+}
+
+.app-header__theme-swatch.is-active {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
 .app-header__settings-toggle {
   display: inline-flex;
   align-items: center;

@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { loadSettings, saveSettings } from '../lib/storage'
-
-type Theme = 'light' | 'dark'
+import type { Theme } from '../lib/theme'
 
 type SettingsStore = {
   aiEnabled: boolean
@@ -9,7 +8,6 @@ type SettingsStore = {
   setAiEnabled: (value: boolean) => void
   toggleAiEnabled: () => void
   setTheme: (theme: Theme) => void
-  toggleTheme: () => void
 }
 
 // Reflect the active theme on the document so the CSS variables switch.
@@ -39,9 +37,5 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
     saveSettings({ aiEnabled: get().aiEnabled, theme })
     applyTheme(theme)
     set({ theme })
-  },
-
-  toggleTheme: () => {
-    get().setTheme(get().theme === 'dark' ? 'light' : 'dark')
   },
 }))
