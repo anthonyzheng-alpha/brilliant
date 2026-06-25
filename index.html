@@ -5,6 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Wizard</title>
+    <script>
+      // Apply the saved theme before paint to avoid a flash. Defaults to dark.
+      try {
+        var s = JSON.parse(localStorage.getItem('algebra-clone-settings') || '{}');
+        document.documentElement.setAttribute('data-theme', s.theme === 'light' ? 'light' : 'dark');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

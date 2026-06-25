@@ -19,10 +19,12 @@ const defaultDebug = (): DebugState => ({
 
 type SettingsState = {
   aiEnabled: boolean
+  theme: 'light' | 'dark'
 }
 
 const defaultSettings = (): SettingsState => ({
   aiEnabled: true,
+  theme: 'dark',
 })
 
 const defaultProgress = (): ProgressState => ({

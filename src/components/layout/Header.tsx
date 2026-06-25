@@ -131,6 +131,8 @@ function SettingsMenu() {
   const ref = useRef<HTMLDivElement>(null)
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
   const toggleAiEnabled = useSettingsStore((s) => s.toggleAiEnabled)
+  const theme = useSettingsStore((s) => s.theme)
+  const toggleTheme = useSettingsStore((s) => s.toggleTheme)
 
   useEffect(() => {
     if (!open) return
@@ -164,6 +166,10 @@ function SettingsMenu() {
       </button>
       <div className="app-header__settings-panel" role="menu">
         <p className="app-header__settings-title">Settings</p>
+        <label className="app-header__settings-toggle">
+          <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+          Dark mode
+        </label>
         <label className="app-header__settings-toggle">
           <input type="checkbox" checked={aiEnabled} onChange={toggleAiEnabled} />
           AI-powered practice
