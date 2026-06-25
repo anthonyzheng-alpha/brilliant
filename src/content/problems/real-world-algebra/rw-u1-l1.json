@@ -137,8 +137,8 @@
       }
     },
     "hints": [
-      "Compare the two per-ounce prices and choose the lower one.",
-      "Divide each price by the number of ounces."
+      "Divide each price by the number of ounces.",
+      "Compare the two per-ounce prices and choose the lower one."
     ],
     "explanation": "Juice B costs $\\$0.12$ per ounce versus $\\$0.125$ for Juice A, so B is the better deal."
   },
@@ -423,8 +423,8 @@
       }
     },
     "hints": [
-      "Compare Plan A's flat fee with Plan B's computed total and pick the lower.",
-      "Compute Plan B's cost: base + rate × GB."
+      "Compute Plan B's cost: base + rate × GB.",
+      "Compare Plan A's flat fee with Plan B's computed total and pick the lower."
     ],
     "explanation": "Plan B costs $10 + 0.50(30) = \\$25$, which is less than Plan A's flat $\\$30$."
   },
@@ -440,8 +440,8 @@
       }
     },
     "hints": [
-      "Divide both sides to solve for the number of miles.",
-      "Set the two cost expressions equal: 5 + 1.50m = 2 + 2m."
+      "Set the two cost expressions equal: 5 + 1.50m = 2 + 2m.",
+      "Divide both sides to solve for the number of miles."
     ],
     "misconception": "Set the two cost expressions equal and solve for miles - don't just compare the base fees.",
     "explanation": "$5 + 1.50m = 2 + 2m \\to 3 = 0.5m \\to m = 6$. Both cost $\\$14$ at 6 miles."

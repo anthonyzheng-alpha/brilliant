@@ -1427,7 +1427,7 @@
     "hints": [
       "No middle term and a perfect-square constant signal a difference of squares.",
       "$49 = 7^2$, so the factors use $7$ with a $+$ and a $-$.",
-      "Drag the $(x+7)$ and $(x-7)$ pair into the slots."
+      "Drag the pair that uses $7$ — once with $+$ and once with $-$ — into the slots."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
     "misconception": "Identify the pattern first: no middle term plus a perfect square means difference of squares, using $\\sqrt{49} = 7$."
