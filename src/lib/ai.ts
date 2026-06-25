@@ -4,6 +4,7 @@ import type { Problem, ProblemType } from '../types/content'
 import { getFirebaseApp } from './firebase'
 import { problemSchema } from './schemas'
 import { getLessonById, problemBank } from '../content'
+import { evalNumber, numbersClose, parseNumericFromLabel } from './mathCheck'
 
 // A review problem also remembers which lesson it is reinforcing so the UI can
 // point the learner back to it ("Review: <lesson>") instead of showing hints.
@@ -76,6 +77,14 @@ const responseSchema = Schema.object({
     misconception: Schema.string({
       description: 'A short note about the most common mistake on this problem.',
     }),
+    answerValue: Schema.number({
+      description:
+        'The exact numeric value of the correct answer. Omit ONLY when the answer is not a number (e.g. a multiple-choice label like "Bag B").',
+    }),
+    verifyExpression: Schema.string({
+      description:
+        'A math.js arithmetic expression using ONLY numbers and + - * / ^ ( ) sqrt abs (no variables, no "="), that evaluates to answerValue. Derive it from the problem\'s given numbers, e.g. for "x + 5 = 2" use "2 - 5". Omit only when answerValue is omitted.',
+    }),
   },
   optionalProperties: [
     'options',
@@ -83,6 +92,8 @@ const responseSchema = Schema.object({
     'numericAnswer',
     'placeholder',
     'misconception',
+    'answerValue',
+    'verifyExpression',
   ],
 })
 
@@ -95,6 +106,8 @@ type RawGenerated = {
   placeholder?: string
   explanation: string
   misconception?: string
+  answerValue?: number
+  verifyExpression?: string
 }
 
 let cachedModel: GenerativeModel | null = null
@@ -144,12 +157,38 @@ function buildPrompt(req: GenerateRequest): string {
       : `Provide a single exact numericAnswer (a number) and a short placeholder.`,
     `${difficultyLine} Use $...$ for any math.`,
     `Always include a clear explanation and a one-sentence misconception.`,
+    `For any problem whose answer is a number, you MUST also return answerValue (the exact answer) and verifyExpression — a math.js arithmetic expression built from the problem's given numbers that evaluates to answerValue (e.g. for "x + 5 = 2" use "2 - 5"). verifyExpression must contain no variables and no "=", and must not be a bare copy of the answer. For multiple-choice, answerValue must equal the numeric value shown in the correct option's label.`,
     examplesBlock,
     avoidBlock,
     mistakes,
   ]
     .filter(Boolean)
     .join('\n')
+}
+
+// Independently re-check the model's arithmetic with math.js. Returns false when
+// the stated answer does not follow from verifyExpression (or, for numeric
+// problems, when the verification fields are missing). Non-numeric multiple
+// choice answers can't be math-checked, so they pass through.
+function verifyRaw(raw: RawGenerated): boolean {
+  if (raw.type === 'numeric') {
+    if (typeof raw.numericAnswer !== 'number' || typeof raw.answerValue !== 'number') return false
+    if (!raw.verifyExpression) return false
+    const computed = evalNumber(raw.verifyExpression)
+    if (computed === null) return false
+    return numbersClose(computed, raw.answerValue) && numbersClose(raw.answerValue, raw.numericAnswer)
+  }
+
+  // Multiple choice: only verify when the correct answer is numeric.
+  const correct = raw.options?.find((o) => o.id === raw.correctOptionId)
+  const labelValue = correct ? parseNumericFromLabel(correct.label) : null
+  if (typeof raw.answerValue !== 'number' || labelValue === null) {
+    // Non-numeric answer (e.g. "Bag B") — nothing to math-check.
+    return true
+  }
+  const computed = raw.verifyExpression ? evalNumber(raw.verifyExpression) : null
+  if (computed === null) return false
+  return numbersClose(computed, raw.answerValue) && numbersClose(labelValue, raw.answerValue)
 }
 
 // Convert the flat model output into our validated Problem shape.
@@ -204,6 +243,9 @@ function toProblem(
     }
   }
 
+  // Math.js safeguard: reject problems whose answer doesn't check out.
+  if (!verifyRaw(raw)) return null
+
   const parsed = problemSchema.safeParse(candidate)
   if (!parsed.success) return null
   return { ...(parsed.data as Problem), reviewRef: lessonId, reviewRoundId: roundId }
@@ -247,7 +289,7 @@ export async function generateReviewProblem(
 ): Promise<GeneratedProblem> {
   const model = getModel()
   if (model) {
-    for (let attempt = 0; attempt < 2; attempt++) {
+    for (let attempt = 0; attempt < 3; attempt++) {
       try {
         const result = await model.generateContent(buildPrompt(req))
         const text = result.response.text()
