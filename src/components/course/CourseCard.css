@@ -20,6 +20,35 @@
   cursor: not-allowed;
 }
 
+.course-card--complete {
+  border-color: #ffd24a;
+  animation: course-card-gold-glow 2.4s ease-in-out infinite;
+}
+
+.course-card--complete:hover {
+  border-color: #ffe08a;
+}
+
+@keyframes course-card-gold-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(255, 195, 64, 0.45),
+      0 0 16px rgba(255, 195, 64, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 195, 64, 0.75),
+      0 0 34px rgba(255, 195, 64, 0.5), 0 0 60px rgba(255, 195, 64, 0.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-card--complete {
+    animation: none;
+    box-shadow: 0 0 12px rgba(255, 195, 64, 0.6),
+      0 0 28px rgba(255, 195, 64, 0.35);
+  }
+}
+
 .course-card__header {
   display: flex;
   justify-content: space-between;

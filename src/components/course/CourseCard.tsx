@@ -13,6 +13,7 @@ type Props = {
   locked?: boolean
   lockedLabel?: string
   lockedHint?: string
+  completed?: boolean
 }
 
 export function CourseCard({
@@ -22,6 +23,7 @@ export function CourseCard({
   locked,
   lockedLabel = 'Coming soon',
   lockedHint,
+  completed,
 }: Props) {
   const unlockAll = useDebugStore((s) => s.unlockAll)
   const isLocked =
@@ -56,7 +58,10 @@ export function CourseCard({
   }
 
   return (
-    <Link to={`/courses/${course.slug}`} className="course-card">
+    <Link
+      to={`/courses/${course.slug}`}
+      className={`course-card${completed ? ' course-card--complete' : ''}`}
+    >
       {inner}
     </Link>
   )

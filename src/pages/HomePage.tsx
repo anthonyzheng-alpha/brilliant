@@ -57,12 +57,17 @@ export function HomePage() {
                 FEATURES.sequentialUnlock &&
                 !unlockAll &&
                 !isCourseUnlocked(course.id, isCourseComplete)
+              const completed = isCourseComplete(
+                course.id,
+                lessons.map((l) => l.id),
+              )
               const prevTitle = index > 0 ? courses[index - 1].title : undefined
               return (
                 <CourseCard
                   key={course.id}
                   course={course}
                   progressPercent={getCourseProblemPercent(course.id, lessons)}
+                  completed={completed}
                   boxes={boxes}
                   locked={sequentiallyLocked || undefined}
                   lockedLabel={sequentiallyLocked ? 'Locked' : undefined}
