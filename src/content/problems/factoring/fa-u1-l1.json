@@ -323,7 +323,6 @@
     },
     "hints": [
       "$x^2 - 9$ is $x^2$ minus a perfect square.",
-      "Since $9 = 3^2$, use $(x + 3)(x - 3)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 9 = (x+3)(x-3)$ — a difference of squares, since $9 = 3^2$.",
@@ -353,7 +352,6 @@
     },
     "hints": [
       "$x^2 - 16$ is $x^2$ minus a perfect square.",
-      "Since $16 = 4^2$, use $(x + 4)(x - 4)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 16 = (x+4)(x-4)$ — a difference of squares, since $16 = 4^2$.",
@@ -383,7 +381,6 @@
     },
     "hints": [
       "$x^2 - 25$ is $x^2$ minus a perfect square.",
-      "Since $25 = 5^2$, use $(x + 5)(x - 5)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 25 = (x+5)(x-5)$ — a difference of squares, since $25 = 5^2$.",
@@ -413,7 +410,6 @@
     },
     "hints": [
       "$x^2 - 1$ is $x^2$ minus a perfect square.",
-      "Since $1 = 1^2$, use $(x + 1)(x - 1)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 1 = (x+1)(x-1)$ — a difference of squares, since $1 = 1^2$.",
@@ -443,7 +439,6 @@
     },
     "hints": [
       "$x^2 - 49$ is $x^2$ minus a perfect square.",
-      "Since $49 = 7^2$, use $(x + 7)(x - 7)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
@@ -563,7 +558,6 @@
     },
     "hints": [
       "$x^2 - 100$ is $x^2$ minus a perfect square.",
-      "Since $100 = 10^2$, use $(x + 10)(x - 10)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 100 = (x+10)(x-10)$ — a difference of squares, since $100 = 10^2$.",
@@ -683,7 +677,6 @@
     },
     "hints": [
       "$x^2 - 64$ is $x^2$ minus a perfect square.",
-      "Since $64 = 8^2$, use $(x + 8)(x - 8)$.",
       "Use the matching $+$ and $-$ pair for a difference of squares."
     ],
     "explanation": "$x^2 - 64 = (x+8)(x-8)$ — a difference of squares, since $64 = 8^2$.",
