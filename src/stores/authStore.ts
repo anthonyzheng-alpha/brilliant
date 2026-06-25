@@ -13,6 +13,7 @@ import { clearAllLocalData } from '../lib/storage'
 import { syncOnLogin } from '../lib/syncProgress'
 import { useProgressStore } from './progressStore'
 import { useGamificationStore } from './gamificationStore'
+import { useStruggleStore } from './struggleStore'
 
 type AuthStore = {
   user: User | null
@@ -45,6 +46,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
           await syncOnLogin(user.uid)
           useProgressStore.getState().hydrate()
           useGamificationStore.getState().hydrate()
+          useStruggleStore.getState().hydrate()
         } catch (e) {
           console.error('Sync on login failed', e)
         }
@@ -103,6 +105,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     clearAllLocalData()
     useProgressStore.getState().hydrate()
     useGamificationStore.getState().hydrate()
+    useStruggleStore.getState().hydrate()
     set({ user: null })
   },
 }))

@@ -170,6 +170,21 @@ export type GamificationState = {
   badges: string[]
 }
 
+// Per-skill record of how often the learner missed a given topic + question type.
+// The skill key is `${lessonId}::${roundId}::${problemType}` (round encodes the
+// specific difficulty band). Legacy 2-part keys `${lessonId}::${problemType}`
+// from before per-round tracking are still read for backward compatibility.
+export type SkillStat = {
+  attempts: number
+  incorrect: number
+  lastSeenISO: string
+}
+
+export type StruggleState = {
+  version: number
+  skills: Record<string, SkillStat>
+}
+
 export type AnswerValue =
   | { type: 'multiple-choice'; selectedId: string }
   | { type: 'drag-drop'; placement: Record<string, string> }

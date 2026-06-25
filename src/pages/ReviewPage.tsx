@@ -23,7 +23,13 @@ export function ReviewPage() {
 
   const newSet = useCallback(() => {
     if (!course) return
-    setProblems(getReviewProblems(course.id, REVIEW_SIZE))
+    setProblems((prev) =>
+      getReviewProblems(
+        course.id,
+        REVIEW_SIZE,
+        prev.map((p) => p.id),
+      ),
+    )
     setSetKey((k) => k + 1)
   }, [course])
 

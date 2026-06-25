@@ -1,5 +1,13 @@
 import { courseSchema, lessonSchema, problemSchema, unitSchema } from '../lib/schemas'
-import type { Course, Lesson, LessonVariant, Problem, Round, Unit } from '../types/content'
+import type {
+  Course,
+  Lesson,
+  LessonVariant,
+  Problem,
+  ProgressState,
+  Round,
+  Unit,
+} from '../types/content'
 
 import solvingEquations from './courses/solving-equations.json'
 import visualAlgebra from './courses/visual-algebra.json'
@@ -62,6 +70,62 @@ for (const lesson of lessons) {
       }
     }
   }
+}
+
+// Resolves where a lesson lives in the content tree (course + unit + display title).
+export type LessonLocation = {
+  lessonId: string
+  lessonTitle: string
+  unitId: string
+  unitTitle: string
+  courseId: string
+  courseSlug: string
+  courseTitle: string
+}
+
+export type ProblemLocation = LessonLocation & { problemId: string }
+
+const lessonLocationMap: Record<string, LessonLocation> = {}
+const problemLocationMap: Record<string, ProblemLocation> = {}
+
+for (const lesson of lessons) {
+  const unit = units.find((u) => u.id === lesson.unitId)
+  const course = unit ? courses.find((c) => c.id === unit.courseId) : undefined
+  const location: LessonLocation = {
+    lessonId: lesson.id,
+    lessonTitle: lesson.title,
+    unitId: lesson.unitId,
+    unitTitle: unit?.title ?? '',
+    courseId: unit?.courseId ?? '',
+    courseSlug: course?.slug ?? '',
+    courseTitle: course?.title ?? '',
+  }
+  lessonLocationMap[lesson.id] = location
+  for (const round of lesson.rounds) {
+    for (const pid of round.problemIds) {
+      problemLocationMap[pid] = { ...location, problemId: pid }
+    }
+  }
+}
+
+export function getLessonLocation(lessonId: string): LessonLocation | undefined {
+  return lessonLocationMap[lessonId]
+}
+
+export function getProblemLocation(problemId: string): ProblemLocation | undefined {
+  return problemLocationMap[problemId]
+}
+
+// Lessons the learner has engaged with at all (any recorded progress or completion).
+export function getCoveredLessonIds(progress: ProgressState): string[] {
+  const covered = new Set<string>()
+  for (const course of Object.values(progress.courses)) {
+    for (const lessonId of course.completedLessons ?? []) covered.add(lessonId)
+    for (const [lessonId, count] of Object.entries(course.lessonProgress ?? {})) {
+      if (count > 0) covered.add(lessonId)
+    }
+  }
+  return [...covered].filter((id) => Boolean(lessonLocationMap[id]))
 }
 
 export function getCourseBySlug(slug: string): Course | undefined {
@@ -154,15 +218,25 @@ export function getAllLessonsForCourse(courseId: string): Lesson[] {
 }
 
 // Random practice set drawn from the entire course pool (every round's full
-// candidate list, not just its sample size), deduped and shuffled.
-export function getReviewProblems(courseId: string, count = 5): Problem[] {
+// candidate list, not just its sample size), deduped and shuffled. Ids in
+// `excludeIds` (e.g. the previous set) are skipped so consecutive sets don't
+// repeat — unless excluding them would leave too few problems.
+export function getReviewProblems(
+  courseId: string,
+  count = 5,
+  excludeIds: string[] = [],
+): Problem[] {
   const ids = new Set<string>()
   for (const lesson of getAllLessonsForCourse(courseId)) {
     for (const round of lesson.rounds) {
       for (const pid of round.problemIds) ids.add(pid)
     }
   }
-  return shuffle([...ids])
+  const exclude = new Set(excludeIds)
+  const available = [...ids].filter((id) => problemBank[id])
+  const fresh = available.filter((id) => !exclude.has(id))
+  const pool = fresh.length >= count ? fresh : available
+  return shuffle(pool)
     .map((id) => problemBank[id])
     .filter(Boolean)
     .slice(0, count)

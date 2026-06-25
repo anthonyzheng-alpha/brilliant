@@ -113,6 +113,12 @@
   margin-bottom: 1.25rem;
 }
 
+.lesson-player__review-status {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0 0 1.25rem;
+}
+
 .lesson-player__prompt {
   font-size: 1.15rem;
   line-height: 1.45;
@@ -190,6 +196,18 @@
 .feedback__body {
   margin: 0 0 0.75rem;
   color: var(--text);
+}
+
+.feedback__review-ref {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.feedback__review-link {
+  font-weight: 600;
+  color: var(--accent, #2563eb);
+  text-decoration: underline;
 }
 
 .milestone-modal-overlay {

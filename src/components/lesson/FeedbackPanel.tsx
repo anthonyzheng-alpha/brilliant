@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FEATURES } from '../../lib/features'
 import { RichText } from '../common/RichText'
 import './LessonPlayer.css'
@@ -10,13 +11,18 @@ type FeedbackState =
   | { kind: 'complete'; lessonTitle: string }
   | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
 
+type ReviewRef = { to: string; lessonTitle: string }
+
 type Props = {
   state: FeedbackState
   onContinue: () => void
   onRetryRound?: () => void
+  // When set, an incorrect answer points the learner to a lesson to relearn,
+  // instead of relying on hints (used by the Overall Review).
+  reviewRef?: ReviewRef
 }
 
-export function FeedbackPanel({ state, onContinue, onRetryRound }: Props) {
+export function FeedbackPanel({ state, onContinue, onRetryRound, reviewRef }: Props) {
   if (state.kind === 'idle') return null
 
   if (state.kind === 'round-complete') {
@@ -45,6 +51,14 @@ export function FeedbackPanel({ state, onContinue, onRetryRound }: Props) {
         <p className="feedback__body">
           <RichText text={state.reason} />
         </p>
+        {reviewRef && (
+          <p className="feedback__review-ref">
+            Go relearn this:{' '}
+            <Link to={reviewRef.to} className="feedback__review-link">
+              {reviewRef.lessonTitle}
+            </Link>
+          </p>
+        )}
       </div>
     )
     return FEATURES.animations ? (

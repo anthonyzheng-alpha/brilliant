@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { PageShell } from '../components/layout/PageShell'
 import { CourseCard } from '../components/course/CourseCard'
@@ -39,6 +40,9 @@ export function HomePage() {
             <p className="hero__sub">
               Interactive puzzles that build intuition before notation.
             </p>
+            <Link to="/review" className="btn btn--primary hero__review-cta" style={{ textDecoration: 'none' }}>
+              Overall Review
+            </Link>
           </section>
           <section className="course-grid">
             {courses.map((course, index) => {

@@ -1,7 +1,7 @@
-import type { GamificationState, ProgressState, CourseProgress } from '../types/content'
+import type { GamificationState, ProgressState, CourseProgress, StruggleState } from '../types/content'
 import { get, ref, set } from 'firebase/database'
 import { getRealtimeDb } from './firebase'
-import { saveProgress, saveGamification } from './storage'
+import { saveProgress, saveGamification, saveStruggles } from './storage'
 
 // RTDB rejects `undefined` values; strip them (and any undefined nested fields).
 function stripUndefined<T>(value: T): T {
@@ -75,13 +75,15 @@ export function mergeGamification(
 export async function fetchUserData(uid: string): Promise<{
   progress: ProgressState | null
   gamification: GamificationState | null
+  struggles: StruggleState | null
 }> {
   const db = getRealtimeDb()
-  if (!db) return { progress: null, gamification: null }
+  if (!db) return { progress: null, gamification: null, struggles: null }
 
-  const [progressSnap, gamificationSnap] = await Promise.all([
+  const [progressSnap, gamificationSnap, strugglesSnap] = await Promise.all([
     get(ref(db, `users/${uid}/progress`)),
     get(ref(db, `users/${uid}/gamification`)),
+    get(ref(db, `users/${uid}/struggles`)),
   ])
 
   return {
@@ -89,6 +91,7 @@ export async function fetchUserData(uid: string): Promise<{
     gamification: gamificationSnap.exists()
       ? (gamificationSnap.val() as GamificationState)
       : null,
+    struggles: strugglesSnap.exists() ? (strugglesSnap.val() as StruggleState) : null,
   }
 }
 
@@ -109,6 +112,16 @@ export async function saveUserGamification(
   saveGamification(gamification)
 }
 
+export async function saveUserStruggles(
+  uid: string,
+  struggles: StruggleState,
+): Promise<void> {
+  const db = getRealtimeDb()
+  if (!db) return
+  await set(ref(db, `users/${uid}/struggles`), stripUndefined(struggles))
+  saveStruggles(struggles)
+}
+
 export async function syncOnLogin(uid: string): Promise<void> {
   const remote = await fetchUserData(uid)
 
@@ -122,7 +135,9 @@ export async function syncOnLogin(uid: string): Promise<void> {
     lessonMilestones: {},
     badges: [],
   }
+  const struggles = remote.struggles ?? { version: 1, skills: {} }
 
   saveProgress(progress)
   saveGamification(gamification)
+  saveStruggles(struggles)
 }

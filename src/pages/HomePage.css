@@ -14,6 +14,11 @@
   margin: 0 auto;
 }
 
+.hero__review-cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
 .course-grid {
   display: flex;
   flex-direction: column;

@@ -1,7 +1,8 @@
-import type { ProgressState, GamificationState, LessonVariant } from '../types/content'
+import type { ProgressState, GamificationState, LessonVariant, StruggleState } from '../types/content'
 
 const PROGRESS_KEY = 'algebra-clone-progress'
 const GAMIFICATION_KEY = 'algebra-clone-gamification'
+const STRUGGLES_KEY = 'algebra-clone-struggles'
 const SEEN_MINI_LESSONS_KEY = 'algebra-clone-seen-minilessons'
 const VARIANTS_KEY = 'algebra-clone-variants'
 const DEBUG_KEY = 'algebra-clone-debug'
@@ -28,6 +29,11 @@ const defaultGamification = (): GamificationState => ({
   activeDates: [],
   lessonMilestones: {},
   badges: [],
+})
+
+const defaultStruggles = (): StruggleState => ({
+  version: 1,
+  skills: {},
 })
 
 function readJson<T>(key: string, fallback: () => T): T {
@@ -59,6 +65,15 @@ export function loadGamification(): GamificationState {
 
 export function saveGamification(state: GamificationState): void {
   writeJson(GAMIFICATION_KEY, state)
+}
+
+export function loadStruggles(): StruggleState {
+  const s = readJson(STRUGGLES_KEY, defaultStruggles)
+  return { ...defaultStruggles(), ...s, skills: s.skills ?? {} }
+}
+
+export function saveStruggles(state: StruggleState): void {
+  writeJson(STRUGGLES_KEY, state)
 }
 
 export function loadSeenMiniLessons(): string[] {
@@ -106,11 +121,12 @@ export function saveVariant(lessonId: string, variant: LessonVariant): void {
 export function clearAllLocalData(): void {
   localStorage.removeItem(PROGRESS_KEY)
   localStorage.removeItem(GAMIFICATION_KEY)
+  localStorage.removeItem(STRUGGLES_KEY)
   localStorage.removeItem(SEEN_MINI_LESSONS_KEY)
   localStorage.removeItem(DEBUG_KEY)
   localStorage.removeItem(VARIANTS_KEY)
   // WELCOME_KEY intentionally preserved: onboarding state, not user progress.
 }
 
-export { PROGRESS_KEY, GAMIFICATION_KEY }
+export { PROGRESS_KEY, GAMIFICATION_KEY, STRUGGLES_KEY }
 export type { DebugState }

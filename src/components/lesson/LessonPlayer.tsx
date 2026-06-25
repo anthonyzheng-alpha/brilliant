@@ -11,9 +11,10 @@ import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
 import { isMiniLessonSeen, markMiniLessonSeen } from '../../lib/storage'
 import { useProgressStore } from '../../stores/progressStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
+import { useStruggleStore } from '../../stores/struggleStore'
 import { useAuthStore } from '../../stores/authStore'
 import { FEATURES } from '../../lib/features'
-import { saveUserProgress, saveUserGamification } from '../../lib/syncProgress'
+import { saveUserProgress, saveUserGamification, saveUserStruggles } from '../../lib/syncProgress'
 import { getAllLessonsForCourse, roundSize } from '../../content'
 import './LessonPlayer.css'
 
@@ -64,6 +65,7 @@ export function LessonPlayer({
   const recordActivity = useGamificationStore((s) => s.recordActivity)
   const onLessonMastered = useGamificationStore((s) => s.onLessonMastered)
   const gamification = useGamificationStore((s) => s.gamification)
+  const recordAttempt = useStruggleStore((s) => s.recordAttempt)
 
   const [problemIndex, setProblemIndex] = useState(initialProblemIndex)
   const [answer, setAnswer] = useState<AnswerValue | null>(() =>
@@ -137,7 +139,15 @@ export function LessonPlayer({
     if (!problem || !answer || feedback.kind === 'correct') return
     if (!hasValidInput(problem, answer)) return
 
-    if (isAnswerValid(problem, answer)) {
+    const correct = isAnswerValid(problem, answer)
+    // Record per-round struggle so the Overall Review can target the specific
+    // difficulty band (e.g. negatives / larger numbers), not just the lesson.
+    recordAttempt(lesson.id, currentRound?.id ?? '', problem.type, correct)
+    if (user) {
+      void saveUserStruggles(user.uid, useStruggleStore.getState().struggles)
+    }
+
+    if (correct) {
       setInputLocked(true)
       setFeedback({ kind: 'correct', explanation: problem.explanation })
     } else {
