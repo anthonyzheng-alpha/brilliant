@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Course } from '../../types/content'
 import { FEATURES } from '../../lib/features'
 import { useDebugStore } from '../../stores/debugStore'
+import { RichText } from '../common/RichText'
 import { ProgressBoxes } from './ProgressBoxes'
 import './CourseCard.css'
 
@@ -37,7 +38,9 @@ export function CourseCard({
         )}
       </div>
       <p className="course-card__subtitle">{course.subtitle}</p>
-      <p className="course-card__desc">{course.description}</p>
+      <p className="course-card__desc">
+        <RichText text={course.description} />
+      </p>
       {!isLocked && boxes && boxes.length > 0 && (
         <ProgressBoxes boxes={boxes} className="course-card__boxes" />
       )}

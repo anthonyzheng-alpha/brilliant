@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { PageShell } from '../components/layout/PageShell'
 import { LessonRow } from '../components/course/LessonRow'
+import { RichText } from '../components/common/RichText'
 import {
   getCourseBySlug,
   getUnitsForCourse,
@@ -90,7 +91,9 @@ export function CoursePage() {
       {units.map((unit) => (
         <section key={unit.id} className="unit-section">
           <h2>{unit.title}</h2>
-          <p className="unit-section__desc">{unit.description}</p>
+          <p className="unit-section__desc">
+            <RichText text={unit.description} />
+          </p>
           {getLessonsForUnit(unit.id).map((lesson) => (
             <LessonRow
               key={lesson.id}
