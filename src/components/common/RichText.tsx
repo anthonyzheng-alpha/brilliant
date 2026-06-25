@@ -4,7 +4,7 @@ import { FEATURES } from '../../lib/features'
 
 /** Simple markdown: **bold** only; optional KaTeX via $...$ */
 export function RichText({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*|\$[^$]+\$)/g)
+  const parts = text.split(/(\*\*[^*]+\*\*|\$(?:\\.|[^$\\])+\$)/g)
   return (
     <span className="rich-text">
       {parts.map((part, i) => {
