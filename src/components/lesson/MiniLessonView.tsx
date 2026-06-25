@@ -4,6 +4,7 @@ import { RichText } from '../common/RichText'
 import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { hasValidInput, isAnswerValid } from '../../lib/validation'
+import { resolveWrongReason } from '../../lib/problemFeedback'
 import './MiniLessonView.css'
 
 type Props = {
@@ -37,6 +38,7 @@ export function MiniLessonView({
 
   const [answer, setAnswer] = useState<AnswerValue | null>(() => initialAnswer(exampleProblem))
   const [result, setResult] = useState<'correct' | 'incorrect' | null>(null)
+  const [wrongReason, setWrongReason] = useState('')
 
   const handleAnswerChange = (next: AnswerValue) => {
     setResult(null)
@@ -45,7 +47,12 @@ export function MiniLessonView({
 
   const handleCheck = () => {
     if (!answer || !hasValidInput(exampleProblem, answer)) return
-    setResult(isAnswerValid(exampleProblem, answer) ? 'correct' : 'incorrect')
+    if (isAnswerValid(exampleProblem, answer)) {
+      setResult('correct')
+    } else {
+      setWrongReason(resolveWrongReason(exampleProblem, answer))
+      setResult('incorrect')
+    }
   }
 
   return (
@@ -98,9 +105,15 @@ export function MiniLessonView({
             aria-live="polite"
           >
             <p className="mini-lesson__feedback-title">
-              {result === 'correct' ? 'Correct!' : 'Not quite — here is why:'}
+              {result === 'correct' ? 'Correct!' : 'Not quite — here is a hint:'}
             </p>
-            <RichText text={miniLesson.example.explanation} />
+            <RichText
+              text={
+                result === 'correct'
+                  ? miniLesson.example.explanation
+                  : wrongReason || 'Reread the important points of the lesson and try again.'
+              }
+            />
             {result === 'incorrect' && (
               <button
                 type="button"
