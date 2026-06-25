@@ -109,7 +109,7 @@ export function clearAllLocalData(): void {
   localStorage.removeItem(SEEN_MINI_LESSONS_KEY)
   localStorage.removeItem(DEBUG_KEY)
   localStorage.removeItem(VARIANTS_KEY)
-  localStorage.removeItem(WELCOME_KEY)
+  // WELCOME_KEY intentionally preserved: onboarding state, not user progress.
 }
 
 export { PROGRESS_KEY, GAMIFICATION_KEY }

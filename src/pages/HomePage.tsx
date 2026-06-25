@@ -13,6 +13,8 @@ import { hasSeenWelcome, markWelcomeSeen } from '../lib/storage'
 import './HomePage.css'
 
 export function HomePage() {
+  // Re-render when synced/cleared progress changes (e.g. after login/logout).
+  useProgressStore((s) => s.progress)
   const isComplete = useProgressStore((s) => s.isLessonComplete)
   const getLessonProgressCount = useProgressStore((s) => s.getLessonProgressCount)
   const getCourseProblemPercent = useProgressStore((s) => s.getCourseProblemPercent)
