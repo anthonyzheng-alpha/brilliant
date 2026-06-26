@@ -1,0 +1,121 @@
+{
+  "id": "rp-u1-l1",
+  "unitId": "rp-u1",
+  "title": "Find the Roots",
+  "description": "From factored forms to the quadratic formula — find where each quadratic equals zero.",
+  "estimatedMinutes": 20,
+  "phase": "M2",
+  "rounds": [
+    {
+      "id": "rp-u1-l1-r1",
+      "label": "Warm-up",
+      "sampleSize": 5,
+      "problemIds": ["rp-u1-l1-r1-p1", "rp-u1-l1-r1-p2", "rp-u1-l1-r1-p3", "rp-u1-l1-r1-p4", "rp-u1-l1-r1-p5", "rp-u1-l1-r1-p6", "rp-u1-l1-r1-p7", "rp-u1-l1-r1-p8", "rp-u1-l1-r1-p9", "rp-u1-l1-r1-p10"],
+      "miniLesson": {
+        "title": "The Zero Product Property",
+        "paragraph": "A **root** is a value of $x$ that makes the expression equal $0$. If a product equals zero, at least one factor must be zero. So $(x - r_1)(x - r_2) = 0$ exactly when $x = r_1$ or $x = r_2$. Read each root straight off its factor: $(x - 5)$ gives the root $x = 5$, while $(x + 3)$ gives $x = -3$.",
+        "example": {
+          "prompt": "One root of $(x-2)(x-5)=0$ is $x = 2$. Enter the other root.",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "x = ?",
+              "validation": { "type": "numeric", "value": 5 }
+            }
+          },
+          "explanation": "Set each factor to zero: $x - 2 = 0$ gives $x = 2$, and $x - 5 = 0$ gives $x = 5$."
+        }
+      }
+    },
+    {
+      "id": "rp-u1-l1-r2",
+      "label": "Basics",
+      "sampleSize": 5,
+      "problemIds": ["rp-u1-l1-r2-p1", "rp-u1-l1-r2-p2", "rp-u1-l1-r2-p3", "rp-u1-l1-r2-p4", "rp-u1-l1-r2-p5", "rp-u1-l1-r2-p6", "rp-u1-l1-r2-p7", "rp-u1-l1-r2-p8", "rp-u1-l1-r2-p9", "rp-u1-l1-r2-p10"],
+      "miniLesson": {
+        "title": "Factor, Then Solve",
+        "paragraph": "To solve $x^2 + bx + c = 0$, first **factor** it (find two numbers that multiply to $c$ and add to $b$), then apply the zero product property to each factor. For example, $x^2 - 7x + 10$ factors as $(x-2)(x-5)$, so the roots are $x = 2$ and $x = 5$.",
+        "example": {
+          "prompt": "Solve $x^2 - 5x + 6 = 0$. Enter one root.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 5x + 6" } },
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "x = ?",
+              "validation": { "type": "numeric-set", "values": [2, 3] }
+            }
+          },
+          "explanation": "$x^2 - 5x + 6 = (x-2)(x-3)$, so the roots are $x = 2$ and $x = 3$."
+        }
+      }
+    },
+    {
+      "id": "rp-u1-l1-r3",
+      "label": "Building",
+      "sampleSize": 5,
+      "problemIds": ["rp-u1-l1-r3-p1", "rp-u1-l1-r3-p2", "rp-u1-l1-r3-p3", "rp-u1-l1-r3-p4", "rp-u1-l1-r3-p5", "rp-u1-l1-r3-p6", "rp-u1-l1-r3-p7", "rp-u1-l1-r3-p8", "rp-u1-l1-r3-p9", "rp-u1-l1-r3-p10"],
+      "miniLesson": {
+        "title": "The Quadratic Formula",
+        "paragraph": "Every quadratic $ax^2 + bx + c = 0$ is solved by the **quadratic formula**: $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Identify $a$, $b$, and $c$, substitute carefully (watch the signs), and the $\\pm$ gives the two roots. It works even when factoring is hard.",
+        "example": {
+          "prompt": "Use the quadratic formula on $x^2 - 5x + 6 = 0$. Enter one root.",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "x = ?",
+              "validation": { "type": "numeric-set", "values": [2, 3] }
+            }
+          },
+          "explanation": "With $a=1, b=-5, c=6$: $x = \\dfrac{5 \\pm \\sqrt{25 - 24}}{2} = \\dfrac{5 \\pm 1}{2}$, giving $x = 3$ and $x = 2$."
+        }
+      }
+    },
+    {
+      "id": "rp-u1-l1-r4",
+      "label": "Challenge",
+      "sampleSize": 5,
+      "problemIds": ["rp-u1-l1-r4-p1", "rp-u1-l1-r4-p2", "rp-u1-l1-r4-p3", "rp-u1-l1-r4-p4", "rp-u1-l1-r4-p5", "rp-u1-l1-r4-p6", "rp-u1-l1-r4-p7", "rp-u1-l1-r4-p8", "rp-u1-l1-r4-p9", "rp-u1-l1-r4-p10"],
+      "miniLesson": {
+        "title": "The Discriminant",
+        "paragraph": "The part under the root, $b^2 - 4ac$, is the **discriminant**. It tells you how many real roots there are before you finish solving: if it is **positive** there are two real roots, if it is **zero** there is exactly one (a repeated root), and if it is **negative** there are no real roots.",
+        "example": {
+          "prompt": "How many real roots does $x^2 + 2x + 5 = 0$ have?",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "No real roots", "whyWrong": "" },
+                { "id": "b", "label": "One real root" },
+                { "id": "c", "label": "Two real roots" }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "The discriminant is $2^2 - 4(1)(5) = 4 - 20 = -16$. A negative discriminant means no real roots."
+        }
+      }
+    },
+    {
+      "id": "rp-u1-l1-r5",
+      "label": "Mastery",
+      "sampleSize": 5,
+      "problemIds": ["rp-u1-l1-r5-p1", "rp-u1-l1-r5-p2", "rp-u1-l1-r5-p3", "rp-u1-l1-r5-p4", "rp-u1-l1-r5-p5", "rp-u1-l1-r5-p6", "rp-u1-l1-r5-p7", "rp-u1-l1-r5-p8", "rp-u1-l1-r5-p9", "rp-u1-l1-r5-p10"],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "This round blends every tool: read roots from factored forms, factor and solve, apply the quadratic formula, and use the discriminant to judge how many real roots exist. For each problem, **pick the fastest route** — if it factors easily, factor; otherwise reach for the formula.",
+        "example": {
+          "prompt": "Solve $x^2 - x - 6 = 0$. Enter one root.",
+          "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - x - 6" } },
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "x = ?",
+              "validation": { "type": "numeric-set", "values": [3, -2] }
+            }
+          },
+          "explanation": "$x^2 - x - 6 = (x-3)(x+2)$, so the roots are $x = 3$ and $x = -2$."
+        }
+      }
+    }
+  ]
+}

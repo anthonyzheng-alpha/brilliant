@@ -174,7 +174,13 @@ export const courseSchema = z.object({
   title: z.string(),
   subtitle: z.string(),
   description: richText,
-  lens: z.enum(['solving-equations', 'visual-algebra', 'real-world-algebra', 'factoring']),
+  lens: z.enum([
+    'solving-equations',
+    'visual-algebra',
+    'real-world-algebra',
+    'factoring',
+    'roots-of-polynomials',
+  ]),
   unitIds: z.array(z.string()),
   lockedUntilPhase: z.enum(['M0', 'M2']),
 })

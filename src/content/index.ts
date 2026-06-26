@@ -13,33 +13,38 @@ import solvingEquations from './courses/solving-equations.json'
 import visualAlgebra from './courses/visual-algebra.json'
 import realWorldAlgebra from './courses/real-world-algebra.json'
 import factoring from './courses/factoring.json'
+import rootsOfPolynomials from './courses/roots-of-polynomials.json'
 
 import seU1 from './units/se-u1.json'
 import vaU1 from './units/va-u1.json'
 import rwU1 from './units/rw-u1.json'
 import faU1 from './units/fa-u1.json'
+import rpU1 from './units/rp-u1.json'
 
 import seU1L1 from './lessons/se-u1-l1.json'
 import seU1L2 from './lessons/se-u1-l2.json'
 import vaU1L1 from './lessons/va-u1-l1.json'
 import rwU1L1 from './lessons/rw-u1-l1.json'
 import faU1L1 from './lessons/fa-u1-l1.json'
+import rpU1L1 from './lessons/rp-u1-l1.json'
 
 import seU1L1Problems from './problems/solving-equations/se-u1-l1.json'
 import seU1L2Problems from './problems/solving-equations/se-u1-l2.json'
 import vaU1L1Problems from './problems/visual-algebra/va-u1-l1.json'
 import rwU1L1Problems from './problems/real-world-algebra/rw-u1-l1.json'
 import faU1L1Problems from './problems/factoring/fa-u1-l1.json'
+import rpU1L1Problems from './problems/roots-of-polynomials/rp-u1-l1.json'
 
-const courseData = [solvingEquations, realWorldAlgebra, visualAlgebra, factoring]
-const unitData = [seU1, vaU1, rwU1, faU1]
-const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1, faU1L1]
+const courseData = [solvingEquations, realWorldAlgebra, visualAlgebra, factoring, rootsOfPolynomials]
+const unitData = [seU1, vaU1, rwU1, faU1, rpU1]
+const lessonData = [seU1L1, seU1L2, vaU1L1, rwU1L1, faU1L1, rpU1L1]
 const problemData = [
   ...seU1L1Problems,
   ...seU1L2Problems,
   ...vaU1L1Problems,
   ...rwU1L1Problems,
   ...faU1L1Problems,
+  ...rpU1L1Problems,
 ]
 
 function parseAll<T>(schema: { parse: (v: unknown) => T }, items: unknown[], label: string): T[] {

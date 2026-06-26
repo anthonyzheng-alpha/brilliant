@@ -140,7 +140,7 @@ export type Course = {
   title: string
   subtitle: string
   description: RichText
-  lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra' | 'factoring'
+  lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra' | 'factoring' | 'roots-of-polynomials'
   unitIds: string[]
   lockedUntilPhase: 'M0' | 'M2'
 }

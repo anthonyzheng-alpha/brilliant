@@ -1,0 +1,841 @@
+[
+  {
+    "id": "rp-u1-l1-r1-p1",
+    "type": "numeric",
+    "prompt": "The equation $(x-2)(x-5)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-2)(x-5)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [2, 5] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x - 2 = 0$ or $x - 5 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 2$ or $x = 5$.",
+    "misconception": "The root of $(x-2)$ is $+2$, not $-2$ - it is the value that makes the factor zero."
+  },
+  {
+    "id": "rp-u1-l1-r1-p2",
+    "type": "numeric",
+    "prompt": "The equation $(x-1)(x-4)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-1)(x-4)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [1, 4] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x - 1 = 0$ or $x - 4 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 1$ or $x = 4$.",
+    "misconception": "The root of $(x-4)$ is $+4$, not $-4$ - it is the value that makes the factor zero."
+  },
+  {
+    "id": "rp-u1-l1-r1-p3",
+    "type": "numeric",
+    "prompt": "The equation $(x+3)(x-2)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x+3)(x-2)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-3, 2] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x + 3 = 0$ or $x - 2 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = -3$ or $x = 2$.",
+    "misconception": "The root of $(x+3)$ is $-3$ - flip the sign of the number inside the factor."
+  },
+  {
+    "id": "rp-u1-l1-r1-p4",
+    "type": "numeric",
+    "prompt": "The equation $(x+1)(x+6)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x+1)(x+6)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-1, -6] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x + 1 = 0$ or $x + 6 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = -1$ or $x = -6$.",
+    "misconception": "Both factors add a number, so both roots are negative."
+  },
+  {
+    "id": "rp-u1-l1-r1-p5",
+    "type": "numeric",
+    "prompt": "The equation $(x-3)(x+7)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-3)(x+7)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, -7] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x - 3 = 0$ or $x + 7 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 3$ or $x = -7$.",
+    "misconception": "The root of $(x+7)$ is $-7$ - flip the sign of the number inside the factor."
+  },
+  {
+    "id": "rp-u1-l1-r1-p6",
+    "type": "multiple-choice",
+    "prompt": "Which value is a root of $(x-4)(x+2)=0$?",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-4)(x+2)" } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 4$" },
+          { "id": "b", "label": "$x = 2$", "whyWrong": "The factor is $(x+2)$, whose root is $-2$, not $2$." },
+          { "id": "c", "label": "$x = -4$", "whyWrong": "The factor $(x-4)$ has root $+4$, not $-4$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Set each factor equal to zero.",
+      "$x - 4 = 0$ gives $x = 4$; $x + 2 = 0$ gives $x = -2$."
+    ],
+    "explanation": "The roots are $x = 4$ and $x = -2$, so $x = 4$ is correct.",
+    "misconception": "Flip the sign of the number inside each factor to read off its root."
+  },
+  {
+    "id": "rp-u1-l1-r1-p7",
+    "type": "numeric",
+    "prompt": "The equation $x(x-7)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x(x-7)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [0, 7] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "The factor $x$ gives the root $x = 0$; the factor $x - 7$ gives $x = 7$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 0$ or $x = 7$.",
+    "misconception": "A lone $x$ factor contributes the root $0$ - do not skip it."
+  },
+  {
+    "id": "rp-u1-l1-r1-p8",
+    "type": "numeric",
+    "prompt": "The equation $(x+5)(x-5)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x+5)(x-5)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-5, 5] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x + 5 = 0$ or $x - 5 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = -5$ or $x = 5$.",
+    "misconception": "The two roots are opposites here, one negative and one positive."
+  },
+  {
+    "id": "rp-u1-l1-r1-p9",
+    "type": "multiple-choice",
+    "prompt": "Which value is a root of $(x+8)(x-1)=0$?",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x+8)(x-1)" } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = -8$" },
+          { "id": "b", "label": "$x = 8$", "whyWrong": "The factor $(x+8)$ has root $-8$, not $8$." },
+          { "id": "c", "label": "$x = -1$", "whyWrong": "The factor $(x-1)$ has root $+1$, not $-1$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Set each factor equal to zero.",
+      "$x + 8 = 0$ gives $x = -8$; $x - 1 = 0$ gives $x = 1$."
+    ],
+    "explanation": "The roots are $x = -8$ and $x = 1$, so $x = -8$ is correct.",
+    "misconception": "Flip the sign of the number inside each factor to read off its root."
+  },
+  {
+    "id": "rp-u1-l1-r1-p10",
+    "type": "numeric",
+    "prompt": "The equation $(x-6)(x-3)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-6)(x-3)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [6, 3] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x - 6 = 0$ or $x - 3 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 6$ or $x = 3$.",
+    "misconception": "The root of $(x-6)$ is $+6$ - it is the value that makes the factor zero."
+  },
+  {
+    "id": "rp-u1-l1-r2-p1",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 7x + 10 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 7x + 10" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [2, 5] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $10$ and add to $-7$.",
+      "Those numbers are $-2$ and $-5$, so it factors as $(x-2)(x-5)$."
+    ],
+    "explanation": "$x^2 - 7x + 10 = (x-2)(x-5)$, so the roots are $x = 2$ and $x = 5$.",
+    "misconception": "After factoring, read the root by flipping the sign inside each factor."
+  },
+  {
+    "id": "rp-u1-l1-r2-p2",
+    "type": "numeric",
+    "prompt": "Solve $x^2 + 7x + 12 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 7x + 12" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-3, -4] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $12$ and add to $7$.",
+      "Those numbers are $3$ and $4$, so it factors as $(x+3)(x+4)$."
+    ],
+    "explanation": "$x^2 + 7x + 12 = (x+3)(x+4)$, so the roots are $x = -3$ and $x = -4$.",
+    "misconception": "Positive constant and positive middle term means both roots are negative."
+  },
+  {
+    "id": "rp-u1-l1-r2-p3",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - x - 12 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - x - 12" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [4, -3] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $-12$ and add to $-1$.",
+      "Those numbers are $-4$ and $3$, so it factors as $(x-4)(x+3)$."
+    ],
+    "explanation": "$x^2 - x - 12 = (x-4)(x+3)$, so the roots are $x = 4$ and $x = -3$.",
+    "misconception": "A negative constant means the two roots have opposite signs."
+  },
+  {
+    "id": "rp-u1-l1-r2-p4",
+    "type": "numeric",
+    "prompt": "Solve $x^2 + 2x - 15 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 2x - 15" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-5, 3] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $-15$ and add to $2$.",
+      "Those numbers are $5$ and $-3$, so it factors as $(x+5)(x-3)$."
+    ],
+    "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$, so the roots are $x = -5$ and $x = 3$.",
+    "misconception": "A negative constant means the two roots have opposite signs."
+  },
+  {
+    "id": "rp-u1-l1-r2-p5",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 9x + 20 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 9x + 20" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [4, 5] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $20$ and add to $-9$.",
+      "Those numbers are $-4$ and $-5$, so it factors as $(x-4)(x-5)$."
+    ],
+    "explanation": "$x^2 - 9x + 20 = (x-4)(x-5)$, so the roots are $x = 4$ and $x = 5$.",
+    "misconception": "Positive constant with a negative middle term means both roots are positive."
+  },
+  {
+    "id": "rp-u1-l1-r2-p6",
+    "type": "numeric",
+    "prompt": "Solve $x^2 + x - 6 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + x - 6" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-3, 2] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $-6$ and add to $1$.",
+      "Those numbers are $3$ and $-2$, so it factors as $(x+3)(x-2)$."
+    ],
+    "explanation": "$x^2 + x - 6 = (x+3)(x-2)$, so the roots are $x = -3$ and $x = 2$.",
+    "misconception": "A negative constant means the two roots have opposite signs."
+  },
+  {
+    "id": "rp-u1-l1-r2-p7",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 4x - 5 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 4x - 5" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [5, -1] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $-5$ and add to $-4$.",
+      "Those numbers are $-5$ and $1$, so it factors as $(x-5)(x+1)$."
+    ],
+    "explanation": "$x^2 - 4x - 5 = (x-5)(x+1)$, so the roots are $x = 5$ and $x = -1$.",
+    "misconception": "A negative constant means the two roots have opposite signs."
+  },
+  {
+    "id": "rp-u1-l1-r2-p8",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 9 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 9" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, -3] } }
+    },
+    "hints": [
+      "This is a difference of squares with no middle term.",
+      "$x^2 - 9 = (x-3)(x+3)$."
+    ],
+    "explanation": "$x^2 - 9 = (x-3)(x+3)$, so the roots are $x = 3$ and $x = -3$.",
+    "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
+  },
+  {
+    "id": "rp-u1-l1-r2-p9",
+    "type": "numeric",
+    "prompt": "Solve $x^2 + 6x + 8 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 6x + 8" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-2, -4] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $8$ and add to $6$.",
+      "Those numbers are $2$ and $4$, so it factors as $(x+2)(x+4)$."
+    ],
+    "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$, so the roots are $x = -2$ and $x = -4$.",
+    "misconception": "Positive constant and positive middle term means both roots are negative."
+  },
+  {
+    "id": "rp-u1-l1-r2-p10",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 8x + 15 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 8x + 15" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, 5] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $15$ and add to $-8$.",
+      "Those numbers are $-3$ and $-5$, so it factors as $(x-3)(x-5)$."
+    ],
+    "explanation": "$x^2 - 8x + 15 = (x-3)(x-5)$, so the roots are $x = 3$ and $x = 5$.",
+    "misconception": "Positive constant with a negative middle term means both roots are positive."
+  },
+  {
+    "id": "rp-u1-l1-r3-p1",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 - 5x + 6 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [2, 3] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -5$, $c = 6$.",
+      "$x = \\dfrac{5 \\pm \\sqrt{25 - 24}}{2} = \\dfrac{5 \\pm 1}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{5 \\pm \\sqrt{1}}{2} = \\dfrac{5 \\pm 1}{2}$, giving $x = 3$ and $x = 2$.",
+    "misconception": "$-b$ means $-(-5) = +5$ - watch the sign when $b$ is negative."
+  },
+  {
+    "id": "rp-u1-l1-r3-p2",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 + 3x - 10 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-5, 2] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 3$, $c = -10$.",
+      "$x = \\dfrac{-3 \\pm \\sqrt{9 + 40}}{2} = \\dfrac{-3 \\pm 7}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{-3 \\pm \\sqrt{49}}{2} = \\dfrac{-3 \\pm 7}{2}$, giving $x = 2$ and $x = -5$.",
+    "misconception": "$-4ac = -4(1)(-10) = +40$ - two negatives make the term positive."
+  },
+  {
+    "id": "rp-u1-l1-r3-p3",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 - 6x + 8 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [2, 4] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -6$, $c = 8$.",
+      "$x = \\dfrac{6 \\pm \\sqrt{36 - 32}}{2} = \\dfrac{6 \\pm 2}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{6 \\pm \\sqrt{4}}{2} = \\dfrac{6 \\pm 2}{2}$, giving $x = 4$ and $x = 2$.",
+    "misconception": "$-b$ means $-(-6) = +6$ - watch the sign when $b$ is negative."
+  },
+  {
+    "id": "rp-u1-l1-r3-p4",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 + x - 12 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-4, 3] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 1$, $c = -12$.",
+      "$x = \\dfrac{-1 \\pm \\sqrt{1 + 48}}{2} = \\dfrac{-1 \\pm 7}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{-1 \\pm \\sqrt{49}}{2} = \\dfrac{-1 \\pm 7}{2}$, giving $x = 3$ and $x = -4$.",
+    "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
+  },
+  {
+    "id": "rp-u1-l1-r3-p5",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 - 2x - 8 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [4, -2] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -2$, $c = -8$.",
+      "$x = \\dfrac{2 \\pm \\sqrt{4 + 32}}{2} = \\dfrac{2 \\pm 6}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{2 \\pm \\sqrt{36}}{2} = \\dfrac{2 \\pm 6}{2}$, giving $x = 4$ and $x = -2$.",
+    "misconception": "$-4ac = -4(1)(-8) = +32$ - two negatives make the term positive."
+  },
+  {
+    "id": "rp-u1-l1-r3-p6",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 - 7x + 12 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, 4] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -7$, $c = 12$.",
+      "$x = \\dfrac{7 \\pm \\sqrt{49 - 48}}{2} = \\dfrac{7 \\pm 1}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{7 \\pm \\sqrt{1}}{2} = \\dfrac{7 \\pm 1}{2}$, giving $x = 4$ and $x = 3$.",
+    "misconception": "$-b$ means $-(-7) = +7$ - watch the sign when $b$ is negative."
+  },
+  {
+    "id": "rp-u1-l1-r3-p7",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 + 8x + 15 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-3, -5] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 8$, $c = 15$.",
+      "$x = \\dfrac{-8 \\pm \\sqrt{64 - 60}}{2} = \\dfrac{-8 \\pm 2}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{-8 \\pm \\sqrt{4}}{2} = \\dfrac{-8 \\pm 2}{2}$, giving $x = -3$ and $x = -5$.",
+    "misconception": "Divide the entire numerator by $2a$, not just part of it."
+  },
+  {
+    "id": "rp-u1-l1-r3-p8",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $2x^2 - 7x + 3 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, 0.5] } }
+    },
+    "hints": [
+      "Here $a = 2$, $b = -7$, $c = 3$, so the denominator is $2a = 4$.",
+      "$x = \\dfrac{7 \\pm \\sqrt{49 - 24}}{4} = \\dfrac{7 \\pm 5}{4}$."
+    ],
+    "explanation": "$x = \\dfrac{7 \\pm \\sqrt{25}}{4} = \\dfrac{7 \\pm 5}{4}$, giving $x = 3$ and $x = \\tfrac{1}{2}$.",
+    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+  },
+  {
+    "id": "rp-u1-l1-r3-p9",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $2x^2 + 5x - 3 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [0.5, -3] } }
+    },
+    "hints": [
+      "Here $a = 2$, $b = 5$, $c = -3$, so the denominator is $2a = 4$.",
+      "$x = \\dfrac{-5 \\pm \\sqrt{25 + 24}}{4} = \\dfrac{-5 \\pm 7}{4}$."
+    ],
+    "explanation": "$x = \\dfrac{-5 \\pm \\sqrt{49}}{4} = \\dfrac{-5 \\pm 7}{4}$, giving $x = \\tfrac{1}{2}$ and $x = -3$.",
+    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+  },
+  {
+    "id": "rp-u1-l1-r3-p10",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 - 4x - 12 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [6, -2] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -4$, $c = -12$.",
+      "$x = \\dfrac{4 \\pm \\sqrt{16 + 48}}{2} = \\dfrac{4 \\pm 8}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{4 \\pm \\sqrt{64}}{2} = \\dfrac{4 \\pm 8}{2}$, giving $x = 6$ and $x = -2$.",
+    "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
+  },
+  {
+    "id": "rp-u1-l1-r4-p1",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 + 5x + 6 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 1 } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 5$, $c = 6$.",
+      "Compute $5^2 - 4(1)(6)$."
+    ],
+    "explanation": "$b^2 - 4ac = 25 - 24 = 1$.",
+    "misconception": "Square $b$ first, then subtract $4ac$ - do not subtract before squaring."
+  },
+  {
+    "id": "rp-u1-l1-r4-p2",
+    "type": "multiple-choice",
+    "prompt": "How many real roots does $x^2 - 4x + 7 = 0$ have?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "No real roots" },
+          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Check the sign of $b^2 - 4ac$.",
+      "$(-4)^2 - 4(1)(7) = 16 - 28$."
+    ],
+    "explanation": "The discriminant is $16 - 28 = -12$. A negative discriminant means no real roots.",
+    "misconception": "A negative discriminant means no real solutions, not one."
+  },
+  {
+    "id": "rp-u1-l1-r4-p3",
+    "type": "multiple-choice",
+    "prompt": "How many real roots does $x^2 - 6x + 9 = 0$ have?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "One real root" },
+          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots need a positive discriminant, not $0$." },
+          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a (repeated) real root." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Check the sign of $b^2 - 4ac$.",
+      "$(-6)^2 - 4(1)(9) = 36 - 36$."
+    ],
+    "explanation": "The discriminant is $36 - 36 = 0$, so there is exactly one (repeated) real root.",
+    "misconception": "A discriminant of $0$ means one repeated root, not zero roots."
+  },
+  {
+    "id": "rp-u1-l1-r4-p4",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 - 3x - 4 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 25 } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -3$, $c = -4$.",
+      "Compute $(-3)^2 - 4(1)(-4)$."
+    ],
+    "explanation": "$b^2 - 4ac = 9 - (-16) = 9 + 16 = 25$.",
+    "misconception": "$-4ac = -4(1)(-4) = +16$ - subtracting a negative adds."
+  },
+  {
+    "id": "rp-u1-l1-r4-p5",
+    "type": "multiple-choice",
+    "prompt": "How many real roots does $x^2 + x + 1 = 0$ have?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "No real roots" },
+          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Check the sign of $b^2 - 4ac$.",
+      "$1^2 - 4(1)(1) = 1 - 4$."
+    ],
+    "explanation": "The discriminant is $1 - 4 = -3$. A negative discriminant means no real roots.",
+    "misconception": "A negative discriminant means no real solutions."
+  },
+  {
+    "id": "rp-u1-l1-r4-p6",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $2x^2 + 4x + 1 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 8 } }
+    },
+    "hints": [
+      "Here $a = 2$, $b = 4$, $c = 1$.",
+      "Compute $4^2 - 4(2)(1)$."
+    ],
+    "explanation": "$b^2 - 4ac = 16 - 8 = 8$.",
+    "misconception": "Use $a = 2$ in $4ac$, giving $4(2)(1) = 8$, not $4$."
+  },
+  {
+    "id": "rp-u1-l1-r4-p7",
+    "type": "multiple-choice",
+    "prompt": "How many real roots does $x^2 - 10x + 25 = 0$ have?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "One real root" },
+          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots need a positive discriminant, not $0$." },
+          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a (repeated) real root." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Check the sign of $b^2 - 4ac$.",
+      "$(-10)^2 - 4(1)(25) = 100 - 100$."
+    ],
+    "explanation": "The discriminant is $100 - 100 = 0$, so there is exactly one (repeated) real root.",
+    "misconception": "A discriminant of $0$ means one repeated root, not two."
+  },
+  {
+    "id": "rp-u1-l1-r4-p8",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 + 7x + 10 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 9 } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 7$, $c = 10$.",
+      "Compute $7^2 - 4(1)(10)$."
+    ],
+    "explanation": "$b^2 - 4ac = 49 - 40 = 9$.",
+    "misconception": "Square $b$ first, then subtract $4ac$."
+  },
+  {
+    "id": "rp-u1-l1-r4-p9",
+    "type": "multiple-choice",
+    "prompt": "Which best describes the roots of $x^2 + 4x + 4 = 0$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "One repeated real root" },
+          { "id": "b", "label": "Two distinct real roots", "whyWrong": "Distinct roots need a positive discriminant, not $0$." },
+          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a real (repeated) root." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Compute the discriminant $b^2 - 4ac$ and check its sign.",
+      "$4^2 - 4(1)(4) = 16 - 16 = 0$."
+    ],
+    "explanation": "The discriminant is $0$, so $x^2 + 4x + 4 = (x+2)^2$ has the single repeated root $x = -2$.",
+    "misconception": "A perfect-square trinomial has a discriminant of $0$ and one repeated root."
+  },
+  {
+    "id": "rp-u1-l1-r4-p10",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $3x^2 - 2x - 1 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 16 } }
+    },
+    "hints": [
+      "Here $a = 3$, $b = -2$, $c = -1$.",
+      "Compute $(-2)^2 - 4(3)(-1)$."
+    ],
+    "explanation": "$b^2 - 4ac = 4 - (-12) = 4 + 12 = 16$.",
+    "misconception": "$-4ac = -4(3)(-1) = +12$ - subtracting a negative adds."
+  },
+  {
+    "id": "rp-u1-l1-r5-p1",
+    "type": "numeric",
+    "prompt": "The equation $(x-7)(x+2)=0$ is already factored. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x-7)(x+2)" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [7, -2] } }
+    },
+    "hints": [
+      "A product is zero when one of its factors is zero.",
+      "Set each factor to zero: $x - 7 = 0$ or $x + 2 = 0$."
+    ],
+    "explanation": "Setting each factor to zero gives $x = 7$ or $x = -2$.",
+    "misconception": "Flip the sign of the number inside each factor to read off its root."
+  },
+  {
+    "id": "rp-u1-l1-r5-p2",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 2x - 15 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 2x - 15" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [5, -3] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $-15$ and add to $-2$.",
+      "Those numbers are $-5$ and $3$, so it factors as $(x-5)(x+3)$."
+    ],
+    "explanation": "$x^2 - 2x - 15 = (x-5)(x+3)$, so the roots are $x = 5$ and $x = -3$.",
+    "misconception": "A negative constant means the two roots have opposite signs."
+  },
+  {
+    "id": "rp-u1-l1-r5-p3",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $x^2 + 6x + 5 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-1, -5] } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = 6$, $c = 5$.",
+      "$x = \\dfrac{-6 \\pm \\sqrt{36 - 20}}{2} = \\dfrac{-6 \\pm 4}{2}$."
+    ],
+    "explanation": "$x = \\dfrac{-6 \\pm \\sqrt{16}}{2} = \\dfrac{-6 \\pm 4}{2}$, giving $x = -1$ and $x = -5$.",
+    "misconception": "Divide the whole numerator by $2a$, not just the $\\pm\\sqrt{\\;}$ part."
+  },
+  {
+    "id": "rp-u1-l1-r5-p4",
+    "type": "multiple-choice",
+    "prompt": "How many real roots does $x^2 + 3x + 4 = 0$ have?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "No real roots" },
+          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Check the sign of $b^2 - 4ac$.",
+      "$3^2 - 4(1)(4) = 9 - 16$."
+    ],
+    "explanation": "The discriminant is $9 - 16 = -7$. A negative discriminant means no real roots.",
+    "misconception": "A negative discriminant means no real solutions."
+  },
+  {
+    "id": "rp-u1-l1-r5-p5",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 16 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 16" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [4, -4] } }
+    },
+    "hints": [
+      "This is a difference of squares with no middle term.",
+      "$x^2 - 16 = (x-4)(x+4)$."
+    ],
+    "explanation": "$x^2 - 16 = (x-4)(x+4)$, so the roots are $x = 4$ and $x = -4$.",
+    "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
+  },
+  {
+    "id": "rp-u1-l1-r5-p6",
+    "type": "multiple-choice",
+    "prompt": "Which value is a root of $(x+9)(x-4)=0$?",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "(x+9)(x-4)" } },
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = -9$" },
+          { "id": "b", "label": "$x = 9$", "whyWrong": "The factor $(x+9)$ has root $-9$, not $9$." },
+          { "id": "c", "label": "$x = -4$", "whyWrong": "The factor $(x-4)$ has root $+4$, not $-4$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Set each factor equal to zero.",
+      "$x + 9 = 0$ gives $x = -9$; $x - 4 = 0$ gives $x = 4$."
+    ],
+    "explanation": "The roots are $x = -9$ and $x = 4$, so $x = -9$ is correct.",
+    "misconception": "Flip the sign of the number inside each factor to read off its root."
+  },
+  {
+    "id": "rp-u1-l1-r5-p7",
+    "type": "numeric",
+    "prompt": "Solve $x^2 + 5x + 6 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 + 5x + 6" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [-2, -3] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $6$ and add to $5$.",
+      "Those numbers are $2$ and $3$, so it factors as $(x+2)(x+3)$."
+    ],
+    "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$, so the roots are $x = -2$ and $x = -3$.",
+    "misconception": "Positive constant and positive middle term means both roots are negative."
+  },
+  {
+    "id": "rp-u1-l1-r5-p8",
+    "type": "numeric",
+    "prompt": "Use the quadratic formula to solve $2x^2 - 5x - 3 = 0$. Enter one root.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, -0.5] } }
+    },
+    "hints": [
+      "Here $a = 2$, $b = -5$, $c = -3$, so the denominator is $2a = 4$.",
+      "$x = \\dfrac{5 \\pm \\sqrt{25 + 24}}{4} = \\dfrac{5 \\pm 7}{4}$."
+    ],
+    "explanation": "$x = \\dfrac{5 \\pm \\sqrt{49}}{4} = \\dfrac{5 \\pm 7}{4}$, giving $x = 3$ and $x = -\\tfrac{1}{2}$.",
+    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+  },
+  {
+    "id": "rp-u1-l1-r5-p9",
+    "type": "numeric",
+    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 - 4x + 4 = 0$.",
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 0 } }
+    },
+    "hints": [
+      "Here $a = 1$, $b = -4$, $c = 4$.",
+      "Compute $(-4)^2 - 4(1)(4)$."
+    ],
+    "explanation": "$b^2 - 4ac = 16 - 16 = 0$, which signals one repeated root.",
+    "misconception": "A discriminant of $0$ is valid - it means the quadratic is a perfect square."
+  },
+  {
+    "id": "rp-u1-l1-r5-p10",
+    "type": "numeric",
+    "prompt": "Solve $x^2 - 7x + 12 = 0$ by factoring. Enter one root.",
+    "visual": { "kind": "factoring-expression", "props": { "expression": "x^2 - 7x + 12" } },
+    "interaction": {
+      "type": "numeric",
+      "data": { "placeholder": "x = ?", "validation": { "type": "numeric-set", "values": [3, 4] } }
+    },
+    "hints": [
+      "Find two numbers that multiply to $12$ and add to $-7$.",
+      "Those numbers are $-3$ and $-4$, so it factors as $(x-3)(x-4)$."
+    ],
+    "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$, so the roots are $x = 3$ and $x = 4$.",
+    "misconception": "Positive constant with a negative middle term means both roots are positive."
+  }
+]

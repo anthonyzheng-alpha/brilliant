@@ -1,0 +1,10 @@
+{
+  "id": "roots-of-polynomials",
+  "slug": "roots-of-polynomials",
+  "title": "Roots of Polynomials",
+  "subtitle": "Where Quadratics Hit Zero",
+  "description": "Turn factored forms into roots, solve quadratics by factoring, and unlock the quadratic formula and discriminant.",
+  "lens": "roots-of-polynomials",
+  "unitIds": ["rp-u1"],
+  "lockedUntilPhase": "M2"
+}

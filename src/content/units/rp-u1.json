@@ -1,0 +1,9 @@
+{
+  "id": "rp-u1",
+  "courseId": "roots-of-polynomials",
+  "title": "Finding Roots",
+  "description": "From factored forms to the quadratic formula — find where a quadratic equals zero.",
+  "order": 1,
+  "phase": "M2",
+  "lessonIds": ["rp-u1-l1"]
+}
