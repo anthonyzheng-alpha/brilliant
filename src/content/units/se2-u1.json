@@ -1,0 +1,9 @@
+{
+  "id": "se2-u1",
+  "courseId": "solving-equations-2",
+  "title": "Powers and Systems",
+  "description": "Solve equations with exponents and radicals, then solve systems of two equations.",
+  "order": 1,
+  "phase": "M3",
+  "lessonIds": ["se2-u1-l1", "se2-u1-l2"]
+}

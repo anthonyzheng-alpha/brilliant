@@ -1,0 +1,182 @@
+{
+  "id": "se2-u1-l2",
+  "unitId": "se2-u1",
+  "title": "Systems of Equations",
+  "description": "Solve two equations at once with substitution and elimination.",
+  "estimatedMinutes": 20,
+  "phase": "M3",
+  "rounds": [
+    {
+      "id": "se2-u1-l2-r1",
+      "label": "Warm-up",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l2-r1-p1",
+        "se2-u1-l2-r1-p2",
+        "se2-u1-l2-r1-p3",
+        "se2-u1-l2-r1-p4",
+        "se2-u1-l2-r1-p5",
+        "se2-u1-l2-r1-p6",
+        "se2-u1-l2-r1-p7",
+        "se2-u1-l2-r1-p8",
+        "se2-u1-l2-r1-p9",
+        "se2-u1-l2-r1-p10"
+      ],
+      "miniLesson": {
+        "title": "Unknown on Both Sides",
+        "paragraph": "Before two equations, get comfortable with one variable appearing on **both sides**. For $3x + 2 = x + 10$, gather the variable on one side: subtract $x$ from both sides to get $2x + 2 = 10$, then solve as usual to find $x = 4$. Move variables to one side and numbers to the other.",
+        "example": {
+          "prompt": "Solve for $x$: $5x = 2x + 9$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 3 }
+            }
+          },
+          "explanation": "Subtract $2x$ from both sides: $3x = 9$, so $x = 3$."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l2-r2",
+      "label": "Basics",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l2-r2-p1",
+        "se2-u1-l2-r2-p2",
+        "se2-u1-l2-r2-p3",
+        "se2-u1-l2-r2-p4",
+        "se2-u1-l2-r2-p5",
+        "se2-u1-l2-r2-p6",
+        "se2-u1-l2-r2-p7",
+        "se2-u1-l2-r2-p8",
+        "se2-u1-l2-r2-p9",
+        "se2-u1-l2-r2-p10"
+      ],
+      "miniLesson": {
+        "title": "Solve by Substitution",
+        "paragraph": "A **system** is two equations that share the same $x$ and $y$. When one equation already gives a variable alone, **substitute** it into the other. If $y = x + 1$ and $x + y = 5$, replace $y$ with $x + 1$: $x + (x + 1) = 5$, so $2x + 1 = 5$, giving $x = 2$ and then $y = 3$. The solution is the pair $(2, 3)$.",
+        "example": {
+          "prompt": "Solve the system: $y = x + 2$ and $x + y = 8$. What is $(x, y)$?",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$(3, 5)$" },
+                { "id": "b", "label": "$(5, 3)$", "whyWrong": "This swaps the values; check that $y = x + 2$." },
+                { "id": "c", "label": "$(4, 4)$", "whyWrong": "Then $y$ would not be 2 more than $x$." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "Substitute: $x + (x + 2) = 8$, so $2x + 2 = 8$, $x = 3$ and $y = 5$."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l2-r3",
+      "label": "Building",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l2-r3-p1",
+        "se2-u1-l2-r3-p2",
+        "se2-u1-l2-r3-p3",
+        "se2-u1-l2-r3-p4",
+        "se2-u1-l2-r3-p5",
+        "se2-u1-l2-r3-p6",
+        "se2-u1-l2-r3-p7",
+        "se2-u1-l2-r3-p8",
+        "se2-u1-l2-r3-p9",
+        "se2-u1-l2-r3-p10"
+      ],
+      "miniLesson": {
+        "title": "Solve by Elimination",
+        "paragraph": "When variables line up, you can **add or subtract the two equations** to eliminate one. If $x + y = 10$ and $x - y = 2$, adding them cancels $y$: $2x = 12$, so $x = 6$, then $y = 4$. Add when the matching terms are opposites; subtract when they are the same.",
+        "example": {
+          "prompt": "Solve the system: $x + y = 9$ and $x - y = 1$. What is $x$?",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 5 }
+            }
+          },
+          "explanation": "Add the equations: $2x = 10$, so $x = 5$ (and $y = 4$)."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l2-r4",
+      "label": "Challenge",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l2-r4-p1",
+        "se2-u1-l2-r4-p2",
+        "se2-u1-l2-r4-p3",
+        "se2-u1-l2-r4-p4",
+        "se2-u1-l2-r4-p5",
+        "se2-u1-l2-r4-p6",
+        "se2-u1-l2-r4-p7",
+        "se2-u1-l2-r4-p8",
+        "se2-u1-l2-r4-p9",
+        "se2-u1-l2-r4-p10"
+      ],
+      "miniLesson": {
+        "title": "Scale, Then Eliminate",
+        "paragraph": "Sometimes no variable cancels yet. **Multiply an equation** so a pair of terms match. For $2x + y = 11$ and $x + y = 7$, subtract the second from the first to get $x = 4$, then $y = 3$. When coefficients differ, scale one equation first so a column lines up.",
+        "example": {
+          "prompt": "Solve the system: $2x + y = 7$ and $x + y = 5$. What is $(x, y)$?",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$(2, 3)$" },
+                { "id": "b", "label": "$(3, 2)$", "whyWrong": "Check the second equation: $x + y$ must equal 5 with $y$ correct." },
+                { "id": "c", "label": "$(1, 5)$", "whyWrong": "This does not satisfy $2x + y = 7$." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "Subtract: $(2x + y) - (x + y) = 7 - 5$, so $x = 2$, then $y = 3$."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l2-r5",
+      "label": "Mastery",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l2-r5-p1",
+        "se2-u1-l2-r5-p2",
+        "se2-u1-l2-r5-p3",
+        "se2-u1-l2-r5-p4",
+        "se2-u1-l2-r5-p5",
+        "se2-u1-l2-r5-p6",
+        "se2-u1-l2-r5-p7",
+        "se2-u1-l2-r5-p8",
+        "se2-u1-l2-r5-p9",
+        "se2-u1-l2-r5-p10"
+      ],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "Now you'll choose the best tool: **substitution** when a variable is already isolated, **elimination** when terms line up to cancel. Always solve for one variable first, then back-substitute to find the other, and check your pair satisfies **both** equations.",
+        "example": {
+          "prompt": "Solve the system: $y = 2x$ and $x + y = 9$. What is $(x, y)$?",
+          "interaction": {
+            "type": "multiple-choice",
+            "data": {
+              "options": [
+                { "id": "a", "label": "$(3, 6)$" },
+                { "id": "b", "label": "$(6, 3)$", "whyWrong": "This swaps the values; $y$ should be twice $x$." },
+                { "id": "c", "label": "$(4.5, 4.5)$", "whyWrong": "Then $y$ would not equal $2x$." }
+              ],
+              "correctOptionId": "a"
+            }
+          },
+          "explanation": "Substitute: $x + 2x = 9$, so $3x = 9$, $x = 3$ and $y = 6$."
+        }
+      }
+    }
+  ]
+}

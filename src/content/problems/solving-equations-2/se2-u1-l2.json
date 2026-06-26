@@ -1,0 +1,979 @@
+[
+  {
+    "id": "se2-u1-l2-r1-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $3x + 2 = x + 10$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Get the variable on one side: subtract $x$ from both sides.",
+      "$2x + 2 = 10$.",
+      "Subtract 2, then divide by 2."
+    ],
+    "explanation": "Subtract $x$: $2x + 2 = 10$. Subtract 2: $2x = 8$. Divide by 2: $x = 4$.",
+    "misconception": "Move the variable terms to one side before isolating $x$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p2",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $5x = 2x + 9$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract $2x$ from both sides.",
+      "$3x = 9$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Subtract $2x$: $3x = 9$. Divide by 3: $x = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p3",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $4x - 3 = 2x + 7$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Subtract $2x$ from both sides.",
+      "$2x - 3 = 7$.",
+      "Add 3, then divide by 2."
+    ],
+    "explanation": "Subtract $2x$: $2x - 3 = 7$. Add 3: $2x = 10$. Divide by 2: $x = 5$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p4",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $6x = 3x + 12$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 4$" },
+          { "id": "b", "label": "$x = 2$", "whyWrong": "This divides 12 by 6 instead of by 3 after moving the variable." },
+          { "id": "c", "label": "$x = 12$", "whyWrong": "This forgets to move and combine the $x$ terms." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract $3x$ from both sides.",
+      "$3x = 12$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Subtract $3x$: $3x = 12$. Divide by 3: $x = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p5",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $7x - 5 = 3x + 11$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Subtract $3x$ from both sides.",
+      "$4x - 5 = 11$.",
+      "Add 5, then divide by 4."
+    ],
+    "explanation": "Subtract $3x$: $4x - 5 = 11$. Add 5: $4x = 16$. Divide by 4: $x = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2x + 8 = 5x - 1$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract $2x$ from both sides.",
+      "$8 = 3x - 1$.",
+      "Add 1, then divide by 3."
+    ],
+    "explanation": "Subtract $2x$: $8 = 3x - 1$. Add 1: $9 = 3x$. Divide by 3: $x = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p7",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $8x = 5x + 15$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Subtract $5x$ from both sides.",
+      "$3x = 15$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Subtract $5x$: $3x = 15$. Divide by 3: $x = 5$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p8",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $9x - 4 = 4x + 16$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Subtract $4x$ from both sides.",
+      "$5x - 4 = 16$.",
+      "Add 4, then divide by 5."
+    ],
+    "explanation": "Subtract $4x$: $5x - 4 = 16$. Add 4: $5x = 20$. Divide by 5: $x = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p9",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $10x + 1 = 4x + 19$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 3$" },
+          { "id": "b", "label": "$x = 2$", "whyWrong": "Check: $10(2)+1 = 21$ but $4(2)+19 = 27$, not equal." },
+          { "id": "c", "label": "$x = 20$", "whyWrong": "This forgets to combine the $x$ terms." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract $4x$ from both sides.",
+      "$6x + 1 = 19$.",
+      "Subtract 1, then divide by 6."
+    ],
+    "explanation": "Subtract $4x$: $6x + 1 = 19$. Subtract 1: $6x = 18$. Divide by 6: $x = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r1-p10",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $6x - 2 = 2x + 14$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Subtract $2x$ from both sides.",
+      "$4x - 2 = 14$.",
+      "Add 2, then divide by 4."
+    ],
+    "explanation": "Subtract $2x$: $4x - 2 = 14$. Add 2: $4x = 16$. Divide by 4: $x = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p1",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = x + 1$ and $x + y = 5$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(2, 3)$" },
+          { "id": "b", "label": "$(3, 2)$", "whyWrong": "Then $y$ would not be 1 more than $x$." },
+          { "id": "c", "label": "$(2.5, 2.5)$", "whyWrong": "Then $y$ would not be 1 more than $x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = x + 1$ into $x + y = 5$.",
+      "$x + (x + 1) = 5$, so $2x + 1 = 5$.",
+      "Solve for $x$, then find $y$."
+    ],
+    "explanation": "Substitute: $x + (x + 1) = 5$, so $2x + 1 = 5$, $x = 2$ and $y = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p2",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = x + 2$ and $x + y = 8$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 5)$" },
+          { "id": "b", "label": "$(5, 3)$", "whyWrong": "This swaps the values; check $y = x + 2$." },
+          { "id": "c", "label": "$(4, 4)$", "whyWrong": "Then $y$ would not be 2 more than $x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = x + 2$ into $x + y = 8$.",
+      "$x + (x + 2) = 8$, so $2x + 2 = 8$.",
+      "Solve for $x$, then find $y$."
+    ],
+    "explanation": "Substitute: $x + (x + 2) = 8$, so $2x + 2 = 8$, $x = 3$ and $y = 5$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p3",
+    "type": "numeric",
+    "prompt": "System: $y = 2x$ and $x + y = 12$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Substitute $y = 2x$ into $x + y = 12$.",
+      "$x + 2x = 12$, so $3x = 12$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Substitute: $x + 2x = 12$, so $3x = 12$ and $x = 4$ (then $y = 8$)."
+  },
+  {
+    "id": "se2-u1-l2-r2-p4",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = x - 1$ and $x + y = 7$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(4, 3)$" },
+          { "id": "b", "label": "$(3, 4)$", "whyWrong": "Then $y$ would be 1 more than $x$, not 1 less." },
+          { "id": "c", "label": "$(3.5, 3.5)$", "whyWrong": "Then $y$ would not be 1 less than $x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = x - 1$ into $x + y = 7$.",
+      "$x + (x - 1) = 7$, so $2x - 1 = 7$.",
+      "Solve for $x$, then find $y$."
+    ],
+    "explanation": "Substitute: $x + (x - 1) = 7$, so $2x - 1 = 7$, $x = 4$ and $y = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p5",
+    "type": "numeric",
+    "prompt": "System: $y = 3x$ and $x + y = 16$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Substitute $y = 3x$ into $x + y = 16$.",
+      "$x + 3x = 16$, so $4x = 16$.",
+      "Divide both sides by 4."
+    ],
+    "explanation": "Substitute: $x + 3x = 16$, so $4x = 16$ and $x = 4$ (then $y = 12$)."
+  },
+  {
+    "id": "se2-u1-l2-r2-p6",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x = y + 3$ and $x + y = 9$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(6, 3)$" },
+          { "id": "b", "label": "$(3, 6)$", "whyWrong": "Then $x$ would be 3 less than $y$, not 3 more." },
+          { "id": "c", "label": "$(4.5, 4.5)$", "whyWrong": "Then $x$ would not be 3 more than $y$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $x = y + 3$ into $x + y = 9$.",
+      "$(y + 3) + y = 9$, so $2y + 3 = 9$.",
+      "Solve for $y$, then find $x$."
+    ],
+    "explanation": "Substitute: $(y + 3) + y = 9$, so $2y + 3 = 9$, $y = 3$ and $x = 6$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p7",
+    "type": "numeric",
+    "prompt": "System: $y = x + 4$ and $x + y = 10$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Substitute $y = x + 4$ into $x + y = 10$.",
+      "$x + (x + 4) = 10$, so $2x + 4 = 10$.",
+      "Subtract 4, then divide by 2."
+    ],
+    "explanation": "Substitute: $x + (x + 4) = 10$, so $2x + 4 = 10$, $x = 3$ (then $y = 7$)."
+  },
+  {
+    "id": "se2-u1-l2-r2-p8",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = 4x$ and $x + y = 15$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 12)$" },
+          { "id": "b", "label": "$(12, 3)$", "whyWrong": "This swaps the values; $y$ should be four times $x$." },
+          { "id": "c", "label": "$(5, 10)$", "whyWrong": "Then $y$ would not equal $4x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = 4x$ into $x + y = 15$.",
+      "$x + 4x = 15$, so $5x = 15$.",
+      "Divide both sides by 5, then find $y$."
+    ],
+    "explanation": "Substitute: $x + 4x = 15$, so $5x = 15$, $x = 3$ and $y = 12$."
+  },
+  {
+    "id": "se2-u1-l2-r2-p9",
+    "type": "numeric",
+    "prompt": "System: $x = 2y$ and $x + y = 18$. What is $y$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Substitute $x = 2y$ into $x + y = 18$.",
+      "$2y + y = 18$, so $3y = 18$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Substitute: $2y + y = 18$, so $3y = 18$ and $y = 6$ (then $x = 12$)."
+  },
+  {
+    "id": "se2-u1-l2-r2-p10",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = x + 5$ and $x + y = 11$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 8)$" },
+          { "id": "b", "label": "$(8, 3)$", "whyWrong": "This swaps the values; $y$ should be 5 more than $x$." },
+          { "id": "c", "label": "$(5.5, 5.5)$", "whyWrong": "Then $y$ would not be 5 more than $x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = x + 5$ into $x + y = 11$.",
+      "$x + (x + 5) = 11$, so $2x + 5 = 11$.",
+      "Subtract 5, then divide by 2."
+    ],
+    "explanation": "Substitute: $x + (x + 5) = 11$, so $2x + 5 = 11$, $x = 3$ and $y = 8$."
+  },
+  {
+    "id": "se2-u1-l2-r3-p1",
+    "type": "numeric",
+    "prompt": "System: $x + y = 10$ and $x - y = 2$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$2x = 12$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add the equations: $2x = 12$, so $x = 6$ (then $y = 4$).",
+    "misconception": "Adding the equations cancels $y$ because $+y$ and $-y$ are opposites."
+  },
+  {
+    "id": "se2-u1-l2-r3-p2",
+    "type": "numeric",
+    "prompt": "System: $x + y = 9$ and $x - y = 1$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$2x = 10$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add the equations: $2x = 10$, so $x = 5$ (then $y = 4$)."
+  },
+  {
+    "id": "se2-u1-l2-r3-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x + y = 8$ and $x - y = 2$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(5, 3)$" },
+          { "id": "b", "label": "$(3, 5)$", "whyWrong": "Then $x - y$ would be $-2$, not $2$." },
+          { "id": "c", "label": "$(6, 2)$", "whyWrong": "Then $x - y$ would be 4, not 2." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "Substitute back to find $y$."
+    ],
+    "explanation": "Add: $2x = 10$, so $x = 5$. Then $y = 8 - 5 = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r3-p4",
+    "type": "numeric",
+    "prompt": "System: $x + y = 14$ and $x - y = 4$. What is $y$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $x$.",
+      "$2y = 10$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Subtract the equations: $(x + y) - (x - y) = 14 - 4$, so $2y = 10$ and $y = 5$ (then $x = 9$)."
+  },
+  {
+    "id": "se2-u1-l2-r3-p5",
+    "type": "numeric",
+    "prompt": "System: $x + y = 7$ and $x - y = 3$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$2x = 10$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add the equations: $2x = 10$, so $x = 5$ (then $y = 2$)."
+  },
+  {
+    "id": "se2-u1-l2-r3-p6",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x + y = 12$ and $x - y = 6$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(9, 3)$" },
+          { "id": "b", "label": "$(3, 9)$", "whyWrong": "Then $x - y$ would be $-6$, not $6$." },
+          { "id": "c", "label": "$(6, 6)$", "whyWrong": "Then $x - y$ would be 0, not 6." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "Substitute back to find $y$."
+    ],
+    "explanation": "Add: $2x = 18$, so $x = 9$. Then $y = 12 - 9 = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r3-p7",
+    "type": "numeric",
+    "prompt": "System: $2x + y = 13$ and $x - y = 2$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$3x = 15$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Add the equations: $3x = 15$, so $x = 5$ (then $y = 3$)."
+  },
+  {
+    "id": "se2-u1-l2-r3-p8",
+    "type": "numeric",
+    "prompt": "System: $x + 2y = 11$ and $x - 2y = 3$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 7 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$2x = 14$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add the equations: $2x = 14$, so $x = 7$ (then $2y = 4$, $y = 2$)."
+  },
+  {
+    "id": "se2-u1-l2-r3-p9",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x + y = 6$ and $x - y = 0$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 3)$" },
+          { "id": "b", "label": "$(6, 0)$", "whyWrong": "Then $x - y$ would be 6, not 0." },
+          { "id": "c", "label": "$(0, 6)$", "whyWrong": "Then $x - y$ would be $-6$, not 0." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "$x - y = 0$ means $x = y$.",
+      "Add the equations: $2x = 6$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add: $2x = 6$, so $x = 3$. Since $x = y$, $y = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r3-p10",
+    "type": "numeric",
+    "prompt": "System: $x + y = 20$ and $x - y = 6$. What is $y$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 7 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $x$.",
+      "$2y = 14$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Subtract: $(x + y) - (x - y) = 20 - 6$, so $2y = 14$ and $y = 7$ (then $x = 13$)."
+  },
+  {
+    "id": "se2-u1-l2-r4-p1",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $2x + y = 7$ and $x + y = 5$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(2, 3)$" },
+          { "id": "b", "label": "$(3, 2)$", "whyWrong": "Then $2x + y$ would be 8, not 7." },
+          { "id": "c", "label": "$(1, 4)$", "whyWrong": "Then $2x + y$ would be 6, not 7." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first.",
+      "Substitute back to find $y$."
+    ],
+    "explanation": "Subtract: $x = 2$. Then $y = 5 - 2 = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p2",
+    "type": "numeric",
+    "prompt": "System: $3x + y = 14$ and $x + y = 8$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first.",
+      "$(3x + y) - (x + y) = 14 - 8$, so $2x = 6$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Subtract: $2x = 6$, so $x = 3$ (then $y = 5$)."
+  },
+  {
+    "id": "se2-u1-l2-r4-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $2x + 3y = 12$ and $x = 3$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 2)$" },
+          { "id": "b", "label": "$(3, 6)$", "whyWrong": "Then $2x + 3y = 6 + 18 = 24$, not 12." },
+          { "id": "c", "label": "$(3, 3)$", "whyWrong": "Then $2x + 3y = 6 + 9 = 15$, not 12." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $x = 3$ into the first equation.",
+      "$6 + 3y = 12$, so $3y = 6$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Substitute $x = 3$: $6 + 3y = 12$, so $3y = 6$ and $y = 2$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p4",
+    "type": "numeric",
+    "prompt": "System: $2x + y = 10$ and $x - y = 2$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$3x = 12$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Add the equations: $3x = 12$, so $x = 4$ (then $y = 2$)."
+  },
+  {
+    "id": "se2-u1-l2-r4-p5",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $3x + 2y = 16$ and $x + 2y = 8$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(4, 2)$" },
+          { "id": "b", "label": "$(2, 4)$", "whyWrong": "Then $3x + 2y = 6 + 8 = 14$, not 16." },
+          { "id": "c", "label": "$(4, 4)$", "whyWrong": "Then $x + 2y = 4 + 8 = 12$, not 8." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $y$.",
+      "$(3x + 2y) - (x + 2y) = 16 - 8$, so $2x = 8$.",
+      "Divide by 2, then find $y$."
+    ],
+    "explanation": "Subtract: $2x = 8$, so $x = 4$. Then $4 + 2y = 8$, $y = 2$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p6",
+    "type": "numeric",
+    "prompt": "System: $4x + y = 18$ and $x + y = 9$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first.",
+      "$(4x + y) - (x + y) = 18 - 9$, so $3x = 9$.",
+      "Divide both sides by 3."
+    ],
+    "explanation": "Subtract: $3x = 9$, so $x = 3$ (then $y = 6$)."
+  },
+  {
+    "id": "se2-u1-l2-r4-p7",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x + 3y = 10$ and $x + y = 6$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(4, 2)$" },
+          { "id": "b", "label": "$(2, 4)$", "whyWrong": "Then $x + y = 6$ holds but $x + 3y = 14$, not 10." },
+          { "id": "c", "label": "$(5, 1)$", "whyWrong": "Then $x + 3y = 8$, not 10." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $x$.",
+      "$(x + 3y) - (x + y) = 10 - 6$, so $2y = 4$.",
+      "Divide by 2, then find $x$."
+    ],
+    "explanation": "Subtract: $2y = 4$, so $y = 2$. Then $x = 6 - 2 = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p8",
+    "type": "numeric",
+    "prompt": "System: $2x + y = 9$ and $y = 3$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Substitute $y = 3$ into the first equation.",
+      "$2x + 3 = 9$.",
+      "Subtract 3, then divide by 2."
+    ],
+    "explanation": "Substitute $y = 3$: $2x + 3 = 9$, so $2x = 6$ and $x = 3$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p9",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $3x - y = 5$ and $x + y = 7$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 4)$" },
+          { "id": "b", "label": "$(4, 3)$", "whyWrong": "Then $3x - y = 12 - 3 = 9$, not 5." },
+          { "id": "c", "label": "$(2, 5)$", "whyWrong": "Then $3x - y = 6 - 5 = 1$, not 5." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$(3x - y) + (x + y) = 5 + 7$, so $4x = 12$.",
+      "Divide by 4, then find $y$."
+    ],
+    "explanation": "Add: $4x = 12$, so $x = 3$. Then $y = 7 - 3 = 4$."
+  },
+  {
+    "id": "se2-u1-l2-r4-p10",
+    "type": "numeric",
+    "prompt": "System: $5x + 2y = 19$ and $x + 2y = 7$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $y$.",
+      "$(5x + 2y) - (x + 2y) = 19 - 7$, so $4x = 12$.",
+      "Divide both sides by 4."
+    ],
+    "explanation": "Subtract: $4x = 12$, so $x = 3$ (then $2y = 4$, $y = 2$)."
+  },
+  {
+    "id": "se2-u1-l2-r5-p1",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = 2x$ and $x + y = 9$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 6)$" },
+          { "id": "b", "label": "$(6, 3)$", "whyWrong": "This swaps the values; $y$ should be twice $x$." },
+          { "id": "c", "label": "$(4.5, 4.5)$", "whyWrong": "Then $y$ would not equal $2x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = 2x$ into $x + y = 9$.",
+      "$x + 2x = 9$, so $3x = 9$.",
+      "Divide by 3, then find $y$."
+    ],
+    "explanation": "Substitute: $x + 2x = 9$, so $3x = 9$, $x = 3$ and $y = 6$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p2",
+    "type": "numeric",
+    "prompt": "System: $x + y = 11$ and $x - y = 5$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 8 }
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$2x = 16$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Add the equations: $2x = 16$, so $x = 8$ (then $y = 3$)."
+  },
+  {
+    "id": "se2-u1-l2-r5-p3",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $7x - 4 = 5x + 8$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Subtract $5x$ from both sides.",
+      "$2x - 4 = 8$.",
+      "Add 4, then divide by 2."
+    ],
+    "explanation": "Subtract $5x$: $2x - 4 = 8$. Add 4: $2x = 12$. Divide by 2: $x = 6$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p4",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $y = x + 6$ and $x + y = 14$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(4, 10)$" },
+          { "id": "b", "label": "$(10, 4)$", "whyWrong": "This swaps the values; $y$ should be 6 more than $x$." },
+          { "id": "c", "label": "$(7, 7)$", "whyWrong": "Then $y$ would not be 6 more than $x$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Substitute $y = x + 6$ into $x + y = 14$.",
+      "$x + (x + 6) = 14$, so $2x + 6 = 14$.",
+      "Subtract 6, then divide by 2."
+    ],
+    "explanation": "Substitute: $x + (x + 6) = 14$, so $2x + 6 = 14$, $x = 4$ and $y = 10$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p5",
+    "type": "numeric",
+    "prompt": "System: $2x + y = 12$ and $x + y = 7$. What is $x$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Subtract the second equation from the first to eliminate $y$.",
+      "$(2x + y) - (x + y) = 12 - 7$.",
+      "Simplify the left side: the $y$ terms cancel, leaving $x$ on its own."
+    ],
+    "explanation": "Subtract: $x = 5$ (then $y = 2$)."
+  },
+  {
+    "id": "se2-u1-l2-r5-p6",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $x + y = 13$ and $x - y = 3$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(8, 5)$" },
+          { "id": "b", "label": "$(5, 8)$", "whyWrong": "Then $x - y$ would be $-3$, not $3$." },
+          { "id": "c", "label": "$(10, 3)$", "whyWrong": "Then $x - y$ would be 7, not 3." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "Substitute back to find $y$."
+    ],
+    "explanation": "Add: $2x = 16$, so $x = 8$. Then $y = 13 - 8 = 5$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p7",
+    "type": "numeric",
+    "prompt": "System: $y = 3x$ and $x + y = 20$. What is $y$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 15 }
+      }
+    },
+    "hints": [
+      "Substitute $y = 3x$ into $x + y = 20$.",
+      "$x + 3x = 20$, so $4x = 20$ and $x = 5$."
+    ],
+    "explanation": "Substitute: $4x = 20$, so $x = 5$. Then $y = 3 \\times 5 = 15$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p8",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $4x + 6 = 6x - 4$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Subtract $4x$ from both sides.",
+      "$6 = 2x - 4$.",
+      "Add 4, then divide by 2."
+    ],
+    "explanation": "Subtract $4x$: $6 = 2x - 4$. Add 4: $10 = 2x$. Divide by 2: $x = 5$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p9",
+    "type": "multiple-choice",
+    "prompt": "Solve the system: $2x + y = 8$ and $x - y = 1$. What is $(x, y)$?",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$(3, 2)$" },
+          { "id": "b", "label": "$(2, 3)$", "whyWrong": "Then $x - y$ would be $-1$, not $1$." },
+          { "id": "c", "label": "$(4, 0)$", "whyWrong": "Then $2x + y = 8$ holds but $x - y = 4$, not 1." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Add the two equations to eliminate $y$.",
+      "$(2x + y) + (x - y) = 8 + 1$, so $3x = 9$.",
+      "Divide by 3, then find $y$."
+    ],
+    "explanation": "Add: $3x = 9$, so $x = 3$. Then $y = x - 1 = 2$."
+  },
+  {
+    "id": "se2-u1-l2-r5-p10",
+    "type": "numeric",
+    "prompt": "System: $x + 2y = 12$ and $x = 4$. What is $y$?",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of y",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Substitute $x = 4$ into $x + 2y = 12$.",
+      "$4 + 2y = 12$, so $2y = 8$.",
+      "Divide both sides by 2."
+    ],
+    "explanation": "Substitute $x = 4$: $4 + 2y = 12$, so $2y = 8$ and $y = 4$."
+  }
+]

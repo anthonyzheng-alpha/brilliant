@@ -1,0 +1,984 @@
+[
+  {
+    "id": "se2-u1-l1-r1-p1",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 9$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 3$" },
+          { "id": "c2", "label": "$x = 9$" },
+          { "id": "c3", "label": "$x = -3$" },
+          { "id": "c4", "label": "$x = -9$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 9?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{9} = \\pm 3$, so both $3$ and $-3$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p2",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 25$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 5$" },
+          { "id": "c2", "label": "$x = 25$" },
+          { "id": "c3", "label": "$x = -5$" },
+          { "id": "c4", "label": "$x = -25$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 25?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{25} = \\pm 5$, so both $5$ and $-5$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p3",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 4$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 2$" },
+          { "id": "c2", "label": "$x = 4$" },
+          { "id": "c3", "label": "$x = -2$" },
+          { "id": "c4", "label": "$x = -4$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 4?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{4} = \\pm 2$, so both $2$ and $-2$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p4",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 36$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 6$" },
+          { "id": "c2", "label": "$x = 36$" },
+          { "id": "c3", "label": "$x = -6$" },
+          { "id": "c4", "label": "$x = -36$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 36?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{36} = \\pm 6$, so both $6$ and $-6$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p5",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 49$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 7$" },
+          { "id": "c2", "label": "$x = 49$" },
+          { "id": "c3", "label": "$x = -7$" },
+          { "id": "c4", "label": "$x = -49$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 49?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{49} = \\pm 7$, so both $7$ and $-7$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p6",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 1$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 1$" },
+          { "id": "c2", "label": "$x = 2$" },
+          { "id": "c3", "label": "$x = -1$" },
+          { "id": "c4", "label": "$x = 0$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 1?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{1} = \\pm 1$, so both $1$ and $-1$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p7",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 64$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 8$" },
+          { "id": "c2", "label": "$x = 64$" },
+          { "id": "c3", "label": "$x = -8$" },
+          { "id": "c4", "label": "$x = -64$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 64?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{64} = \\pm 8$, so both $8$ and $-8$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p8",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 100$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 10$" },
+          { "id": "c2", "label": "$x = 100$" },
+          { "id": "c3", "label": "$x = -10$" },
+          { "id": "c4", "label": "$x = -100$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 100?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{100} = \\pm 10$, so both $10$ and $-10$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p9",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 81$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 9$" },
+          { "id": "c2", "label": "$x = 81$" },
+          { "id": "c3", "label": "$x = -9$" },
+          { "id": "c4", "label": "$x = -81$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 81?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{81} = \\pm 9$, so both $9$ and $-9$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r1-p10",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 144$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 12$" },
+          { "id": "c2", "label": "$x = 144$" },
+          { "id": "c3", "label": "$x = -12$" },
+          { "id": "c4", "label": "$x = -144$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What numbers times itself give 144?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{144} = \\pm 12$, so both $12$ and $-12$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r2-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 5$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 25 }
+      }
+    },
+    "hints": [
+      "Undo a square root by squaring both sides."
+    ],
+    "explanation": "Square both sides: $x = 5^2 = 25$.",
+    "misconception": "Squaring reverses the square root; do not multiply 5 by 2."
+  },
+  {
+    "id": "se2-u1-l1-r2-p2",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 7$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 49 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 7^2 = 49$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 4$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 16$" },
+          { "id": "b", "label": "$x = 8$", "whyWrong": "This multiplies 4 by 2 instead of squaring it." },
+          { "id": "c", "label": "$x = 2$", "whyWrong": "This takes another square root instead of squaring." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 4^2 = 16$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p4",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 6$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 36 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 6^2 = 36$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p5",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 9 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 3^2 = 9$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 10$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 100 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 10^2 = 100$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p7",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 8$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 64$" },
+          { "id": "b", "label": "$x = 16$", "whyWrong": "This multiplies 8 by 2 instead of squaring it." },
+          { "id": "c", "label": "$x = 4$", "whyWrong": "This takes another square root instead of squaring." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 8^2 = 64$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p8",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 2^2 = 4$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p9",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 9$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 81 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 9^2 = 81$."
+  },
+  {
+    "id": "se2-u1-l1-r2-p10",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 12$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 144 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 12^2 = 144$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p1",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 27$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Undo a cube by taking the cube root.",
+      "What number times itself three times gives 27?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{27} = 3$.",
+    "misconception": "A cube has a single real solution, so no $\\pm$ is needed here."
+  },
+  {
+    "id": "se2-u1-l1-r3-p2",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 64$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 4 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 64?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{64} = 4$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p3",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $x^3 = -8$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = -2$" },
+          { "id": "b", "label": "$x = 2$", "whyWrong": "$2^3 = 8$, not $-8$; the sign must be negative." },
+          { "id": "c", "label": "$x = \\pm 2$", "whyWrong": "A cube keeps the sign, so there is only one real root." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "A negative number cubed stays negative."
+    ],
+    "explanation": "Take the cube root: $x = \\sqrt[3]{-8} = -2$, since $(-2)^3 = -8$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p4",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 8$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 2 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 8?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{8} = 2$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p5",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 1$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 1 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 1?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{1} = 1$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 125$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 5 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 125?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{125} = 5$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p7",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = -27$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": -3 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "A negative number cubed stays negative."
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{-27} = -3$.",
+    "misconception": "Keep the negative sign: an odd power preserves the sign of the base."
+  },
+  {
+    "id": "se2-u1-l1-r3-p8",
+    "type": "multiple-choice",
+    "prompt": "Solve for $x$: $x^3 = 1000$",
+    "interaction": {
+      "type": "multiple-choice",
+      "data": {
+        "options": [
+          { "id": "a", "label": "$x = 10$" },
+          { "id": "b", "label": "$x = 100$", "whyWrong": "$100^3$ is far larger than 1000." },
+          { "id": "c", "label": "$x = \\pm 10$", "whyWrong": "A cube has only one real root, so no $\\pm$." }
+        ],
+        "correctOptionId": "a"
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 1000?"
+    ],
+    "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{1000} = 10$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p9",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt[3]{x} = 2$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 8 }
+      }
+    },
+    "hints": [
+      "Undo a cube root by cubing both sides."
+    ],
+    "explanation": "Cube both sides: $x = 2^3 = 8$."
+  },
+  {
+    "id": "se2-u1-l1-r3-p10",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt[3]{x} = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 27 }
+      }
+    },
+    "hints": [
+      "Undo a cube root by cubing both sides."
+    ],
+    "explanation": "Cube both sides: $x = 3^3 = 27$."
+  },
+  {
+    "id": "se2-u1-l1-r4-p1",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $2x^2 = 50$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 5$" },
+          { "id": "c2", "label": "$x = 25$" },
+          { "id": "c3", "label": "$x = -5$" },
+          { "id": "c4", "label": "$x = -25$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Isolate the power first: divide both sides by 2.",
+      "$x^2 = 25$ — and there are two solutions."
+    ],
+    "explanation": "Divide by 2: $x^2 = 25$. Take the square root: $x = \\pm 5$, so both $5$ and $-5$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p2",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 + 4 = 20$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 4$" },
+          { "id": "c2", "label": "$x = 16$" },
+          { "id": "c3", "label": "$x = -4$" },
+          { "id": "c4", "label": "$x = -16$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Subtract 4 from both sides first.",
+      "$x^2 = 16$ — and there are two solutions."
+    ],
+    "explanation": "Subtract 4: $x^2 = 16$. Take the square root: $x = \\pm 4$, so both $4$ and $-4$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p3",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $3x^2 = 75$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 5$" },
+          { "id": "c2", "label": "$x = 25$" },
+          { "id": "c3", "label": "$x = -5$" },
+          { "id": "c4", "label": "$x = -25$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Divide both sides by 3 first.",
+      "$x^2 = 25$ — and there are two solutions."
+    ],
+    "explanation": "Divide by 3: $x^2 = 25$. Take the square root: $x = \\pm 5$, so both $5$ and $-5$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p4",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 - 9 = 16$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 5$" },
+          { "id": "c2", "label": "$x = 25$" },
+          { "id": "c3", "label": "$x = -5$" },
+          { "id": "c4", "label": "$x = -25$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Add 9 to both sides first.",
+      "$x^2 = 25$ — and there are two solutions."
+    ],
+    "explanation": "Add 9: $x^2 = 25$. Take the square root: $x = \\pm 5$, so both $5$ and $-5$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p5",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2\\sqrt{x} = 8$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 16 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 2 first.",
+      "$\\sqrt{x} = 4$."
+    ],
+    "explanation": "Divide by 2: $\\sqrt{x} = 4$. Square both sides: $x = 16$."
+  },
+  {
+    "id": "se2-u1-l1-r4-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} + 1 = 5$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 16 }
+      }
+    },
+    "hints": [
+      "Subtract 1 from both sides first.",
+      "$\\sqrt{x} = 4$."
+    ],
+    "explanation": "Subtract 1: $\\sqrt{x} = 4$. Square both sides: $x = 16$."
+  },
+  {
+    "id": "se2-u1-l1-r4-p7",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $5x^2 = 45$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 3$" },
+          { "id": "c2", "label": "$x = 9$" },
+          { "id": "c3", "label": "$x = -3$" },
+          { "id": "c4", "label": "$x = -9$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Divide both sides by 5 first.",
+      "$x^2 = 9$ — and there are two solutions."
+    ],
+    "explanation": "Divide by 5: $x^2 = 9$. Take the square root: $x = \\pm 3$, so both $3$ and $-3$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p8",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 + 10 = 110$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 10$" },
+          { "id": "c2", "label": "$x = 100$" },
+          { "id": "c3", "label": "$x = -10$" },
+          { "id": "c4", "label": "$x = -100$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Subtract 10 from both sides first.",
+      "$x^2 = 100$ — and there are two solutions."
+    ],
+    "explanation": "Subtract 10: $x^2 = 100$. Take the square root: $x = \\pm 10$, so both $10$ and $-10$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r4-p9",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $2x^3 = 16$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 2 }
+      }
+    },
+    "hints": [
+      "Divide both sides by 2 first.",
+      "$x^3 = 8$."
+    ],
+    "explanation": "Divide by 2: $x^3 = 8$. Take the cube root: $x = 2$."
+  },
+  {
+    "id": "se2-u1-l1-r4-p10",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 + 5 = 32$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 3 }
+      }
+    },
+    "hints": [
+      "Subtract 5 from both sides first.",
+      "$x^3 = 27$."
+    ],
+    "explanation": "Subtract 5: $x^3 = 27$. Take the cube root: $x = 3$."
+  },
+  {
+    "id": "se2-u1-l1-r5-p1",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 121$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 11$" },
+          { "id": "c2", "label": "$x = 121$" },
+          { "id": "c3", "label": "$x = -11$" },
+          { "id": "c4", "label": "$x = -121$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What number squared gives 121?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root: $x = \\pm\\sqrt{121} = \\pm 11$, so both $11$ and $-11$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r5-p2",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 11$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 121 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 11^2 = 121$."
+  },
+  {
+    "id": "se2-u1-l1-r5-p3",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $4x^2 = 64$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 4$" },
+          { "id": "c2", "label": "$x = 16$" },
+          { "id": "c3", "label": "$x = -4$" },
+          { "id": "c4", "label": "$x = -16$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Divide both sides by 4 first.",
+      "$x^2 = 16$ — and there are two solutions."
+    ],
+    "explanation": "Divide by 4: $x^2 = 16$. Take the square root: $x = \\pm 4$, so both $4$ and $-4$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r5-p4",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = 216$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 6 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "What number cubed gives 216?"
+    ],
+    "explanation": "Take the cube root: $x = \\sqrt[3]{216} = 6$."
+  },
+  {
+    "id": "se2-u1-l1-r5-p5",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 - 7 = 18$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 5$" },
+          { "id": "c2", "label": "$x = 25$" },
+          { "id": "c3", "label": "$x = -5$" },
+          { "id": "c4", "label": "$x = -25$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Add 7 to both sides first.",
+      "$x^2 = 25$ — and there are two solutions."
+    ],
+    "explanation": "Add 7: $x^2 = 25$. Take the square root: $x = \\pm 5$, so both $5$ and $-5$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r5-p6",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} - 2 = 3$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 25 }
+      }
+    },
+    "hints": [
+      "Add 2 to both sides first.",
+      "$\\sqrt{x} = 5$."
+    ],
+    "explanation": "Add 2: $\\sqrt{x} = 5$. Square both sides: $x = 25$."
+  },
+  {
+    "id": "se2-u1-l1-r5-p7",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $x^2 = 169$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 13$" },
+          { "id": "c2", "label": "$x = 169$" },
+          { "id": "c3", "label": "$x = -13$" },
+          { "id": "c4", "label": "$x = -169$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "What number squared gives 169?",
+      "Take the square root of both sides — there are two solutions."
+    ],
+    "explanation": "Take the square root: $x = \\pm\\sqrt{169} = \\pm 13$, so both $13$ and $-13$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r5-p8",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $x^3 = -64$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": -4 }
+      }
+    },
+    "hints": [
+      "Take the cube root of both sides.",
+      "A negative number cubed stays negative."
+    ],
+    "explanation": "Take the cube root: $x = \\sqrt[3]{-64} = -4$.",
+    "misconception": "Keep the negative sign: an odd power preserves the base's sign."
+  },
+  {
+    "id": "se2-u1-l1-r5-p9",
+    "type": "tap-sequence",
+    "prompt": "Solve for $x$: $3x^2 = 108$. Select all solutions (more than one answer is correct).",
+    "interaction": {
+      "type": "tap-sequence",
+      "data": {
+        "multiSelect": true,
+        "cells": [
+          { "id": "c1", "label": "$x = 6$" },
+          { "id": "c2", "label": "$x = 36$" },
+          { "id": "c3", "label": "$x = -6$" },
+          { "id": "c4", "label": "$x = -36$" }
+        ],
+        "correctCellIds": ["c1", "c3"]
+      }
+    },
+    "hints": [
+      "Divide both sides by 3 first.",
+      "$x^2 = 36$ — and there are two solutions."
+    ],
+    "explanation": "Divide by 3: $x^2 = 36$. Take the square root: $x = \\pm 6$, so both $6$ and $-6$ are solutions."
+  },
+  {
+    "id": "se2-u1-l1-r5-p10",
+    "type": "numeric",
+    "prompt": "Solve for $x$: $\\sqrt{x} = 13$",
+    "interaction": {
+      "type": "numeric",
+      "data": {
+        "placeholder": "Value of x",
+        "validation": { "type": "numeric", "value": 169 }
+      }
+    },
+    "hints": [
+      "Square both sides to undo the root."
+    ],
+    "explanation": "Square both sides: $x = 13^2 = 169$."
+  }
+]

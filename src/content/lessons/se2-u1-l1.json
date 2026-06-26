@@ -1,0 +1,188 @@
+{
+  "id": "se2-u1-l1",
+  "unitId": "se2-u1",
+  "title": "Exponents and Radicals",
+  "description": "Solve equations like x^2 = 49 and \\sqrt{x} = 6.",
+  "estimatedMinutes": 20,
+  "phase": "M3",
+  "rounds": [
+    {
+      "id": "se2-u1-l1-r1",
+      "label": "Warm-up",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l1-r1-p1",
+        "se2-u1-l1-r1-p2",
+        "se2-u1-l1-r1-p3",
+        "se2-u1-l1-r1-p4",
+        "se2-u1-l1-r1-p5",
+        "se2-u1-l1-r1-p6",
+        "se2-u1-l1-r1-p7",
+        "se2-u1-l1-r1-p8",
+        "se2-u1-l1-r1-p9",
+        "se2-u1-l1-r1-p10"
+      ],
+      "miniLesson": {
+        "title": "Undo a Square",
+        "paragraph": "A squared variable like $x^2 = 9$ asks: what number times itself gives 9? To undo squaring, take the **square root of both sides**. But remember a key idea: both $3$ and $-3$ square to $9$, so $x^2 = 9$ has **two solutions**, $x = 3$ and $x = -3$. We write this as $x = \\pm 3$.",
+        "example": {
+          "prompt": "Solve for $x$: $x^2 = 16$. Select all solutions (more than one answer is correct).",
+          "interaction": {
+            "type": "tap-sequence",
+            "data": {
+              "multiSelect": true,
+              "cells": [
+                { "id": "c1", "label": "$x = 4$" },
+                { "id": "c2", "label": "$x = 16$" },
+                { "id": "c3", "label": "$x = -4$" },
+                { "id": "c4", "label": "$x = -16$" }
+              ],
+              "correctCellIds": ["c1", "c3"]
+            }
+          },
+          "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{16} = \\pm 4$, so both $4$ and $-4$ are solutions."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l1-r2",
+      "label": "Basics",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l1-r2-p1",
+        "se2-u1-l1-r2-p2",
+        "se2-u1-l1-r2-p3",
+        "se2-u1-l1-r2-p4",
+        "se2-u1-l1-r2-p5",
+        "se2-u1-l1-r2-p6",
+        "se2-u1-l1-r2-p7",
+        "se2-u1-l1-r2-p8",
+        "se2-u1-l1-r2-p9",
+        "se2-u1-l1-r2-p10"
+      ],
+      "miniLesson": {
+        "title": "Undo a Square Root",
+        "paragraph": "A square root equation like $\\sqrt{x} = 5$ is undone by **squaring both sides**. Squaring reverses the root, so $x = 5^2 = 25$. Unlike squaring, a square root equation has a **single** solution, because $\\sqrt{x}$ means the non-negative root.",
+        "example": {
+          "prompt": "Solve for $x$: $\\sqrt{x} = 6$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 36 }
+            }
+          },
+          "explanation": "Square both sides: $x = 6^2 = 36$."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l1-r3",
+      "label": "Building",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l1-r3-p1",
+        "se2-u1-l1-r3-p2",
+        "se2-u1-l1-r3-p3",
+        "se2-u1-l1-r3-p4",
+        "se2-u1-l1-r3-p5",
+        "se2-u1-l1-r3-p6",
+        "se2-u1-l1-r3-p7",
+        "se2-u1-l1-r3-p8",
+        "se2-u1-l1-r3-p9",
+        "se2-u1-l1-r3-p10"
+      ],
+      "miniLesson": {
+        "title": "Cubes and Cube Roots",
+        "paragraph": "A cubed variable like $x^3 = 27$ is undone by the **cube root**: $x = \\sqrt[3]{27} = 3$. Cubing keeps the sign, so a cube has only **one** real solution. For example $x^3 = -8$ gives $x = -2$, because $(-2)^3 = -8$.",
+        "example": {
+          "prompt": "Solve for $x$: $x^3 = 8$",
+          "interaction": {
+            "type": "numeric",
+            "data": {
+              "placeholder": "Value of x",
+              "validation": { "type": "numeric", "value": 2 }
+            }
+          },
+          "explanation": "Take the cube root of both sides: $x = \\sqrt[3]{8} = 2$."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l1-r4",
+      "label": "Challenge",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l1-r4-p1",
+        "se2-u1-l1-r4-p2",
+        "se2-u1-l1-r4-p3",
+        "se2-u1-l1-r4-p4",
+        "se2-u1-l1-r4-p5",
+        "se2-u1-l1-r4-p6",
+        "se2-u1-l1-r4-p7",
+        "se2-u1-l1-r4-p8",
+        "se2-u1-l1-r4-p9",
+        "se2-u1-l1-r4-p10"
+      ],
+      "miniLesson": {
+        "title": "Isolate the Power First",
+        "paragraph": "When a power has a coefficient or constant attached, **isolate the power before undoing it**, just like a two-step equation. For $2x^2 = 50$, divide by 2 to get $x^2 = 25$, then take the square root: $x = \\pm 5$. For $x^2 + 4 = 20$, subtract 4 first to get $x^2 = 16$.",
+        "example": {
+          "prompt": "Solve for $x$: $3x^2 = 48$. Select all solutions (more than one answer is correct).",
+          "interaction": {
+            "type": "tap-sequence",
+            "data": {
+              "multiSelect": true,
+              "cells": [
+                { "id": "c1", "label": "$x = 4$" },
+                { "id": "c2", "label": "$x = 16$" },
+                { "id": "c3", "label": "$x = -4$" },
+                { "id": "c4", "label": "$x = -16$" }
+              ],
+              "correctCellIds": ["c1", "c3"]
+            }
+          },
+          "explanation": "Divide by 3: $x^2 = 16$. Take the square root: $x = \\pm 4$, so both $4$ and $-4$ are solutions."
+        }
+      }
+    },
+    {
+      "id": "se2-u1-l1-r5",
+      "label": "Mastery",
+      "sampleSize": 5,
+      "problemIds": [
+        "se2-u1-l1-r5-p1",
+        "se2-u1-l1-r5-p2",
+        "se2-u1-l1-r5-p3",
+        "se2-u1-l1-r5-p4",
+        "se2-u1-l1-r5-p5",
+        "se2-u1-l1-r5-p6",
+        "se2-u1-l1-r5-p7",
+        "se2-u1-l1-r5-p8",
+        "se2-u1-l1-r5-p9",
+        "se2-u1-l1-r5-p10"
+      ],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "Now you'll mix squares, cubes, and roots, sometimes with a step to isolate the power first. The rule stays the same: **undo the operation on the variable with its inverse**, and remember that an even power ($x^2$) gives $\\pm$ two solutions while a square root or odd power gives one.",
+        "example": {
+          "prompt": "Solve for $x$: $x^2 - 5 = 20$. Select all solutions (more than one answer is correct).",
+          "interaction": {
+            "type": "tap-sequence",
+            "data": {
+              "multiSelect": true,
+              "cells": [
+                { "id": "c1", "label": "$x = 5$" },
+                { "id": "c2", "label": "$x = 25$" },
+                { "id": "c3", "label": "$x = -5$" },
+                { "id": "c4", "label": "$x = -25$" }
+              ],
+              "correctCellIds": ["c1", "c3"]
+            }
+          },
+          "explanation": "Add 5: $x^2 = 25$. Take the square root: $x = \\pm 5$, so both $5$ and $-5$ are solutions."
+        }
+      }
+    }
+  ]
+}

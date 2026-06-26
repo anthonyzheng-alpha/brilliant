@@ -38,9 +38,10 @@ TABLE OF CONTENTS
 Build a "learn by doing" algebra learning experience inspired by Brilliant.org's
 pedagogy. Learners solve interactive puzzles and discover algebraic ideas through
 hands-on play before formal notation and vocabulary are introduced. The product
-rolls out in five phases (M0–M4), eventually covering four algebra courses
-(Solving Equations, Visual Algebra, Real-World Algebra, Factoring)
-without copying proprietary content, branding, or assets.
+rolls out in five phases (M0–M4), eventually covering several algebra courses
+(Solving Equations, Solving Equations 2, Visual Algebra, Real-World Algebra,
+Factoring, Roots of Polynomials) without copying proprietary content, branding,
+or assets.
 
 Tagline: "Learn algebra by doing."
 
@@ -692,26 +693,29 @@ Course A: Solving Equations ("The Detective's Path")
   Unit 5: Multi-Step and Parentheses [M3]
   Unit 6: Word Problems to Equations [M3]
 
+Course A2: Solving Equations 2 ("The Detective Levels Up")
+  Unit 1: Powers and Systems         [M3]
+
 Course B: Visual Algebra ("Lines on the Coordinate Plane")
   Unit 1: Graphing Lines             [M2]
-  Unit 2: Rate Comparison              [M3]
+  Unit 2: Rate Comparison            [M3]
   Unit 3: Rules and Functions        [M3]
   Unit 4: Graphs from Patterns       [M3]
   Unit 5: Non-Linear Preview         [M3]
 
 Course C: Real-World Algebra ("The Pragmatist's Route")
   Unit 1: Proportional Reasoning     [M2]
-  Unit 2: Linear Models                [M3]
-  Unit 3: Systems (Introduction)       [M3]
+  Unit 2: Linear Models              [M3]
+  Unit 3: Systems (Introduction)     [M3]
   Unit 4: Inequalities in Context    [M3]
-  Unit 5: Model Critique               [M3]
+  Unit 5: Model Critique             [M3]
 
 Course D: Factoring ("Breaking Apart Expressions")
   Unit 1: Factoring Basics           [M2]
-  Unit 2: GCF and Grouping             [M3]
-  Unit 3: Trinomials (a ≠ 1)           [M3]
-  Unit 4: Special Products             [M3]
-  Unit 5: Factor to Solve              [M3]
+  Unit 2: GCF and Grouping           [M3]
+  Unit 3: Trinomials (a ≠ 1)         [M3]
+  Unit 4: Special Products           [M3]
+  Unit 5: Factor to Solve            [M3]
 
 9.3 Course A: Solving Equations — Unit Detail
 ---------------------------------------------
@@ -747,6 +751,23 @@ Unit 6: Word Problems to Equations [M3]
   Topics: Translate scenarios into equations
   Interactions: Build equation from story tiles
   Lessons: L6.1 Age problem; L6.2 Consecutive integers; L6.3 Perimeter
+
+9.3a Course A2: Solving Equations 2 — Unit Detail
+-------------------------------------------------
+
+A follow-on to Solving Equations for learners who have completed it. Unlocks
+sequentially after Solving Equations. Mirrors that course's shape: one unit
+with two lessons (each five rounds: Warm-up, Basics, Building, Challenge,
+Mastery, with a mini-lesson per round).
+
+Unit 1: Powers and Systems [M3]
+  Topics: Exponents and radicals; systems of two equations
+  Interactions: Numeric answer; multiple-choice (incl. +/- roots and ordered
+    pairs); numeric-set for two-valued solutions
+  Lessons: L1.1 Exponents and Radicals (x^2 = k, sqrt(x) = k, cubes/cube
+             roots, isolate-the-power, mixed)
+           L1.2 Systems of Equations (unknown on both sides, substitution,
+             elimination, scale-then-eliminate, mixed)
 
 9.4 Course B: Visual Algebra — Unit Detail
 ------------------------------------------

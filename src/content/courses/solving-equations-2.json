@@ -1,0 +1,10 @@
+{
+  "id": "solving-equations-2",
+  "slug": "solving-equations-2",
+  "title": "Solving Equations 2",
+  "subtitle": "The Detective Levels Up",
+  "description": "Take solving further: tackle exponents and radicals, then crack systems of equations.",
+  "lens": "solving-equations",
+  "unitIds": ["se2-u1"],
+  "lockedUntilPhase": "M0"
+}
