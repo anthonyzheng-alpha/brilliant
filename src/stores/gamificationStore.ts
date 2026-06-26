@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { GamificationState } from '../types/content'
+import type { GamificationState, MonsterSlot } from '../types/content'
 import { loadGamification, saveGamification } from '../lib/storage'
 import { computeStreakUpdate, todayLocal } from '../lib/streaks'
 import {
@@ -7,6 +7,7 @@ import {
   awardLessonMilestone,
   awardUnitBadge,
 } from '../lib/milestones'
+import { ITEMS_BY_ID } from '../lib/shop'
 
 type GamificationStore = {
   gamification: GamificationState
@@ -14,6 +15,9 @@ type GamificationStore = {
   setFromRemote: (state: GamificationState) => void
   recordActivity: () => void
   awardCoins: (amount: number) => void
+  buyItem: (itemId: string) => boolean
+  equipItem: (itemId: string) => void
+  unequip: (slot: MonsterSlot) => void
   onLessonMastered: (
     lessonId: string,
     unitId?: string,
@@ -52,6 +56,56 @@ export const useGamificationStore = create<GamificationStore>((set, get) => ({
   awardCoins: (amount) => {
     const g = get().gamification
     const updated = { ...g, coins: (g.coins ?? 0) + amount }
+    saveGamification(updated)
+    set({ gamification: updated })
+  },
+
+  buyItem: (itemId) => {
+    const g = get().gamification
+    const item = ITEMS_BY_ID[itemId]
+    if (!item) return false
+    if (g.profile.ownedItems.includes(itemId)) return false
+    if ((g.coins ?? 0) < item.price) return false
+    const updated: GamificationState = {
+      ...g,
+      coins: (g.coins ?? 0) - item.price,
+      profile: {
+        ...g.profile,
+        ownedItems: [...g.profile.ownedItems, itemId],
+      },
+    }
+    saveGamification(updated)
+    set({ gamification: updated })
+    return true
+  },
+
+  equipItem: (itemId) => {
+    const g = get().gamification
+    const item = ITEMS_BY_ID[itemId]
+    if (!item) return
+    if (!g.profile.ownedItems.includes(itemId)) return
+    let profile = g.profile
+    if (item.category === 'color') {
+      profile = { ...profile, bodyColor: itemId }
+    } else {
+      profile = {
+        ...profile,
+        equipped: { ...profile.equipped, [item.category]: itemId },
+      }
+    }
+    const updated: GamificationState = { ...g, profile }
+    saveGamification(updated)
+    set({ gamification: updated })
+  },
+
+  unequip: (slot) => {
+    const g = get().gamification
+    const equipped = { ...g.profile.equipped }
+    delete equipped[slot]
+    const updated: GamificationState = {
+      ...g,
+      profile: { ...g.profile, equipped },
+    }
     saveGamification(updated)
     set({ gamification: updated })
   },

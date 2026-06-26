@@ -175,6 +175,17 @@ export type ProgressState = {
 // Maps a round id to the problem ids selected for the current lesson run.
 export type LessonVariant = Record<string, string[]>
 
+export type MonsterSlot = 'hat' | 'eyes' | 'accessory'
+
+export type MonsterProfile = {
+  // Currently equipped body color item id.
+  bodyColor: string
+  // Purchased item ids (colors + accessories). Default items are always present.
+  ownedItems: string[]
+  // Equipped accessory item id per slot.
+  equipped: Partial<Record<MonsterSlot, string>>
+}
+
 export type GamificationState = {
   version: number
   currentStreak: number
@@ -184,6 +195,7 @@ export type GamificationState = {
   lessonMilestones: Record<string, { earnedAt: string }>
   badges: string[]
   coins: number
+  profile: MonsterProfile
 }
 
 // Per-skill record of how often the learner missed a given topic + question type.

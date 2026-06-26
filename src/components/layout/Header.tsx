@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StreakBadge } from '../gamification/StreakBadge'
 import { CoinBadge } from '../gamification/CoinBadge'
+import { Monster } from '../profile/Monster'
+import { useGamificationStore } from '../../stores/gamificationStore'
+import '../profile/Profile.css'
 import { LoginButton } from '../auth/LoginButton'
 import { UserMenu } from '../auth/UserMenu'
 import { FEATURES } from '../../lib/features'
@@ -28,9 +31,19 @@ export function Header() {
         <SettingsMenu />
         {FEATURES.gamification && <CoinBadge />}
         {FEATURES.gamification && <StreakBadge />}
+        {FEATURES.gamification && <ProfileAvatar />}
         {FEATURES.firebase && <AuthSlot />}
       </div>
     </header>
+  )
+}
+
+function ProfileAvatar() {
+  const profile = useGamificationStore((s) => s.gamification.profile)
+  return (
+    <Link to="/profile" className="profile-avatar-btn" aria-label="Your monster profile" title="Your monster">
+      <Monster bodyColor={profile.bodyColor} equipped={profile.equipped} size={32} />
+    </Link>
   )
 }
 

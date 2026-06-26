@@ -1,7 +1,7 @@
 import type { GamificationState, ProgressState, CourseProgress, StruggleState } from '../types/content'
 import { get, ref, set } from 'firebase/database'
 import { getRealtimeDb } from './firebase'
-import { saveProgress, saveGamification, saveStruggles } from './storage'
+import { saveProgress, saveGamification, saveStruggles, defaultMonsterProfile } from './storage'
 
 // RTDB rejects `undefined` values; strip them (and any undefined nested fields).
 function stripUndefined<T>(value: T): T {
@@ -61,6 +61,21 @@ export function mergeGamification(
   const activeDates = [
     ...new Set([...(local.activeDates ?? []), ...(remote.activeDates ?? [])]),
   ].sort()
+  const base = defaultMonsterProfile()
+  const localProfile = local.profile ?? base
+  const remoteProfile = remote.profile ?? base
+  const profile = {
+    // Prefer the local equipped look; fall back to remote then defaults.
+    bodyColor: localProfile.bodyColor ?? remoteProfile.bodyColor ?? base.bodyColor,
+    ownedItems: [
+      ...new Set([
+        ...base.ownedItems,
+        ...(remoteProfile.ownedItems ?? []),
+        ...(localProfile.ownedItems ?? []),
+      ]),
+    ],
+    equipped: { ...remoteProfile.equipped, ...localProfile.equipped },
+  }
   return {
     version: 1,
     currentStreak: Math.max(local.currentStreak, remote.currentStreak),
@@ -70,6 +85,7 @@ export function mergeGamification(
     lessonMilestones,
     badges,
     coins: Math.max(local.coins ?? 0, remote.coins ?? 0),
+    profile,
   }
 }
 
@@ -127,16 +143,19 @@ export async function syncOnLogin(uid: string): Promise<void> {
   const remote = await fetchUserData(uid)
 
   const progress = remote.progress ?? { version: 1, courses: {} }
-  const gamification = remote.gamification ?? {
-    version: 1,
-    currentStreak: 0,
-    longestStreak: 0,
-    lastActiveDate: null,
-    activeDates: [],
-    lessonMilestones: {},
-    badges: [],
-    coins: 0,
-  }
+  const gamification = remote.gamification
+    ? { ...remote.gamification, profile: remote.gamification.profile ?? defaultMonsterProfile() }
+    : {
+        version: 1,
+        currentStreak: 0,
+        longestStreak: 0,
+        lastActiveDate: null,
+        activeDates: [],
+        lessonMilestones: {},
+        badges: [],
+        coins: 0,
+        profile: defaultMonsterProfile(),
+      }
   const struggles = remote.struggles ?? { version: 1, skills: {} }
 
   saveProgress(progress)

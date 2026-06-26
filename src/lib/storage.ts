@@ -1,5 +1,12 @@
-import type { ProgressState, GamificationState, LessonVariant, StruggleState } from '../types/content'
+import type {
+  ProgressState,
+  GamificationState,
+  LessonVariant,
+  StruggleState,
+  MonsterProfile,
+} from '../types/content'
 import { DEFAULT_THEME, isTheme, type Theme } from './theme'
+import { DEFAULT_COLOR, DEFAULT_OWNED } from './shop'
 
 const PROGRESS_KEY = 'algebra-clone-progress'
 const GAMIFICATION_KEY = 'algebra-clone-gamification'
@@ -33,6 +40,12 @@ const defaultProgress = (): ProgressState => ({
   courses: {},
 })
 
+export const defaultMonsterProfile = (): MonsterProfile => ({
+  bodyColor: DEFAULT_COLOR,
+  ownedItems: [...DEFAULT_OWNED],
+  equipped: {},
+})
+
 const defaultGamification = (): GamificationState => ({
   version: 1,
   currentStreak: 0,
@@ -42,6 +55,7 @@ const defaultGamification = (): GamificationState => ({
   lessonMilestones: {},
   badges: [],
   coins: 0,
+  profile: defaultMonsterProfile(),
 })
 
 const defaultStruggles = (): StruggleState => ({
@@ -73,7 +87,19 @@ export function saveProgress(state: ProgressState): void {
 
 export function loadGamification(): GamificationState {
   const g = readJson(GAMIFICATION_KEY, defaultGamification)
-  return { ...defaultGamification(), ...g, activeDates: g.activeDates ?? [] }
+  const base = defaultMonsterProfile()
+  const profile: MonsterProfile = {
+    bodyColor: g.profile?.bodyColor ?? base.bodyColor,
+    // Always include the free defaults so the monster can always render.
+    ownedItems: [...new Set([...base.ownedItems, ...(g.profile?.ownedItems ?? [])])],
+    equipped: g.profile?.equipped ?? {},
+  }
+  return {
+    ...defaultGamification(),
+    ...g,
+    activeDates: g.activeDates ?? [],
+    profile,
+  }
 }
 
 export function saveGamification(state: GamificationState): void {
