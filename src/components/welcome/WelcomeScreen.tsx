@@ -10,6 +10,10 @@ type WelcomeScreenProps = {
   onDismiss: () => void
 }
 
+const CHIP_LABEL_OVERRIDES: Record<string, string> = {
+  'solving-equations-2': 'Systems of Equations',
+}
+
 const overlayMotion = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -68,7 +72,7 @@ export function WelcomeScreen({ onDismiss }: WelcomeScreenProps) {
               : {}
             return (
               <Chip key={course.id} className="welcome__chip" {...chipProps}>
-                {course.title}
+                {CHIP_LABEL_OVERRIDES[course.id] ?? course.title}
               </Chip>
             )
           })}
