@@ -32,8 +32,8 @@ export function OverallReviewPage() {
         <div className="feedback feedback--complete">
           <p className="feedback__title">Nothing to review yet</p>
           <p className="feedback__body">
-            Work through some lessons first. Once you have practiced a few topics, the
-            Overall Review will generate fresh problems focused on what you missed.
+            Work through some lessons first. Once you have practiced a few topics, there
+            will be fresh problems focused on what you missed.
           </p>
           <div className="feedback__actions">
             <Link to="/" className="btn btn--primary" style={{ textDecoration: 'none' }}>

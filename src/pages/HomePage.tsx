@@ -41,7 +41,7 @@ export function HomePage() {
               Interactive puzzles that build intuition before notation.
             </p>
             <Link to="/review" className="btn btn--primary hero__review-cta" style={{ textDecoration: 'none' }}>
-              Overall Review
+              Review Suggested Problems
             </Link>
           </section>
           <section className="course-grid">
