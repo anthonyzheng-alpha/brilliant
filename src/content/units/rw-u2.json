@@ -1,0 +1,9 @@
+{
+  "id": "rw-u2",
+  "courseId": "real-world-algebra",
+  "title": "Systems of Equations",
+  "description": "Solve word problems with two unknowns.",
+  "order": 2,
+  "phase": "M2",
+  "lessonIds": ["rw-u2-l1"]
+}

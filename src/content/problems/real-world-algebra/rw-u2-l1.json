@@ -1,0 +1,1005 @@
+[
+  {
+    "id": "rw-u2-l1-r1-p1",
+    "type": "multi-input",
+    "prompt": "**1 apple costs $3.** **2 apples and 1 banana** cost **$8**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "banana", "emoji": "🍌", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $b$ the banana's. The clues become $a = 3$ and $2a + b = 8$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Two apples cost **$6**, so the banana is **$8** - **$6** = **$2**.",
+    "misconception": "Use the given apple price in the second clue before solving for the banana."
+  },
+  {
+    "id": "rw-u2-l1-r1-p2",
+    "type": "multi-input",
+    "prompt": "**1 orange costs $2.** **1 orange and 1 cookie** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "orange", "emoji": "🍊", "label": "Orange", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $o$ be the orange's price and $c$ the cookie's. The clues become $o = 2$ and $o + c = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "The orange is **$2**, so the cookie is **$6** - **$2** = **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p3",
+    "type": "multi-input",
+    "prompt": "**1 coffee costs $4.** **1 coffee and 1 donut** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the coffee's price and $d$ the donut's. The clues become $c = 4$ and $c + d = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "The coffee is **$4**, so the donut is **$6** - **$4** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p4",
+    "type": "multi-input",
+    "prompt": "**1 burger costs $5.** **1 burger and 1 fries** cost **$8**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "burger", "emoji": "🍔", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 5 } },
+          { "id": "fries", "emoji": "🍟", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the burger's price and $f$ the fries'. The clues become $b = 5$ and $b + f = 8$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "The burger is **$5**, so the fries are **$8** - **$5** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p5",
+    "type": "multi-input",
+    "prompt": "**1 pen costs $2.** **3 pens and 1 notebook** cost **$10**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pen", "emoji": "🖊️", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "notebook", "emoji": "📓", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pen's price and $n$ the notebook's. The clues become $p = 2$ and $3p + n = 10$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Three pens cost **$6**, so the notebook is **$10** - **$6** = **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p6",
+    "type": "multi-input",
+    "prompt": "**1 soda costs $1.** **2 sodas and 1 taco** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "soda", "emoji": "🥤", "label": "Soda", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+          { "id": "taco", "emoji": "🌮", "label": "Taco", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $s$ be the soda's price and $t$ the taco's. The clues become $s = 1$ and $2s + t = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Two sodas cost **$2**, so the taco is **$6** - **$2** = **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p7",
+    "type": "multi-input",
+    "prompt": "**1 popcorn costs $6.** **1 ticket and 1 popcorn** cost **$16**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "ticket", "emoji": "🎫", "label": "Ticket", "unit": "$", "validation": { "type": "numeric", "value": 10 } },
+          { "id": "popcorn", "emoji": "🍿", "label": "Popcorn", "unit": "$", "validation": { "type": "numeric", "value": 6 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $p = 6$ and $t + p = 16$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "The popcorn is **$6**, so the ticket is **$16** - **$6** = **$10**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p8",
+    "type": "multi-input",
+    "prompt": "**1 milk costs $2.** **2 milks and 1 cookie** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "milk", "emoji": "🥛", "label": "Milk", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $m$ be the milk's price and $c$ the cookie's. The clues become $m = 2$ and $2m + c = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Two milks cost **$4**, so the cookie is **$7** - **$4** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p9",
+    "type": "multi-input",
+    "prompt": "**1 pencil costs $1.** **4 pencils and 1 marker** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pencil", "emoji": "✏️", "label": "Pencil", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+          { "id": "marker", "emoji": "🖍️", "label": "Marker", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pencil's price and $m$ the marker's. The clues become $p = 1$ and $4p + m = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Four pencils cost **$4**, so the marker is **$7** - **$4** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r1-p10",
+    "type": "multi-input",
+    "prompt": "**1 apple costs $2.** **3 apples and 1 pear** cost **$11**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "pear", "emoji": "🍐", "label": "Pear", "unit": "$", "validation": { "type": "numeric", "value": 5 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $p$ the pear's. The clues become $a = 2$ and $3a + p = 11$ - the same kind of system you solved with $x$ and $y$.",
+      "One clue already gives a single item's price - put that value into the other clue.",
+      "Subtract the known amount to find the remaining item."
+    ],
+    "explanation": "Three apples cost **$6**, so the pear is **$11** - **$6** = **$5**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p1",
+    "type": "multi-input",
+    "prompt": "**1 notebook costs $4.** **2 pens and 1 notebook** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pen", "emoji": "🖊️", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+          { "id": "notebook", "emoji": "📓", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pen's price and $n$ the notebook's. The clues become $n = 4$ and $2p + n = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "The notebook is **$4**, so 2 pens cost **$6** - **$4** = **$2**, making each pen **$1**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p2",
+    "type": "multi-input",
+    "prompt": "**1 donut costs $2.** **3 coffees and 1 donut** cost **$11**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the coffee's price and $d$ the donut's. The clues become $d = 2$ and $3c + d = 11$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "The donut is **$2**, so 3 coffees cost **$11** - **$2** = **$9**, making each coffee **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p3",
+    "type": "multi-input",
+    "prompt": "**1 fries costs $3.** **2 burgers and 2 fries** cost **$12**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "burger", "emoji": "🍔", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "fries", "emoji": "🍟", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the burger's price and $f$ the fries'. The clues become $f = 3$ and $2b + 2f = 12$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two fries cost **$6**, so 2 burgers cost **$12** - **$6** = **$6**, making each burger **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p4",
+    "type": "multi-input",
+    "prompt": "**1 banana costs $1.** **4 apples and 2 bananas** cost **$14**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "banana", "emoji": "🍌", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 1 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $b$ the banana's. The clues become $b = 1$ and $4a + 2b = 14$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two bananas cost **$2**, so 4 apples cost **$14** - **$2** = **$12**, making each apple **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p5",
+    "type": "multi-input",
+    "prompt": "**1 soda costs $2.** **3 tacos and 2 sodas** cost **$13**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "taco", "emoji": "🌮", "label": "Taco", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "soda", "emoji": "🥤", "label": "Soda", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the taco's price and $s$ the soda's. The clues become $s = 2$ and $3t + 2s = 13$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two sodas cost **$4**, so 3 tacos cost **$13** - **$4** = **$9**, making each taco **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p6",
+    "type": "multi-input",
+    "prompt": "**1 cookie costs $2.** **5 cookies and 1 milk** cost **$13**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "milk", "emoji": "🥛", "label": "Milk", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the cookie's price and $m$ the milk's. The clues become $c = 2$ and $5c + m = 13$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Five cookies cost **$10**, so the milk is **$13** - **$10** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p7",
+    "type": "multi-input",
+    "prompt": "**1 ticket costs $9.** **2 tickets and 3 popcorns** cost **$30**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "ticket", "emoji": "🎫", "label": "Ticket", "unit": "$", "validation": { "type": "numeric", "value": 9 } },
+          { "id": "popcorn", "emoji": "🍿", "label": "Popcorn", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $t = 9$ and $2t + 3p = 30$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two tickets cost **$18**, so 3 popcorns cost **$30** - **$18** = **$12**, making each popcorn **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p8",
+    "type": "multi-input",
+    "prompt": "**1 marker costs $2.** **3 pencils and 2 markers** cost **$10**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pencil", "emoji": "✏️", "label": "Pencil", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "marker", "emoji": "🖍️", "label": "Marker", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pencil's price and $m$ the marker's. The clues become $m = 2$ and $3p + 2m = 10$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two markers cost **$4**, so 3 pencils cost **$10** - **$4** = **$6**, making each pencil **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p9",
+    "type": "multi-input",
+    "prompt": "**1 pear costs $3.** **2 apples and 2 pears** cost **$14**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "pear", "emoji": "🍐", "label": "Pear", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $p$ the pear's. The clues become $p = 3$ and $2a + 2p = 14$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two pears cost **$6**, so 2 apples cost **$14** - **$6** = **$8**, making each apple **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r2-p10",
+    "type": "multi-input",
+    "prompt": "**1 coffee costs $3.** **2 coffees and 4 donuts** cost **$14**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the coffee's price and $d$ the donut's. The clues become $c = 3$ and $2c + 4d = 14$ - the same kind of system you solved with $x$ and $y$.",
+      "Replace the item with the known price in the other clue.",
+      "That leaves one item; isolate it to find its price."
+    ],
+    "explanation": "Two coffees cost **$6**, so 4 donuts cost **$14** - **$6** = **$8**, making each donut **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p1",
+    "type": "multi-input",
+    "prompt": "**3 apples and 1 orange** cost **$7**. **1 apple and 1 orange** cost **$3**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "orange", "emoji": "🍊", "label": "Orange", "unit": "$", "validation": { "type": "numeric", "value": 1 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $o$ the orange's. The clues become $3a + o = 7$ and $a + o = 3$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the orange: 2 apples = **$7** - **$3** = **$4**, so an apple is **$2** and the orange is **$3** - **$2** = **$1**.",
+    "misconception": "Subtracting the clues removes the orange because it appears once in each."
+  },
+  {
+    "id": "rw-u2-l1-r3-p2",
+    "type": "multi-input",
+    "prompt": "**2 coffees and 1 donut** cost **$9**. **1 coffee and 1 donut** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the coffee's price and $d$ the donut's. The clues become $2c + d = 9$ and $c + d = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the donut: 1 coffee = **$9** - **$6** = **$3**, so the donut is **$6** - **$3** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p3",
+    "type": "multi-input",
+    "prompt": "**2 burgers and 1 fries** cost **$11**. **1 burger and 1 fries** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "burger", "emoji": "🍔", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "fries", "emoji": "🍟", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the burger's price and $f$ the fries'. The clues become $2b + f = 11$ and $b + f = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the fries: 1 burger = **$11** - **$7** = **$4**, so the fries are **$7** - **$4** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p4",
+    "type": "multi-input",
+    "prompt": "**3 pens and 1 notebook** cost **$9**. **1 pen and 1 notebook** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pen", "emoji": "🖊️", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "notebook", "emoji": "📓", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pen's price and $n$ the notebook's. The clues become $3p + n = 9$ and $p + n = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the notebook: 2 pens = **$9** - **$5** = **$4**, so a pen is **$2** and the notebook is **$5** - **$2** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p5",
+    "type": "multi-input",
+    "prompt": "**2 tacos and 1 soda** cost **$8**. **1 taco and 1 soda** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "taco", "emoji": "🌮", "label": "Taco", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "soda", "emoji": "🥤", "label": "Soda", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the taco's price and $s$ the soda's. The clues become $2t + s = 8$ and $t + s = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the soda: 1 taco = **$8** - **$5** = **$3**, so the soda is **$5** - **$3** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p6",
+    "type": "multi-input",
+    "prompt": "**2 cookies and 1 milk** cost **$7**. **1 cookie and 1 milk** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "milk", "emoji": "🥛", "label": "Milk", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the cookie's price and $m$ the milk's. The clues become $2c + m = 7$ and $c + m = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the milk: 1 cookie = **$7** - **$5** = **$2**, so the milk is **$5** - **$2** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p7",
+    "type": "multi-input",
+    "prompt": "**3 apples and 1 banana** cost **$10**. **1 apple and 1 banana** cost **$4**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "banana", "emoji": "🍌", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 1 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $b$ the banana's. The clues become $3a + b = 10$ and $a + b = 4$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the banana: 2 apples = **$10** - **$4** = **$6**, so an apple is **$3** and the banana is **$4** - **$3** = **$1**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p8",
+    "type": "multi-input",
+    "prompt": "**2 tickets and 1 popcorn** cost **$25**. **1 ticket and 1 popcorn** cost **$14**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "ticket", "emoji": "🎫", "label": "Ticket", "unit": "$", "validation": { "type": "numeric", "value": 11 } },
+          { "id": "popcorn", "emoji": "🍿", "label": "Popcorn", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $2t + p = 25$ and $t + p = 14$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the popcorn: 1 ticket = **$25** - **$14** = **$11**, so the popcorn is **$14** - **$11** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p9",
+    "type": "multi-input",
+    "prompt": "**2 pencils and 1 marker** cost **$5**. **1 pencil and 1 marker** cost **$4**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pencil", "emoji": "✏️", "label": "Pencil", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+          { "id": "marker", "emoji": "🖍️", "label": "Marker", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pencil's price and $m$ the marker's. The clues become $2p + m = 5$ and $p + m = 4$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the marker: 1 pencil = **$5** - **$4** = **$1**, so the marker is **$4** - **$1** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r3-p10",
+    "type": "multi-input",
+    "prompt": "**2 pears and 1 apple** cost **$13**. **1 pear and 1 apple** cost **$8**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pear", "emoji": "🍐", "label": "Pear", "unit": "$", "validation": { "type": "numeric", "value": 5 } },
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pear's price and $a$ the apple's. The clues become $2p + a = 13$ and $p + a = 8$ - the same kind of system you solved with $x$ and $y$.",
+      "Both clues have one of the same item - subtract one clue from the other to cancel it.",
+      "Solve the item that remains, then substitute back for the other."
+    ],
+    "explanation": "Subtracting cancels the apple: 1 pear = **$13** - **$8** = **$5**, so the apple is **$8** - **$5** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p1",
+    "type": "multi-input",
+    "prompt": "**2 apples and 3 oranges** cost **$13**. **1 apple and 1 orange** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "orange", "emoji": "🍊", "label": "Orange", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $o$ the orange's. The clues become $2a + 3o = 13$ and $a + o = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 apples and 2 oranges = **$10**. Subtracting leaves 1 orange = **$3**, so an apple is **$5** - **$3** = **$2**.",
+    "misconception": "Scale the whole clue - multiply every part by the same number before subtracting."
+  },
+  {
+    "id": "rw-u2-l1-r4-p2",
+    "type": "multi-input",
+    "prompt": "**3 coffees and 2 donuts** cost **$16**. **1 coffee and 1 donut** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the coffee's price and $d$ the donut's. The clues become $3c + 2d = 16$ and $c + d = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 coffees and 2 donuts = **$12**. Subtracting leaves 1 coffee = **$4**, so the donut is **$6** - **$4** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p3",
+    "type": "multi-input",
+    "prompt": "**2 burgers and 3 fries** cost **$18**. **1 burger and 2 fries** cost **$11**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "burger", "emoji": "🍔", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "fries", "emoji": "🍟", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the burger's price and $f$ the fries'. The clues become $2b + 3f = 18$ and $b + 2f = 11$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 burgers and 4 fries = **$22**. Subtracting leaves 1 fries = **$4**, so a burger is **$11** - 2 × **$4** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p4",
+    "type": "multi-input",
+    "prompt": "**3 pens and 2 notebooks** cost **$11**. **1 pen and 1 notebook** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pen", "emoji": "🖊️", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+          { "id": "notebook", "emoji": "📓", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pen's price and $n$ the notebook's. The clues become $3p + 2n = 11$ and $p + n = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 pens and 2 notebooks = **$10**. Subtracting leaves 1 pen = **$11** - **$10** = **$1**, so the notebook is **$5** - **$1** = **$4**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p5",
+    "type": "multi-input",
+    "prompt": "**3 tacos and 2 sodas** cost **$16**. **1 taco and 1 soda** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "taco", "emoji": "🌮", "label": "Taco", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "soda", "emoji": "🥤", "label": "Soda", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the taco's price and $s$ the soda's. The clues become $3t + 2s = 16$ and $t + s = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 tacos and 2 sodas = **$12**. Subtracting leaves 1 taco = **$4**, so the soda is **$6** - **$4** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p6",
+    "type": "multi-input",
+    "prompt": "**2 cookies and 3 milks** cost **$13**. **1 cookie and 1 milk** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "milk", "emoji": "🥛", "label": "Milk", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the cookie's price and $m$ the milk's. The clues become $2c + 3m = 13$ and $c + m = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 cookies and 2 milks = **$10**. Subtracting leaves 1 milk = **$3**, so the cookie is **$5** - **$3** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p7",
+    "type": "multi-input",
+    "prompt": "**2 tickets and 3 popcorns** cost **$32**. **1 ticket and 1 popcorn** cost **$13**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "ticket", "emoji": "🎫", "label": "Ticket", "unit": "$", "validation": { "type": "numeric", "value": 7 } },
+          { "id": "popcorn", "emoji": "🍿", "label": "Popcorn", "unit": "$", "validation": { "type": "numeric", "value": 6 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $2t + 3p = 32$ and $t + p = 13$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 tickets and 2 popcorns = **$26**. Subtracting leaves 1 popcorn = **$6**, so the ticket is **$13** - **$6** = **$7**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p8",
+    "type": "multi-input",
+    "prompt": "**3 pencils and 2 markers** cost **$12**. **1 pencil and 1 marker** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pencil", "emoji": "✏️", "label": "Pencil", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "marker", "emoji": "🖍️", "label": "Marker", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pencil's price and $m$ the marker's. The clues become $3p + 2m = 12$ and $p + m = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 pencils and 2 markers = **$10**. Subtracting leaves 1 pencil = **$2**, so the marker is **$5** - **$2** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p9",
+    "type": "multi-input",
+    "prompt": "**2 apples and 3 pears** cost **$16**. **1 apple and 2 pears** cost **$9**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 5 } },
+          { "id": "pear", "emoji": "🍐", "label": "Pear", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $p$ the pear's. The clues become $2a + 3p = 16$ and $a + 2p = 9$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 apples and 4 pears = **$18**. Subtracting leaves 1 pear = **$2**, so an apple is **$9** - 2 × **$2** = **$5**."
+  },
+  {
+    "id": "rw-u2-l1-r4-p10",
+    "type": "multi-input",
+    "prompt": "**2 bananas and 3 apples** cost **$13**. **1 banana and 2 apples** cost **$8**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "banana", "emoji": "🍌", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the banana's price and $a$ the apple's. The clues become $2b + 3a = 13$ and $b + 2a = 8$ - the same kind of system you solved with $x$ and $y$.",
+      "Scale one clue so an item appears the same number of times in both.",
+      "Subtract to cancel that item, then solve and substitute back."
+    ],
+    "explanation": "Double the second clue to 2 bananas and 4 apples = **$16**. Subtracting leaves 1 apple = **$16** - **$13** = **$3**, so a banana is **$8** - 2 × **$3** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p1",
+    "type": "multi-input",
+    "prompt": "**1 apple costs $4.** **2 apples and 3 bananas** cost **$14**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "banana", "emoji": "🍌", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $a$ be the apple's price and $b$ the banana's. The clues become $a = 4$ and $2a + 3b = 14$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Two apples cost **$8**, so 3 bananas cost **$14** - **$8** = **$6**, making each banana **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p2",
+    "type": "multi-input",
+    "prompt": "**3 burgers and 1 fries** cost **$14**. **1 burger and 1 fries** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "burger", "emoji": "🍔", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "fries", "emoji": "🍟", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $b$ be the burger's price and $f$ the fries'. The clues become $3b + f = 14$ and $b + f = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Subtracting cancels the fries: 2 burgers = **$14** - **$6** = **$8**, so a burger is **$4** and the fries are **$6** - **$4** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p3",
+    "type": "multi-input",
+    "prompt": "**2 tacos and 3 sodas** cost **$18**. **1 taco and 1 soda** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "taco", "emoji": "🌮", "label": "Taco", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "soda", "emoji": "🥤", "label": "Soda", "unit": "$", "validation": { "type": "numeric", "value": 4 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the taco's price and $s$ the soda's. The clues become $2t + 3s = 18$ and $t + s = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Double the second clue to 2 tacos and 2 sodas = **$14**. Subtracting leaves 1 soda = **$4**, so the taco is **$7** - **$4** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p4",
+    "type": "multi-input",
+    "prompt": "**1 notebook costs $5.** **3 pens and 2 notebooks** cost **$16**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pen", "emoji": "🖊️", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "notebook", "emoji": "📓", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 5 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pen's price and $n$ the notebook's. The clues become $n = 5$ and $3p + 2n = 16$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Two notebooks cost **$10**, so 3 pens cost **$16** - **$10** = **$6**, making each pen **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p5",
+    "type": "multi-input",
+    "prompt": "**2 cookies and 1 milk** cost **$8**. **1 cookie and 1 milk** cost **$5**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "cookie", "emoji": "🍪", "label": "Cookie", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "milk", "emoji": "🥛", "label": "Milk", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $c$ be the cookie's price and $m$ the milk's. The clues become $2c + m = 8$ and $c + m = 5$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Subtracting cancels the milk: 1 cookie = **$8** - **$5** = **$3**, so the milk is **$5** - **$3** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p6",
+    "type": "multi-input",
+    "prompt": "**2 tickets and 1 popcorn** cost **$23**. **1 ticket and 1 popcorn** cost **$13**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "ticket", "emoji": "🎫", "label": "Ticket", "unit": "$", "validation": { "type": "numeric", "value": 10 } },
+          { "id": "popcorn", "emoji": "🍿", "label": "Popcorn", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $2t + p = 23$ and $t + p = 13$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Subtracting cancels the popcorn: 1 ticket = **$23** - **$13** = **$10**, so the popcorn is **$13** - **$10** = **$3**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p7",
+    "type": "multi-input",
+    "prompt": "**3 oranges and 2 apples** cost **$16**. **1 orange and 1 apple** cost **$6**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "orange", "emoji": "🍊", "label": "Orange", "unit": "$", "validation": { "type": "numeric", "value": 4 } },
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $o$ be the orange's price and $a$ the apple's. The clues become $3o + 2a = 16$ and $o + a = 6$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Double the second clue to 2 oranges and 2 apples = **$12**. Subtracting leaves 1 orange = **$4**, so the apple is **$6** - **$4** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p8",
+    "type": "multi-input",
+    "prompt": "**1 marker costs $3.** **2 pencils and 2 markers** cost **$10**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pencil", "emoji": "✏️", "label": "Pencil", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "marker", "emoji": "🖍️", "label": "Marker", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pencil's price and $m$ the marker's. The clues become $m = 3$ and $2p + 2m = 10$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Two markers cost **$6**, so 2 pencils cost **$10** - **$6** = **$4**, making each pencil **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p9",
+    "type": "multi-input",
+    "prompt": "**2 donuts and 3 coffees** cost **$19**. **1 donut and 1 coffee** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "donut", "emoji": "🍩", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+          { "id": "coffee", "emoji": "☕", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 5 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $d$ be the donut's price and $c$ the coffee's. The clues become $2d + 3c = 19$ and $d + c = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Double the second clue to 2 donuts and 2 coffees = **$14**. Subtracting leaves 1 coffee = **$5**, so the donut is **$7** - **$5** = **$2**."
+  },
+  {
+    "id": "rw-u2-l1-r5-p10",
+    "type": "multi-input",
+    "prompt": "**4 pears and 1 apple** cost **$13**. **2 pears and 1 apple** cost **$7**. Find the price of each.",
+    "interaction": {
+      "type": "multi-input",
+      "data": {
+        "fields": [
+          { "id": "pear", "emoji": "🍐", "label": "Pear", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+          { "id": "apple", "emoji": "🍎", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 1 } }
+        ]
+      }
+    },
+    "hints": [
+      "Let $p$ be the pear's price and $a$ the apple's. The clues become $4p + a = 13$ and $2p + a = 7$ - the same kind of system you solved with $x$ and $y$.",
+      "Decide whether to substitute a known price or eliminate a shared item.",
+      "After finding one price, substitute it back to get the other."
+    ],
+    "explanation": "Subtracting cancels the apple: 2 pears = **$13** - **$7** = **$6**, so a pear is **$3** and the apple is **$7** - 2 × **$3** = **$1**."
+  }
+]

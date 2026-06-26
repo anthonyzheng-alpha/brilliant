@@ -7,6 +7,7 @@ import { SliderProblem } from './SliderProblem'
 import { TapSequenceProblem } from './TapSequenceProblem'
 import { LineEquationProblem } from './LineEquationProblem'
 import { FactoringProblem } from './FactoringProblem'
+import { MultiInputProblem } from './MultiInputProblem'
 
 function initialAnswer(problem: Problem): AnswerValue | null {
   switch (problem.interaction.type) {
@@ -27,6 +28,8 @@ function initialAnswer(problem: Problem): AnswerValue | null {
       return { type: 'line-equation', slope: '', intercept: '' }
     case 'factoring':
       return { type: 'factoring', placement: {} }
+    case 'multi-input':
+      return { type: 'multi-input', values: {} }
     default:
       return null
   }
@@ -112,6 +115,20 @@ export function ProblemRenderer({ problem, answer, onAnswerChange, onSubmit, dis
             disabled={disabled}
           />
         )
+      case 'multi-input': {
+        const values = answer?.type === 'multi-input' ? answer.values : {}
+        return (
+          <MultiInputProblem
+            data={interaction.data}
+            values={values}
+            onChange={(id, value) =>
+              onAnswerChange({ type: 'multi-input', values: { ...values, [id]: value } })
+            }
+            onSubmit={onSubmit}
+            disabled={disabled}
+          />
+        )
+      }
       default:
         return null
     }

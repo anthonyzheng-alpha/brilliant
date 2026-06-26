@@ -94,6 +94,23 @@ const interaction = z.discriminatedUnion('type', [
       acceptCommutative: z.boolean().optional(),
     }),
   }),
+  z.object({
+    type: z.literal('multi-input'),
+    data: z.object({
+      fields: z
+        .array(
+          z.object({
+            id: z.string(),
+            emoji: z.string().optional(),
+            label: richText,
+            placeholder: z.string().optional(),
+            unit: z.string().optional(),
+            validation: validationRule,
+          }),
+        )
+        .min(1),
+    }),
+  }),
 ])
 
 const visualSchema = z
@@ -123,6 +140,7 @@ export const problemSchema = z.object({
     'tap-sequence',
     'line-equation',
     'factoring',
+    'multi-input',
   ]),
   prompt: richText,
   visual: z

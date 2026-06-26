@@ -119,6 +119,12 @@ export function isAnswerValid(problem: Problem, answer: AnswerValue): boolean {
         interaction.data.acceptCommutative,
       )
     }
+    case 'multi-input': {
+      if (answer.type !== 'multi-input') return false
+      return interaction.data.fields.every((field) =>
+        validateNumericString(answer.values[field.id] ?? '', field.validation),
+      )
+    }
     default:
       return false
   }
@@ -151,6 +157,14 @@ export function hasValidInput(problem: Problem, answer: AnswerValue | null): boo
         answer.type === 'factoring' &&
         problem.interaction.type === 'factoring' &&
         factoringZonesFilled(problem.interaction.data, answer.placement)
+      )
+    case 'multi-input':
+      return (
+        answer.type === 'multi-input' &&
+        problem.interaction.type === 'multi-input' &&
+        problem.interaction.data.fields.every(
+          (field) => (answer.values[field.id] ?? '').trim() !== '',
+        )
       )
     default:
       return false

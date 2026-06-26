@@ -6,6 +6,7 @@ export type ProblemType =
   | 'tap-sequence'
   | 'line-equation'
   | 'factoring'
+  | 'multi-input'
 
 export type VisualKind =
   | 'none'
@@ -72,6 +73,19 @@ export type FactoringInteraction = {
   acceptCommutative?: boolean
 }
 
+export type MultiInputField = {
+  id: string
+  emoji?: string
+  label: RichText
+  placeholder?: string
+  unit?: string
+  validation: ValidationRule
+}
+
+export type MultiInputInteraction = {
+  fields: MultiInputField[]
+}
+
 export type InteractionConfig =
   | { type: 'multiple-choice'; data: MultipleChoiceInteraction }
   | { type: 'drag-drop'; data: DragDropInteraction }
@@ -80,6 +94,7 @@ export type InteractionConfig =
   | { type: 'tap-sequence'; data: TapSequenceInteraction }
   | { type: 'line-equation'; data: LineEquationInteraction }
   | { type: 'factoring'; data: FactoringInteraction }
+  | { type: 'multi-input'; data: MultiInputInteraction }
 
 export type Problem = {
   id: string
@@ -193,3 +208,4 @@ export type AnswerValue =
   | { type: 'tap-sequence'; selectedIds: string[] }
   | { type: 'line-equation'; slope: string; intercept: string }
   | { type: 'factoring'; placement: Record<string, string> }
+  | { type: 'multi-input'; values: Record<string, string> }

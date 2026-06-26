@@ -87,15 +87,15 @@ Secondary:
 1.5 User Needs
 --------------
 
-| User need                          | How the product addresses it              |
-|------------------------------------|-------------------------------------------|
-| Understand, not memorize           | Puzzles before formal rules               |
-| Immediate feedback                 | Check answers in-place with explanations  |
-| Low commitment per session         | Short lessons, clear progress indicators  |
-| Resume without setup               | localStorage progress, no login required  |
-| Feel progress and achievement      | Daily streaks + lesson mastery milestones |
-| Multiple ways to see algebra       | Three distinct course lenses (M2+)        |
-| Mobile-friendly practice           | Mobile-first responsive design            |
+| User need                     | How the product addresses it              |
+|-------------------------------|-------------------------------------------|
+| Understand, not memorize      | Puzzles before formal rules               |
+| Immediate feedback            | Check answers in-place with explanations  |
+| Low commitment per session    | Short lessons, clear progress indicators  |
+| Resume without setup          | localStorage progress, no login required  |
+| Feel progress and achievement | Daily streaks + lesson mastery milestones |
+| Multiple ways to see algebra  | Three distinct course lenses (M2+)        |
+| Mobile-friendly practice      | Mobile-first responsive design            |
 
 1.6 Non-Goals (entire MVP)
 --------------------------
@@ -127,42 +127,45 @@ Also deferred (may revisit post-MVP):
 2.1 Phase Matrix
 ----------------
 
-| Capability                    | M0 | M1 | M2 | M3 | M4 |
-|-------------------------------|----|----|----|----|-----|
-| Homepage + course + lesson nav| X  | X  | X  | X  | X  |
-| Lesson player (Check, hints)  | X  | X  | X  | X  | X  |
-| MCQ + drag-drop + numeric     | X  | X  | X  | X  | X  |
-| Slider + tap-sequence         |    | X  | X  | X  | X  |
-| KaTeX math rendering          |    | X  | X  | X  | X  |
-| BalanceScale widget           |    | X  | X  | X  | X  |
-| Visual Algebra widgets        |    |    | X  | X  | X  |
-| Real-World Algebra widgets    |    |    | X  | X  | X  |
-| Factoring widgets             |    |    | X  | X  | X  |
-| Solving Equations content     | 1  | U1-3| U1 | All| All|
-| Visual Algebra content        | -- | -- | U1 | All| All|
-| Real-World Algebra content    | -- | -- | U1 | All| All|
-| Factoring content             | -- | -- | U1 | All| All|
-| Daily streaks                 | X  | X  | X  | X  | X  |
-| Lesson mastery milestones     | X  | X  | X  | X  | X  |
-| Unit/course badges            |    |    |    | X  | X  |
-| Streak history (longest)      |    |    |    | X  | X  |
-| Sequential lesson unlock      |    | X  | X  | X  | X  |
-| Lesson-complete screen        |    |    |    |    |    |
-| Animations (scale, patterns)  |    |    |    |    | X  |
-| "Coming soon" locked courses  | X  |    |    |    |    |
+| Capability                              | M0 | M1   | M2   | M3  | M4  |
+|-----------------------------------------|----|------|------|-----|-----|
+| Homepage + course + lesson nav          | X  | X    | X    | X   | X   |
+| Lesson player (Check, hints)            | X  | X    | X    | X   | X   |
+| MCQ + drag-drop + numeric               | X  | X    | X    | X   | X   |
+| Slider + tap-sequence                   |    | X    | X    | X   | X   |
+| line-equation + factoring + multi-input |    |      | X    | X   | X   |
+| KaTeX math rendering                    |    | X    | X    | X   | X   |
+| BalanceScale widget                     |    | X    | X    | X   | X   |
+| Visual Algebra widgets                  |    |      | X    | X   | X   |
+| Real-World Algebra widgets              |    |      | X    | X   | X   |
+| Factoring widgets                       |    |      | X    | X   | X   |
+| Solving Equations content               | 1  | U1-3 | U1   | All | All |
+| Solving Equations 2 content             | -- | --   | --   | All | All |
+| Visual Algebra content                  | -- | --   | U1   | All | All |
+| Real-World Algebra content              | -- | --   | U1-2 | All | All |
+| Factoring content                       | -- | --   | U1   | All | All |
+| Roots of Polynomials content            | -- | --   | U1   | All | All |
+| Daily streaks                           | X  | X    | X    | X   | X   |
+| Lesson mastery milestones               | X  | X    | X    | X   | X   |
+| Unit/course badges                      |    |      |      | X   | X   |
+| Streak history (longest)                |    |      |      | X   | X   |
+| Sequential lesson unlock                |    | X    | X    | X   | X   |
+| Lesson-complete screen                  |    |      |      |     |     |
+| Animations (scale, patterns)            |    |      |      |     | X   |
+| "Coming soon" locked courses            | X  |      |      |     |     |
 
 U1-3 = Units 1 through 3. "All" = all units in course (~150–250 problems total).
 
 2.2 Content Volume by Phase
 ---------------------------
 
-| Phase | Scope                                           | Problem count |
-|-------|-------------------------------------------------|---------------|
-| M0    | Solving Equations, Lesson 1 only                | ~6            |
-| M1    | Solving Equations, Units 1–3                    | ~30–40        |
-| M2    | + Unit 1 for Visual, Real-World, and Factoring  | ~70–90        |
-| M3    | All units, all 4 courses                          | ~150–250      |
-| M4    | No new content; polish existing                   | ~150–250      |
+| Phase | Scope                                          | Problem count |
+|-------|------------------------------------------------|---------------|
+| M0    | Solving Equations, Lesson 1 only               | ~6            |
+| M1    | Solving Equations, Units 1–3                   | ~30–40        |
+| M2    | + Unit 1 for Visual, Real-World, and Factoring | ~70–90        |
+| M3    | All units, all 4 courses                       | ~150–250      |
+| M4    | No new content; polish existing                | ~150–250      |
 
 2.3 Indicative Timeline (1 developer)
 -------------------------------------
@@ -615,12 +618,12 @@ Timezone: Use learner's local browser timezone for calendar day boundaries.
 8.4 Badges (M3+)
 ----------------
 
-| Badge ID pattern          | Trigger                              |
-|---------------------------|--------------------------------------|
-| lesson-{lessonId}         | Mastered individual lesson           |
-| unit-{unitId}             | Mastered all lessons in unit         |
-| course-{courseId}         | Mastered all units in course         |
-| streak-7, streak-30, ...  | Optional streak milestone badges     |
+| Badge ID pattern         | Trigger                          |
+|--------------------------|----------------------------------|
+| lesson-{lessonId}        | Mastered individual lesson       |
+| unit-{unitId}            | Mastered all lessons in unit     |
+| course-{courseId}        | Mastered all units in course     |
+| streak-7, streak-30, ... | Optional streak milestone badges |
 
 8.5 localStorage Schema (Gamification)
 --------------------------------------
@@ -663,12 +666,12 @@ single store (Zustand) that writes both keys.
 8.7 Edge Cases
 --------------
 
-| Scenario                         | Behavior                                    |
-|----------------------------------|---------------------------------------------|
-| Browser storage cleared          | All progress, streaks, badges reset           |
-| Replay mastered lesson           | Milestone retained; streak counts if new day   |
-| Complete problem at 11:59 PM     | Counts for that calendar day                  |
-| Change device/browser            | Fresh state (no sync in MVP)                  |
+| Scenario                     | Behavior                                     |
+|------------------------------|----------------------------------------------|
+| Browser storage cleared      | All progress, streaks, badges reset          |
+| Replay mastered lesson       | Milestone retained; streak counts if new day |
+| Complete problem at 11:59 PM | Counts for that calendar day                 |
+| Change device/browser        | Fresh state (no sync in MVP)                 |
 
 ================================================================================
 9. CONTENT ARCHITECTURE: THREE ALGEBRA LENSES
@@ -694,7 +697,7 @@ Course A: Solving Equations ("The Detective's Path")
   Unit 6: Word Problems to Equations [M3]
 
 Course A2: Solving Equations 2 ("The Detective Levels Up")
-  Unit 1: Powers and Systems         [M3]
+  Unit 1: Powers and Systems         [M3] [built]
 
 Course B: Visual Algebra ("Lines on the Coordinate Plane")
   Unit 1: Graphing Lines             [M2]
@@ -704,18 +707,22 @@ Course B: Visual Algebra ("Lines on the Coordinate Plane")
   Unit 5: Non-Linear Preview         [M3]
 
 Course C: Real-World Algebra ("The Pragmatist's Route")
-  Unit 1: Proportional Reasoning     [M2]
-  Unit 2: Linear Models              [M3]
-  Unit 3: Systems (Introduction)     [M3]
-  Unit 4: Inequalities in Context    [M3]
-  Unit 5: Model Critique             [M3]
+  Unit 1: Proportional Reasoning     [M2] [built]
+  Unit 2: Systems of Equations       [M2] [built]
+  Unit 3: Linear Models              [M3]
+  Unit 4: Systems on a Graph         [M3]
+  Unit 5: Inequalities in Context    [M3]
+  Unit 6: Model Critique             [M3]
 
 Course D: Factoring ("Breaking Apart Expressions")
-  Unit 1: Factoring Basics           [M2]
+  Unit 1: Factoring Basics           [M2] [built]
   Unit 2: GCF and Grouping           [M3]
   Unit 3: Trinomials (a ≠ 1)         [M3]
   Unit 4: Special Products           [M3]
   Unit 5: Factor to Solve            [M3]
+
+Course E: Roots of Polynomials ("Where Quadratics Hit Zero")
+  Unit 1: Finding Roots              [M2] [built]
 
 9.3 Course A: Solving Equations — Unit Detail
 ---------------------------------------------
@@ -804,30 +811,40 @@ Unit 5: Non-Linear Preview [M3]
 9.5 Course C: Real-World Algebra — Unit Detail
 ------------------------------------------------
 
-Unit 1: Proportional Reasoning [M2]
-  Topics: Unit rates; best buy
-  Interactions: RateComparison widget
-  Lessons: L1.1 Best cereal deal; L1.2 Miles per gallon; L1.3 Scale a recipe
+Unit 1: Proportional Reasoning [M2] [built]
+  Topics: Unit rates; best buy; fixed fee plus rate
+  Interactions: Numeric and multiple-choice answers; rate-comparison and
+    scenario-illustration placeholder cards
+  Lessons: L1.1 Best Buy (5 rounds: Warm-up, Basics, Building, Challenge,
+    Mastery, with a mini-lesson per round)
 
-Unit 2: Linear Models [M3]
+Unit 2: Systems of Equations [M2] [built]
+  Topics: Two unknowns from two purchase clues; substitution, elimination,
+    scale-then-eliminate
+  Interactions: multi-input (each item shown as an emoji + label with its own
+    numeric input)
+  Lessons: L2.1 Pricing Two Items (5 rounds: Warm-up, Basics, Building,
+    Challenge, Mastery, with a mini-lesson per round)
+
+Unit 3: Linear Models [M3]
   Topics: Fixed + variable cost; phone plans
   Interactions: ParameterSlider + graph match
-  Lessons: L2.1 Taxi fare; L2.2 Phone plans; L2.3 Equation from graph
+  Lessons: L3.1 Taxi fare; L3.2 Phone plans; L3.3 Equation from graph
 
-Unit 3: Systems (Introduction) [M3]
+Unit 4: Systems on a Graph [M3]
   Topics: Two constraints; intersection
   Interactions: CoordinateGraph intersection
-  Lessons: L3.1 Equal plans; L3.2 Ticket types; L3.3 Read solution from graph
+  Lessons: L4.1 Equal plans; L4.2 Ticket types; L4.3 Read solution from graph
 
-Unit 4: Inequalities in Context [M3]
+Unit 5: Inequalities in Context [M3]
   Topics: Budgets; constraints
   Interactions: Tap-sequence shade feasible region
-  Lessons: L4.1 Spend at most $50; L4.2 Minimum tickets; L4.3 Graph inequality
+  Lessons: L5.1 Spend at most $50; L5.2 Minimum tickets; L5.3 Graph inequality
 
-Unit 5: Model Critique [M3]
+Unit 6: Model Critique [M3]
   Topics: Does the model fit?
   Interactions: Multiple choice pick correct model
-  Lessons: L5.1 Pick linear model; L5.2 Spot bad model; L5.3 Fix axis/units
+  Lessons: L6.1 Pick linear model; L6.2 Spot bad model; L6.3 Fix axis/units
 
 9.6 Course D: Factoring — Unit Detail
 ------------------------------------
@@ -856,6 +873,20 @@ Unit 5: Factor to Solve [M3]
   Topics: Zero product property; roots from factored form
   Interactions: MCQ + drag-and-drop
   Lessons: L5.1 Set factors to zero; L5.2 Find x-intercepts; L5.3 Word problems
+
+9.6a Course E: Roots of Polynomials — Unit Detail
+-------------------------------------------------
+
+A follow-on course (locked until M2) covering where quadratics equal zero:
+factored forms to roots, solving by factoring, and the quadratic formula and
+discriminant.
+
+Unit 1: Finding Roots [M2] [built]
+  Topics: Roots from factored form; solve quadratics by factoring; quadratic
+    formula and discriminant
+  Interactions: Numeric and multiple-choice answers
+  Lessons: L1.1 Find the Roots (5 rounds: Warm-up, Basics, Building, Challenge,
+    Mastery, with a mini-lesson per round)
 
 9.7 Content Authoring Guidelines
 --------------------------------
@@ -891,76 +922,89 @@ Round structure (difficulty ramp):
 10.1 Landing and Navigation
 ---------------------------
 
-| ID     | Requirement                                      | Phase |
-|--------|--------------------------------------------------|-------|
-| FR-1.1 | Homepage hero: "Learn algebra by doing"          | M0    |
-| FR-1.2 | 3 course cards with progress % and streak badge  | M0    |
-| FR-1.3 | Locked courses show "Coming soon" (non-clickable)| M0    |
-| FR-1.4 | Unlock all course cards                          | M2    |
-| FR-1.5 | Top nav: Home, Courses                           | M0    |
-| FR-1.6 | Client-side routing (no full page reload)        | M0    |
-| FR-1.7 | Longest streak display on homepage               | M3    |
+| ID     | Requirement                                       | Phase |
+|--------|---------------------------------------------------|-------|
+| FR-1.1 | Homepage hero: "Learn algebra by doing"           | M0    |
+| FR-1.2 | 3 course cards with progress % and streak badge   | M0    |
+| FR-1.3 | Locked courses show "Coming soon" (non-clickable) | M0    |
+| FR-1.4 | Unlock all course cards                           | M2    |
+| FR-1.5 | Top nav: Home, Courses                            | M0    |
+| FR-1.6 | Client-side routing (no full page reload)         | M0    |
+| FR-1.7 | Longest streak display on homepage                | M3    |
 
 10.2 Course and Lesson Browser
 ------------------------------
 
-| ID     | Requirement                                      | Phase |
-|--------|--------------------------------------------------|-------|
-| FR-2.1 | Course overview: units, lessons, progress %      | M0    |
-| FR-2.2 | Lesson rows: title, duration, milestone icon     | M0/M3 |
-| FR-2.3 | Sequential lesson unlock                         | M1    |
-| FR-2.4 | Resume deep-link to last problem index           | M0    |
-| FR-2.5 | URL guard on locked lessons                      | M1    |
+| ID     | Requirement                                  | Phase |
+|--------|----------------------------------------------|-------|
+| FR-2.1 | Course overview: units, lessons, progress %  | M0    |
+| FR-2.2 | Lesson rows: title, duration, milestone icon | M0/M3 |
+| FR-2.3 | Sequential lesson unlock                     | M1    |
+| FR-2.4 | Resume deep-link to last problem index       | M0    |
+| FR-2.5 | URL guard on locked lessons                  | M1    |
 
 10.3 Lesson Player
 ------------------
 
-| ID     | Requirement                                      | Phase |
-|--------|--------------------------------------------------|-------|
-| FR-3.1 | Progress bar, prompt, Check, Hint buttons        | M0    |
-| FR-3.2 | MCQ, drag-drop, numeric problem types            | M0    |
-| FR-3.3 | Slider, tap-sequence problem types               | M1    |
-| FR-3.4 | Progressive hints (3 tiers); unlimited retries   | M0    |
-| FR-3.5 | Must answer correctly to advance                 | M0    |
-| FR-3.6 | KaTeX math in prompts/explanations                | M1    |
-| FR-3.7 | Keyboard: Enter submits; Tab navigates           | M1    |
+| ID      | Requirement                                      | Phase |
+|---------|--------------------------------------------------|-------|
+| FR-3.1  | Progress bar, prompt, Check, Hint buttons        | M0    |
+| FR-3.2  | MCQ, drag-drop, numeric problem types            | M0    |
+| FR-3.3  | Slider, tap-sequence problem types               | M1    |
+| FR-3.3a | line-equation, factoring, multi-input types      | M2    |
+| FR-3.4  | Progressive hints (1-3 tiers); unlimited retries | M0    |
+| FR-3.5  | Must answer correctly to advance                 | M0    |
+| FR-3.6  | KaTeX math in prompts/explanations               | M1    |
+| FR-3.7  | Keyboard: Enter submits; Tab navigates           | M1    |
 
 10.4 Gamification
 -----------------
 
-| ID     | Requirement                                      | Phase |
-|--------|--------------------------------------------------|-------|
-| FR-4.1 | Lesson milestone modal on lesson mastery         | M0    |
-| FR-4.2 | Daily streak increment and display               | M0    |
-| FR-4.3 | Milestone badge icons on lesson rows             | M3    |
-| FR-4.4 | Unit and course completion badges                | M3    |
-| FR-4.5 | Longest streak tracking and display              | M3    |
+| ID     | Requirement                              | Phase |
+|--------|------------------------------------------|-------|
+| FR-4.1 | Lesson milestone modal on lesson mastery | M0    |
+| FR-4.2 | Daily streak increment and display       | M0    |
+| FR-4.3 | Milestone badge icons on lesson rows     | M3    |
+| FR-4.4 | Unit and course completion badges        | M3    |
+| FR-4.5 | Longest streak tracking and display      | M3    |
 
 10.4a Topic Review
 ------------------
 
-| ID     | Requirement                                      | Phase |
-|--------|--------------------------------------------------|-------|
-| FR-4a.1| Review button on course page when 100% complete  | M4    |
-| FR-4a.2| Session of 5 random questions from full pool     | M4    |
-| FR-4a.3| Repeatable sessions with end-of-set summary      | M4    |
-| FR-4a.4| Completing a round or review set counts toward daily streak | M4    |
-| FR-4a.5| No effect on progress, mastery, or unlock state  | M4    |
+| ID      | Requirement                                                 | Phase |
+|---------|-------------------------------------------------------------|-------|
+| FR-4a.1 | Review button on course page when 100% complete             | M4    |
+| FR-4a.2 | Session of 5 random questions from full pool                | M4    |
+| FR-4a.3 | Repeatable sessions with end-of-set summary                 | M4    |
+| FR-4a.4 | Completing a round or review set counts toward daily streak | M4    |
+| FR-4a.5 | No effect on progress, mastery, or unlock state             | M4    |
 
 10.5 Widgets
 ------------
 
-| Widget             | Phase | Used in                          |
-|--------------------|-------|----------------------------------|
-| DragDropBoard      | M0    | Solving Equations (generic)      |
-| BalanceScale       | M1    | Solving Equations Unit 1         |
-| SequenceGrid       | M2    | Visual Algebra Unit 2+             |
-| CoordinateGraph    | M2    | Visual Algebra Unit 1; Real-World M3 |
-| InputOutputMachine | M2    | Visual Algebra Unit 3              |
-| ParameterSlider    | M2    | Real-World Algebra Unit 1        |
-| RateComparison     | M2    | Real-World Algebra Unit 1        |
-| FactoringExpression| M2    | Factoring Unit 1                 |
-| FactoringProblem   | M2    | Factoring Unit 1                 |
+Built widgets live in src/components/widgets/ and are routed by the ProblemVisual
+dispatcher (keyed off a problem's optional `visual.kind`):
+
+| Widget              | Status | Phase | Used in                         |
+|---------------------|--------|-------|---------------------------------|
+| ProblemVisual       | built  | M1    | Dispatcher for all visual kinds |
+| BalanceScale        | built  | M1    | Solving Equations               |
+| CoordinateGraph     | built  | M2    | Visual Algebra (line-equation)  |
+| SequenceGrid        | built  | M2    | Visual Algebra (pattern grids)  |
+| FactoringExpression | built  | M2    | Factoring                       |
+
+Other visuals/interactions are rendered without a dedicated widget component:
+
+| Element               | Form                                          |
+|-----------------------|-----------------------------------------------|
+| rate-comparison       | inline placeholder card (ProblemVisual)       |
+| scenario-illustration | inline placeholder card (ProblemVisual)       |
+| multi-input           | inline emoji + label + numeric input per item |
+|                       | (MultiInputProblem; no separate widget)       |
+
+Planned but not yet built as components: ParameterSlider, RateComparison,
+InputOutputMachine. The slider interaction type uses a native range input rather
+than a dedicated widget.
 
 10.6 Design Principles (all phases)
 ---------------------------------
@@ -978,6 +1022,9 @@ Round structure (difficulty ramp):
 11.1 Type Definitions
 ---------------------
 
+These mirror src/types/content.ts (the canonical source) and the Zod schemas in
+src/lib/schemas.ts.
+
 type RichText = string  // Markdown + inline LaTeX (M1+)
 
 type ProblemType =
@@ -986,40 +1033,114 @@ type ProblemType =
   | 'numeric'           // M0
   | 'slider'            // M1
   | 'tap-sequence'      // M1
+  | 'line-equation'     // M2 (Visual Algebra)
+  | 'factoring'         // M2 (Factoring)
+  | 'multi-input'       // M2 (Real-World Algebra, Systems of Equations)
 
 type VisualKind =
   | 'none'
   | 'balance-scale'           // M1
   | 'sequence-grid'           // M2
   | 'coordinate-graph'        // M2
-  | 'input-output-machine'    // M2
-  | 'rate-comparison'         // M2
-  | 'scenario-illustration'
+  | 'input-output-machine'    // defined but not rendered as a widget
+  | 'rate-comparison'         // inline placeholder card
+  | 'scenario-illustration'   // inline placeholder card
+  | 'factoring-expression'    // M2
+
+type ValidationRule =
+  | { type: 'exact'; value: string }
+  | { type: 'numeric'; value: number; tolerance?: number }
+  | { type: 'numeric-set'; values: number[]; tolerance?: number }
+  | { type: 'expression'; acceptable: string[] }
+
+// Per-type interaction shapes (InteractionConfig is a discriminated union on
+// `type`, each carrying a matching `data` payload):
+type InteractionConfig =
+  | { type: 'multiple-choice'; data: {
+        options: { id: string; label: RichText; whyWrong?: RichText }[]
+        correctOptionId: string } }
+  | { type: 'drag-drop'; data: {
+        draggables: { id: string; label: RichText }[]
+        dropZones: { id: string; label?: RichText; accepts?: string[] }[]
+        correctPlacement: Record<string, string> } }
+  | { type: 'numeric'; data: {
+        placeholder?: string; unit?: string; validation: ValidationRule } }
+  | { type: 'slider'; data: {
+        min: number; max: number; step: number; target: number
+        tolerance?: number; label?: string } }
+  | { type: 'tap-sequence'; data: {
+        cells: { id: string; label: RichText }[]
+        correctCellIds: string[]; multiSelect?: boolean } }
+  | { type: 'line-equation'; data: {
+        slopePlaceholder?: string; interceptPlaceholder?: string
+        targetSlope: number; targetIntercept: number; tolerance?: number } }
+  | { type: 'factoring'; data: {
+        draggables: { id: string; label: RichText }[]
+        dropZones: { id: string; label?: RichText }[]
+        correctPlacement: Record<string, string>
+        acceptCommutative?: boolean } }
+  | { type: 'multi-input'; data: {
+        fields: {
+          id: string; emoji?: string; label: RichText
+          placeholder?: string; unit?: string; validation: ValidationRule
+        }[] } }
+
+// Answer shapes produced by each interaction (see src/lib/validation.ts):
+//   multiple-choice -> { selectedId }
+//   drag-drop / factoring -> { placement: Record<string,string> }
+//   numeric -> { value: string }
+//   slider -> { value: number }
+//   tap-sequence -> { selectedIds: string[] }
+//   line-equation -> { slope: string; intercept: string }
+//   multi-input -> { values: Record<string,string> }  // valid when every
+//                  field's value satisfies its own ValidationRule
 
 type Problem = {
   id: string
   type: ProblemType
   prompt: RichText
   visual?: { kind: VisualKind; props: Record<string, unknown> }
-  interaction: InteractionConfig  // see prior PRD for per-type shapes
-  hints: [RichText, RichText, RichText]
+  interaction: InteractionConfig
+  hints: RichText[]            // 1-3 progressive hints (schema enforces min 1)
   explanation: RichText
+  misconception?: RichText
   introNotation?: boolean
+}
+
+type MiniLesson = {
+  title?: RichText
+  paragraph: RichText
+  example: {
+    prompt: RichText
+    visual?: { kind: VisualKind; props: Record<string, unknown> }
+    interaction: InteractionConfig
+    explanation: RichText
+  }
+}
+
+type Round = {
+  id: string
+  label: string
+  problemIds: string[]
+  sampleSize?: number          // problems sampled from the pool per run
+  miniLesson?: MiniLesson      // shown before the round's problems
 }
 
 type Lesson = {
   id: string
   unitId: string
   title: string
+  description: string
   estimatedMinutes: number
   phase: 'M0' | 'M1' | 'M2' | 'M3'
-  problemIds: string[]
+  rounds: Round[]              // replaces the old flat problemIds list
 }
 
 type Unit = {
   id: string
   courseId: string
   title: string
+  description: string
   order: number
   phase: 'M0' | 'M1' | 'M2' | 'M3'
   lessonIds: string[]
@@ -1030,7 +1151,9 @@ type Course = {
   slug: string
   title: string
   subtitle: string
+  description: RichText
   lens: 'solving-equations' | 'visual-algebra' | 'real-world-algebra'
+      | 'factoring' | 'roots-of-polynomials'
   unitIds: string[]
   lockedUntilPhase: 'M0' | 'M2'  // M0: only solving-equations unlocked
 }
@@ -1041,21 +1164,42 @@ type Course = {
 src/content/
   courses/
     solving-equations.json
+    solving-equations-2.json
     visual-algebra.json
     real-world-algebra.json
+    factoring.json
+    roots-of-polynomials.json
+  units/
+    se-u1.json  se2-u1.json  va-u1.json
+    rw-u1.json  rw-u2.json   fa-u1.json  rp-u1.json
+  lessons/
+    se-u1-l1.json  se-u1-l2.json
+    se2-u1-l1.json se2-u1-l2.json
+    va-u1-l1.json
+    rw-u1-l1.json  rw-u2-l1.json
+    fa-u1-l1.json
+    rp-u1-l1.json
   problems/
     solving-equations/
+    solving-equations-2/
     visual-algebra/
     real-world-algebra/
-  index.ts
+    factoring/
+    roots-of-polynomials/
+  index.ts            // imports + validates all of the above
 
 11.3 Build-Time Validation
 --------------------------
 
-- Every problemId in lessons exists
-- hints.length >= 3 per problem
-- phase tags align with roadmap (M0 problems only in M0 lessons)
-- lockedUntilPhase respected in course config
+Performed in src/content/index.ts at module load:
+- Every course, unit, lesson, and problem JSON is parsed through its Zod schema
+  (courseSchema, unitSchema, lessonSchema, problemSchema); a failure throws
+  "Invalid <label> at index <i>".
+- Every problemId referenced by a lesson round must exist in the problem bank,
+  else "Lesson <id> references missing problem <pid>".
+- hints requires at least 1 entry per problem (schema-enforced; 1-3 in practice).
+- lockedUntilPhase respected in course config (gating at runtime).
+Note: phase tags are not cross-checked against lesson placement at build time.
 
 11.4 Example Problem (M0)
 -------------------------
@@ -1091,17 +1235,17 @@ src/content/
 12.1 Stack
 ----------
 
-| Layer        | Choice                         | First needed |
-|--------------|--------------------------------|--------------|
-| Frontend     | React 19 + TypeScript + Vite   | M0           |
-| Routing      | React Router                   | M0           |
-| State        | Zustand                        | M0           |
-| Persistence  | localStorage (2 keys)          | M0           |
-| Content      | Static JSON in src/content/    | M0           |
-| Math         | KaTeX via react-katex          | M1           |
-| Styling      | CSS Modules                    | M0           |
-| Animations   | CSS transitions; Framer Motion | M4           |
-| Validation   | Zod                            | M0           |
+| Layer       | Choice                         | First needed |
+|-------------|--------------------------------|--------------|
+| Frontend    | React 19 + TypeScript + Vite   | M0           |
+| Routing     | React Router                   | M0           |
+| State       | Zustand                        | M0           |
+| Persistence | localStorage (2 keys)          | M0           |
+| Content     | Static JSON in src/content/    | M0           |
+| Math        | KaTeX via react-katex          | M1           |
+| Styling     | CSS Modules                    | M0           |
+| Animations  | CSS transitions; Framer Motion | M4           |
+| Validation  | Zod                            | M0           |
 
 12.2 Routes
 -----------
@@ -1217,33 +1361,33 @@ exists). Revisit if user testing shows frustration with gating.
 15.1 Success Metrics
 --------------------
 
-| Metric                         | Target              | Phase to measure |
-|--------------------------------|---------------------|------------------|
-| Lesson completion rate         | >= 60%              | M0 pilot         |
-| Time-on-task per session       | 8–15 min            | M0 pilot         |
-| Day-7 return rate              | >= 30%              | M2 pilot         |
-| Streak participation           | >= 40% have streak>1| M2 pilot         |
-| Lesson load time               | < 2s on 4G          | M0               |
-| Interaction feedback latency   | < 100ms             | M0               |
+| Metric                       | Target               | Phase to measure |
+|------------------------------|----------------------|------------------|
+| Lesson completion rate       | >= 60%               | M0 pilot         |
+| Time-on-task per session     | 8–15 min             | M0 pilot         |
+| Day-7 return rate            | >= 30%               | M2 pilot         |
+| Streak participation         | >= 40% have streak>1 | M2 pilot         |
+| Lesson load time             | < 2s on 4G           | M0               |
+| Interaction feedback latency | < 100ms              | M0               |
 
 MVP launch (M3 complete):
-1. All three courses fully playable (~150–250 problems)
+1. All courses fully playable (~150–250 problems)
 2. Streaks and milestones work across courses
-3. All 5 problem types and 7 widgets in production
+3. All eight problem types and the built widgets in production
 4. No broken content references
 
 15.2 Risks and Mitigations
 --------------------------
 
-| Risk                                   | Impact | Mitigation                              |
-|----------------------------------------|--------|-----------------------------------------|
-| Widget build cost                      | High   | P0 generic drag-drop M0; specialized M1+ |
-| Gamification adds M0 scope             | Medium | Simple modal + counter; no badge art M0 |
-| Content authoring bottleneck           | High   | JSON schema frozen at M0; 6-problem slice |
-| Streak timezone edge cases             | Low    | Use local browser date; document rules  |
-| Scope creep (auth, AI, CMS)            | High   | Non-goals section; phase gates          |
-| Shallow pedagogy                       | Medium | Authoring guidelines; no notation in M0 |
-| Mobile drag-drop jank                  | Medium | Real-device testing in M4               |
+| Risk                         | Impact | Mitigation                                |
+|------------------------------|--------|-------------------------------------------|
+| Widget build cost            | High   | P0 generic drag-drop M0; specialized M1+  |
+| Gamification adds M0 scope   | Medium | Simple modal + counter; no badge art M0   |
+| Content authoring bottleneck | High   | JSON schema frozen at M0; 6-problem slice |
+| Streak timezone edge cases   | Low    | Use local browser date; document rules    |
+| Scope creep (auth, AI, CMS)  | High   | Non-goals section; phase gates            |
+| Shallow pedagogy             | Medium | Authoring guidelines; no notation in M0   |
+| Mobile drag-drop jank        | Medium | Real-device testing in M4                 |
 
 ================================================================================
 APPENDIX A: GLOSSARY

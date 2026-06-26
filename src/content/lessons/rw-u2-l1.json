@@ -1,0 +1,180 @@
+{
+  "id": "rw-u2-l1",
+  "unitId": "rw-u2",
+  "title": "Pricing Two Items",
+  "description": "Use two clues to find two unknown prices.",
+  "estimatedMinutes": 20,
+  "phase": "M2",
+  "rounds": [
+    {
+      "id": "rw-u2-l1-r1",
+      "label": "Warm-up",
+      "sampleSize": 5,
+      "problemIds": [
+        "rw-u2-l1-r1-p1",
+        "rw-u2-l1-r1-p2",
+        "rw-u2-l1-r1-p3",
+        "rw-u2-l1-r1-p4",
+        "rw-u2-l1-r1-p5",
+        "rw-u2-l1-r1-p6",
+        "rw-u2-l1-r1-p7",
+        "rw-u2-l1-r1-p8",
+        "rw-u2-l1-r1-p9",
+        "rw-u2-l1-r1-p10"
+      ],
+      "miniLesson": {
+        "title": "Two Unknowns, Two Clues",
+        "paragraph": "We introduced the concept of **system of equations** earlier. For this lesson, you can think of a system of equations as two clues about two unknowns. Each clue is really an equation: give each price a letter and write what you know. With $a$ for the apple and $b$ for the banana, the two clues become $a = 2$ and $a + b = 5$ - the same systems you solved with $x$ and $y$, just with letters that stand for prices. When one price is already known, **substitute** it into the other clue and solve for what is left. Always check your prices in **both** clues before you finish.",
+        "example": {
+          "prompt": "**1 apple costs $2.** Together, **1 apple and 1 banana** cost **$5**. Find the price of each.",
+          "interaction": {
+            "type": "multi-input",
+            "data": {
+              "fields": [
+                { "id": "apple", "emoji": "\ud83c\udf4e", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 2 } },
+                { "id": "banana", "emoji": "\ud83c\udf4c", "label": "Banana", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+              ]
+            }
+          },
+          "explanation": "As equations: $a = 2$ and $a + b = 5$. The apple is **$2**, so the banana is **$5** - **$2** = **$3**."
+        }
+      }
+    },
+    {
+      "id": "rw-u2-l1-r2",
+      "label": "Basics",
+      "sampleSize": 5,
+      "problemIds": [
+        "rw-u2-l1-r2-p1",
+        "rw-u2-l1-r2-p2",
+        "rw-u2-l1-r2-p3",
+        "rw-u2-l1-r2-p4",
+        "rw-u2-l1-r2-p5",
+        "rw-u2-l1-r2-p6",
+        "rw-u2-l1-r2-p7",
+        "rw-u2-l1-r2-p8",
+        "rw-u2-l1-r2-p9",
+        "rw-u2-l1-r2-p10"
+      ],
+      "miniLesson": {
+        "title": "Substitution",
+        "paragraph": "When one clue tells you a single item's price, **substitute** that value into the other clue. Replace the known item with its price, then the remaining math has just **one unknown** left to solve. With $p$ for the pen and $n$ for the notebook, the clues become $p = 1$ and $2p + n = 5$; substituting gives $2(1) + n = 5$, exactly the substitution step from systems of equations.",
+        "example": {
+          "prompt": "**1 pen costs $1.** **2 pens and 1 notebook** cost **$5**. Find the price of each.",
+          "interaction": {
+            "type": "multi-input",
+            "data": {
+              "fields": [
+                { "id": "pen", "emoji": "\ud83d\udd8a\ufe0f", "label": "Pen", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+                { "id": "notebook", "emoji": "\ud83d\udcd3", "label": "Notebook", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+              ]
+            }
+          },
+          "explanation": "As equations: $p = 1$ and $2p + n = 5$. Substitute $p = 1$: two pens cost **$2**, so the notebook is **$5** - **$2** = **$3**."
+        }
+      }
+    },
+    {
+      "id": "rw-u2-l1-r3",
+      "label": "Building",
+      "sampleSize": 5,
+      "problemIds": [
+        "rw-u2-l1-r3-p1",
+        "rw-u2-l1-r3-p2",
+        "rw-u2-l1-r3-p3",
+        "rw-u2-l1-r3-p4",
+        "rw-u2-l1-r3-p5",
+        "rw-u2-l1-r3-p6",
+        "rw-u2-l1-r3-p7",
+        "rw-u2-l1-r3-p8",
+        "rw-u2-l1-r3-p9",
+        "rw-u2-l1-r3-p10"
+      ],
+      "miniLesson": {
+        "title": "Elimination",
+        "paragraph": "When both clues mix the two items, line them up and **subtract** one from the other. If an item appears the same number of times in both clues, subtracting **cancels** it, leaving a single price you can solve for. Writing $a$ for the apple and $o$ for the orange, the clues become $2a + o = 4$ and $a + o = 3$; subtracting them cancels $o$, the same elimination step from systems of equations.",
+        "example": {
+          "prompt": "**2 apples and 1 orange** cost **$4**. **1 apple and 1 orange** cost **$3**. Find the price of each.",
+          "interaction": {
+            "type": "multi-input",
+            "data": {
+              "fields": [
+                { "id": "apple", "emoji": "\ud83c\udf4e", "label": "Apple", "unit": "$", "validation": { "type": "numeric", "value": 1 } },
+                { "id": "orange", "emoji": "\ud83c\udf4a", "label": "Orange", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+              ]
+            }
+          },
+          "explanation": "As equations: $2a + o = 4$ and $a + o = 3$. Subtracting the clues cancels the orange: 1 apple = **$4** - **$3** = **$1**, so the orange is **$3** - **$1** = **$2**."
+        }
+      }
+    },
+    {
+      "id": "rw-u2-l1-r4",
+      "label": "Challenge",
+      "sampleSize": 5,
+      "problemIds": [
+        "rw-u2-l1-r4-p1",
+        "rw-u2-l1-r4-p2",
+        "rw-u2-l1-r4-p3",
+        "rw-u2-l1-r4-p4",
+        "rw-u2-l1-r4-p5",
+        "rw-u2-l1-r4-p6",
+        "rw-u2-l1-r4-p7",
+        "rw-u2-l1-r4-p8",
+        "rw-u2-l1-r4-p9",
+        "rw-u2-l1-r4-p10"
+      ],
+      "miniLesson": {
+        "title": "Scaling Before You Subtract",
+        "paragraph": "Sometimes no item appears the **same number of times** in either clue, so subtracting right away cancels nothing. First **multiply** one whole clue so that an item lines up, then subtract to eliminate it. Scaling a clue means multiplying every part of it by the same number. Writing $b$ for the burger and $f$ for the fries, the clues become $2b + f = 13$ and $b + 2f = 11$; doubling the second clue gives $2b + 4f = 22$, so subtracting now cancels the burgers - the same scale-then-eliminate move you used on systems of equations.",
+        "example": {
+          "prompt": "**2 burgers and 1 fries** cost **$13**. **1 burger and 2 fries** cost **$11**. Find the price of each.",
+          "interaction": {
+            "type": "multi-input",
+            "data": {
+              "fields": [
+                { "id": "burger", "emoji": "\ud83c\udf54", "label": "Burger", "unit": "$", "validation": { "type": "numeric", "value": 5 } },
+                { "id": "fries", "emoji": "\ud83c\udf5f", "label": "Fries", "unit": "$", "validation": { "type": "numeric", "value": 3 } }
+              ]
+            }
+          },
+          "explanation": "As equations: $2b + f = 13$ and $b + 2f = 11$. Neither item lines up, so double the second clue to $2b + 4f = 22$. Subtracting the first cancels the burgers: $3f$ = **$22** - **$13** = **$9**, so the fries are **$3**. Then $2b$ = **$13** - **$3** = **$10**, so a burger is **$5**."
+        }
+      }
+    },
+    {
+      "id": "rw-u2-l1-r5",
+      "label": "Mastery",
+      "sampleSize": 5,
+      "problemIds": [
+        "rw-u2-l1-r5-p1",
+        "rw-u2-l1-r5-p2",
+        "rw-u2-l1-r5-p3",
+        "rw-u2-l1-r5-p4",
+        "rw-u2-l1-r5-p5",
+        "rw-u2-l1-r5-p6",
+        "rw-u2-l1-r5-p7",
+        "rw-u2-l1-r5-p8",
+        "rw-u2-l1-r5-p9",
+        "rw-u2-l1-r5-p10"
+      ],
+      "miniLesson": {
+        "title": "Putting It Together",
+        "paragraph": "Now pick the best tool for each problem: **substitute** when one price is given, and **eliminate** when both clues mix the items. This is the same choice you make on any system of equations - with $c$ for the coffee and $d$ for the donut, the clues become $2c + d = 8$ and $c + d = 5$. Whatever you choose, finish by checking both prices satisfy **both** clues.",
+        "example": {
+          "prompt": "**2 coffees and 1 donut** cost **$8**. **1 coffee and 1 donut** cost **$5**. Find the price of each.",
+          "interaction": {
+            "type": "multi-input",
+            "data": {
+              "fields": [
+                { "id": "coffee", "emoji": "\u2615", "label": "Coffee", "unit": "$", "validation": { "type": "numeric", "value": 3 } },
+                { "id": "donut", "emoji": "\ud83c\udf69", "label": "Donut", "unit": "$", "validation": { "type": "numeric", "value": 2 } }
+              ]
+            }
+          },
+          "explanation": "As equations: $2c + d = 8$ and $c + d = 5$. Subtracting cancels the donut: 1 coffee = **$8** - **$5** = **$3**, so the donut is **$5** - **$3** = **$2**."
+        }
+      }
+    }
+  ]
+}

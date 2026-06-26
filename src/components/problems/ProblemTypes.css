@@ -209,3 +209,43 @@
   font-weight: 700;
   color: var(--text-h);
 }
+
+.multi-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.multi-input__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.multi-input__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.multi-input__label {
+  min-width: 5rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.multi-input__unit {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.multi-input__input {
+  flex: 1;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+}
