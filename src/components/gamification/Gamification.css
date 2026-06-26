@@ -3,6 +3,63 @@
   display: inline-flex;
 }
 
+.coin-badge__wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.coin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--accent-bg);
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.coin-badge__popover {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 16rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 0.75rem;
+  z-index: 30;
+}
+
+.coin-badge__popover-title {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.coin-info {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.coin-info p {
+  margin: 0 0 0.35rem;
+}
+
+.coin-info ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.coin-info li {
+  margin-bottom: 0.15rem;
+}
+
 .streak-badge {
   display: flex;
   align-items: center;

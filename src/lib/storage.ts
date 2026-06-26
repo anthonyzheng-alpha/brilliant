@@ -41,6 +41,7 @@ const defaultGamification = (): GamificationState => ({
   activeDates: [],
   lessonMilestones: {},
   badges: [],
+  coins: 0,
 })
 
 const defaultStruggles = (): StruggleState => ({

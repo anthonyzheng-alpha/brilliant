@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StreakBadge } from '../gamification/StreakBadge'
+import { CoinBadge } from '../gamification/CoinBadge'
 import { LoginButton } from '../auth/LoginButton'
 import { UserMenu } from '../auth/UserMenu'
 import { FEATURES } from '../../lib/features'
@@ -25,6 +26,7 @@ export function Header() {
       <div className="app-header__actions">
         {import.meta.env.DEV && <DebugUnlockToggle />}
         <SettingsMenu />
+        {FEATURES.gamification && <CoinBadge />}
         {FEATURES.gamification && <StreakBadge />}
         {FEATURES.firebase && <AuthSlot />}
       </div>

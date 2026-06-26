@@ -13,6 +13,7 @@ type GamificationStore = {
   hydrate: () => void
   setFromRemote: (state: GamificationState) => void
   recordActivity: () => void
+  awardCoins: (amount: number) => void
   onLessonMastered: (
     lessonId: string,
     unitId?: string,
@@ -44,6 +45,13 @@ export const useGamificationStore = create<GamificationStore>((set, get) => ({
       ...computeStreakUpdate(g.currentStreak, g.longestStreak, g.lastActiveDate),
       activeDates,
     }
+    saveGamification(updated)
+    set({ gamification: updated })
+  },
+
+  awardCoins: (amount) => {
+    const g = get().gamification
+    const updated = { ...g, coins: (g.coins ?? 0) + amount }
     saveGamification(updated)
     set({ gamification: updated })
   },

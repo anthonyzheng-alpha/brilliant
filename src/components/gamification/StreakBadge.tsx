@@ -26,8 +26,6 @@ export function StreakBadge() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [open])
 
-  if (streak === 0 && longest === 0) return null
-
   return (
     <div
       className="streak-badge__wrap"

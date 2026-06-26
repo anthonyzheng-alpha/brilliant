@@ -183,6 +183,7 @@ export type GamificationState = {
   activeDates: string[]
   lessonMilestones: Record<string, { earnedAt: string }>
   badges: string[]
+  coins: number
 }
 
 // Per-skill record of how often the learner missed a given topic + question type.

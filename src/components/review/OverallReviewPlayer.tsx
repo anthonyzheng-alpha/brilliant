@@ -12,6 +12,7 @@ import { useStruggleStore } from '../../stores/struggleStore'
 import { useSettingsStore } from '../../stores/settingsStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
 import { FEATURES } from '../../lib/features'
+import { coinsForCorrect } from '../../lib/coins'
 import {
   generateReviewProblem,
   normalizePrompt,
@@ -70,6 +71,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const getAttemptedSkills = useStruggleStore((s) => s.getAttemptedSkills)
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
   const recordActivity = useGamificationStore((s) => s.recordActivity)
+  const awardCoins = useGamificationStore((s) => s.awardCoins)
 
   const [problem, setProblem] = useState<GeneratedProblem | null>(null)
   const [answer, setAnswer] = useState<AnswerValue | null>(null)
@@ -78,6 +80,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const [loading, setLoading] = useState(true)
   const [attempted, setAttempted] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
+  const [coinsEarned, setCoinsEarned] = useState(0)
   const [ended, setEnded] = useState(false)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
@@ -85,6 +88,9 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
     | { kind: 'correct'; explanation: string }
   >({ kind: 'idle' })
 
+  // Session-wide consecutive-correct streak that drives coin milestone bonuses
+  // (separate from the per-skill streaks below; any wrong answer breaks it).
+  const correctStreakRef = useRef(0)
   // In-session adaptivity: per-skill correct streak + topics mastered this session.
   const streaksRef = useRef<Record<string, number>>({})
   const masteredRef = useRef<Set<string>>(new Set())
@@ -237,12 +243,17 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
       setFeedback({ kind: 'correct', explanation: problem.explanation })
       if (FEATURES.gamification) {
         recordActivity()
+        correctStreakRef.current += 1
+        const gained = coinsForCorrect(correctStreakRef.current)
+        awardCoins(gained)
+        setCoinsEarned((c) => c + gained)
         if (user) {
           void saveUserGamification(user.uid, useGamificationStore.getState().gamification)
         }
       }
     } else {
       // Struggling again: reset streak and re-open the topic for targeting.
+      correctStreakRef.current = 0
       streaksRef.current[key] = 0
       masteredRef.current.delete(key)
       setWrongLine(resolveWrongLine(problem, answer))
@@ -279,7 +290,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
         <div className="feedback feedback--complete">
           <p className="feedback__title">Review session complete</p>
           <p className="feedback__body">
-            You answered {correctCount} of {attempted} correctly.
+            You answered {correctCount} of {attempted} correctly. You earned {coinsEarned} coins.
           </p>
           <div className="feedback__actions">
             <button
@@ -312,7 +323,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   return (
     <div className="lesson-player">
       <p className="lesson-player__review-status">
-        Overall Review · {attempted} answered · {correctCount} correct
+        Overall Review · {attempted} answered · {correctCount} correct · {coinsEarned} coins
       </p>
 
       {loading || !problem ? (

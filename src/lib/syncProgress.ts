@@ -69,6 +69,7 @@ export function mergeGamification(
     activeDates,
     lessonMilestones,
     badges,
+    coins: Math.max(local.coins ?? 0, remote.coins ?? 0),
   }
 }
 
@@ -134,6 +135,7 @@ export async function syncOnLogin(uid: string): Promise<void> {
     activeDates: [],
     lessonMilestones: {},
     badges: [],
+    coins: 0,
   }
   const struggles = remote.struggles ?? { version: 1, skills: {} }
 
