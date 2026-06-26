@@ -31,7 +31,7 @@ type SettingsState = {
 }
 
 const defaultSettings = (): SettingsState => ({
-  aiEnabled: true,
+  aiEnabled: false,
   theme: DEFAULT_THEME,
 })
 
