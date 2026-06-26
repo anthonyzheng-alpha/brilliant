@@ -10,6 +10,8 @@ import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
 import { useAuthStore } from '../../stores/authStore'
 import { useStruggleStore } from '../../stores/struggleStore'
 import { useSettingsStore } from '../../stores/settingsStore'
+import { useGamificationStore } from '../../stores/gamificationStore'
+import { FEATURES } from '../../lib/features'
 import {
   generateReviewProblem,
   normalizePrompt,
@@ -19,7 +21,7 @@ import {
   type GeneratedProblem,
 } from '../../lib/ai'
 import { getLessonById, getLessonLocation, problemBank } from '../../content'
-import { saveUserStruggles } from '../../lib/syncProgress'
+import { saveUserStruggles, saveUserGamification } from '../../lib/syncProgress'
 import '../lesson/LessonPlayer.css'
 
 type Props = {
@@ -67,6 +69,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const getWeakSkills = useStruggleStore((s) => s.getWeakSkills)
   const getAttemptedSkills = useStruggleStore((s) => s.getAttemptedSkills)
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
+  const recordActivity = useGamificationStore((s) => s.recordActivity)
 
   const [problem, setProblem] = useState<GeneratedProblem | null>(null)
   const [answer, setAnswer] = useState<AnswerValue | null>(null)
@@ -232,6 +235,12 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
       setCorrectCount((n) => n + 1)
       setInputLocked(true)
       setFeedback({ kind: 'correct', explanation: problem.explanation })
+      if (FEATURES.gamification) {
+        recordActivity()
+        if (user) {
+          void saveUserGamification(user.uid, useGamificationStore.getState().gamification)
+        }
+      }
     } else {
       // Struggling again: reset streak and re-open the topic for targeting.
       streaksRef.current[key] = 0
