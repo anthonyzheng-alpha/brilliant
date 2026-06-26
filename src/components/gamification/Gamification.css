@@ -30,6 +30,67 @@
   z-index: 30;
 }
 
+.streak-badge__popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.streak-badge__popover-title {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.streak-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.streak-info-btn:hover,
+.streak-info-btn[aria-expanded='true'] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.streak-info {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.streak-info p {
+  margin: 0 0 0.35rem;
+}
+
+.streak-info ul {
+  margin: 0 0 0.35rem;
+  padding-left: 1.1rem;
+}
+
+.streak-info li {
+  margin-bottom: 0.15rem;
+}
+
+.streak-info__note {
+  color: var(--text);
+  opacity: 0.7;
+}
+
 .milestone-icon {
   color: var(--accent);
   margin-left: 0.35rem;
