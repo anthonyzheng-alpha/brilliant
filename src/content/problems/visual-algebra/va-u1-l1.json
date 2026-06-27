@@ -17,8 +17,8 @@
     },
     "hints": [
       "The y-intercept is where the line crosses the **y-axis** (when $x = 0$).",
-      "Find the point on the line directly above the origin: $x = 0$.",
-      "Trace the line to where it touches the y-axis and choose that point."
+      "Trace the line left or right until it reaches the vertical y-axis.",
+      "Read the $y$ value at that crossing and choose that coordinate."
     ],
     "explanation": "The line crosses the y-axis at $y = 2$, so the y-intercept is $(0, 2)$."
   },
@@ -41,7 +41,7 @@
     "hints": [
       "Slope measures how much $y$ changes when $x$ increases by 1.",
       "Step one unit to the right and count how far the line rises.",
-      "Count the rise for a single step to the right, and that number is the slope."
+      "Read the $y$ values at two gridpoints one step apart; their difference is the slope."
     ],
     "explanation": "Moving 1 unit right raises the line 2 units, so the slope is $m = 2$."
   },
@@ -63,8 +63,8 @@
     },
     "hints": [
       "Look for where the line crosses the **y-axis** ($x = 0$).",
-      "This line passes straight through the origin.",
-      "Find where the line meets the y-axis and choose that point."
+      "Slide along the line until you reach $x = 0$ and note the height there.",
+      "The $y$ value at that crossing is the y-intercept — choose that point."
     ],
     "explanation": "The line passes through the origin, so the y-intercept is $(0, 0)$ and $b = 0$."
   },
@@ -87,7 +87,7 @@
     "hints": [
       "Slope is the rise over the run: how much $y$ changes per 1 step right.",
       "Pick two points one unit apart in $x$ and compare their $y$ values.",
-      "Compare the rise to the run for one step right to read off the slope."
+      "The difference between those two $y$ values is the slope."
     ],
     "explanation": "Each step of 1 to the right raises the line by 1, so the slope is $m = 1$."
   },
@@ -156,7 +156,7 @@
     "hints": [
       "A downward line has a negative slope.",
       "Count the vertical change for a 1 unit step to the right.",
-      "Find how far the line drops for one step right, and remember the slope is negative."
+      "Read two gridpoints one step apart; the drop between them is the slope (negative)."
     ],
     "explanation": "Moving 1 unit right drops the line 2 units, so the slope is $m = -2$."
   },
@@ -243,8 +243,8 @@
     },
     "hints": [
       "Read the slope $m$ and the y-intercept $b$, then build $y = mx + b$.",
-      "The line rises 2 per step right ($m = 2$) and crosses the y-axis at $1$ ($b = 1$).",
-      "Combine the slope you read with the y-intercept into $y = mx + b$."
+      "Count how far the line rises for one step right to get the slope $m$.",
+      "Then read where the line crosses the y-axis for $b$, and combine them as $y = mx + b$."
     ],
     "explanation": "The slope is $2$ and the y-intercept is $1$, so the equation is $y = 2x + 1$."
   },
@@ -266,8 +266,8 @@
     },
     "hints": [
       "A falling line means a negative slope.",
-      "The line falls 1 per step right ($m = -1$) and crosses the y-axis at $4$ ($b = 4$).",
-      "Put the negative slope and the y-intercept together as $y = mx + b$."
+      "Count how far the line falls for one step right to get the negative slope $m$.",
+      "Then read where it crosses the y-axis for $b$, and write $y = mx + b$."
     ],
     "explanation": "The slope is $-1$ and the y-intercept is $4$, so the equation is $y = -x + 4$."
   },
@@ -289,8 +289,8 @@
     },
     "hints": [
       "Read the slope first, then the y-intercept.",
-      "The line rises 3 per step right ($m = 3$) and crosses the y-axis at $-2$ ($b = -2$).",
-      "Read the slope and the y-intercept, then assemble $y = mx + b$."
+      "Count the rise for one step right to get the slope $m$.",
+      "Then read the y-axis crossing (below the origin) for $b$, and assemble $y = mx + b$."
     ],
     "explanation": "The slope is $3$ and the y-intercept is $-2$, so the equation is $y = 3x - 2$."
   },
@@ -311,9 +311,9 @@
       }
     },
     "hints": [
-      "When a line passes through the origin, the y-intercept is $b = 0$.",
-      "The line falls 2 per step right ($m = -2$) and crosses the y-axis at $0$.",
-      "With the line through the origin, the intercept term drops out of $y = mx + b$."
+      "First decide the sign of the slope: this line falls to the right.",
+      "Count how far it falls for one step right to get the slope $m$.",
+      "The line passes through the origin, so $b = 0$ and the equation is just $y = mx$."
     ],
     "explanation": "The slope is $-2$ and the y-intercept is $0$, so the equation is $y = -2x$."
   },
@@ -334,9 +334,9 @@
       }
     },
     "hints": [
-      "A slope of $1$ is written simply as $x$ (no number in front needed).",
-      "The line rises 1 per step right ($m = 1$) and crosses the y-axis at $-3$ ($b = -3$).",
-      "Combine a slope of 1 (written just as $x$) with the y-intercept."
+      "Read the slope first, then the y-intercept.",
+      "Count the rise for one step right to get the slope $m$ (a slope of $1$ is written as just $x$).",
+      "Then read the y-axis crossing for $b$, and write $y = mx + b$."
     ],
     "explanation": "The slope is $1$ and the y-intercept is $-3$, so the equation is $y = x - 3$."
   },
@@ -371,7 +371,7 @@
     "hints": [
       "Slope is how much $y$ changes when $x$ increases by 1.",
       "From $(0, 1)$ to $(1, 3)$, $y$ rises by 2, so $m = 2$.",
-      "Read the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 2 units per 1 unit right, so $m = 2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = 2x + 1$.",
     "misconception": "A common slip is swapping slope and intercept, or reading rise/run backwards."
@@ -407,7 +407,7 @@
     "hints": [
       "The points go down as $x$ increases, so the slope is negative.",
       "From $(0, 3)$ to $(1, 2)$, $y$ falls by 1, so $m = -1$.",
-      "Use the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 1 unit per 1 unit right, so $m = -1$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -x + 3$.",
     "misconception": "A common slip is dropping the negative sign on a falling slope, or swapping $m$ and $b$."
@@ -443,7 +443,7 @@
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
       "From $(0, -2)$ to $(1, 1)$, $y$ rises by 3, so $m = 3$.",
-      "Find the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 3 units per 1 unit right, so $m = 3$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = 3x - 2$.",
     "misconception": "A common slip is swapping slope and intercept, or losing the sign of the intercept."
@@ -479,7 +479,7 @@
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
       "From $(0, 1)$ to $(1, -1)$, $y$ falls by 2, so $m = -2$.",
-      "Read the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 2 units per 1 unit right, so $m = -2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = -2x + 1$.",
     "misconception": "A common slip is dropping the negative sign on a falling slope, or swapping $m$ and $b$."
@@ -515,7 +515,7 @@
     "hints": [
       "Find how much $y$ changes for each 1 step right.",
       "From $(0, -2)$ to $(1, -1)$, $y$ rises by 1, so $m = 1$.",
-      "Read the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 1 unit per 1 unit right, so $m = 1$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = x - 2$.",
     "misconception": "A common slip is swapping slope and intercept, or losing the sign of the intercept."
@@ -552,7 +552,7 @@
     "hints": [
       "When $y$ rises slowly, the slope is a fraction less than 1.",
       "From $(0, 1)$ to $(2, 2)$, $y$ rises 1 over a run of 2, so $m = \\frac{1}{2} = 0.5$.",
-      "Form the slope as rise over run (it's a fraction here) and read $b$ at the y-axis, then enter both."
+      "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = \\frac{1}{2}x + 1$.",
     "misconception": "A common slip is using only the rise and forgetting to divide by the run, giving a whole-number slope instead of a fraction."
@@ -608,7 +608,7 @@
     "hints": [
       "The points slowly fall, so the slope is a small negative fraction.",
       "From $(0, 2)$ to $(2, 1)$, $y$ falls 1 over a run of 2, so $m = -\\frac{1}{2} = -0.5$.",
-      "Form the slope as rise over run (a negative fraction here) and read $b$ at the y-axis, then enter both."
+      "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line falls 1 unit for every 2 units right, so $m = -\\frac{1}{2} = -0.5$. The y-intercept is $(0, 2)$, so $b = 2$ and $y = -\\frac{1}{2}x + 2$.",
     "misconception": "A common slip is forgetting to divide the rise by the run, or dropping the negative sign on a falling slope."
@@ -669,8 +669,8 @@
     },
     "hints": [
       "The y-intercept is where the line crosses the **y-axis** (when $x = 0$).",
-      "Read the height where the line meets the y-axis.",
-      "Trace the line to the y-axis and choose that point."
+      "Trace the line until it reaches the vertical y-axis.",
+      "Read the height at that crossing and choose that point."
     ],
     "explanation": "The line crosses the y-axis at $y = 4$, so the y-intercept is $(0, 4)$."
   },
@@ -693,7 +693,7 @@
     "hints": [
       "Slope measures how much $y$ changes when $x$ increases by 1.",
       "Step one unit right and count how far the line rises.",
-      "Count the rise for a single step to the right, and that number is the slope."
+      "Read the $y$ values at two gridpoints one step apart; their difference is the slope."
     ],
     "explanation": "Moving 1 unit right raises the line 3 units, so the slope is $m = 3$."
   },
@@ -739,7 +739,7 @@
     "hints": [
       "Slope is the rise over the run: how much $y$ changes per 1 step right.",
       "Pick two points one unit apart in $x$ and compare their $y$ values.",
-      "Compare the rise to the run for one step right to read off the slope."
+      "The difference between those two $y$ values is the slope."
     ],
     "explanation": "Each step of 1 to the right raises the line by 1, so the slope is $m = 1$."
   },
@@ -762,7 +762,7 @@
     "hints": [
       "Slope measures how much $y$ changes when $x$ increases by 1.",
       "Step one unit right and count how far the line rises.",
-      "Count the rise for a single step to the right, and that number is the slope."
+      "Read the $y$ values at two gridpoints one step apart; their difference is the slope."
     ],
     "explanation": "Moving 1 unit right raises the line 2 units, so the slope is $m = 2$."
   },
@@ -785,7 +785,7 @@
     "hints": [
       "A downward line has a negative slope.",
       "Count the vertical change for a 1 unit step to the right.",
-      "Find how far the line drops for one step right, and remember the slope is negative."
+      "Read two gridpoints one step apart; the drop between them is the slope (negative)."
     ],
     "explanation": "Moving 1 unit right drops the line 2 units, so the slope is $m = -2$."
   },
@@ -895,8 +895,8 @@
     },
     "hints": [
       "Read the slope first, then the y-intercept.",
-      "The line rises 2 per step right ($m = 2$) and crosses the y-axis at $-1$ ($b = -1$).",
-      "Read the slope and the y-intercept, then assemble $y = mx + b$."
+      "Count the rise for one step right to get the slope $m$.",
+      "Then read where it crosses the y-axis (below the origin) for $b$, and assemble $y = mx + b$."
     ],
     "explanation": "The slope is $2$ and the y-intercept is $-1$, so the equation is $y = 2x - 1$."
   },
@@ -918,8 +918,8 @@
     },
     "hints": [
       "A falling line means a negative slope.",
-      "The line falls 2 per step right ($m = -2$) and crosses the y-axis at $3$ ($b = 3$).",
-      "Put the negative slope and the y-intercept together as $y = mx + b$."
+      "Count how far the line falls for one step right to get the negative slope $m$.",
+      "Then read where it crosses the y-axis for $b$, and write $y = mx + b$."
     ],
     "explanation": "The slope is $-2$ and the y-intercept is $3$, so the equation is $y = -2x + 3$."
   },
@@ -940,9 +940,9 @@
       }
     },
     "hints": [
-      "A slope of $1$ is written simply as $x$.",
-      "The line rises 1 per step right ($m = 1$) and crosses the y-axis at $2$ ($b = 2$).",
-      "Combine a slope of 1 (written just as $x$) with the y-intercept."
+      "Read the slope first, then the y-intercept.",
+      "Count the rise for one step right to get the slope $m$ (a slope of $1$ is written as just $x$).",
+      "Then read where it crosses the y-axis for $b$, and write $y = mx + b$."
     ],
     "explanation": "The slope is $1$ and the y-intercept is $2$, so the equation is $y = x + 2$."
   },
@@ -964,8 +964,8 @@
     },
     "hints": [
       "Read the slope $m$ and the y-intercept $b$, then build $y = mx + b$.",
-      "The line rises 3 per step right ($m = 3$) and crosses the y-axis at $1$ ($b = 1$).",
-      "Combine the slope you read with the y-intercept into $y = mx + b$."
+      "Count how far the line rises for one step right to get the slope $m$.",
+      "Then read where the line crosses the y-axis for $b$, and combine them as $y = mx + b$."
     ],
     "explanation": "The slope is $3$ and the y-intercept is $1$, so the equation is $y = 3x + 1$."
   },
@@ -986,9 +986,9 @@
       }
     },
     "hints": [
-      "A falling line means a negative slope, and a slope of $-1$ is written as $-x$.",
-      "The line falls 1 per step right ($m = -1$) and crosses the y-axis at $-2$ ($b = -2$).",
-      "Put the negative slope and the negative y-intercept together as $y = mx + b$."
+      "A falling line means a negative slope.",
+      "Count how far the line falls for one step right to get the slope $m$ (a slope of $-1$ is written as $-x$).",
+      "Then read the y-axis crossing (below the origin) for $b$, and write $y = mx + b$."
     ],
     "explanation": "The slope is $-1$ and the y-intercept is $-2$, so the equation is $y = -x - 2$."
   },
@@ -1023,7 +1023,7 @@
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
       "From $(0, -1)$ to $(1, 1)$, $y$ rises by 2, so $m = 2$.",
-      "Find the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 2 units per 1 unit right, so $m = 2$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = 2x - 1$.",
     "misconception": "A common slip is swapping slope and intercept, or losing the sign of the intercept."
@@ -1059,7 +1059,7 @@
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
       "From $(0, 3)$ to $(1, 1)$, $y$ falls by 2, so $m = -2$.",
-      "Read the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 2 units per 1 unit right, so $m = -2$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -2x + 3$.",
     "misconception": "A common slip is dropping the negative sign on a falling slope, or swapping $m$ and $b$."
@@ -1095,7 +1095,7 @@
     "hints": [
       "Find how much $y$ changes for each 1 step right.",
       "From $(0, 2)$ to $(1, 3)$, $y$ rises by 1, so $m = 1$.",
-      "Read the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 1 unit per 1 unit right, so $m = 1$. The y-intercept is $(0, 2)$, so $b = 2$ and $y = x + 2$.",
     "misconception": "A common slip is swapping slope and intercept, or reading rise/run backwards."
@@ -1131,7 +1131,7 @@
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
       "From $(0, 1)$ to $(1, 4)$, $y$ rises by 3, so $m = 3$.",
-      "Find the rise-over-run for $m$ and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 3 units per 1 unit right, so $m = 3$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = 3x + 1$.",
     "misconception": "A common slip is swapping slope and intercept, or reading rise/run backwards."
@@ -1167,7 +1167,7 @@
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
       "From $(0, -1)$ to $(1, -2)$, $y$ falls by 1, so $m = -1$.",
-      "Read the rise-over-run for $m$ (negative here) and the y-axis crossing for $b$, then enter both."
+      "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 1 unit per 1 unit right, so $m = -1$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = -x - 1$.",
     "misconception": "A common slip is dropping the negative sign on a falling slope, or losing the sign of the intercept."
@@ -1204,7 +1204,7 @@
     "hints": [
       "When $y$ rises slowly, the slope is a fraction less than 1.",
       "From $(0, -1)$ to $(2, 0)$, $y$ rises 1 over a run of 2, so $m = \\frac{1}{2} = 0.5$.",
-      "Form the slope as rise over run (a fraction here) and read $b$ at the y-axis, then enter both."
+      "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = \\frac{1}{2}x - 1$.",
     "misconception": "A common slip is using only the rise and forgetting to divide by the run, giving a whole-number slope instead of a fraction."
@@ -1260,7 +1260,7 @@
     "hints": [
       "The points slowly fall, so the slope is a small negative fraction.",
       "From $(0, 3)$ to $(2, 2)$, $y$ falls 1 over a run of 2, so $m = -\\frac{1}{2} = -0.5$.",
-      "Form the slope as rise over run (a negative fraction here) and read $b$ at the y-axis, then enter both."
+      "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line falls 1 unit for every 2 units right, so $m = -\\frac{1}{2} = -0.5$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -\\frac{1}{2}x + 3$.",
     "misconception": "A common slip is forgetting to divide the rise by the run, or dropping the negative sign on a falling slope."

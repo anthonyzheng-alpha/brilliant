@@ -13,7 +13,7 @@
     "hints": [
       "Divide both sides by 3.",
       "$x = 15 \\div 3$.",
-      "Divide to get your value for $x$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 3: $x = 15 \\div 3 = 5$.",
     "misconception": "To undo multiplication by 3, divide both sides by 3 rather than subtracting 3."
@@ -54,7 +54,7 @@
     "hints": [
       "Divide both sides by 5.",
       "$y = 45 \\div 5$.",
-      "Divide to get your value for $y$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 5: $y = 45 \\div 5 = 9$.",
     "misconception": "To undo multiplication by 5, divide both sides by 5 rather than subtracting 5."
@@ -95,7 +95,7 @@
     "hints": [
       "Divide both sides by 7.",
       "$t = 42 \\div 7$.",
-      "Divide to get your value for $t$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 7: $t = 42 \\div 7 = 6$.",
     "misconception": "To undo multiplication by 7, divide both sides by 7 rather than subtracting 7."
@@ -136,7 +136,7 @@
     "hints": [
       "Multiply both sides by 5.",
       "$n = 6 \\times 5$.",
-      "Multiply to get your value for $n$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 5: $n = 6 \\times 5 = 30$.",
     "misconception": "To undo division by 5, multiply both sides by 5 rather than dividing again."
@@ -155,7 +155,7 @@
     "hints": [
       "Multiply both sides by 3.",
       "$y = 7 \\times 3$.",
-      "Multiply to get your value for $y$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 3: $y = 7 \\times 3 = 21$.",
     "misconception": "To undo division by 3, multiply both sides by 3 rather than dividing."
@@ -196,7 +196,7 @@
     "hints": [
       "Multiply both sides by 2.",
       "$t = 9 \\times 2$.",
-      "Multiply to get your value for $t$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 2: $t = 9 \\times 2 = 18$.",
     "misconception": "To undo division by 2, multiply both sides by 2 rather than dividing."
@@ -215,7 +215,7 @@
     "hints": [
       "First subtract 1 from both sides: $2x = 8$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $x$."
+      "So $x = 8 \\div 2$ — compute and enter it."
     ],
     "explanation": "Subtract 1: $2x = 8$. Divide by 2: $x = 4$.",
     "misconception": "Subtract the constant first, then divide by the coefficient; don't divide before subtracting."
@@ -238,7 +238,7 @@
     "hints": [
       "First subtract 5 from both sides: $3n = 15$.",
       "Then divide both sides by 3.",
-      "Divide your result by 3 and choose the matching option."
+      "So $n = 15 \\div 3$ — compute and pick that option."
     ],
     "explanation": "Subtract 5: $3n = 15$. Divide by 3: $n = 5$."
   },
@@ -256,7 +256,7 @@
     "hints": [
       "First add 3 to both sides: $4y = 16$.",
       "Then divide both sides by 4.",
-      "Divide your result by 4 to get $y$."
+      "So $y = 16 \\div 4$ — compute and enter it."
     ],
     "explanation": "Add 3: $4y = 16$. Divide by 4: $y = 4$.",
     "misconception": "Add 3 first to undo the subtraction, then divide by 4; don't divide before adding."
@@ -279,7 +279,7 @@
     "hints": [
       "First subtract 2 from both sides: $5a = 25$.",
       "Then divide both sides by 5.",
-      "Divide your result by 5 and choose the matching option."
+      "So $a = 25 \\div 5$ — compute and pick that option."
     ],
     "explanation": "Subtract 2: $5a = 25$. Divide by 5: $a = 5$."
   },
@@ -297,7 +297,7 @@
     "hints": [
       "First add 7 to both sides: $2t = 16$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $t$."
+      "So $t = 16 \\div 2$ — compute and enter it."
     ],
     "explanation": "Add 7: $2t = 16$. Divide by 2: $t = 8$.",
     "misconception": "Add 7 first to undo the subtraction, then divide by 2; don't divide before adding."
@@ -316,7 +316,7 @@
     "hints": [
       "First subtract 10 from both sides: $2x = -6$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $x$; it is negative."
+      "So $x = -6 \\div 2$ — compute and enter it (it is negative)."
     ],
     "explanation": "Subtract 10: $2x = -6$. Divide by 2: $x = -3$.",
     "misconception": "Subtract 10 first to get a negative value, then divide by 2; keep the negative sign."
@@ -339,7 +339,7 @@
     "hints": [
       "First add 5 to both sides: $3n = -15$.",
       "Then divide both sides by 3.",
-      "Divide your result by 3 and choose the negative option."
+      "So $n = -15 \\div 3$ — compute and pick the negative option."
     ],
     "explanation": "Add 5: $3n = -15$. Divide by 3: $n = -5$."
   },
@@ -357,7 +357,7 @@
     "hints": [
       "First subtract 1 from both sides: $-2y = 8$.",
       "Then divide both sides by $-2$.",
-      "Divide your result by $-2$ to get $y$."
+      "So $y = 8 \\div (-2)$ — compute and enter it."
     ],
     "explanation": "Subtract 1: $-2y = 8$. Divide by $-2$: $y = -4$.",
     "misconception": "After subtracting 1, divide by $-2$; dividing by a negative flips the sign of the answer."
@@ -380,7 +380,7 @@
     "hints": [
       "First subtract 18 from both sides: $4a = -16$.",
       "Then divide both sides by 4.",
-      "Divide your result by 4 and choose the negative option."
+      "So $a = -16 \\div 4$ — compute and pick the negative option."
     ],
     "explanation": "Subtract 18: $4a = -16$. Divide by 4: $a = -4$."
   },
@@ -398,7 +398,7 @@
     "hints": [
       "First add 3 to both sides: $5t = -25$.",
       "Then divide both sides by 5.",
-      "Divide your result by 5 to get $t$; it is negative."
+      "So $t = -25 \\div 5$ — compute and enter it (it is negative)."
     ],
     "explanation": "Add 3: $5t = -25$. Divide by 5: $t = -5$.",
     "misconception": "Add 3 first to get $-25$, then divide by 5; keep the negative sign."
@@ -417,7 +417,7 @@
     "hints": [
       "First subtract 2 from both sides: $\\frac{x}{3} = 3$.",
       "Then multiply both sides by 3.",
-      "Multiply your result by 3 to get $x$."
+      "So $x = 3 \\times 3$ — compute and enter it."
     ],
     "explanation": "Subtract 2: $\\frac{x}{3} = 3$. Multiply by 3: $x = 9$.",
     "misconception": "Subtract 2 first, then multiply by 3; don't multiply before subtracting."
@@ -458,7 +458,7 @@
     "hints": [
       "First subtract 1.5 from both sides: $2y = 5$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $y$."
+      "So $y = 5 \\div 2$ — compute and enter it."
     ],
     "explanation": "Subtract 1.5: $2y = 5$. Divide by 2: $y = 2.5$.",
     "misconception": "Subtract 1.5 first, then divide by 2; don't divide before subtracting."
@@ -481,7 +481,7 @@
     "hints": [
       "First add 1 to both sides: $\\frac{a}{2} = 4$.",
       "Then multiply both sides by 2.",
-      "Multiply your result by 2 and choose the matching option."
+      "So $a = 4 \\times 2$ — compute and pick that option."
     ],
     "explanation": "Add 1: $\\frac{a}{2} = 4$. Multiply by 2: $a = 8$."
   },
@@ -499,7 +499,7 @@
     "hints": [
       "First subtract 0.5 from both sides: $3t = 1.5$.",
       "Then divide both sides by 3.",
-      "Divide your result by 3 to get $t$."
+      "So $t = 1.5 \\div 3$ — compute and enter it."
     ],
     "explanation": "Subtract 0.5: $3t = 1.5$. Divide by 3: $t = 0.5$.",
     "misconception": "Subtract 0.5 first, then divide by 3; don't divide before subtracting."
@@ -518,7 +518,7 @@
     "hints": [
       "Divide both sides by 8.",
       "$x = 32 \\div 8$.",
-      "Divide to get your value for $x$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 8: $x = 32 \\div 8 = 4$.",
     "misconception": "To undo multiplication by 8, divide both sides by 8 rather than subtracting 8."
@@ -537,7 +537,7 @@
     "hints": [
       "Divide both sides by 9.",
       "$y = 36 \\div 9$.",
-      "Divide to get your value for $y$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 9: $y = 36 \\div 9 = 4$.",
     "misconception": "To undo multiplication by 9, divide both sides by 9 rather than subtracting 9."
@@ -578,7 +578,7 @@
     "hints": [
       "Divide both sides by 4.",
       "$t = 24 \\div 4$.",
-      "Divide to get your value for $t$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 4: $t = 24 \\div 4 = 6$.",
     "misconception": "To undo multiplication by 4, divide both sides by 4 rather than subtracting 4."
@@ -597,7 +597,7 @@
     "hints": [
       "Divide both sides by 3.",
       "$a = 21 \\div 3$.",
-      "Divide to get your value for $a$."
+      "Compute that division and enter the value."
     ],
     "explanation": "Divide both sides by 3: $a = 21 \\div 3 = 7$.",
     "misconception": "To undo multiplication by 3, divide both sides by 3 rather than subtracting 3."
@@ -616,7 +616,7 @@
     "hints": [
       "Multiply both sides by 7.",
       "$x = 4 \\times 7$.",
-      "Multiply to get your value for $x$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 7: $x = 4 \\times 7 = 28$.",
     "misconception": "To undo division by 7, multiply both sides by 7 rather than dividing."
@@ -635,7 +635,7 @@
     "hints": [
       "Multiply both sides by 8.",
       "$y = 3 \\times 8$.",
-      "Multiply to get your value for $y$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 8: $y = 3 \\times 8 = 24$.",
     "misconception": "To undo division by 8, multiply both sides by 8 rather than dividing."
@@ -676,7 +676,7 @@
     "hints": [
       "Multiply both sides by 4.",
       "$t = 5 \\times 4$.",
-      "Multiply to get your value for $t$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 4: $t = 5 \\times 4 = 20$.",
     "misconception": "To undo division by 4, multiply both sides by 4 rather than dividing."
@@ -695,7 +695,7 @@
     "hints": [
       "Multiply both sides by 6.",
       "$n = 5 \\times 6$.",
-      "Multiply to get your value for $n$."
+      "Compute that product and enter the value."
     ],
     "explanation": "Multiply both sides by 6: $n = 5 \\times 6 = 30$.",
     "misconception": "To undo division by 6, multiply both sides by 6 rather than dividing."
@@ -714,7 +714,7 @@
     "hints": [
       "First subtract 3 from both sides: $2x = 8$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $x$."
+      "So $x = 8 \\div 2$ — compute and enter it."
     ],
     "explanation": "Subtract 3: $2x = 8$. Divide by 2: $x = 4$.",
     "misconception": "Subtract the constant first, then divide by the coefficient; don't divide before subtracting."
@@ -737,7 +737,7 @@
     "hints": [
       "First subtract 1 from both sides: $4n = 12$.",
       "Then divide both sides by 4.",
-      "Divide your result by 4 and choose the matching option."
+      "So $n = 12 \\div 4$ — compute and pick that option."
     ],
     "explanation": "Subtract 1: $4n = 12$. Divide by 4: $n = 3$."
   },
@@ -755,7 +755,7 @@
     "hints": [
       "First add 2 to both sides: $3y = 12$.",
       "Then divide both sides by 3.",
-      "Divide your result by 3 to get $y$."
+      "So $y = 12 \\div 3$ — compute and enter it."
     ],
     "explanation": "Add 2: $3y = 12$. Divide by 3: $y = 4$.",
     "misconception": "Add 2 first to undo the subtraction, then divide by 3; don't divide before adding."
@@ -774,7 +774,7 @@
     "hints": [
       "First subtract 4 from both sides: $5t = 20$.",
       "Then divide both sides by 5.",
-      "Divide your result by 5 to get $t$."
+      "So $t = 20 \\div 5$ — compute and enter it."
     ],
     "explanation": "Subtract 4: $5t = 20$. Divide by 5: $t = 4$.",
     "misconception": "Subtract 4 first, then divide by 5; don't divide before subtracting."
@@ -797,7 +797,7 @@
     "hints": [
       "First add 6 to both sides: $2a = 14$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 and choose the matching option."
+      "So $a = 14 \\div 2$ — compute and pick that option."
     ],
     "explanation": "Add 6: $2a = 14$. Divide by 2: $a = 7$."
   },
@@ -815,7 +815,7 @@
     "hints": [
       "First subtract 12 from both sides: $2x = -6$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $x$; it is negative."
+      "So $x = -6 \\div 2$ — compute and enter it (it is negative)."
     ],
     "explanation": "Subtract 12: $2x = -6$. Divide by 2: $x = -3$.",
     "misconception": "Subtract 12 first to get a negative value, then divide by 2; keep the negative sign."
@@ -838,7 +838,7 @@
     "hints": [
       "First subtract 4 from both sides: $3n = -15$.",
       "Then divide both sides by 3.",
-      "Divide your result by 3 and choose the negative option."
+      "So $n = -15 \\div 3$ — compute and pick the negative option."
     ],
     "explanation": "Subtract 4: $3n = -15$. Divide by 3: $n = -5$."
   },
@@ -856,7 +856,7 @@
     "hints": [
       "First subtract 2 from both sides: $-3y = 12$.",
       "Then divide both sides by $-3$.",
-      "Divide your result by $-3$ to get $y$."
+      "So $y = 12 \\div (-3)$ — compute and enter it."
     ],
     "explanation": "Subtract 2: $-3y = 12$. Divide by $-3$: $y = -4$.",
     "misconception": "After subtracting 2, divide by $-3$; dividing by a negative flips the sign of the answer."
@@ -879,7 +879,7 @@
     "hints": [
       "First subtract 20 from both sides: $5a = -15$.",
       "Then divide both sides by 5.",
-      "Divide your result by 5 and choose the negative option."
+      "So $a = -15 \\div 5$ — compute and pick the negative option."
     ],
     "explanation": "Subtract 20: $5a = -15$. Divide by 5: $a = -3$."
   },
@@ -897,7 +897,7 @@
     "hints": [
       "First add 2 to both sides: $4t = -20$.",
       "Then divide both sides by 4.",
-      "Divide your result by 4 to get $t$; it is negative."
+      "So $t = -20 \\div 4$ — compute and enter it (it is negative)."
     ],
     "explanation": "Add 2: $4t = -20$. Divide by 4: $t = -5$.",
     "misconception": "Add 2 first to get $-20$, then divide by 4; keep the negative sign."
@@ -916,7 +916,7 @@
     "hints": [
       "First subtract 3 from both sides: $\\frac{x}{4} = 4$.",
       "Then multiply both sides by 4.",
-      "Multiply your result by 4 to get $x$."
+      "So $x = 4 \\times 4$ — compute and enter it."
     ],
     "explanation": "Subtract 3: $\\frac{x}{4} = 4$. Multiply by 4: $x = 16$.",
     "misconception": "Subtract 3 first, then multiply by 4; don't multiply before subtracting."
@@ -935,7 +935,7 @@
     "hints": [
       "First subtract 2.5 from both sides: $2y = 5$.",
       "Then divide both sides by 2.",
-      "Divide your result by 2 to get $y$."
+      "So $y = 5 \\div 2$ — compute and enter it."
     ],
     "explanation": "Subtract 2.5: $2y = 5$. Divide by 2: $y = 2.5$.",
     "misconception": "Subtract 2.5 first, then divide by 2; don't divide before subtracting."
@@ -976,7 +976,7 @@
     "hints": [
       "First add 2 to both sides: $\\frac{a}{3} = 3$.",
       "Then multiply both sides by 3.",
-      "Multiply your result by 3 to get $a$."
+      "So $a = 3 \\times 3$ — compute and enter it."
     ],
     "explanation": "Add 2: $\\frac{a}{3} = 3$. Multiply by 3: $a = 9$.",
     "misconception": "Add 2 first to undo the subtraction, then multiply by 3; don't multiply before adding."
@@ -995,7 +995,7 @@
     "hints": [
       "First subtract 0.8 from both sides: $4t = 3.2$.",
       "Then divide both sides by 4.",
-      "Divide your result by 4 to get $t$."
+      "So $t = 3.2 \\div 4$ — compute and enter it."
     ],
     "explanation": "Subtract 0.8: $4t = 3.2$. Divide by 4: $t = 0.8$.",
     "misconception": "Subtract 0.8 first, then divide by 4; don't divide before subtracting."

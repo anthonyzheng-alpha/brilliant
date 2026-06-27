@@ -13,7 +13,7 @@
     },
     "hints": [
       "Divide the total cost by the number of pounds.",
-      "Unit price = total cost ÷ quantity."
+      "Set up the division of the given amounts and compute that single per-unit value."
     ],
     "misconception": "Divide cost by quantity, not quantity by cost - per-pound price is dollars $\\div$ pounds.",
     "explanation": "$\\$6 \\div 3 = \\$2$ per pound."
@@ -35,7 +35,7 @@
     },
     "hints": [
       "Divide the distance by the time to get speed.",
-      "Speed = distance ÷ time."
+      "Carry out that division; the result is the speed in miles per hour."
     ],
     "explanation": "$150 \\div 3 = 50$ miles per hour."
   },
@@ -53,7 +53,7 @@
     },
     "hints": [
       "Divide the total cost by the number of apples.",
-      "Unit price = total cost ÷ quantity."
+      "Set up the division of the given amounts and compute that single per-unit value."
     ],
     "misconception": "Divide the total by the number of items - don't multiply the price by 5.",
     "explanation": "$\\$2.50 \\div 5 = \\$0.50$ per apple."
@@ -72,7 +72,7 @@
     },
     "hints": [
       "Divide the price by the number of ounces.",
-      "Price per ounce = price ÷ ounces."
+      "Carry out that division; the result is the price for a single ounce."
     ],
     "misconception": "Per-ounce price is dollars $\\div$ ounces, not ounces $\\div$ dollars.",
     "explanation": "$\\$3.60 \\div 12 = \\$0.30$ per ounce."
@@ -94,7 +94,7 @@
     },
     "hints": [
       "Divide the words by the minutes to get the rate.",
-      "Rate = words ÷ minutes."
+      "Carry out that division; the result is words per minute."
     ],
     "explanation": "$200 \\div 4 = 50$ words per minute."
   },
@@ -222,7 +222,7 @@
     },
     "hints": [
       "Multiply the price per apple by the number of apples.",
-      "Total cost = price per apple × number of apples."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "This is a multiplication problem - multiply price by quantity instead of dividing.",
     "explanation": "$\\$1.25 \\times 8 = \\$10.00$."
@@ -242,7 +242,7 @@
     },
     "hints": [
       "Multiply the price per gallon by the number of gallons.",
-      "Total = price per gallon × gallons."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "Multiply price per gallon by gallons - don't divide or add the two numbers.",
     "explanation": "$\\$3.50 \\times 12 = \\$42.00$."
@@ -261,7 +261,7 @@
     },
     "hints": [
       "Divide your budget by the price of one ticket.",
-      "Number you can buy = budget ÷ price."
+      "Carry out that division to count how many whole items the budget covers."
     ],
     "misconception": "Divide budget by price to count items - don't multiply $\\$9$ by anything.",
     "explanation": "$\\$54 \\div \\$9 = 6$ tickets."
@@ -280,7 +280,7 @@
     },
     "hints": [
       "Multiply the price per pound by the number of pounds.",
-      "Total = price per pound × pounds."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "Multiply the per-pound price by the pounds, even when the pounds is a decimal.",
     "explanation": "$\\$0.60 \\times 4.5 = \\$2.70$."
@@ -321,7 +321,7 @@
     },
     "hints": [
       "Add the base fare to the per-mile cost times the miles.",
-      "Cost = base fare + rate × miles."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't forget the fixed base fare - total = base + rate $\\times$ miles, not just rate $\\times$ miles.",
     "explanation": "$3 + 2(4) = 11$ dollars."
@@ -341,7 +341,7 @@
     },
     "hints": [
       "Add the joining fee to the monthly rate times the months.",
-      "Total = joining fee + monthly rate × months."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Include the one-time joining fee - total = fee + monthly rate $\\times$ months.",
     "explanation": "$25 + 15(6) = 25 + 90 = 115$ dollars."
@@ -361,7 +361,7 @@
     },
     "hints": [
       "Add the base fee to the per-minute rate times the minutes.",
-      "Bill = base fee + per-minute rate × minutes."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the flat monthly fee - total = base + per-minute rate $\\times$ minutes, not just the minutes cost.",
     "explanation": "$20 + 0.10(50) = 20 + 5 = 25$ dollars."
@@ -381,7 +381,7 @@
     },
     "hints": [
       "Add the base fare to the per-mile rate times the miles.",
-      "Cost = base fare + rate × miles."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't drop the base fare - total = base + rate $\\times$ miles.",
     "explanation": "$4 + 1.50(10) = 4 + 15 = 19$ dollars."
@@ -401,7 +401,7 @@
     },
     "hints": [
       "Add the base price to the per-screen rate times the extra screens.",
-      "Cost = base price + per-screen rate × screens."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the base monthly price - total = base + per-screen rate $\\times$ extra screens.",
     "explanation": "$8 + 1.25(3) = 8 + 3.75 = 11.75$ dollars."
@@ -520,7 +520,7 @@
     },
     "hints": [
       "Divide the total cost by the number of pounds.",
-      "Unit price = total cost ÷ quantity."
+      "Set up the division of the given amounts and compute that single per-unit value."
     ],
     "misconception": "Divide cost by quantity, not quantity by cost - per-pound price is dollars $\\div$ pounds.",
     "explanation": "$\\$6 \\div 3 = \\$2$ per pound."
@@ -538,7 +538,7 @@
     },
     "hints": [
       "Divide the number of copies by the number of minutes.",
-      "Rate = copies ÷ minutes."
+      "Carry out that division; the result is copies per minute."
     ],
     "explanation": "$90 \\div 3 = 30$ copies per minute."
   },
@@ -559,7 +559,7 @@
     },
     "hints": [
       "Divide the distance by the time to get speed.",
-      "Speed = distance ÷ time."
+      "Carry out that division; the result is the speed in miles per hour."
     ],
     "explanation": "$12 \\div 2 = 6$ miles per hour."
   },
@@ -577,7 +577,7 @@
     },
     "hints": [
       "Divide the price by the number of ounces.",
-      "Price per ounce = price ÷ ounces."
+      "Carry out that division; the result is the price for a single ounce."
     ],
     "misconception": "Per-ounce price is dollars $\\div$ ounces, not ounces $\\div$ dollars.",
     "explanation": "$\\$1.60 \\div 8 = \\$0.20$ per ounce."
@@ -596,7 +596,7 @@
     },
     "hints": [
       "Divide the total cost by the number of notebooks.",
-      "Unit price = total cost ÷ quantity."
+      "Set up the division of the given amounts and compute that single per-unit value."
     ],
     "misconception": "Divide the total by the number of items - don't multiply the price by 5.",
     "explanation": "$\\$7.50 \\div 5 = \\$1.50$ per notebook."
@@ -725,7 +725,7 @@
     },
     "hints": [
       "Multiply the price per orange by the number of oranges.",
-      "Total cost = price per orange × number of oranges."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "This is a multiplication problem - multiply price by quantity instead of dividing.",
     "explanation": "$\\$0.80 \\times 5 = \\$4.00$."
@@ -745,7 +745,7 @@
     },
     "hints": [
       "Multiply the price per gallon by the number of gallons.",
-      "Total = price per gallon × gallons."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "Multiply price per gallon by gallons - don't divide or add the two numbers.",
     "explanation": "$\\$4.00 \\times 9 = \\$36.00$."
@@ -763,7 +763,7 @@
     },
     "hints": [
       "Divide your budget by the price of one slice.",
-      "Number you can buy = budget ÷ price."
+      "Carry out that division to count how many whole items the budget covers."
     ],
     "misconception": "Divide budget by price to count items - don't multiply $\\$3$ by anything.",
     "explanation": "$\\$18 \\div \\$3 = 6$ slices."
@@ -782,7 +782,7 @@
     },
     "hints": [
       "Multiply the price per yard by the number of yards.",
-      "Total = price per yard × yards."
+      "Multiply the two given amounts together and compute that total."
     ],
     "misconception": "Multiply the per-yard price by the yards, even when the length is a decimal.",
     "explanation": "$\\$1.20 \\times 2.5 = \\$3.00$."
@@ -823,7 +823,7 @@
     },
     "hints": [
       "Add the base fare to the per-mile cost times the miles.",
-      "Cost = base fare + rate × miles."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't forget the fixed base fare - total = base + rate $\\times$ miles, not just rate $\\times$ miles.",
     "explanation": "$5 + 3(4) = 5 + 12 = 17$ dollars."
@@ -843,7 +843,7 @@
     },
     "hints": [
       "Add the joining fee to the monthly rate times the months.",
-      "Total = joining fee + monthly rate × months."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Include the one-time joining fee - total = fee + monthly rate $\\times$ months.",
     "explanation": "$30 + 20(5) = 30 + 100 = 130$ dollars."
@@ -863,7 +863,7 @@
     },
     "hints": [
       "Add the base fee to the per-minute rate times the minutes.",
-      "Bill = base fee + per-minute rate × minutes."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the flat monthly fee - total = base + per-minute rate $\\times$ minutes, not just the minutes cost.",
     "explanation": "$15 + 0.20(40) = 15 + 8 = 23$ dollars."
@@ -883,7 +883,7 @@
     },
     "hints": [
       "Add the base charge to the per-mile rate times the miles.",
-      "Cost = base charge + rate × miles."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't drop the base charge - total = base + rate $\\times$ miles.",
     "explanation": "$30 + 0.50(20) = 30 + 10 = 40$ dollars."
@@ -903,7 +903,7 @@
     },
     "hints": [
       "Add the base price to the per-screen rate times the extra screens.",
-      "Cost = base price + per-screen rate × screens."
+      "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the base monthly price - total = base + per-screen rate $\\times$ extra screens.",
     "explanation": "$10 + 2(4) = 10 + 8 = 18$ dollars."
