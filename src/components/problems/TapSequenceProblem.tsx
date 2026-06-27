@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import type { TapSequenceInteraction } from '../../types/content'
 import { RichText } from '../common/RichText'
+import { shuffle } from '../../lib/shuffle'
 import './ProblemTypes.css'
 
 type Props = {
@@ -10,6 +12,8 @@ type Props = {
 }
 
 export function TapSequenceProblem({ data, selectedIds, onChange, disabled }: Props) {
+  const cells = useMemo(() => shuffle(data.cells), [data])
+
   const toggle = (id: string) => {
     if (data.multiSelect) {
       if (selectedIds.includes(id)) {
@@ -24,7 +28,7 @@ export function TapSequenceProblem({ data, selectedIds, onChange, disabled }: Pr
 
   return (
     <div className="tap-grid" role="group">
-      {data.cells.map((cell) => (
+      {cells.map((cell) => (
         <button
           key={cell.id}
           type="button"

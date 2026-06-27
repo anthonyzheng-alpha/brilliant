@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import type { MultipleChoiceInteraction } from '../../types/content'
 import { RichText } from '../common/RichText'
+import { shuffle } from '../../lib/shuffle'
 import './ProblemTypes.css'
 
 type Props = {
@@ -10,9 +12,11 @@ type Props = {
 }
 
 export function MultipleChoiceProblem({ data, selectedId, onChange, disabled }: Props) {
+  const options = useMemo(() => shuffle(data.options), [data])
+
   return (
     <div className="problem-options" role="radiogroup">
-      {data.options.map((opt) => (
+      {options.map((opt) => (
         <button
           key={opt.id}
           type="button"

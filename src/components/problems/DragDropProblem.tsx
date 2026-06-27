@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { DragDropInteraction } from '../../types/content'
 import { RichText } from '../common/RichText'
+import { shuffle } from '../../lib/shuffle'
 import './ProblemTypes.css'
 
 type Props = {
@@ -12,9 +13,10 @@ type Props = {
 
 export function DragDropProblem({ data, placement, onChange, disabled }: Props) {
   const [dragging, setDragging] = useState<string | null>(null)
+  const draggables = useMemo(() => shuffle(data.draggables), [data])
 
   const usedIds = new Set(Object.values(placement))
-  const available = data.draggables.filter((d) => !usedIds.has(d.id))
+  const available = draggables.filter((d) => !usedIds.has(d.id))
 
   const handleDrop = (zoneId: string, draggableId: string) => {
     const next = { ...placement, [zoneId]: draggableId }
