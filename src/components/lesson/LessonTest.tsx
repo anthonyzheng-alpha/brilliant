@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { AnswerValue, Lesson } from '../../types/content'
 import { RichText } from '../common/RichText'
 import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
@@ -46,7 +46,14 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
     | { kind: 'correct'; explanation: string }
   >({ kind: 'idle' })
 
+  // Token identifying the latest generate() run. StrictMode double-invokes the
+  // mount effect (and "Retry test" can overlap), so stale runs must not commit
+  // their results — otherwise a discarded set briefly renders before the real
+  // first problem.
+  const runIdRef = useRef(0)
+
   const generate = useCallback(async () => {
+    const runId = ++runIdRef.current
     setPhase('loading')
     setGeneratedCount(0)
     const targets: TestTarget[] = lesson.rounds.map((r) => ({
@@ -61,10 +68,12 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
       for (let attempt = 0; attempt < 5 && seen.has(normalizePrompt(problem.prompt)); attempt++) {
         problem = await generateReviewProblem({ ...req, avoidPrompts: [...seen] })
       }
+      if (runIdRef.current !== runId) return
       generated.push(problem)
       seen.add(normalizePrompt(problem.prompt))
       setGeneratedCount(generated.length)
     }
+    if (runIdRef.current !== runId) return
     setProblems(generated)
     setIndex(0)
     setAnswer(generated[0] ? initialAnswer(generated[0]) : null)

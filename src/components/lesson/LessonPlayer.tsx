@@ -68,9 +68,16 @@ export function LessonPlayer({
   const gamification = useGamificationStore((s) => s.gamification)
   const recordAttempt = useStruggleStore((s) => s.recordAttempt)
 
-  const [problemIndex, setProblemIndex] = useState(initialProblemIndex)
+  // When resuming a lesson whose practice is fully done but whose test isn't
+  // passed, initialProblemIndex equals problems.length (out of range). Clamp the
+  // practice index to a valid value and surface the test checkpoint instead.
+  const clampedInitialIndex = Math.min(initialProblemIndex, Math.max(0, problems.length - 1))
+  const [problemIndex, setProblemIndex] = useState(clampedInitialIndex)
   const [answer, setAnswer] = useState<AnswerValue | null>(() =>
-    problems[initialProblemIndex] ? initialAnswer(problems[initialProblemIndex]) : null,
+    problems[clampedInitialIndex] ? initialAnswer(problems[clampedInitialIndex]) : null,
+  )
+  const [showTestGate, setShowTestGate] = useState(
+    () => problems.length > 0 && initialProblemIndex >= problems.length,
   )
   const [hintsRevealed, setHintsRevealed] = useState(0)
   const [feedback, setFeedback] = useState<
@@ -83,7 +90,6 @@ export function LessonPlayer({
   >({ kind: 'idle' })
   const [inputLocked, setInputLocked] = useState(false)
   const [showLessonTest, setShowLessonTest] = useState(false)
-  const [showMilestoneModal, setShowMilestoneModal] = useState(false)
   const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
   // Furthest problem the learner has reached; persisted progress never drops below this.
   const [maxProblemIndex, setMaxProblemIndex] = useState(initialProblemIndex)
@@ -207,8 +213,11 @@ export function LessonPlayer({
     if (nextIndex >= total) {
       // Gate completion behind the end-of-lesson mastery test. The lesson is
       // only marked complete (and the next lesson unlocked) after the learner
-      // passes the test, via completeLesson().
-      setShowLessonTest(true)
+      // passes the test, via completeLesson(). Persist full practice completion
+      // so the last progress box fills, then show the test checkpoint screen so
+      // the learner explicitly starts the test (and resuming lands here too).
+      await persistProgress(total)
+      setShowTestGate(true)
       return
     }
 
@@ -269,7 +278,6 @@ export function LessonPlayer({
       if (user) {
         await saveUserGamification(user.uid, useGamificationStore.getState().gamification)
       }
-      setShowMilestoneModal(true)
       setFeedback({ kind: 'milestone', lessonTitle: lesson.title })
     } else {
       setFeedback({ kind: 'complete', lessonTitle: lesson.title })
@@ -292,6 +300,36 @@ export function LessonPlayer({
     )
   }
 
+  if (showTestGate) {
+    return (
+      <div className="lesson-player">
+        <div className="lesson-player__layout">
+          <div className="lesson-player__main">
+            <p className="lesson-player__prompt">
+              You've finished all the practice problems for {lesson.title}. Ready for
+              the lesson test?
+            </p>
+            <div className="lesson-player__actions">
+              <button
+                type="button"
+                className="btn btn--primary"
+                onClick={() => {
+                  setShowTestGate(false)
+                  setShowLessonTest(true)
+                }}
+              >
+                Start lesson test
+              </button>
+              <button type="button" className="btn btn--ghost" onClick={finishLesson}>
+                Back to course
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (miniLessonRoundIdx !== null && lesson.rounds[miniLessonRoundIdx]?.miniLesson) {
     return (
       <div className="lesson-player">
@@ -302,6 +340,42 @@ export function LessonPlayer({
           miniLesson={lesson.rounds[miniLessonRoundIdx].miniLesson!}
           onStart={handleStartRound}
         />
+      </div>
+    )
+  }
+
+  // Lesson finished: show only the completion UI so the just-answered question
+  // never bleeds through behind the (semi-transparent) milestone modal.
+  if (feedback.kind === 'milestone') {
+    return (
+      <div className="lesson-player">
+        <div className="milestone-modal-overlay" role="dialog" aria-modal="true">
+          <div className="milestone-modal">
+            <p className="milestone-modal__emoji" aria-hidden>
+              ★
+            </p>
+            <h2>You mastered {lesson.title}!</h2>
+            <p>
+              Streak: {gamification.currentStreak} day
+              {gamification.currentStreak !== 1 ? 's' : ''}
+            </p>
+            <button type="button" className="btn btn--primary" onClick={finishLesson}>
+              Continue
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (feedback.kind === 'complete') {
+    return (
+      <div className="lesson-player">
+        <div className="lesson-player__layout">
+          <div className="lesson-player__main">
+            <FeedbackPanel state={feedback} onContinue={finishLesson} />
+          </div>
+        </div>
       </div>
     )
   }
@@ -360,8 +434,6 @@ export function LessonPlayer({
           />
 
           {feedback.kind !== 'correct' &&
-            feedback.kind !== 'complete' &&
-            feedback.kind !== 'milestone' &&
             feedback.kind !== 'round-complete' && (
               <div className="lesson-player__actions">
                 <button
@@ -425,25 +497,6 @@ export function LessonPlayer({
           )}
         </div>
       </div>
-
-      {showMilestoneModal && FEATURES.gamification && (
-        <div className="milestone-modal-overlay" role="dialog" aria-modal="true">
-          <div className="milestone-modal">
-            <p className="milestone-modal__emoji" aria-hidden>
-              ★
-            </p>
-            <h2>You mastered {lesson.title}!</h2>
-            <p>Streak: {gamification.currentStreak} day{gamification.currentStreak !== 1 ? 's' : ''}</p>
-            <button type="button" className="btn btn--primary" onClick={finishLesson}>
-              Continue
-            </button>
-          </div>
-        </div>
-      )}
-
-      {!FEATURES.gamification && feedback.kind === 'complete' && (
-        <FeedbackPanel state={feedback} onContinue={finishLesson} />
-      )}
     </div>
   )
 }
