@@ -45,3 +45,21 @@
 .lesson-row__lock {
   font-size: 0.85rem;
 }
+
+.lesson-row__progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lesson-row__test-star {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-h);
+  opacity: 0.35;
+}
+
+.lesson-row__test-star--earned {
+  color: #f5b301;
+  opacity: 1;
+}

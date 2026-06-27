@@ -6,6 +6,7 @@ import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from './FeedbackPanel'
 import { MiniLessonView } from './MiniLessonView'
+import { LessonTest } from './LessonTest'
 import { isAnswerValid, hasValidInput } from '../../lib/validation'
 import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
 import { isMiniLessonSeen, markMiniLessonSeen } from '../../lib/storage'
@@ -81,6 +82,7 @@ export function LessonPlayer({
     | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
   >({ kind: 'idle' })
   const [inputLocked, setInputLocked] = useState(false)
+  const [showLessonTest, setShowLessonTest] = useState(false)
   const [showMilestoneModal, setShowMilestoneModal] = useState(false)
   const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
   // Furthest problem the learner has reached; persisted progress never drops below this.
@@ -203,23 +205,10 @@ export function LessonPlayer({
       return
     }
     if (nextIndex >= total) {
-      markComplete(courseId, lesson.id)
-      if (user) {
-        await saveUserProgress(user.uid, useProgressStore.getState().progress)
-      }
-
-      if (FEATURES.gamification) {
-        recordActivity()
-        const courseLessonIds = getAllLessonsForCourse(courseId).map((l) => l.id)
-        onLessonMastered(lesson.id, unitId, unitLessonIds, courseId, courseLessonIds)
-        if (user) {
-          await saveUserGamification(user.uid, useGamificationStore.getState().gamification)
-        }
-        setShowMilestoneModal(true)
-        setFeedback({ kind: 'milestone', lessonTitle: lesson.title })
-      } else {
-        setFeedback({ kind: 'complete', lessonTitle: lesson.title })
-      }
+      // Gate completion behind the end-of-lesson mastery test. The lesson is
+      // only marked complete (and the next lesson unlocked) after the learner
+      // passes the test, via completeLesson().
+      setShowLessonTest(true)
       return
     }
 
@@ -266,12 +255,41 @@ export function LessonPlayer({
     setHintsRevealed((n) => Math.min(n + 1, problem.hints.length))
   }
 
+  const completeLesson = async () => {
+    setShowLessonTest(false)
+    markComplete(courseId, lesson.id)
+    if (user) {
+      await saveUserProgress(user.uid, useProgressStore.getState().progress)
+    }
+
+    if (FEATURES.gamification) {
+      recordActivity()
+      const courseLessonIds = getAllLessonsForCourse(courseId).map((l) => l.id)
+      onLessonMastered(lesson.id, unitId, unitLessonIds, courseId, courseLessonIds)
+      if (user) {
+        await saveUserGamification(user.uid, useGamificationStore.getState().gamification)
+      }
+      setShowMilestoneModal(true)
+      setFeedback({ kind: 'milestone', lessonTitle: lesson.title })
+    } else {
+      setFeedback({ kind: 'complete', lessonTitle: lesson.title })
+    }
+  }
+
   const finishLesson = () => {
     navigate(`/courses/${courseSlug}`)
   }
 
   if (!problem) {
     return <p>Lesson not found.</p>
+  }
+
+  if (showLessonTest) {
+    return (
+      <div className="lesson-player">
+        <LessonTest lesson={lesson} onPass={completeLesson} onExit={finishLesson} />
+      </div>
+    )
   }
 
   if (miniLessonRoundIdx !== null && lesson.rounds[miniLessonRoundIdx]?.miniLesson) {

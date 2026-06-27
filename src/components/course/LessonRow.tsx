@@ -36,7 +36,18 @@ export function LessonRow({ courseId, courseSlug, lesson, locked, completed }: P
         {completed && <span className="lesson-row__check" aria-label="Completed">✓</span>}
         {locked && <span className="lesson-row__lock" aria-label="Locked">🔒</span>}
       </span>
-      <ProgressBoxes boxes={roundBoxes} className="lesson-row__rounds" />
+      <span className="lesson-row__progress">
+        <ProgressBoxes boxes={roundBoxes} className="lesson-row__rounds" />
+        <span
+          className={`lesson-row__test-star ${
+            completed ? 'lesson-row__test-star--earned' : ''
+          }`}
+          aria-label={completed ? 'Lesson test passed' : 'Lesson test'}
+          title="Lesson test"
+        >
+          ★
+        </span>
+      </span>
     </>
   )
 

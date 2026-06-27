@@ -567,18 +567,43 @@ US-M4-2: As a learner, I get a satisfying animation when I earn a lesson
 8.2 Lesson Mastery (Milestone)
 ------------------------------
 
-Definition: A lesson is mastered when the learner has answered every problem
-in that lesson correctly at least once.
+Definition: A lesson is mastered when the learner has answered every problem in
+that lesson correctly at least once AND passed the end-of-lesson mastery test
+(see 8.2a).
 
 Rules:
 - Unlimited retries per problem; must submit correct answer to advance
-- Milestone earned immediately on final correct answer of the lesson
+- Completing the final round opens the end-of-lesson mastery test; the lesson is
+  only marked complete (milestone earned, next lesson unlocked) after the learner
+  answers all 5 test questions correctly
+- Milestone earned immediately after passing the end-of-lesson test
 - Milestone persists in localStorage; replaying a mastered lesson does not
-  revoke the milestone
+  revoke the milestone (and does not re-show the test)
 - Milestone UI (M0): modal overlay — "You mastered {lesson title}!"
 - Milestone UI (M3+): persistent badge icon on lesson row + modal on first earn
 
-8.2a Topic Review (Practice)
+8.2a End-of-Lesson Mastery Test
+-------------------------------
+
+Definition: After finishing all rounds of a lesson, the learner takes a short
+test reviewing the whole lesson before completion is recorded. Passing it is
+what marks the lesson complete and unlocks the next lesson.
+
+Rules:
+- 5 questions drawn from across the lesson's rounds (all difficulty bands)
+- Questions are AI-generated (reusing the review-generation pipeline), falling
+  back to authored problems from the lesson when AI is off or unavailable
+- Per-question Check with immediate feedback; the learner must get all 5 correct
+- A single wrong answer fails the test; the learner restarts with 5 fresh
+  questions ("Retry test") or exits to the course
+- Passing all 5 marks the lesson complete and unlocks the next lesson; until
+  passed, the next lesson stays locked
+- No hints (it is a test); attempts still feed the struggle store so the
+  Topic/Overall Review can keep targeting weaknesses
+- The course lesson row shows a star next to the round rectangles that fills gold
+  once the test is passed
+
+8.2b Topic Review (Practice)
 ----------------------------
 
 Definition: Once every lesson in a course is mastered, the course page exposes a
@@ -912,7 +937,8 @@ Round structure (difficulty ramp):
 - The lesson JSON uses a `rounds` array (each round: id, label, problemIds[]) instead
   of a flat `problemIds` list. Problem IDs follow `<lessonId>-r{n}-p{m}`.
 - A checkpoint appears after each round, offering "Next round" and "Practice this
-  round again" (round retry). Completing the final round triggers lesson mastery
+  round again" (round retry). Completing the final round opens the end-of-lesson
+  mastery test (5 questions, see 8.2a); passing it triggers lesson mastery
   (milestone modal + badges); per-round badges/streaks are out of scope.
 
 ================================================================================
@@ -942,6 +968,7 @@ Round structure (difficulty ramp):
 | FR-2.3 | Sequential lesson unlock                     | M1    |
 | FR-2.4 | Resume deep-link to last problem index       | M0    |
 | FR-2.5 | URL guard on locked lessons                  | M1    |
+| FR-2.6 | Lesson row star indicator for end-of-lesson test | M4 |
 
 10.3 Lesson Player
 ------------------
@@ -956,6 +983,7 @@ Round structure (difficulty ramp):
 | FR-3.5  | Must answer correctly to advance                 | M0    |
 | FR-3.6  | KaTeX math in prompts/explanations               | M1    |
 | FR-3.7  | Keyboard: Enter submits; Tab navigates           | M1    |
+| FR-3.8  | End-of-lesson 5-question mastery test gating completion | M4 |
 
 10.4 Gamification
 -----------------
@@ -1394,9 +1422,10 @@ APPENDIX A: GLOSSARY
 ================================================================================
 
 Lens        — Pedagogical perspective: Solving, Visual, Real-World, or Factoring algebra.
-Milestone   — Badge earned when all problems in a lesson are answered correctly.
+Milestone   — Badge earned when a lesson is mastered (all problems answered correctly and the end-of-lesson test passed).
 Streak      — Consecutive calendar days with at least one round (mini-lesson) or review set completed.
-Mastery     — Synonym for lesson milestone in this PRD.
+Mastery     — Lesson milestone: earned after answering all lesson problems correctly and passing the end-of-lesson mastery test (see 8.2a).
+Lesson test — End-of-lesson 5-question mastery test; all 5 must be correct to complete the lesson and unlock the next.
 Phase       — Delivery milestone M0–M4; not to be confused with course Unit.
 Widget      — Reusable visual component (BalanceScale, SequenceGrid, etc.).
 
