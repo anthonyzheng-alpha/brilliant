@@ -261,3 +261,22 @@
   cursor: pointer;
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .app-header {
+    gap: 0.5rem;
+    padding: 0.75rem 0.6rem;
+  }
+
+  .app-header__logo {
+    font-size: 1rem;
+  }
+
+  .app-header__nav {
+    flex: 0 0 auto;
+  }
+
+  .app-header__actions {
+    gap: 0.5rem;
+  }
+}

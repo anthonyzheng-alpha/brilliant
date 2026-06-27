@@ -23,7 +23,6 @@ export function Header() {
         Algebra Wizard
       </Link>
       <nav className="app-header__nav">
-        <Link to="/">Home</Link>
         <CoursesDropdown />
       </nav>
       <div className="app-header__actions">
