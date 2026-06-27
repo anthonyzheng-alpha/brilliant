@@ -9,6 +9,10 @@ type Props = {
   problem: Problem
   answer?: AnswerValue | null
   wrongLine?: { slope: number; intercept: number } | null
+  // When false, suppress the live green dashed preview drawn from the user's
+  // typed slope/intercept (used by the practice test, which has no per-question
+  // feedback).
+  showLinePreview?: boolean
 }
 
 function parseGraphPoints(raw: unknown): GraphPoint[] | undefined {
@@ -24,7 +28,7 @@ function parseGraphPoints(raw: unknown): GraphPoint[] | undefined {
   return points.length > 0 ? points : undefined
 }
 
-export function ProblemVisual({ problem, answer, wrongLine }: Props) {
+export function ProblemVisual({ problem, answer, wrongLine, showLinePreview }: Props) {
   if (!problem.visual || problem.visual.kind === 'none') return null
 
   const props = problem.visual.props as Record<string, number | number[] | string[] | unknown>
@@ -54,7 +58,7 @@ export function ProblemVisual({ problem, answer, wrongLine }: Props) {
       let previewSlope: number | undefined
       let previewIntercept: number | undefined
       // While a wrong submission is shown, suppress the live preview so only the red line is visible.
-      if (!wrongLine && answer?.type === 'line-equation') {
+      if (showLinePreview !== false && !wrongLine && answer?.type === 'line-equation') {
         const m = parseNumericInput(answer.slope)
         const b = parseNumericInput(answer.intercept)
         if (m !== null) previewSlope = m

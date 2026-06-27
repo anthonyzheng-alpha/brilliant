@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
 import { CoursePage } from './pages/CoursePage'
 import { LessonPage } from './pages/LessonPage'
@@ -15,6 +15,7 @@ function AppRoutes() {
   const user = useAuthStore((s) => s.user)
   const loading = useAuthStore((s) => s.loading)
   const navigate = useNavigate()
+  const { pathname } = useLocation()
   const baselineSet = useRef(false)
   const prevUid = useRef<string | null>(null)
 
@@ -24,6 +25,10 @@ function AppRoutes() {
     }
     init()
   }, [init])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   useEffect(() => {
     if (loading) return

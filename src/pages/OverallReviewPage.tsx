@@ -1,15 +1,21 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageShell } from '../components/layout/PageShell'
 import { OverallReviewPlayer } from '../components/review/OverallReviewPlayer'
+import { PracticeTestPlayer } from '../components/review/PracticeTestPlayer'
 import { getCoveredLessonIds, getLessonLocation } from '../content'
 import { useProgressStore } from '../stores/progressStore'
 import { useStruggleStore } from '../stores/struggleStore'
+import '../components/review/PracticeTest.css'
+
+type ReviewMode = 'choose' | 'infinite' | 'test'
 
 export function OverallReviewPage() {
   const progress = useProgressStore((s) => s.progress)
   const struggles = useStruggleStore((s) => s.struggles)
   const getAttemptedLessonIds = useStruggleStore((s) => s.getAttemptedLessonIds)
+
+  const [mode, setMode] = useState<ReviewMode>('choose')
 
   // Lessons reachable by the review: anything progress counts as covered, plus
   // anything the learner has attempted (struggle store) but may not have advanced
@@ -23,9 +29,15 @@ export function OverallReviewPage() {
 
   return (
     <PageShell>
-      <Link to="/" className="back-link">
-        ← Home
-      </Link>
+      {mode === 'choose' ? (
+        <Link to="/" className="back-link">
+          ← Home
+        </Link>
+      ) : (
+        <button type="button" className="back-link" onClick={() => setMode('choose')}>
+          ← Review options
+        </button>
+      )}
       <h1 className="lesson-page__title">Overall Review</h1>
 
       {coveredLessonIds.length === 0 ? (
@@ -41,8 +53,36 @@ export function OverallReviewPage() {
             </Link>
           </div>
         </div>
-      ) : (
+      ) : mode === 'infinite' ? (
         <OverallReviewPlayer coveredLessonIds={coveredLessonIds} />
+      ) : mode === 'test' ? (
+        <PracticeTestPlayer coveredLessonIds={coveredLessonIds} />
+      ) : (
+        <div className="review-modes">
+          <button
+            type="button"
+            className="review-mode-card"
+            onClick={() => setMode('infinite')}
+          >
+            <span className="review-mode-card__title">Infinite practice</span>
+            <span className="review-mode-card__desc">
+              Endless problems that adapt to the topics you miss most. Earn coins and extend your streak for
+              every correct answer. AI-generated problems unless AI-powered practice is off.
+            </span>
+          </button>
+          <button
+            type="button"
+            className="review-mode-card"
+            onClick={() => setMode('test')}
+          >
+            <span className="review-mode-card__title">Practice test</span>
+            <span className="review-mode-card__desc">
+              Choose how many questions and which topics to focus on, then submit for a
+              graded score with explanations. Counts toward your streak — no coins.
+              AI-generated problems unless AI-powered practice is off.
+            </span>
+          </button>
+        </div>
       )}
     </PageShell>
   )

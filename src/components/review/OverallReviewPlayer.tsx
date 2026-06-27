@@ -21,7 +21,8 @@ import {
   type GenerateRequest,
   type GeneratedProblem,
 } from '../../lib/ai'
-import { getLessonById, getLessonLocation, problemBank } from '../../content'
+import { getLessonLocation } from '../../content'
+import { roundContext, roundLabelFor, pickRandom as pick } from '../../lib/reviewTargeting'
 import { saveUserStruggles, saveUserGamification } from '../../lib/syncProgress'
 import '../lesson/LessonPlayer.css'
 
@@ -33,34 +34,6 @@ const MASTERY_STREAK = 3
 
 function skillKey(lessonId: string, roundId: string, type: ProblemType): string {
   return `${lessonId}::${roundId}::${type}`
-}
-
-function pick<T>(items: T[]): T {
-  return items[Math.floor(Math.random() * items.length)]
-}
-
-// Pull the difficulty label, mini-lesson description, and a couple of authored
-// example prompts for a specific round so the generator can match that band.
-function roundContext(
-  lessonId: string,
-  roundId: string,
-  problemType: ProblemType,
-): { difficultyLabel?: string; difficultyNote?: string; examples: string[] } {
-  const lesson = getLessonById(lessonId)
-  const round = roundId ? lesson?.rounds.find((r) => r.id === roundId) : undefined
-  if (!round) return { examples: [] }
-  const note = round.miniLesson
-    ? `${round.miniLesson.title ? `${round.miniLesson.title}: ` : ''}${round.miniLesson.paragraph}`
-    : undefined
-  const pool = round.problemIds.map((pid) => problemBank[pid]).filter(Boolean)
-  const preferred = pool.filter((p) => p.type === problemType)
-  const examples = (preferred.length > 0 ? preferred : pool).slice(0, 2).map((p) => p.prompt)
-  return { difficultyLabel: round.label, difficultyNote: note, examples }
-}
-
-function roundLabelFor(lessonId: string, roundId: string): string | undefined {
-  if (!roundId) return undefined
-  return getLessonById(lessonId)?.rounds.find((r) => r.id === roundId)?.label
 }
 
 export function OverallReviewPlayer({ coveredLessonIds }: Props) {
