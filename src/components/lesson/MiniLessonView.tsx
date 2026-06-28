@@ -13,6 +13,7 @@ type Props = {
   totalRounds: number
   miniLesson: MiniLesson
   onStart: () => void
+  reviewMode?: boolean
 }
 
 export function MiniLessonView({
@@ -21,6 +22,7 @@ export function MiniLessonView({
   totalRounds,
   miniLesson,
   onStart,
+  reviewMode = false,
 }: Props) {
   // Reuse the full problem pipeline by adapting the example into a Problem.
   const exampleProblem = useMemo<Problem>(
@@ -131,7 +133,7 @@ export function MiniLessonView({
       </div>
 
       <div className="mini-lesson__start">
-        {result !== 'correct' && (
+        {!reviewMode && result !== 'correct' && (
           <p className="mini-lesson__start-hint">
             Answer the example correctly to start the round.
           </p>
@@ -140,9 +142,9 @@ export function MiniLessonView({
           type="button"
           className="btn btn--primary"
           onClick={onStart}
-          disabled={result !== 'correct'}
+          disabled={!reviewMode && result !== 'correct'}
         >
-          Start round
+          {reviewMode ? 'Back to problem' : 'Start round'}
         </button>
       </div>
     </div>

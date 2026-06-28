@@ -17,6 +17,12 @@
   margin-bottom: 1rem;
 }
 
+.lesson-player__nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .lesson-player__hints {
   margin-top: 1.25rem;
   padding: 1rem;

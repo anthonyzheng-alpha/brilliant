@@ -99,6 +99,9 @@ export function LessonPlayer({
     const ri = getRoundIndexForProblem(lesson, initialProblemIndex)
     return roundHasUnseenMiniLesson(lesson, ri) ? ri : null
   })
+  // True when the mini-lesson is shown because the learner chose to review it
+  // mid-practice (vs. the first-time gated view before a round).
+  const [isReviewing, setIsReviewing] = useState(false)
 
   const rounds = useMemo(() => {
     let startIndex = 0
@@ -200,6 +203,12 @@ export function LessonPlayer({
       markMiniLessonSeen(lesson.rounds[miniLessonRoundIdx].id)
     }
     setMiniLessonRoundIdx(null)
+    setIsReviewing(false)
+  }
+
+  const handleReviewLesson = () => {
+    setMiniLessonRoundIdx(currentRoundIndex)
+    setIsReviewing(true)
   }
 
   const handleContinue = async () => {
@@ -339,6 +348,7 @@ export function LessonPlayer({
           totalRounds={lesson.rounds.length}
           miniLesson={lesson.rounds[miniLessonRoundIdx].miniLesson!}
           onStart={handleStartRound}
+          reviewMode={isReviewing}
         />
       </div>
     )
@@ -399,21 +409,32 @@ export function LessonPlayer({
       <div className="lesson-player__layout">
         <div className="lesson-player__main">
           <div className="lesson-player__nav">
-            <button
-              type="button"
-              className="btn btn--ghost btn--sm"
-              onClick={handleBack}
-              disabled={problemIndex === 0}
-            >
-              ← Previous
-            </button>
-            {problemIndex < maxProblemIndex && (
+            <div className="lesson-player__nav-left">
               <button
                 type="button"
                 className="btn btn--ghost btn--sm"
-                onClick={handleForward}
+                onClick={handleBack}
+                disabled={problemIndex === 0}
               >
-                Next →
+                ← Previous
+              </button>
+              {problemIndex < maxProblemIndex && (
+                <button
+                  type="button"
+                  className="btn btn--ghost btn--sm"
+                  onClick={handleForward}
+                >
+                  Next →
+                </button>
+              )}
+            </div>
+            {lesson.rounds[currentRoundIndex]?.miniLesson && (
+              <button
+                type="button"
+                className="btn btn--ghost btn--sm"
+                onClick={handleReviewLesson}
+              >
+                Review lesson
               </button>
             )}
           </div>
