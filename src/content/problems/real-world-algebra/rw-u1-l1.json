@@ -8,7 +8,10 @@
       "data": {
         "placeholder": "Dollars per lb",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 2 }
+        "validation": {
+          "type": "numeric",
+          "value": 2
+        }
       }
     },
     "hints": [
@@ -27,9 +30,20 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "40 mph", "whyWrong": "Too low - $150 \\div 3$ is 50, not 40." },
-          { "id": "b", "label": "50 mph" },
-          { "id": "c", "label": "60 mph", "whyWrong": "Too high - 60 mph would need 180 miles in 3 hours." }
+          {
+            "id": "a",
+            "label": "40 mph",
+            "whyWrong": "Too low — divide total distance by time to find speed."
+          },
+          {
+            "id": "b",
+            "label": "50 mph"
+          },
+          {
+            "id": "c",
+            "label": "60 mph",
+            "whyWrong": "Too high - 60 mph would need 180 miles in 3 hours."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -50,7 +64,11 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 0.5, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 0.5,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -70,7 +88,11 @@
       "data": {
         "placeholder": "Dollars per oz",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 0.3, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 0.3,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -89,9 +111,20 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "40 words/min", "whyWrong": "Too low - $200 \\div 4$ is 50, not 40." },
-          { "id": "b", "label": "50 words/min" },
-          { "id": "c", "label": "60 words/min", "whyWrong": "Too high - that would need 240 words in 4 minutes." }
+          {
+            "id": "a",
+            "label": "40 words/min",
+            "whyWrong": "Too low — divide total words by minutes to find rate."
+          },
+          {
+            "id": "b",
+            "label": "50 words/min"
+          },
+          {
+            "id": "c",
+            "label": "60 words/min",
+            "whyWrong": "Too high - that would need 240 words in 4 minutes."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -107,14 +140,33 @@
     "id": "rw-u1-l1-r2-p1",
     "type": "multiple-choice",
     "prompt": "Box A: **12 oz for $3.60**. Box B: **18 oz for $4.50**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Box A ($\\$0.30$/oz)", "whyWrong": "Box A is actually more per ounce - divide price by ounces for each to compare." },
-          { "id": "b", "label": "Box B ($\\$0.25$/oz)" },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.30$ vs $\\$0.25$ per ounce." }
+          {
+            "id": "a",
+            "label": "Box A ($\\$0.30$/oz)",
+            "whyWrong": "Box A is actually more per ounce - divide price by ounces for each to compare."
+          },
+          {
+            "id": "b",
+            "label": "Box B ($\\$0.25$/oz)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -130,14 +182,33 @@
     "id": "rw-u1-l1-r2-p2",
     "type": "multiple-choice",
     "prompt": "Juice A: **32 oz for $4.00**. Juice B: **64 oz for $7.68**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Juice A ($\\$0.125$/oz)", "whyWrong": "Juice A costs more per ounce - $4.00 \\div 32$ is higher than $7.68 \\div 64$." },
-          { "id": "b", "label": "Juice B ($\\$0.12$/oz)" },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The per-ounce prices aren't equal - one is $\\$0.125$ and the other $\\$0.12$." }
+          {
+            "id": "a",
+            "label": "Juice A ($\\$0.125$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Juice B ($\\$0.12$/oz)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -153,14 +224,33 @@
     "id": "rw-u1-l1-r2-p3",
     "type": "multiple-choice",
     "prompt": "Coffee A: **10 oz for $4.50**. Coffee B: **16 oz for $7.84**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Coffee A ($\\$0.45$/oz)" },
-          { "id": "b", "label": "Coffee B ($\\$0.49$/oz)", "whyWrong": "Coffee B costs more per ounce - $7.84 \\div 16$ is higher than $4.50 \\div 10$." },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.45$ vs $\\$0.49$ per ounce." }
+          {
+            "id": "a",
+            "label": "Coffee A ($\\$0.45$/oz)"
+          },
+          {
+            "id": "b",
+            "label": "Coffee B ($\\$0.49$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "a"
       }
@@ -176,14 +266,33 @@
     "id": "rw-u1-l1-r2-p4",
     "type": "multiple-choice",
     "prompt": "Rice A: **5 lb for $6.00**. Rice B: **10 lb for $11.00**. Which is the better deal per pound?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Rice A ($\\$1.20$/lb)", "whyWrong": "Rice A costs more per pound - $6.00 \\div 5$ is higher than $11.00 \\div 10$." },
-          { "id": "b", "label": "Rice B ($\\$1.10$/lb)" },
-          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices aren't equal - $\\$1.20$ vs $\\$1.10$." }
+          {
+            "id": "a",
+            "label": "Rice A ($\\$1.20$/lb)",
+            "whyWrong": "Divide price by weight for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Rice B ($\\$1.10$/lb)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per lb",
+            "whyWrong": "The per-pound rates aren't equal — divide each package's price by its weight and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -199,14 +308,33 @@
     "id": "rw-u1-l1-r2-p5",
     "type": "multiple-choice",
     "prompt": "Soda Pack A: **6 cans for $3.00**. Soda Pack B: **12 cans for $5.40**. Which is the better deal per can?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Pack A ($\\$0.50$/can)", "whyWrong": "Pack A costs more per can - $3.00 \\div 6$ is higher than $5.40 \\div 12$." },
-          { "id": "b", "label": "Pack B ($\\$0.45$/can)" },
-          { "id": "c", "label": "Same price per can", "whyWrong": "The per-can prices differ - $\\$0.50$ vs $\\$0.45$." }
+          {
+            "id": "a",
+            "label": "Pack A ($\\$0.50$/can)",
+            "whyWrong": "Divide price by number of cans for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Pack B ($\\$0.45$/can)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per can",
+            "whyWrong": "The per-can rates aren't equal — divide each package's price by the number of cans and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -227,7 +355,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 10 }
+        "validation": {
+          "type": "numeric",
+          "value": 10
+        }
       }
     },
     "hints": [
@@ -242,13 +373,21 @@
     "id": "rw-u1-l1-r3-p2",
     "type": "numeric",
     "prompt": "Gas costs **$3.50** per gallon. How much to fill **12 gallons**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "gas" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "gas"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 42 }
+        "validation": {
+          "type": "numeric",
+          "value": 42
+        }
       }
     },
     "hints": [
@@ -263,12 +402,20 @@
     "id": "rw-u1-l1-r3-p3",
     "type": "numeric",
     "prompt": "Movie tickets cost **$9** each. How many tickets can you buy with **$54**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "tickets" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "tickets"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Tickets",
-        "validation": { "type": "numeric", "value": 6 }
+        "validation": {
+          "type": "numeric",
+          "value": 6
+        }
       }
     },
     "hints": [
@@ -288,7 +435,11 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 2.7, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 2.7,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -307,9 +458,20 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "7 notebooks", "whyWrong": "You can afford more - 7 notebooks leave over $\\$3$ unspent." },
-          { "id": "b", "label": "8 notebooks" },
-          { "id": "c", "label": "9 notebooks", "whyWrong": "9 notebooks cost $\\$21.60$, which is over your $\\$20$ budget." }
+          {
+            "id": "a",
+            "label": "7 notebooks",
+            "whyWrong": "You can afford more - 7 notebooks leave over $\\$3$ unspent."
+          },
+          {
+            "id": "b",
+            "label": "8 notebooks"
+          },
+          {
+            "id": "c",
+            "label": "9 notebooks",
+            "whyWrong": "9 notebooks cost $\\$21.60$, which is over your $\\$20$ budget."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -325,13 +487,21 @@
     "id": "rw-u1-l1-r4-p1",
     "type": "numeric",
     "prompt": "A taxi charges **$3** plus **$2** per mile. How much for **4** miles?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "taxi"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 11 }
+        "validation": {
+          "type": "numeric",
+          "value": 11
+        }
       }
     },
     "hints": [
@@ -346,13 +516,21 @@
     "id": "rw-u1-l1-r4-p2",
     "type": "numeric",
     "prompt": "A gym charges a **$25** joining fee plus **$15** per month. What is the total cost for **6 months**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "gym" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "gym"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 115 }
+        "validation": {
+          "type": "numeric",
+          "value": 115
+        }
       }
     },
     "hints": [
@@ -367,13 +545,21 @@
     "id": "rw-u1-l1-r4-p3",
     "type": "numeric",
     "prompt": "A phone plan costs **$20** per month plus **$0.10** per minute. What is the bill for **50 minutes**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "phone" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "phone"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 25 }
+        "validation": {
+          "type": "numeric",
+          "value": 25
+        }
       }
     },
     "hints": [
@@ -388,13 +574,21 @@
     "id": "rw-u1-l1-r4-p4",
     "type": "numeric",
     "prompt": "A taxi charges **$4** plus **$1.50** per mile. How much for **10** miles?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "taxi"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 19 }
+        "validation": {
+          "type": "numeric",
+          "value": 19
+        }
       }
     },
     "hints": [
@@ -409,13 +603,22 @@
     "id": "rw-u1-l1-r4-p5",
     "type": "numeric",
     "prompt": "A streaming plan costs **$8** per month plus **$1.25** for each extra screen. What is the cost with **3 extra screens**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "streaming" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "streaming"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 11.75, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 11.75,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -430,14 +633,33 @@
     "id": "rw-u1-l1-r5-p1",
     "type": "multiple-choice",
     "prompt": "Plan A: **$30 flat** per month. Plan B: **$10 plus $0.50 per GB**. For **30 GB**, which plan is cheaper?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Plan A ($\\$30$)", "whyWrong": "Plan A's flat fee is higher than Plan B's computed total at 30 GB." },
-          { "id": "b", "label": "Plan B ($\\$25$)" },
-          { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $\\$30$ versus $\\$25$ for 30 GB." }
+          {
+            "id": "a",
+            "label": "Plan A ($\\$30$)",
+            "whyWrong": "Compare each plan's total cost at the given usage."
+          },
+          {
+            "id": "b",
+            "label": "Plan B ($\\$25$)"
+          },
+          {
+            "id": "c",
+            "label": "Same cost",
+            "whyWrong": "Compute each plan's total at the given usage before comparing."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -457,7 +679,10 @@
       "type": "numeric",
       "data": {
         "placeholder": "Miles",
-        "validation": { "type": "numeric", "value": 6 }
+        "validation": {
+          "type": "numeric",
+          "value": 6
+        }
       }
     },
     "hints": [
@@ -477,7 +702,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 30 }
+        "validation": {
+          "type": "numeric",
+          "value": 30
+        }
       }
     },
     "hints": [
@@ -492,14 +720,33 @@
     "id": "rw-u1-l1-r5-p4",
     "type": "multiple-choice",
     "prompt": "Bulk nuts: **3 lb for $7.50** or **5 lb for $11.25**. Which is the better deal per pound?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "3 lb bag ($\\$2.50$/lb)", "whyWrong": "The 3 lb bag costs more per pound - $7.50 \\div 3$ is higher than $11.25 \\div 5$." },
-          { "id": "b", "label": "5 lb bag ($\\$2.25$/lb)" },
-          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$2.50$ vs $\\$2.25$." }
+          {
+            "id": "a",
+            "label": "3 lb bag ($\\$2.50$/lb)",
+            "whyWrong": "Divide price by weight for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "5 lb bag ($\\$2.25$/lb)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per lb",
+            "whyWrong": "The per-pound rates aren't equal — divide each package's price by its weight and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -520,7 +767,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 80 }
+        "validation": {
+          "type": "numeric",
+          "value": 80
+        }
       }
     },
     "hints": [
@@ -540,7 +790,10 @@
       "data": {
         "placeholder": "Dollars per lb",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 2 }
+        "validation": {
+          "type": "numeric",
+          "value": 2
+        }
       }
     },
     "hints": [
@@ -559,7 +812,10 @@
       "type": "numeric",
       "data": {
         "placeholder": "Copies per minute",
-        "validation": { "type": "numeric", "value": 30 }
+        "validation": {
+          "type": "numeric",
+          "value": 30
+        }
       }
     },
     "hints": [
@@ -577,9 +833,20 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "5 mph", "whyWrong": "Too low - $12 \\div 2$ is 6, not 5." },
-          { "id": "b", "label": "6 mph" },
-          { "id": "c", "label": "8 mph", "whyWrong": "Too high - 8 mph would cover 16 miles in 2 hours." }
+          {
+            "id": "a",
+            "label": "5 mph",
+            "whyWrong": "Too low — divide distance by time to find speed."
+          },
+          {
+            "id": "b",
+            "label": "6 mph"
+          },
+          {
+            "id": "c",
+            "label": "8 mph",
+            "whyWrong": "Too high - 8 mph would cover 16 miles in 2 hours."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -600,7 +867,11 @@
       "data": {
         "placeholder": "Dollars per oz",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 0.2, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 0.2,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -620,7 +891,11 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 1.5, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 1.5,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -635,14 +910,33 @@
     "id": "rw-u1-l1-r2-p6",
     "type": "multiple-choice",
     "prompt": "Bread A: **20 oz for $2.00**. Bread B: **24 oz for $2.88**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Bread A ($\\$0.10$/oz)" },
-          { "id": "b", "label": "Bread B ($\\$0.12$/oz)", "whyWrong": "Bread B costs more per ounce - $2.88 \\div 24$ is higher than $2.00 \\div 20$." },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.12$ per ounce." }
+          {
+            "id": "a",
+            "label": "Bread A ($\\$0.10$/oz)"
+          },
+          {
+            "id": "b",
+            "label": "Bread B ($\\$0.12$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "a"
       }
@@ -658,14 +952,33 @@
     "id": "rw-u1-l1-r2-p7",
     "type": "multiple-choice",
     "prompt": "Pasta A: **16 oz for $1.60**. Pasta B: **32 oz for $2.88**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Pasta A ($\\$0.10$/oz)", "whyWrong": "Pasta A costs more per ounce - $1.60 \\div 16$ is higher than $2.88 \\div 32$." },
-          { "id": "b", "label": "Pasta B ($\\$0.09$/oz)" },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.09$ per ounce." }
+          {
+            "id": "a",
+            "label": "Pasta A ($\\$0.10$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Pasta B ($\\$0.09$/oz)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -681,14 +994,33 @@
     "id": "rw-u1-l1-r2-p8",
     "type": "multiple-choice",
     "prompt": "Shampoo A: **8 oz for $4.00**. Shampoo B: **12 oz for $5.40**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Shampoo A ($\\$0.50$/oz)", "whyWrong": "Shampoo A costs more per ounce - $4.00 \\div 8$ is higher than $5.40 \\div 12$." },
-          { "id": "b", "label": "Shampoo B ($\\$0.45$/oz)" },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.50$ vs $\\$0.45$ per ounce." }
+          {
+            "id": "a",
+            "label": "Shampoo A ($\\$0.50$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Shampoo B ($\\$0.45$/oz)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -704,14 +1036,33 @@
     "id": "rw-u1-l1-r2-p9",
     "type": "multiple-choice",
     "prompt": "Cheese A: **2 lb for $9.00**. Cheese B: **3 lb for $12.00**. Which is the better deal per pound?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Cheese A ($\\$4.50$/lb)", "whyWrong": "Cheese A costs more per pound - $9.00 \\div 2$ is higher than $12.00 \\div 3$." },
-          { "id": "b", "label": "Cheese B ($\\$4.00$/lb)" },
-          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$4.50$ vs $\\$4.00$." }
+          {
+            "id": "a",
+            "label": "Cheese A ($\\$4.50$/lb)",
+            "whyWrong": "Divide price by weight for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "Cheese B ($\\$4.00$/lb)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per lb",
+            "whyWrong": "The per-pound rates aren't equal — divide each package's price by its weight and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -727,14 +1078,33 @@
     "id": "rw-u1-l1-r2-p10",
     "type": "multiple-choice",
     "prompt": "Detergent A: **50 oz for $5.00**. Detergent B: **100 oz for $11.00**. Which is the better deal per ounce?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Detergent A ($\\$0.10$/oz)" },
-          { "id": "b", "label": "Detergent B ($\\$0.11$/oz)", "whyWrong": "Detergent B costs more per ounce - $11.00 \\div 100$ is higher than $5.00 \\div 50$." },
-          { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.11$ per ounce." }
+          {
+            "id": "a",
+            "label": "Detergent A ($\\$0.10$/oz)"
+          },
+          {
+            "id": "b",
+            "label": "Detergent B ($\\$0.11$/oz)",
+            "whyWrong": "Divide price by ounces for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "c",
+            "label": "Same price per oz",
+            "whyWrong": "The per-ounce rates aren't equal — divide each package's price by its ounces and compare."
+          }
         ],
         "correctOptionId": "a"
       }
@@ -755,7 +1125,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 4 }
+        "validation": {
+          "type": "numeric",
+          "value": 4
+        }
       }
     },
     "hints": [
@@ -770,13 +1143,21 @@
     "id": "rw-u1-l1-r3-p7",
     "type": "numeric",
     "prompt": "Gas costs **$4.00** per gallon. How much to fill **9 gallons**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "gas" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "gas"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 36 }
+        "validation": {
+          "type": "numeric",
+          "value": 36
+        }
       }
     },
     "hints": [
@@ -795,7 +1176,10 @@
       "type": "numeric",
       "data": {
         "placeholder": "Slices",
-        "validation": { "type": "numeric", "value": 6 }
+        "validation": {
+          "type": "numeric",
+          "value": 6
+        }
       }
     },
     "hints": [
@@ -815,7 +1199,11 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 3, "tolerance": 0.01 }
+        "validation": {
+          "type": "numeric",
+          "value": 3,
+          "tolerance": 0.01
+        }
       }
     },
     "hints": [
@@ -834,9 +1222,20 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "5 markers", "whyWrong": "You can afford more - 5 markers leave $\\$2.50$ unspent." },
-          { "id": "b", "label": "6 markers" },
-          { "id": "c", "label": "7 markers", "whyWrong": "7 markers cost $\\$10.50$, which is over your $\\$10$ budget." }
+          {
+            "id": "a",
+            "label": "5 markers",
+            "whyWrong": "You can afford more - 5 markers leave $\\$2.50$ unspent."
+          },
+          {
+            "id": "b",
+            "label": "6 markers"
+          },
+          {
+            "id": "c",
+            "label": "7 markers",
+            "whyWrong": "7 markers cost $\\$10.50$, which is over your $\\$10$ budget."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -852,13 +1251,21 @@
     "id": "rw-u1-l1-r4-p6",
     "type": "numeric",
     "prompt": "A taxi charges **$5** plus **$3** per mile. How much for **4** miles?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "taxi"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 17 }
+        "validation": {
+          "type": "numeric",
+          "value": 17
+        }
       }
     },
     "hints": [
@@ -873,13 +1280,21 @@
     "id": "rw-u1-l1-r4-p7",
     "type": "numeric",
     "prompt": "A gym charges a **$30** joining fee plus **$20** per month. What is the total cost for **5 months**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "gym" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "gym"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 130 }
+        "validation": {
+          "type": "numeric",
+          "value": 130
+        }
       }
     },
     "hints": [
@@ -894,13 +1309,21 @@
     "id": "rw-u1-l1-r4-p8",
     "type": "numeric",
     "prompt": "A phone plan costs **$15** per month plus **$0.20** per minute. What is the bill for **40 minutes**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "phone" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "phone"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 23 }
+        "validation": {
+          "type": "numeric",
+          "value": 23
+        }
       }
     },
     "hints": [
@@ -915,13 +1338,21 @@
     "id": "rw-u1-l1-r4-p9",
     "type": "numeric",
     "prompt": "A car rental costs **$30** plus **$0.50** per mile. How much for **20** miles?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "taxi" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "taxi"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 40 }
+        "validation": {
+          "type": "numeric",
+          "value": 40
+        }
       }
     },
     "hints": [
@@ -936,13 +1367,21 @@
     "id": "rw-u1-l1-r4-p10",
     "type": "numeric",
     "prompt": "A streaming plan costs **$10** per month plus **$2** for each extra screen. What is the cost with **4 extra screens**?",
-    "visual": { "kind": "scenario-illustration", "props": { "type": "streaming" } },
+    "visual": {
+      "kind": "scenario-illustration",
+      "props": {
+        "type": "streaming"
+      }
+    },
     "interaction": {
       "type": "numeric",
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 18 }
+        "validation": {
+          "type": "numeric",
+          "value": 18
+        }
       }
     },
     "hints": [
@@ -957,14 +1396,33 @@
     "id": "rw-u1-l1-r5-p6",
     "type": "multiple-choice",
     "prompt": "Plan A: **$40 flat** per month. Plan B: **$20 plus $1 per GB**. For **25 GB**, which plan is cheaper?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Plan A ($\\$40$)" },
-          { "id": "b", "label": "Plan B ($\\$45$)", "whyWrong": "Plan B totals $\\$45$ at 25 GB, which is more than Plan A's $\\$40$." },
-          { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $\\$40$ versus $\\$45$ for 25 GB." }
+          {
+            "id": "a",
+            "label": "Plan A ($\\$40$)"
+          },
+          {
+            "id": "b",
+            "label": "Plan B ($\\$45$)",
+            "whyWrong": "Work out each plan's total at the given usage, then compare."
+          },
+          {
+            "id": "c",
+            "label": "Same cost",
+            "whyWrong": "Compute each plan's total at the given usage before comparing."
+          }
         ],
         "correctOptionId": "a"
       }
@@ -984,7 +1442,10 @@
       "type": "numeric",
       "data": {
         "placeholder": "Miles",
-        "validation": { "type": "numeric", "value": 2 }
+        "validation": {
+          "type": "numeric",
+          "value": 2
+        }
       }
     },
     "hints": [
@@ -1004,7 +1465,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 48 }
+        "validation": {
+          "type": "numeric",
+          "value": 48
+        }
       }
     },
     "hints": [
@@ -1019,14 +1483,33 @@
     "id": "rw-u1-l1-r5-p9",
     "type": "multiple-choice",
     "prompt": "Bulk rice: **4 lb for $10.00** or **6 lb for $13.50**. Which is the better deal per pound?",
-    "visual": { "kind": "rate-comparison", "props": { "items": ["A", "B"] } },
+    "visual": {
+      "kind": "rate-comparison",
+      "props": {
+        "items": [
+          "A",
+          "B"
+        ]
+      }
+    },
     "interaction": {
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "4 lb bag ($\\$2.50$/lb)", "whyWrong": "The 4 lb bag costs more per pound - $10.00 \\div 4$ is higher than $13.50 \\div 6$." },
-          { "id": "b", "label": "6 lb bag ($\\$2.25$/lb)" },
-          { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$2.50$ vs $\\$2.25$." }
+          {
+            "id": "a",
+            "label": "4 lb bag ($\\$2.50$/lb)",
+            "whyWrong": "Divide price by weight for each option — the cheaper one has the lower unit rate."
+          },
+          {
+            "id": "b",
+            "label": "6 lb bag ($\\$2.25$/lb)"
+          },
+          {
+            "id": "c",
+            "label": "Same price per lb",
+            "whyWrong": "The per-pound rates aren't equal — divide each package's price by its weight and compare."
+          }
         ],
         "correctOptionId": "b"
       }
@@ -1047,7 +1530,10 @@
       "data": {
         "placeholder": "Dollars",
         "unit": "$",
-        "validation": { "type": "numeric", "value": 40 }
+        "validation": {
+          "type": "numeric",
+          "value": 40
+        }
       }
     },
     "hints": [

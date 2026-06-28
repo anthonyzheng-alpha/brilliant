@@ -305,7 +305,7 @@
         "options": [
           { "id": "a", "label": "$y = -2x$" },
           { "id": "b", "label": "$y = 2x$", "whyWrong": "The slope sign is wrong — the line falls to the right, so the slope is negative." },
-          { "id": "c", "label": "$y = -2x + 2$", "whyWrong": "This adds an intercept, but the line passes through the origin where $b = 0$." }
+          { "id": "c", "label": "$y = -2x + 2$", "whyWrong": "This adds an intercept, but the line crosses the y-axis at the origin." }
         ],
         "correctOptionId": "a"
       }

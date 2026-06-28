@@ -156,10 +156,10 @@ function buildPrompt(req: GenerateRequest): string {
     `Topic / lesson: "${req.topic}".`,
     `Required interaction type: ${req.problemType}.`,
     req.problemType === 'multiple-choice'
-      ? `Provide exactly 4 options with short ids (a, b, c, d), set correctOptionId, and give a brief whyWrong for each incorrect option.`
+      ? `Provide exactly 4 options with short ids (a, b, c, d), set correctOptionId, and give a brief whyWrong for each incorrect option. whyWrong must describe the mistake or concept only — never state the correct answer, named factor pairs, evaluated square roots, completed arithmetic that yields the answer, or map a discriminant/coefficient pattern to the root count that matches this problem.`
       : `Provide a single exact numericAnswer (a number) and a short placeholder.`,
     `${difficultyLine} Use $...$ for any math.`,
-    `Always include a clear explanation and a one-sentence misconception.`,
+    `Always include a clear explanation and a one-sentence misconception. The misconception must describe the mistake or concept only — never state the correct answer, named factor pairs, evaluated square roots, completed arithmetic that yields the answer, or map a discriminant/coefficient pattern to the root count that matches this problem.`,
     `For any problem whose answer is a number, you MUST also return answerValue (the exact answer) and verifyExpression — a math.js arithmetic expression built from the problem's given numbers that evaluates to answerValue (e.g. for "x + 5 = 2" use "2 - 5"). verifyExpression must contain no variables and no "=", and must not be a bare copy of the answer. For multiple-choice, answerValue must equal the numeric value shown in the correct option's label.`,
     examplesBlock,
     avoidBlock,

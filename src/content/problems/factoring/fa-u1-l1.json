@@ -890,7 +890,7 @@
       "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 8x + 12 = (x+2)(x+6)$ because $2 \\times 6 = 12$ and $2 + 6 = 8$.",
-    "misconception": "Several pairs multiply to 12, so check which one also adds to 8 - here it's 2 and 6, not 3 and 4."
+    "misconception": "Several pairs multiply to the constant — test each pair against the middle coefficient too."
   },
   {
     "id": "fa-u1-l1-r2-p6",
@@ -1070,7 +1070,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 9 = (x+3)(x-3)$ — a difference of squares, since $9 = 3^2$.",
-    "misconception": "A difference of squares uses the square root of the constant (here 3), not the constant itself (9)."
+    "misconception": "Use the square root of the constant term, not the constant itself."
   },
   {
     "id": "fa-u1-l1-r3-p7",
@@ -1100,7 +1100,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 16 = (x+4)(x-4)$ — a difference of squares, since $16 = 4^2$.",
-    "misconception": "Use the square root of 16, which is 4, not 2 or 8."
+    "misconception": "Take the square root of the constant term, not the constant itself."
   },
   {
     "id": "fa-u1-l1-r3-p8",
@@ -1130,7 +1130,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 25 = (x+5)(x-5)$ — a difference of squares, since $25 = 5^2$.",
-    "misconception": "Use the square root of 25, which is 5, not 10."
+    "misconception": "Take the square root of the constant term, not the constant itself."
   },
   {
     "id": "fa-u1-l1-r3-p9",
@@ -1160,7 +1160,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 36 = (x+6)(x-6)$ — a difference of squares, since $36 = 6^2$.",
-    "misconception": "Use the square root of 36, which is 6, not 4."
+    "misconception": "Take the square root of the constant term, not the constant itself."
   },
   {
     "id": "fa-u1-l1-r3-p10",
@@ -1190,7 +1190,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
-    "misconception": "Use the square root of 49, which is 7, not 14."
+    "misconception": "Take the square root of the constant term, not the constant itself."
   },
   {
     "id": "fa-u1-l1-r4-p6",
@@ -1220,7 +1220,7 @@
       "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 10x + 21 = (x+3)(x+7)$ because $3 \\times 7 = 21$ and $3 + 7 = 10$.",
-    "misconception": "List the factor pairs of 21 (1·21, 3·7) and pick the pair that also adds to 10."
+    "misconception": "List all factor pairs of the constant, then check which pair also adds to the middle coefficient."
   },
   {
     "id": "fa-u1-l1-r4-p7",
@@ -1250,7 +1250,7 @@
       "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 11x + 24 = (x+3)(x+8)$ because $3 \\times 8 = 24$ and $3 + 8 = 11$.",
-    "misconception": "Several pairs multiply to 24, so check which one also adds to 11 - here it's 3 and 8, not 4 and 6."
+    "misconception": "Several pairs multiply to the constant — test each pair against the middle coefficient too."
   },
   {
     "id": "fa-u1-l1-r4-p8",
@@ -1280,7 +1280,7 @@
       "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 12x + 35 = (x+5)(x+7)$ because $5 \\times 7 = 35$ and $5 + 7 = 12$.",
-    "misconception": "List the factor pairs of 35 (1·35, 5·7) and pick the pair that also adds to 12."
+    "misconception": "List all factor pairs of the constant, then check which pair also adds to the middle coefficient."
   },
   {
     "id": "fa-u1-l1-r4-p9",
@@ -1310,7 +1310,7 @@
       "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 64 = (x+8)(x-8)$ — a difference of squares, since $64 = 8^2$.",
-    "misconception": "First decide which pattern applies: no middle term and a perfect square means difference of squares, so use $\\sqrt{64} = 8$."
+    "misconception": "No middle term and a perfect-square constant means difference of squares — use the square root of the constant."
   },
   {
     "id": "fa-u1-l1-r4-p10",
@@ -1340,7 +1340,7 @@
       "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 13x + 36 = (x+4)(x+9)$ because $4 \\times 9 = 36$ and $4 + 9 = 13$.",
-    "misconception": "Several pairs multiply to 36, so check which one also adds to 13 - here it's 4 and 9."
+    "misconception": "Several pairs multiply to the constant — test each pair against the middle coefficient too."
   },
   {
     "id": "fa-u1-l1-r5-p6",
@@ -1430,7 +1430,7 @@
       "Build the matching $+$ and $-$ pair from that square root, then drag them into the slots."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
-    "misconception": "Identify the pattern first: no middle term plus a perfect square means difference of squares, using $\\sqrt{49} = 7$."
+    "misconception": "No middle term and a perfect-square constant means difference of squares — use the square root of the constant."
   },
   {
     "id": "fa-u1-l1-r5-p9",

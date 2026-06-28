@@ -442,7 +442,7 @@
       "data": {
         "options": [
           { "id": "a", "label": "$x = -2$" },
-          { "id": "b", "label": "$x = 2$", "whyWrong": "$2^3 = 8$, not $-8$; the sign must be negative." },
+          { "id": "b", "label": "$x = 2$", "whyWrong": "An odd root keeps the sign of the radicand — check whether your value cubed matches the right-hand side." },
           { "id": "c", "label": "$x = \\pm 2$", "whyWrong": "A cube keeps the sign, so there is only one real root." }
         ],
         "correctOptionId": "a"

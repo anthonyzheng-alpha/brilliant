@@ -13,7 +13,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 2$ or $x = 5$.",
-    "misconception": "The root of $(x-2)$ is $+2$, not $-2$ - it is the value that makes the factor zero."
+    "misconception": "Flip the sign of the number inside each factor — a minus means a positive root and vice versa."
   },
   {
     "id": "rp-u1-l1-r1-p2",
@@ -29,7 +29,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 1$ or $x = 4$.",
-    "misconception": "The root of $(x-4)$ is $+4$, not $-4$ - it is the value that makes the factor zero."
+    "misconception": "Flip the sign of the number inside each factor — a minus means a positive root and vice versa."
   },
   {
     "id": "rp-u1-l1-r1-p3",
@@ -45,7 +45,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -3$ or $x = 2$.",
-    "misconception": "The root of $(x+3)$ is $-3$ - flip the sign of the number inside the factor."
+    "misconception": "Flip the sign of the number inside each factor — a minus means a positive root and vice versa."
   },
   {
     "id": "rp-u1-l1-r1-p4",
@@ -61,7 +61,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -1$ or $x = -6$.",
-    "misconception": "Both factors add a number, so both roots are negative."
+    "misconception": "Each factor's form determines its root — set $(x + k)$ or $(x - k)$ equal to zero and solve."
   },
   {
     "id": "rp-u1-l1-r1-p5",
@@ -77,7 +77,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 3$ or $x = -7$.",
-    "misconception": "The root of $(x+7)$ is $-7$ - flip the sign of the number inside the factor."
+    "misconception": "Flip the sign of the number inside each factor — a minus means a positive root and vice versa."
   },
   {
     "id": "rp-u1-l1-r1-p6",
@@ -89,8 +89,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "$x = 4$" },
-          { "id": "b", "label": "$x = 2$", "whyWrong": "The factor is $(x+2)$, whose root is $-2$, not $2$." },
-          { "id": "c", "label": "$x = -4$", "whyWrong": "The factor $(x-4)$ has root $+4$, not $-4$." }
+          { "id": "b", "label": "$x = 2$", "whyWrong": "Check which factor your value came from — roots come from setting a factor equal to zero." },
+          { "id": "c", "label": "$x = -4$", "whyWrong": "You flipped the sign — for $(x - k)$, the root matches the sign of $k$ inside the factor." }
         ],
         "correctOptionId": "a"
       }
@@ -116,7 +116,7 @@
       "Set each factor equal to zero and solve; the lone $x$ factor also gives a root, so don't skip it."
     ],
     "explanation": "Setting each factor to zero gives $x = 0$ or $x = 7$.",
-    "misconception": "A lone $x$ factor contributes the root $0$ - do not skip it."
+    "misconception": "Don't overlook a bare $x$ factor — set each factor in the product equal to zero."
   },
   {
     "id": "rp-u1-l1-r1-p8",
@@ -132,7 +132,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -5$ or $x = 5$.",
-    "misconception": "The two roots are opposites here, one negative and one positive."
+    "misconception": "Set each binomial factor equal to zero — difference-of-squares problems have two factors to check."
   },
   {
     "id": "rp-u1-l1-r1-p9",
@@ -144,8 +144,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "$x = -8$" },
-          { "id": "b", "label": "$x = 8$", "whyWrong": "The factor $(x+8)$ has root $-8$, not $8$." },
-          { "id": "c", "label": "$x = -1$", "whyWrong": "The factor $(x-1)$ has root $+1$, not $-1$." }
+          { "id": "b", "label": "$x = 8$", "whyWrong": "You flipped the sign — for $(x + k)$, the root is the opposite of $k$ inside the factor." },
+          { "id": "c", "label": "$x = -1$", "whyWrong": "You flipped the sign — for $(x - k)$, the root matches the sign of $k$ inside the factor." }
         ],
         "correctOptionId": "a"
       }
@@ -171,7 +171,7 @@
       "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 6$ or $x = 3$.",
-    "misconception": "The root of $(x-6)$ is $+6$ - it is the value that makes the factor zero."
+    "misconception": "Flip the sign of the number inside each factor — a minus means a positive root and vice versa."
   },
   {
     "id": "rp-u1-l1-r2-p1",
@@ -203,7 +203,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 7x + 12 = (x+3)(x+4)$, so the roots are $x = -3$ and $x = -4$.",
-    "misconception": "Positive constant and positive middle term means both roots are negative."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p3",
@@ -219,7 +219,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - x - 12 = (x-4)(x+3)$, so the roots are $x = 4$ and $x = -3$.",
-    "misconception": "A negative constant means the two roots have opposite signs."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p4",
@@ -235,7 +235,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$, so the roots are $x = -5$ and $x = 3$.",
-    "misconception": "A negative constant means the two roots have opposite signs."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p5",
@@ -251,7 +251,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 9x + 20 = (x-4)(x-5)$, so the roots are $x = 4$ and $x = 5$.",
-    "misconception": "Positive constant with a negative middle term means both roots are positive."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p6",
@@ -267,7 +267,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + x - 6 = (x+3)(x-2)$, so the roots are $x = -3$ and $x = 2$.",
-    "misconception": "A negative constant means the two roots have opposite signs."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p7",
@@ -283,7 +283,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 4x - 5 = (x-5)(x+1)$, so the roots are $x = 5$ and $x = -1$.",
-    "misconception": "A negative constant means the two roots have opposite signs."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p8",
@@ -299,7 +299,7 @@
       "Write it as two binomials that differ only by a sign, then set each factor equal to zero."
     ],
     "explanation": "$x^2 - 9 = (x-3)(x+3)$, so the roots are $x = 3$ and $x = -3$.",
-    "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
+    "misconception": "Factor as a difference of squares, then set each binomial equal to zero."
   },
   {
     "id": "rp-u1-l1-r2-p9",
@@ -315,7 +315,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$, so the roots are $x = -2$ and $x = -4$.",
-    "misconception": "Positive constant and positive middle term means both roots are negative."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r2-p10",
@@ -331,7 +331,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 8x + 15 = (x-3)(x-5)$, so the roots are $x = 3$ and $x = 5$.",
-    "misconception": "Positive constant with a negative middle term means both roots are positive."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r3-p1",
@@ -346,7 +346,7 @@
       "Substitute $a=1, b=-5, c=6$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{5 \\pm \\sqrt{1}}{2} = \\dfrac{5 \\pm 1}{2}$, giving $x = 3$ and $x = 2$.",
-    "misconception": "$-b$ means $-(-5) = +5$ - watch the sign when $b$ is negative."
+    "misconception": "When $b$ is negative, $-b$ flips its sign — watch the double negative."
   },
   {
     "id": "rp-u1-l1-r3-p2",
@@ -361,7 +361,7 @@
       "Substitute $a=1, b=3, c=-10$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-3 \\pm \\sqrt{49}}{2} = \\dfrac{-3 \\pm 7}{2}$, giving $x = 2$ and $x = -5$.",
-    "misconception": "$-4ac = -4(1)(-10) = +40$ - two negatives make the term positive."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r3-p3",
@@ -376,7 +376,7 @@
       "Substitute $a=1, b=-6, c=8$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{6 \\pm \\sqrt{4}}{2} = \\dfrac{6 \\pm 2}{2}$, giving $x = 4$ and $x = 2$.",
-    "misconception": "$-b$ means $-(-6) = +6$ - watch the sign when $b$ is negative."
+    "misconception": "When $b$ is negative, $-b$ flips its sign — watch the double negative."
   },
   {
     "id": "rp-u1-l1-r3-p4",
@@ -391,7 +391,7 @@
       "Substitute $a=1, b=1, c=-12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-1 \\pm \\sqrt{49}}{2} = \\dfrac{-1 \\pm 7}{2}$, giving $x = 3$ and $x = -4$.",
-    "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r3-p5",
@@ -406,7 +406,7 @@
       "Substitute $a=1, b=-2, c=-8$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{2 \\pm \\sqrt{36}}{2} = \\dfrac{2 \\pm 6}{2}$, giving $x = 4$ and $x = -2$.",
-    "misconception": "$-4ac = -4(1)(-8) = +32$ - two negatives make the term positive."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r3-p6",
@@ -421,7 +421,7 @@
       "Substitute $a=1, b=-7, c=12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{7 \\pm \\sqrt{1}}{2} = \\dfrac{7 \\pm 1}{2}$, giving $x = 4$ and $x = 3$.",
-    "misconception": "$-b$ means $-(-7) = +7$ - watch the sign when $b$ is negative."
+    "misconception": "When $b$ is negative, $-b$ flips its sign — watch the double negative."
   },
   {
     "id": "rp-u1-l1-r3-p7",
@@ -451,7 +451,7 @@
       "Substitute $a=2, b=-7, c=3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{7 \\pm \\sqrt{25}}{4} = \\dfrac{7 \\pm 5}{4}$, giving $x = 3$ and $x = \\tfrac{1}{2}$.",
-    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+    "misconception": "When $a \\neq 1$, the denominator is $2a$, not $2$."
   },
   {
     "id": "rp-u1-l1-r3-p9",
@@ -466,7 +466,7 @@
       "Substitute $a=2, b=5, c=-3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-5 \\pm \\sqrt{49}}{4} = \\dfrac{-5 \\pm 7}{4}$, giving $x = \\tfrac{1}{2}$ and $x = -3$.",
-    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+    "misconception": "When $a \\neq 1$, the denominator is $2a$, not $2$."
   },
   {
     "id": "rp-u1-l1-r3-p10",
@@ -481,7 +481,7 @@
       "Substitute $a=1, b=-4, c=-12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{4 \\pm \\sqrt{64}}{2} = \\dfrac{4 \\pm 8}{2}$, giving $x = 6$ and $x = -2$.",
-    "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r4-p1",
@@ -507,8 +507,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "No real roots" },
-          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
-          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+          { "id": "b", "label": "One real root", "whyWrong": "Exactly one real root requires the discriminant to equal zero — compute $b^2 - 4ac$ and check." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots require a positive discriminant — compute yours and compare to zero." }
         ],
         "correctOptionId": "a"
       }
@@ -518,7 +518,7 @@
       "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $16 - 28 = -12$. A negative discriminant means no real roots.",
-    "misconception": "A negative discriminant means no real solutions, not one."
+    "misconception": "Count the roots only after computing the discriminant — compare $b^2 - 4ac$ to zero before choosing a category."
   },
   {
     "id": "rp-u1-l1-r4-p3",
@@ -529,8 +529,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "One real root" },
-          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots need a positive discriminant, not $0$." },
-          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a (repeated) real root." }
+          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots require a positive discriminant — compute $b^2 - 4ac$ before deciding." },
+          { "id": "c", "label": "No real roots", "whyWrong": "No real roots require a negative discriminant — compute $b^2 - 4ac$ and check its sign." }
         ],
         "correctOptionId": "a"
       }
@@ -541,7 +541,7 @@
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $36 - 36 = 0$, so there is exactly one (repeated) real root.",
-    "misconception": "A discriminant of $0$ means one repeated root, not zero roots."
+    "misconception": "Count the roots only after computing the discriminant — compare $b^2 - 4ac$ to zero before choosing a category."
   },
   {
     "id": "rp-u1-l1-r4-p4",
@@ -556,7 +556,7 @@
       "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 9 - (-16) = 9 + 16 = 25$.",
-    "misconception": "$-4ac = -4(1)(-4) = +16$ - subtracting a negative adds."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r4-p5",
@@ -567,8 +567,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "No real roots" },
-          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
-          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+          { "id": "b", "label": "One real root", "whyWrong": "Exactly one real root requires the discriminant to equal zero — compute $b^2 - 4ac$ and check." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots require a positive discriminant — compute yours and compare to zero." }
         ],
         "correctOptionId": "a"
       }
@@ -578,7 +578,7 @@
       "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $1 - 4 = -3$. A negative discriminant means no real roots.",
-    "misconception": "A negative discriminant means no real solutions."
+    "misconception": "Compare your discriminant to zero before deciding whether real roots exist — compute $b^2 - 4ac$ first."
   },
   {
     "id": "rp-u1-l1-r4-p6",
@@ -593,7 +593,7 @@
       "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 8 = 8$.",
-    "misconception": "Use $a = 2$ in $4ac$, giving $4(2)(1) = 8$, not $4$."
+    "misconception": "Substitute the actual value of $a$ into $4ac$ — don't assume $a = 1$."
   },
   {
     "id": "rp-u1-l1-r4-p7",
@@ -604,8 +604,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "One real root" },
-          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots need a positive discriminant, not $0$." },
-          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a (repeated) real root." }
+          { "id": "b", "label": "Two real roots", "whyWrong": "Two distinct roots require a positive discriminant — compute $b^2 - 4ac$ before deciding." },
+          { "id": "c", "label": "No real roots", "whyWrong": "No real roots require a negative discriminant — compute $b^2 - 4ac$ and check its sign." }
         ],
         "correctOptionId": "a"
       }
@@ -616,7 +616,7 @@
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $100 - 100 = 0$, so there is exactly one (repeated) real root.",
-    "misconception": "A discriminant of $0$ means one repeated root, not two."
+    "misconception": "Count the roots only after computing the discriminant — compare $b^2 - 4ac$ to zero before choosing a category."
   },
   {
     "id": "rp-u1-l1-r4-p8",
@@ -642,8 +642,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "One repeated real root" },
-          { "id": "b", "label": "Two distinct real roots", "whyWrong": "Distinct roots need a positive discriminant, not $0$." },
-          { "id": "c", "label": "No real roots", "whyWrong": "A discriminant of $0$ still gives a real (repeated) root." }
+          { "id": "b", "label": "Two distinct real roots", "whyWrong": "Two distinct roots require a positive discriminant — compute $b^2 - 4ac$ before deciding." },
+          { "id": "c", "label": "No real roots", "whyWrong": "No real roots require a negative discriminant — compute $b^2 - 4ac$ and check its sign." }
         ],
         "correctOptionId": "a"
       }
@@ -654,7 +654,7 @@
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $0$, so $x^2 + 4x + 4 = (x+2)^2$ has the single repeated root $x = -2$.",
-    "misconception": "A perfect-square trinomial has a discriminant of $0$ and one repeated root."
+    "misconception": "Check whether the quadratic is a perfect square by factoring or computing the discriminant — then interpret the result."
   },
   {
     "id": "rp-u1-l1-r4-p10",
@@ -669,7 +669,7 @@
       "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 4 - (-12) = 4 + 12 = 16$.",
-    "misconception": "$-4ac = -4(3)(-1) = +12$ - subtracting a negative adds."
+    "misconception": "Two negatives inside $-4ac$ make that term positive — track the signs carefully."
   },
   {
     "id": "rp-u1-l1-r5-p1",
@@ -701,7 +701,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 2x - 15 = (x-5)(x+3)$, so the roots are $x = 5$ and $x = -3$.",
-    "misconception": "A negative constant means the two roots have opposite signs."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r5-p3",
@@ -727,8 +727,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "No real roots" },
-          { "id": "b", "label": "One real root", "whyWrong": "A single root needs a discriminant of exactly $0$." },
-          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots need a positive discriminant." }
+          { "id": "b", "label": "One real root", "whyWrong": "Exactly one real root requires the discriminant to equal zero — compute $b^2 - 4ac$ and check." },
+          { "id": "c", "label": "Two real roots", "whyWrong": "Two real roots require a positive discriminant — compute yours and compare to zero." }
         ],
         "correctOptionId": "a"
       }
@@ -738,7 +738,7 @@
       "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $9 - 16 = -7$. A negative discriminant means no real roots.",
-    "misconception": "A negative discriminant means no real solutions."
+    "misconception": "Compare your discriminant to zero before deciding whether real roots exist — compute $b^2 - 4ac$ first."
   },
   {
     "id": "rp-u1-l1-r5-p5",
@@ -754,7 +754,7 @@
       "Write it as two binomials that differ only by a sign, then set each factor equal to zero."
     ],
     "explanation": "$x^2 - 16 = (x-4)(x+4)$, so the roots are $x = 4$ and $x = -4$.",
-    "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
+    "misconception": "Factor as a difference of squares, then set each binomial equal to zero."
   },
   {
     "id": "rp-u1-l1-r5-p6",
@@ -766,8 +766,8 @@
       "data": {
         "options": [
           { "id": "a", "label": "$x = -9$" },
-          { "id": "b", "label": "$x = 9$", "whyWrong": "The factor $(x+9)$ has root $-9$, not $9$." },
-          { "id": "c", "label": "$x = -4$", "whyWrong": "The factor $(x-4)$ has root $+4$, not $-4$." }
+          { "id": "b", "label": "$x = 9$", "whyWrong": "You flipped the sign — for $(x + k)$, the root is the opposite of $k$ inside the factor." },
+          { "id": "c", "label": "$x = -4$", "whyWrong": "You flipped the sign — for $(x - k)$, the root matches the sign of $k$ inside the factor." }
         ],
         "correctOptionId": "a"
       }
@@ -793,7 +793,7 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$, so the roots are $x = -2$ and $x = -3$.",
-    "misconception": "Positive constant and positive middle term means both roots are negative."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   },
   {
     "id": "rp-u1-l1-r5-p8",
@@ -808,7 +808,7 @@
       "Substitute $a=2, b=-5, c=-3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{5 \\pm \\sqrt{49}}{4} = \\dfrac{5 \\pm 7}{4}$, giving $x = 3$ and $x = -\\tfrac{1}{2}$.",
-    "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
+    "misconception": "When $a \\neq 1$, the denominator is $2a$, not $2$."
   },
   {
     "id": "rp-u1-l1-r5-p9",
@@ -823,7 +823,7 @@
       "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 16 = 0$, which signals one repeated root.",
-    "misconception": "A discriminant of $0$ is valid - it means the quadratic is a perfect square."
+    "misconception": "A discriminant of zero is a valid result — double-check your arithmetic if you ruled that case out too soon."
   },
   {
     "id": "rp-u1-l1-r5-p10",
@@ -839,6 +839,6 @@
       "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$, so the roots are $x = 3$ and $x = 4$.",
-    "misconception": "Positive constant with a negative middle term means both roots are positive."
+    "misconception": "Each root comes from one factor set to zero — match the sign inside that factor to find $x$."
   }
 ]
