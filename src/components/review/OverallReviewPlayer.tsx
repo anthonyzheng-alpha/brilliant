@@ -6,7 +6,7 @@ import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from '../lesson/FeedbackPanel'
 import { isAnswerValid, hasValidInput } from '../../lib/validation'
-import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
+import { resolveWrongLine, resolveWrongReason, resolveIncorrectFeedbackTitle } from '../../lib/problemFeedback'
 import { useAuthStore } from '../../stores/authStore'
 import { useStruggleStore } from '../../stores/struggleStore'
 import { useSettingsStore } from '../../stores/settingsStore'
@@ -74,12 +74,19 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const [ended, setEnded] = useState(false)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
-    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
   >(() => {
     if (!pausedSession) return { kind: 'idle' }
     if (pausedSession.feedback.kind === 'incorrect') {
-      return { ...pausedSession.feedback, shake: false }
+      const fb = pausedSession.feedback
+      return {
+        ...fb,
+        title:
+          fb.title ??
+          resolveIncorrectFeedbackTitle(pausedSession.problem, pausedSession.answer),
+        shake: false,
+      }
     }
     return pausedSession.feedback
   })
@@ -264,6 +271,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
       setFeedback({
         kind: 'incorrect',
         reason: resolveWrongReason(problem, answer),
+        title: resolveIncorrectFeedbackTitle(problem, answer),
         shake: true,
       })
       setTimeout(

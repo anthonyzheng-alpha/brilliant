@@ -5,7 +5,7 @@ import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from './FeedbackPanel'
 import { isAnswerValid, hasValidInput } from '../../lib/validation'
-import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
+import { resolveWrongLine, resolveWrongReason, resolveIncorrectFeedbackTitle } from '../../lib/problemFeedback'
 import { useSettingsStore } from '../../stores/settingsStore'
 import { useStruggleStore } from '../../stores/struggleStore'
 import { useAuthStore } from '../../stores/authStore'
@@ -42,7 +42,7 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
   const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
-    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
   >({ kind: 'idle' })
 
@@ -109,7 +109,12 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
       setFeedback({ kind: 'correct', explanation: problem.explanation })
     } else {
       setWrongLine(resolveWrongLine(problem, answer))
-      setFeedback({ kind: 'incorrect', reason: resolveWrongReason(problem, answer), shake: true })
+      setFeedback({
+        kind: 'incorrect',
+        reason: resolveWrongReason(problem, answer),
+        title: resolveIncorrectFeedbackTitle(problem, answer),
+        shake: true,
+      })
       setTimeout(() => setPhase('failed'), 600)
     }
   }

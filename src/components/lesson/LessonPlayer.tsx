@@ -8,7 +8,7 @@ import { FeedbackPanel } from './FeedbackPanel'
 import { MiniLessonView } from './MiniLessonView'
 import { LessonTest } from './LessonTest'
 import { isAnswerValid, hasValidInput } from '../../lib/validation'
-import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
+import { resolveWrongLine, resolveWrongReason, resolveIncorrectFeedbackTitle } from '../../lib/problemFeedback'
 import { isMiniLessonSeen, markMiniLessonSeen } from '../../lib/storage'
 import { useProgressStore } from '../../stores/progressStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
@@ -98,7 +98,7 @@ export function LessonPlayer({
   const [hintsRevealed, setHintsRevealed] = useState(0)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
-    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
     | { kind: 'complete'; lessonTitle: string }
     | { kind: 'milestone'; lessonTitle: string }
@@ -189,6 +189,7 @@ export function LessonPlayer({
       setFeedback({
         kind: 'incorrect',
         reason: resolveWrongReason(problem, answer),
+        title: resolveIncorrectFeedbackTitle(problem, answer),
         shake: true,
       })
       setTimeout(() => setFeedback((f) => (f.kind === 'incorrect' ? { ...f, shake: false } : f)), 400)
@@ -450,7 +451,7 @@ export function LessonPlayer({
               >
                 ← Previous
               </button>
-              {problemIndex < maxProblemIndex && (
+              {problemIndex < maxProblemIndex && feedback.kind === 'idle' && (
                 <button
                   type="button"
                   className="btn btn--ghost btn--sm"

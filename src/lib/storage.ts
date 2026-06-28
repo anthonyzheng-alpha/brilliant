@@ -178,7 +178,7 @@ export type OverallReviewSession = {
   answer: AnswerValue
   feedback:
     | { kind: 'idle' }
-    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
   inputLocked: boolean
   wrongLine: { slope: number; intercept: number } | null

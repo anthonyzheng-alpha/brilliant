@@ -6,7 +6,7 @@ import './LessonPlayer.css'
 
 type FeedbackState =
   | { kind: 'idle' }
-  | { kind: 'incorrect'; reason: string; shake?: boolean }
+  | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
   | { kind: 'correct'; explanation: string }
   | { kind: 'complete'; lessonTitle: string }
   | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
@@ -74,7 +74,7 @@ export function FeedbackPanel({
   if (state.kind === 'incorrect') {
     const panel = (
       <div className={`feedback feedback--incorrect ${state.shake ? 'feedback--shake' : ''}`}>
-        <p className="feedback__title">Not quite</p>
+        <p className="feedback__title">{state.title}</p>
         <p className="feedback__body">
           <RichText text={state.reason} />
         </p>

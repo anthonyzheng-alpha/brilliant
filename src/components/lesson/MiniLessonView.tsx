@@ -109,7 +109,7 @@ export function MiniLessonView({
             aria-live="polite"
           >
             <p className="mini-lesson__feedback-title">
-              {result === 'correct' ? 'Correct!' : 'Not quite — here is a hint:'}
+              {result === 'correct' ? 'Correct!' : 'Not quite'}
             </p>
             <RichText
               text={

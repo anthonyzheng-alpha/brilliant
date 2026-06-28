@@ -6,7 +6,7 @@ import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
 import { ProblemVisual } from '../widgets/ProblemVisual'
 import { FeedbackPanel } from '../lesson/FeedbackPanel'
 import { isAnswerValid, hasValidInput } from '../../lib/validation'
-import { resolveWrongLine, resolveWrongReason } from '../../lib/problemFeedback'
+import { resolveWrongLine, resolveWrongReason, resolveIncorrectFeedbackTitle } from '../../lib/problemFeedback'
 import { useAuthStore } from '../../stores/authStore'
 import { useGamificationStore } from '../../stores/gamificationStore'
 import { FEATURES } from '../../lib/features'
@@ -35,7 +35,7 @@ export function ReviewPlayer({ courseSlug, problems, onNewSet }: Props) {
   const [finished, setFinished] = useState(false)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
-    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'incorrect'; reason: string; title: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
   >({ kind: 'idle' })
 
@@ -60,6 +60,7 @@ export function ReviewPlayer({ courseSlug, problems, onNewSet }: Props) {
       setFeedback({
         kind: 'incorrect',
         reason: resolveWrongReason(problem, answer),
+        title: resolveIncorrectFeedbackTitle(problem, answer),
         shake: true,
       })
       setTimeout(

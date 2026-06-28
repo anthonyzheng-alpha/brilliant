@@ -63,3 +63,16 @@ export function resolveWrongReason(problem: Problem, answer: AnswerValue): strin
   if (problem.misconception) return problem.misconception
   return problem.hints[0]
 }
+
+export function resolveIncorrectFeedbackTitle(problem: Problem, answer: AnswerValue): string {
+  if (
+    problem.interaction.type === 'multiple-choice' &&
+    answer.type === 'multiple-choice'
+  ) {
+    const selected = problem.interaction.data.options.find(
+      (opt) => opt.id === answer.selectedId,
+    )
+    if (selected?.whyWrong) return 'Not quite'
+  }
+  return 'Possibly helpful information'
+}
