@@ -24,7 +24,7 @@
     "hints": [
       "Find two numbers that multiply to **6** and add to **5**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$ because $2 \\times 3 = 6$ and $2 + 3 = 5$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -54,7 +54,7 @@
     "hints": [
       "Find two numbers that multiply to **12** and add to **7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 7x + 12 = (x+3)(x+4)$ because $3 \\times 4 = 12$ and $3 + 4 = 7$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -84,7 +84,7 @@
     "hints": [
       "Find two numbers that multiply to **8** and add to **6**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$ because $2 \\times 4 = 8$ and $2 + 4 = 6$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -114,7 +114,7 @@
     "hints": [
       "Find two numbers that multiply to **15** and add to **8**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 8x + 15 = (x+3)(x+5)$ because $3 \\times 5 = 15$ and $3 + 5 = 8$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -144,7 +144,7 @@
     "hints": [
       "Find two numbers that multiply to **10** and add to **7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 7x + 10 = (x+2)(x+5)$ because $2 \\times 5 = 10$ and $2 + 5 = 7$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -174,7 +174,7 @@
     "hints": [
       "Find two numbers that multiply to **6** and add to **-5**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 5x + 6 = (x-2)(x-3)$ because $(-2) \\times (-3) = 6$ and $(-2) + (-3) = -5$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -204,7 +204,7 @@
     "hints": [
       "Find two numbers that multiply to **-6** and add to **1**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + x - 6 = (x+3)(x-2)$ because $3 \\times (-2) = -6$ and $3 + (-2) = 1$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -234,7 +234,7 @@
     "hints": [
       "Find two numbers that multiply to **-8** and add to **-2**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 2x - 8 = (x-4)(x+2)$ because $(-4) \\times 2 = -8$ and $(-4) + 2 = -2$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -264,7 +264,7 @@
     "hints": [
       "Find two numbers that multiply to **12** and add to **-7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$ because $(-3) \\times (-4) = 12$ and $(-3) + (-4) = -7$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -294,7 +294,7 @@
     "hints": [
       "Find two numbers that multiply to **-15** and add to **2**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$ because $5 \\times (-3) = -15$ and $5 + (-3) = 2$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -469,7 +469,7 @@
     "hints": [
       "Find two numbers that multiply to **24** and add to **11**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 11x + 24 = (x+3)(x+8)$ because $3 \\times 8 = 24$ and $3 + 8 = 11$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -499,7 +499,7 @@
     "hints": [
       "Find two numbers that multiply to **36** and add to **-13**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 13x + 36 = (x-4)(x-9)$ because $(-4) \\times (-9) = 36$ and $(-4) + (-9) = -13$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -529,7 +529,7 @@
     "hints": [
       "Find two numbers that multiply to **-30** and add to **7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 7x - 30 = (x+10)(x-3)$ because $10 \\times (-3) = -30$ and $10 + (-3) = 7$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -588,7 +588,7 @@
     "hints": [
       "Find two numbers that multiply to **56** and add to **15**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 15x + 56 = (x+7)(x+8)$ because $7 \\times 8 = 56$ and $7 + 8 = 15$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -618,7 +618,7 @@
     "hints": [
       "Find two numbers that multiply to **20** and add to **9**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 9x + 20 = (x+4)(x+5)$ because $4 \\times 5 = 20$ and $4 + 5 = 9$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -648,7 +648,7 @@
     "hints": [
       "Find two numbers that multiply to **-10** and add to **-3**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 3x - 10 = (x-5)(x+2)$ because $(-5) \\times 2 = -10$ and $(-5) + 2 = -3$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -707,7 +707,7 @@
     "hints": [
       "Find two numbers that multiply to **48** and add to **-14**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 14x + 48 = (x-6)(x-8)$ because $(-6) \\times (-8) = 48$ and $(-6) + (-8) = -14$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -737,7 +737,7 @@
     "hints": [
       "Find two numbers that multiply to **-21** and add to **4**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 4x - 21 = (x+7)(x-3)$ because $7 \\times (-3) = -21$ and $7 + (-3) = 4$.",
     "misconception": "Watch the signs: a negative constant means one factor is $+$ and the other is $-$, and the larger number takes the sign of the middle term."
@@ -767,7 +767,7 @@
     "hints": [
       "Find two numbers that multiply to **15** and add to **8**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 8x + 15 = (x+3)(x+5)$ because $3 \\times 5 = 15$ and $3 + 5 = 8$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -797,7 +797,7 @@
     "hints": [
       "Find two numbers that multiply to **8** and add to **6**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$ because $2 \\times 4 = 8$ and $2 + 4 = 6$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -827,7 +827,7 @@
     "hints": [
       "Find two numbers that multiply to **20** and add to **9**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 9x + 20 = (x+4)(x+5)$ because $4 \\times 5 = 20$ and $4 + 5 = 9$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -857,7 +857,7 @@
     "hints": [
       "Find two numbers that multiply to **10** and add to **7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 7x + 10 = (x+2)(x+5)$ because $2 \\times 5 = 10$ and $2 + 5 = 7$.",
     "misconception": "Check both conditions: the two numbers must multiply to the constant AND add to the middle coefficient - getting only one right is the usual slip."
@@ -887,7 +887,7 @@
     "hints": [
       "Find two numbers that multiply to **12** and add to **8**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 8x + 12 = (x+2)(x+6)$ because $2 \\times 6 = 12$ and $2 + 6 = 8$.",
     "misconception": "Several pairs multiply to 12, so check which one also adds to 8 - here it's 2 and 6, not 3 and 4."
@@ -917,7 +917,7 @@
     "hints": [
       "Find two numbers that multiply to **6** and add to **-5**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Each negative number becomes a factor $(x - n)$ — build both and drop them into the slots."
+      "Write each number $n$ as $(x + n)$ — the sign in front of $n$ matches the sign of the number itself — then drop both into the slots."
     ],
     "explanation": "$x^2 - 5x + 6 = (x-2)(x-3)$ because $(-2) \\times (-3) = 6$ and $(-2) + (-3) = -5$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -947,7 +947,7 @@
     "hints": [
       "Find two numbers that multiply to **12** and add to **-7**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Each negative number becomes a factor $(x - n)$ — build both and drop them into the slots."
+      "Write each number $n$ as $(x + n)$ — the sign in front of $n$ matches the sign of the number itself — then drop both into the slots."
     ],
     "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$ because $(-3) \\times (-4) = 12$ and $(-3) + (-4) = -7$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -977,7 +977,7 @@
     "hints": [
       "Find two numbers that multiply to **-6** and add to **1**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + x - 6 = (x+3)(x-2)$ because $3 \\times (-2) = -6$ and $3 + (-2) = 1$.",
     "misconception": "A negative constant means one factor is $+$ and the other is $-$; the larger number takes the sign of the middle term."
@@ -1007,7 +1007,7 @@
     "hints": [
       "Find two numbers that multiply to **-6** and add to **-1**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - x - 6 = (x-3)(x+2)$ because $(-3) \\times 2 = -6$ and $(-3) + 2 = -1$.",
     "misconception": "A negative constant means one factor is $+$ and the other is $-$; the larger number takes the sign of the middle term."
@@ -1037,7 +1037,7 @@
     "hints": [
       "Find two numbers that multiply to **3** and add to **-4**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Each negative number becomes a factor $(x - n)$ — build both and drop them into the slots."
+      "Write each number $n$ as $(x + n)$ — the sign in front of $n$ matches the sign of the number itself — then drop both into the slots."
     ],
     "explanation": "$x^2 - 4x + 3 = (x-1)(x-3)$ because $(-1) \\times (-3) = 3$ and $(-1) + (-3) = -4$.",
     "misconception": "A positive constant with a negative middle term means BOTH factors are negative - don't leave one of them positive."
@@ -1066,8 +1066,8 @@
     },
     "hints": [
       "There is no middle term, and $9 = 3^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $3$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 9 = (x+3)(x-3)$ — a difference of squares, since $9 = 3^2$.",
     "misconception": "A difference of squares uses the square root of the constant (here 3), not the constant itself (9)."
@@ -1096,8 +1096,8 @@
     },
     "hints": [
       "There is no middle term, and $16 = 4^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $4$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 16 = (x+4)(x-4)$ — a difference of squares, since $16 = 4^2$.",
     "misconception": "Use the square root of 16, which is 4, not 2 or 8."
@@ -1126,8 +1126,8 @@
     },
     "hints": [
       "There is no middle term, and $25 = 5^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $5$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 25 = (x+5)(x-5)$ — a difference of squares, since $25 = 5^2$.",
     "misconception": "Use the square root of 25, which is 5, not 10."
@@ -1156,8 +1156,8 @@
     },
     "hints": [
       "There is no middle term, and $36 = 6^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $6$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 36 = (x+6)(x-6)$ — a difference of squares, since $36 = 6^2$.",
     "misconception": "Use the square root of 36, which is 6, not 4."
@@ -1186,8 +1186,8 @@
     },
     "hints": [
       "There is no middle term, and $49 = 7^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $7$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
     "misconception": "Use the square root of 49, which is 7, not 14."
@@ -1217,7 +1217,7 @@
     "hints": [
       "Find two numbers that multiply to **21** and add to **10**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 10x + 21 = (x+3)(x+7)$ because $3 \\times 7 = 21$ and $3 + 7 = 10$.",
     "misconception": "List the factor pairs of 21 (1·21, 3·7) and pick the pair that also adds to 10."
@@ -1247,7 +1247,7 @@
     "hints": [
       "Find two numbers that multiply to **24** and add to **11**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 11x + 24 = (x+3)(x+8)$ because $3 \\times 8 = 24$ and $3 + 8 = 11$.",
     "misconception": "Several pairs multiply to 24, so check which one also adds to 11 - here it's 3 and 8, not 4 and 6."
@@ -1277,7 +1277,7 @@
     "hints": [
       "Find two numbers that multiply to **35** and add to **12**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 12x + 35 = (x+5)(x+7)$ because $5 \\times 7 = 35$ and $5 + 7 = 12$.",
     "misconception": "List the factor pairs of 35 (1·35, 5·7) and pick the pair that also adds to 12."
@@ -1306,8 +1306,8 @@
     },
     "hints": [
       "There is no middle term, and $64 = 8^2$ is a perfect square.",
-      "A difference of squares factors as $(x + \\sqrt{c})(x - \\sqrt{c})$.",
-      "Use $8$ as the number, once with $+$ and once with $-$."
+      "A difference of squares factors as $(x + a)(x - a)$, where $a$ is the positive number whose square is the constant.",
+      "Write two binomials with the same number inside — one with $+$ and one with $-$ — using the square root of the constant."
     ],
     "explanation": "$x^2 - 64 = (x+8)(x-8)$ — a difference of squares, since $64 = 8^2$.",
     "misconception": "First decide which pattern applies: no middle term and a perfect square means difference of squares, so use $\\sqrt{64} = 8$."
@@ -1337,7 +1337,7 @@
     "hints": [
       "Find two numbers that multiply to **36** and add to **13**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 13x + 36 = (x+4)(x+9)$ because $4 \\times 9 = 36$ and $4 + 9 = 13$.",
     "misconception": "Several pairs multiply to 36, so check which one also adds to 13 - here it's 4 and 9."
@@ -1367,7 +1367,7 @@
     "hints": [
       "Find two numbers that multiply to **15** and add to **-8**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Each negative number becomes a factor $(x - n)$ — build both and drop them into the slots."
+      "Write each number $n$ as $(x + n)$ — the sign in front of $n$ matches the sign of the number itself — then drop both into the slots."
     ],
     "explanation": "$x^2 - 8x + 15 = (x-3)(x-5)$ because $(-3) \\times (-5) = 15$ and $(-3) + (-5) = -8$.",
     "misconception": "Identify the pattern first: a positive constant with a negative middle term means both factors are negative."
@@ -1397,7 +1397,7 @@
     "hints": [
       "Find two numbers that multiply to **-15** and add to **2**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$ because $5 \\times (-3) = -15$ and $5 + (-3) = 2$.",
     "misconception": "A negative constant means one factor is $+$ and the other is $-$; the larger number takes the sign of the middle term."
@@ -1426,8 +1426,8 @@
     },
     "hints": [
       "No middle term and a perfect-square constant signal a difference of squares.",
-      "$49 = 7^2$, so the factors use $7$ with a $+$ and a $-$.",
-      "Drag the pair that uses $7$ — once with $+$ and once with $-$ — into the slots."
+      "A difference of squares factors as $(x + a)(x - a)$ — find the positive number whose square is the constant.",
+      "Build the matching $+$ and $-$ pair from that square root, then drag them into the slots."
     ],
     "explanation": "$x^2 - 49 = (x+7)(x-7)$ — a difference of squares, since $49 = 7^2$.",
     "misconception": "Identify the pattern first: no middle term plus a perfect square means difference of squares, using $\\sqrt{49} = 7$."
@@ -1457,7 +1457,7 @@
     "hints": [
       "Find two numbers that multiply to **14** and add to **9**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — a positive $n$ gives $(x + n)$ and a negative one gives $(x - n)$ — then drop both into the slots."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 + 9x + 14 = (x+2)(x+7)$ because $2 \\times 7 = 14$ and $2 + 7 = 9$.",
     "misconception": "Both $b$ and $c$ are positive, so both factors are positive; check the pair that adds to 9."
@@ -1487,7 +1487,7 @@
     "hints": [
       "Find two numbers that multiply to **-8** and add to **-2**.",
       "List the factor pairs of the constant and check which pair also adds up to the middle coefficient.",
-      "Turn each number into a factor — the positive one gives $(x + n)$ and the negative one gives $(x - n)$ — then drop both in."
+      "Write each number $n$ as a binomial $(x + n)$ — the sign in front of $n$ matches the sign of the number itself (e.g. $-2$ gives $(x - 2)$) — then drop both into the slots."
     ],
     "explanation": "$x^2 - 2x - 8 = (x-4)(x+2)$ because $(-4) \\times 2 = -8$ and $(-4) + 2 = -2$.",
     "misconception": "A negative constant means one factor is $+$ and the other is $-$; the larger number takes the sign of the middle term."

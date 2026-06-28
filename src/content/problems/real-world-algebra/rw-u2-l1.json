@@ -837,7 +837,7 @@
     },
     "hints": [
       "Let $b$ be the burger's price and $f$ the fries'. The clues become $3b + f = 14$ and $b + f = 6$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Subtracting cancels the fries: 2 burgers = **$14** - **$6** = **$8**, so a burger is **$4** and the fries are **$6** - **$4** = **$2**."
@@ -857,7 +857,7 @@
     },
     "hints": [
       "Let $t$ be the taco's price and $s$ the soda's. The clues become $2t + 3s = 18$ and $t + s = 7$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Double the second clue to 2 tacos and 2 sodas = **$14**. Subtracting leaves 1 soda = **$4**, so the taco is **$7** - **$4** = **$3**."
@@ -897,7 +897,7 @@
     },
     "hints": [
       "Let $c$ be the cookie's price and $m$ the milk's. The clues become $2c + m = 8$ and $c + m = 5$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Subtracting cancels the milk: 1 cookie = **$8** - **$5** = **$3**, so the milk is **$5** - **$3** = **$2**."
@@ -917,7 +917,7 @@
     },
     "hints": [
       "Let $t$ be the ticket's price and $p$ the popcorn's. The clues become $2t + p = 23$ and $t + p = 13$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Subtracting cancels the popcorn: 1 ticket = **$23** - **$13** = **$10**, so the popcorn is **$13** - **$10** = **$3**."
@@ -937,7 +937,7 @@
     },
     "hints": [
       "Let $o$ be the orange's price and $a$ the apple's. The clues become $3o + 2a = 16$ and $o + a = 6$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Double the second clue to 2 oranges and 2 apples = **$12**. Subtracting leaves 1 orange = **$4**, so the apple is **$6** - **$4** = **$2**."
@@ -977,7 +977,7 @@
     },
     "hints": [
       "Let $d$ be the donut's price and $c$ the coffee's. The clues become $2d + 3c = 19$ and $d + c = 7$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Double the second clue to 2 donuts and 2 coffees = **$14**. Subtracting leaves 1 coffee = **$5**, so the donut is **$7** - **$5** = **$2**."
@@ -997,7 +997,7 @@
     },
     "hints": [
       "Let $p$ be the pear's price and $a$ the apple's. The clues become $4p + a = 13$ and $2p + a = 7$ - the same kind of system you solved with $x$ and $y$.",
-      "Decide whether to substitute a known price or eliminate a shared item.",
+      "Neither clue gives a single item's price directly — subtract or scale the clues to cancel one item and solve for the other.",
       "After finding one price, substitute it back to get the other."
     ],
     "explanation": "Subtracting cancels the apple: 2 pears = **$13** - **$7** = **$6**, so a pear is **$3** and the apple is **$7** - 2 × **$3** = **$1**."

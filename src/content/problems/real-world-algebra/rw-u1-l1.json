@@ -112,8 +112,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Box A ($0.30/oz)", "whyWrong": "Box A is actually more per ounce - divide price by ounces for each to compare." },
-          { "id": "b", "label": "Box B ($0.25/oz)" },
+          { "id": "a", "label": "Box A ($\\$0.30$/oz)", "whyWrong": "Box A is actually more per ounce - divide price by ounces for each to compare." },
+          { "id": "b", "label": "Box B ($\\$0.25$/oz)" },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.30$ vs $\\$0.25$ per ounce." }
         ],
         "correctOptionId": "b"
@@ -135,8 +135,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Juice A ($0.125/oz)", "whyWrong": "Juice A costs more per ounce - $4.00 \\div 32$ is higher than $7.68 \\div 64$." },
-          { "id": "b", "label": "Juice B ($0.12/oz)" },
+          { "id": "a", "label": "Juice A ($\\$0.125$/oz)", "whyWrong": "Juice A costs more per ounce - $4.00 \\div 32$ is higher than $7.68 \\div 64$." },
+          { "id": "b", "label": "Juice B ($\\$0.12$/oz)" },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The per-ounce prices aren't equal - one is $\\$0.125$ and the other $\\$0.12$." }
         ],
         "correctOptionId": "b"
@@ -158,8 +158,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Coffee A ($0.45/oz)" },
-          { "id": "b", "label": "Coffee B ($0.49/oz)", "whyWrong": "Coffee B costs more per ounce - $7.84 \\div 16$ is higher than $4.50 \\div 10$." },
+          { "id": "a", "label": "Coffee A ($\\$0.45$/oz)" },
+          { "id": "b", "label": "Coffee B ($\\$0.49$/oz)", "whyWrong": "Coffee B costs more per ounce - $7.84 \\div 16$ is higher than $4.50 \\div 10$." },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.45$ vs $\\$0.49$ per ounce." }
         ],
         "correctOptionId": "a"
@@ -181,8 +181,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Rice A ($1.20/lb)", "whyWrong": "Rice A costs more per pound - $6.00 \\div 5$ is higher than $11.00 \\div 10$." },
-          { "id": "b", "label": "Rice B ($1.10/lb)" },
+          { "id": "a", "label": "Rice A ($\\$1.20$/lb)", "whyWrong": "Rice A costs more per pound - $6.00 \\div 5$ is higher than $11.00 \\div 10$." },
+          { "id": "b", "label": "Rice B ($\\$1.10$/lb)" },
           { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices aren't equal - $\\$1.20$ vs $\\$1.10$." }
         ],
         "correctOptionId": "b"
@@ -204,8 +204,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Pack A ($0.50/can)", "whyWrong": "Pack A costs more per can - $3.00 \\div 6$ is higher than $5.40 \\div 12$." },
-          { "id": "b", "label": "Pack B ($0.45/can)" },
+          { "id": "a", "label": "Pack A ($\\$0.50$/can)", "whyWrong": "Pack A costs more per can - $3.00 \\div 6$ is higher than $5.40 \\div 12$." },
+          { "id": "b", "label": "Pack B ($\\$0.45$/can)" },
           { "id": "c", "label": "Same price per can", "whyWrong": "The per-can prices differ - $\\$0.50$ vs $\\$0.45$." }
         ],
         "correctOptionId": "b"
@@ -340,7 +340,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't forget the fixed base fare - total = base + rate $\\times$ miles, not just rate $\\times$ miles.",
-    "explanation": "$3 + 2(4) = 11$ dollars."
+    "explanation": "$\\$3 + 2(4) = \\$11$."
   },
   {
     "id": "rw-u1-l1-r4-p2",
@@ -361,7 +361,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Include the one-time joining fee - total = fee + monthly rate $\\times$ months.",
-    "explanation": "$25 + 15(6) = 25 + 90 = 115$ dollars."
+    "explanation": "$\\$25 + 15(6) = 25 + 90 = \\$115$."
   },
   {
     "id": "rw-u1-l1-r4-p3",
@@ -382,7 +382,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the flat monthly fee - total = base + per-minute rate $\\times$ minutes, not just the minutes cost.",
-    "explanation": "$20 + 0.10(50) = 20 + 5 = 25$ dollars."
+    "explanation": "$\\$20 + 0.10(50) = 20 + 5 = \\$25$."
   },
   {
     "id": "rw-u1-l1-r4-p4",
@@ -403,7 +403,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't drop the base fare - total = base + rate $\\times$ miles.",
-    "explanation": "$4 + 1.50(10) = 4 + 15 = 19$ dollars."
+    "explanation": "$\\$4 + 1.50(10) = 4 + 15 = \\$19$."
   },
   {
     "id": "rw-u1-l1-r4-p5",
@@ -424,7 +424,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the base monthly price - total = base + per-screen rate $\\times$ extra screens.",
-    "explanation": "$8 + 1.25(3) = 8 + 3.75 = 11.75$ dollars."
+    "explanation": "$\\$8 + 1.25(3) = 8 + 3.75 = \\$11.75$."
   },
   {
     "id": "rw-u1-l1-r5-p1",
@@ -435,8 +435,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Plan A ($30)", "whyWrong": "Plan A's flat fee is higher than Plan B's computed total at 30 GB." },
-          { "id": "b", "label": "Plan B ($25)" },
+          { "id": "a", "label": "Plan A ($\\$30$)", "whyWrong": "Plan A's flat fee is higher than Plan B's computed total at 30 GB." },
+          { "id": "b", "label": "Plan B ($\\$25$)" },
           { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $\\$30$ versus $\\$25$ for 30 GB." }
         ],
         "correctOptionId": "b"
@@ -463,7 +463,7 @@
     "hints": [
       "Before calculating, figure out what each number stands for and how the quantities relate; that tells you which operation to use.",
       "Set the two cost expressions equal: 5 + 1.50m = 2 + 2m.",
-      "Divide both sides to solve for the number of miles."
+      "Collect the $m$ terms on one side and the constants on the other, then divide by the coefficient of $m$."
     ],
     "misconception": "Set the two cost expressions equal and solve for miles - don't just compare the base fees.",
     "explanation": "$5 + 1.50m = 2 + 2m \\to 3 = 0.5m \\to m = 6$. Both cost $\\$14$ at 6 miles."
@@ -497,8 +497,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "3 lb bag ($2.50/lb)", "whyWrong": "The 3 lb bag costs more per pound - $7.50 \\div 3$ is higher than $11.25 \\div 5$." },
-          { "id": "b", "label": "5 lb bag ($2.25/lb)" },
+          { "id": "a", "label": "3 lb bag ($\\$2.50$/lb)", "whyWrong": "The 3 lb bag costs more per pound - $7.50 \\div 3$ is higher than $11.25 \\div 5$." },
+          { "id": "b", "label": "5 lb bag ($\\$2.25$/lb)" },
           { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$2.50$ vs $\\$2.25$." }
         ],
         "correctOptionId": "b"
@@ -640,8 +640,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Bread A ($0.10/oz)" },
-          { "id": "b", "label": "Bread B ($0.12/oz)", "whyWrong": "Bread B costs more per ounce - $2.88 \\div 24$ is higher than $2.00 \\div 20$." },
+          { "id": "a", "label": "Bread A ($\\$0.10$/oz)" },
+          { "id": "b", "label": "Bread B ($\\$0.12$/oz)", "whyWrong": "Bread B costs more per ounce - $2.88 \\div 24$ is higher than $2.00 \\div 20$." },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.12$ per ounce." }
         ],
         "correctOptionId": "a"
@@ -663,8 +663,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Pasta A ($0.10/oz)", "whyWrong": "Pasta A costs more per ounce - $1.60 \\div 16$ is higher than $2.88 \\div 32$." },
-          { "id": "b", "label": "Pasta B ($0.09/oz)" },
+          { "id": "a", "label": "Pasta A ($\\$0.10$/oz)", "whyWrong": "Pasta A costs more per ounce - $1.60 \\div 16$ is higher than $2.88 \\div 32$." },
+          { "id": "b", "label": "Pasta B ($\\$0.09$/oz)" },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.09$ per ounce." }
         ],
         "correctOptionId": "b"
@@ -686,8 +686,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Shampoo A ($0.50/oz)", "whyWrong": "Shampoo A costs more per ounce - $4.00 \\div 8$ is higher than $5.40 \\div 12$." },
-          { "id": "b", "label": "Shampoo B ($0.45/oz)" },
+          { "id": "a", "label": "Shampoo A ($\\$0.50$/oz)", "whyWrong": "Shampoo A costs more per ounce - $4.00 \\div 8$ is higher than $5.40 \\div 12$." },
+          { "id": "b", "label": "Shampoo B ($\\$0.45$/oz)" },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.50$ vs $\\$0.45$ per ounce." }
         ],
         "correctOptionId": "b"
@@ -709,8 +709,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Cheese A ($4.50/lb)", "whyWrong": "Cheese A costs more per pound - $9.00 \\div 2$ is higher than $12.00 \\div 3$." },
-          { "id": "b", "label": "Cheese B ($4.00/lb)" },
+          { "id": "a", "label": "Cheese A ($\\$4.50$/lb)", "whyWrong": "Cheese A costs more per pound - $9.00 \\div 2$ is higher than $12.00 \\div 3$." },
+          { "id": "b", "label": "Cheese B ($\\$4.00$/lb)" },
           { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$4.50$ vs $\\$4.00$." }
         ],
         "correctOptionId": "b"
@@ -732,8 +732,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Detergent A ($0.10/oz)" },
-          { "id": "b", "label": "Detergent B ($0.11/oz)", "whyWrong": "Detergent B costs more per ounce - $11.00 \\div 100$ is higher than $5.00 \\div 50$." },
+          { "id": "a", "label": "Detergent A ($\\$0.10$/oz)" },
+          { "id": "b", "label": "Detergent B ($\\$0.11$/oz)", "whyWrong": "Detergent B costs more per ounce - $11.00 \\div 100$ is higher than $5.00 \\div 50$." },
           { "id": "c", "label": "Same price per oz", "whyWrong": "The unit prices differ - $\\$0.10$ vs $\\$0.11$ per ounce." }
         ],
         "correctOptionId": "a"
@@ -867,7 +867,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't forget the fixed base fare - total = base + rate $\\times$ miles, not just rate $\\times$ miles.",
-    "explanation": "$5 + 3(4) = 5 + 12 = 17$ dollars."
+    "explanation": "$\\$5 + 3(4) = 5 + 12 = \\$17$."
   },
   {
     "id": "rw-u1-l1-r4-p7",
@@ -888,7 +888,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Include the one-time joining fee - total = fee + monthly rate $\\times$ months.",
-    "explanation": "$30 + 20(5) = 30 + 100 = 130$ dollars."
+    "explanation": "$\\$30 + 20(5) = 30 + 100 = \\$130$."
   },
   {
     "id": "rw-u1-l1-r4-p8",
@@ -909,7 +909,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the flat monthly fee - total = base + per-minute rate $\\times$ minutes, not just the minutes cost.",
-    "explanation": "$15 + 0.20(40) = 15 + 8 = 23$ dollars."
+    "explanation": "$\\$15 + 0.20(40) = 15 + 8 = \\$23$."
   },
   {
     "id": "rw-u1-l1-r4-p9",
@@ -930,7 +930,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Don't drop the base charge - total = base + rate $\\times$ miles.",
-    "explanation": "$30 + 0.50(20) = 30 + 10 = 40$ dollars."
+    "explanation": "$\\$30 + 0.50(20) = 30 + 10 = \\$40$."
   },
   {
     "id": "rw-u1-l1-r4-p10",
@@ -951,7 +951,7 @@
       "Multiply the rate by the quantity first, then add the fixed starting amount."
     ],
     "misconception": "Add the base monthly price - total = base + per-screen rate $\\times$ extra screens.",
-    "explanation": "$10 + 2(4) = 10 + 8 = 18$ dollars."
+    "explanation": "$\\$10 + 2(4) = 10 + 8 = \\$18$."
   },
   {
     "id": "rw-u1-l1-r5-p6",
@@ -962,8 +962,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "Plan A ($40)" },
-          { "id": "b", "label": "Plan B ($45)", "whyWrong": "Plan B totals $\\$45$ at 25 GB, which is more than Plan A's $\\$40$." },
+          { "id": "a", "label": "Plan A ($\\$40$)" },
+          { "id": "b", "label": "Plan B ($\\$45$)", "whyWrong": "Plan B totals $\\$45$ at 25 GB, which is more than Plan A's $\\$40$." },
           { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $\\$40$ versus $\\$45$ for 25 GB." }
         ],
         "correctOptionId": "a"
@@ -1024,8 +1024,8 @@
       "type": "multiple-choice",
       "data": {
         "options": [
-          { "id": "a", "label": "4 lb bag ($2.50/lb)", "whyWrong": "The 4 lb bag costs more per pound - $10.00 \\div 4$ is higher than $13.50 \\div 6$." },
-          { "id": "b", "label": "6 lb bag ($2.25/lb)" },
+          { "id": "a", "label": "4 lb bag ($\\$2.50$/lb)", "whyWrong": "The 4 lb bag costs more per pound - $10.00 \\div 4$ is higher than $13.50 \\div 6$." },
+          { "id": "b", "label": "6 lb bag ($\\$2.25$/lb)" },
           { "id": "c", "label": "Same price per lb", "whyWrong": "The per-pound prices differ - $\\$2.50$ vs $\\$2.25$." }
         ],
         "correctOptionId": "b"

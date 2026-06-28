@@ -587,10 +587,10 @@
       }
     },
     "hints": [
-      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
-      "$x - y = 0$ means $x = y$.",
-      "Add the equations: $2x = 6$.",
-      "Divide both sides by 2."
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
+      "Notice that $x - y = 0$ tells you something about how $x$ and $y$ relate — use that before or while combining the equations.",
+      "Add the two equations to eliminate $y$, then solve for the remaining variable.",
+      "Use your value for the first variable to find the second."
     ],
     "explanation": "Add: $2x = 6$, so $x = 3$. Since $x = y$, $y = 3$."
   },

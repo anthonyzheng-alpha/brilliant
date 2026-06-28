@@ -65,9 +65,9 @@
             "type": "multiple-choice",
             "data": {
               "options": [
-                { "id": "a", "label": "Bag A ($2.00/lb)", "whyWrong": "Bag A is more per pound - 4 \u00f7 2 = $2.00 beats 4.50 \u00f7 3 = $1.50." },
-                { "id": "b", "label": "Bag B ($1.50/lb)" },
-                { "id": "c", "label": "Same price per lb", "whyWrong": "The unit prices differ - $2.00 vs $1.50 per pound." }
+                { "id": "a", "label": "Bag A ($\\$2.00$/lb)", "whyWrong": "Bag A is more per pound - 4 \u00f7 2 = $\\$2.00$ beats 4.50 \u00f7 3 = $\\$1.50$." },
+                { "id": "b", "label": "Bag B ($\\$1.50$/lb)" },
+                { "id": "c", "label": "Same price per lb", "whyWrong": "The unit prices differ - $\\$2.00$ vs $\\$1.50$ per pound." }
               ],
               "correctOptionId": "b"
             }
@@ -139,7 +139,7 @@
               "validation": { "type": "numeric", "value": 11 }
             }
           },
-          "explanation": "$5 + 2 \\times 3 = 5 + 6 = \\$11$."
+          "explanation": "$\\$5 + 2 \\times 3 = 5 + 6 = \\$11$."
         }
       }
     },
@@ -169,14 +169,14 @@
             "type": "multiple-choice",
             "data": {
               "options": [
-                { "id": "a", "label": "Plan A ($20)", "whyWrong": "Plan B totals only $15 at 10 GB, which is less than Plan A's $20." },
-                { "id": "b", "label": "Plan B ($15)" },
-                { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $20 versus $15 for 10 GB." }
+                { "id": "a", "label": "Plan A ($\\$20$)", "whyWrong": "Plan B totals only $\\$15$ at 10 GB, which is less than Plan A's $\\$20$." },
+                { "id": "b", "label": "Plan B ($\\$15$)" },
+                { "id": "c", "label": "Same cost", "whyWrong": "The totals differ - $\\$20$ versus $\\$15$ for 10 GB." }
               ],
               "correctOptionId": "b"
             }
           },
-          "explanation": "Plan B costs $5 + 1 \\times 10 = \\$15$, which is less than Plan A's flat $20."
+          "explanation": "Plan B costs $\\$5 + 1 \\times 10 = \\$15$, which is less than Plan A's flat $\\$20$."
         }
       }
     }

@@ -10,7 +10,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 2$ or $x = 5$.",
     "misconception": "The root of $(x-2)$ is $+2$, not $-2$ - it is the value that makes the factor zero."
@@ -26,7 +26,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 1$ or $x = 4$.",
     "misconception": "The root of $(x-4)$ is $+4$, not $-4$ - it is the value that makes the factor zero."
@@ -42,7 +42,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -3$ or $x = 2$.",
     "misconception": "The root of $(x+3)$ is $-3$ - flip the sign of the number inside the factor."
@@ -58,7 +58,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -1$ or $x = -6$.",
     "misconception": "Both factors add a number, so both roots are negative."
@@ -74,7 +74,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 3$ or $x = -7$.",
     "misconception": "The root of $(x+7)$ is $-7$ - flip the sign of the number inside the factor."
@@ -96,8 +96,8 @@
       }
     },
     "hints": [
-      "Set each factor equal to zero.",
-      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
+      "Take one factor at a time and set it equal to zero.",
+      "Take one factor at a time, set it equal to zero, and solve for $x$ — that value is a root."
     ],
     "explanation": "The roots are $x = 4$ and $x = -2$, so $x = 4$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -129,7 +129,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = -5$ or $x = 5$.",
     "misconception": "The two roots are opposites here, one negative and one positive."
@@ -151,8 +151,8 @@
       }
     },
     "hints": [
-      "Set each factor equal to zero.",
-      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
+      "Take one factor at a time and set it equal to zero.",
+      "Take one factor at a time, set it equal to zero, and solve for $x$ — that value is a root."
     ],
     "explanation": "The roots are $x = -8$ and $x = 1$, so $x = -8$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -168,7 +168,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 6$ or $x = 3$.",
     "misconception": "The root of $(x-6)$ is $+6$ - it is the value that makes the factor zero."
@@ -537,7 +537,8 @@
     },
     "hints": [
       "Check the sign of $b^2 - 4ac$.",
-      "$(-6)^2 - 4(1)(9) = 36 - 36$."
+      "Compute $b^2 - 4ac$ using $a = 1$, $b = -6$, $c = 9$ — square $b$ first, then subtract $4ac$.",
+      "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $36 - 36 = 0$, so there is exactly one (repeated) real root.",
     "misconception": "A discriminant of $0$ means one repeated root, not zero roots."
@@ -611,7 +612,8 @@
     },
     "hints": [
       "Check the sign of $b^2 - 4ac$.",
-      "$(-10)^2 - 4(1)(25) = 100 - 100$."
+      "Compute $b^2 - 4ac$ using $a = 1$, $b = -10$, $c = 25$ — square $b$ first, then subtract $4ac$.",
+      "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $100 - 100 = 0$, so there is exactly one (repeated) real root.",
     "misconception": "A discriminant of $0$ means one repeated root, not two."
@@ -648,7 +650,8 @@
     },
     "hints": [
       "Compute the discriminant $b^2 - 4ac$ and check its sign.",
-      "$4^2 - 4(1)(4) = 16 - 16 = 0$."
+      "Compute $b^2 - 4ac$ using $a = 1$, $b = 4$, $c = 4$ — square $b$ first, then subtract $4ac$.",
+      "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $0$, so $x^2 + 4x + 4 = (x+2)^2$ has the single repeated root $x = -2$.",
     "misconception": "A perfect-square trinomial has a discriminant of $0$ and one repeated root."
@@ -679,7 +682,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
+      "Each factor, set equal to zero, gives one root — pick a factor and find the $x$ that makes it zero."
     ],
     "explanation": "Setting each factor to zero gives $x = 7$ or $x = -2$.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -770,8 +773,8 @@
       }
     },
     "hints": [
-      "Set each factor equal to zero.",
-      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
+      "Take one factor at a time and set it equal to zero.",
+      "Take one factor at a time, set it equal to zero, and solve for $x$ — that value is a root."
     ],
     "explanation": "The roots are $x = -9$ and $x = 4$, so $x = -9$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."

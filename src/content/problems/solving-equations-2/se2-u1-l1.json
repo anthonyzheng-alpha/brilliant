@@ -17,7 +17,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 9?",
+      "Which numbers, when squared, give $9$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{9} = \\pm 3$, so both $3$ and $-3$ are solutions."
@@ -40,7 +40,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 25?",
+      "Which numbers, when squared, give $25$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{25} = \\pm 5$, so both $5$ and $-5$ are solutions."
@@ -63,7 +63,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 4?",
+      "Which numbers, when squared, give $4$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{4} = \\pm 2$, so both $2$ and $-2$ are solutions."
@@ -86,7 +86,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 36?",
+      "Which numbers, when squared, give $36$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{36} = \\pm 6$, so both $6$ and $-6$ are solutions."
@@ -109,7 +109,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 49?",
+      "Which numbers, when squared, give $49$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{49} = \\pm 7$, so both $7$ and $-7$ are solutions."
@@ -132,7 +132,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 1?",
+      "Which numbers, when squared, give $1$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{1} = \\pm 1$, so both $1$ and $-1$ are solutions."
@@ -155,7 +155,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 64?",
+      "Which numbers, when squared, give $64$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{64} = \\pm 8$, so both $8$ and $-8$ are solutions."
@@ -178,7 +178,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 100?",
+      "Which numbers, when squared, give $100$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{100} = \\pm 10$, so both $10$ and $-10$ are solutions."
@@ -201,7 +201,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 81?",
+      "Which numbers, when squared, give $81$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{81} = \\pm 9$, so both $9$ and $-9$ are solutions."
@@ -224,7 +224,7 @@
       }
     },
     "hints": [
-      "What numbers times itself give 144?",
+      "Which numbers, when squared, give $144$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root of both sides: $x = \\pm\\sqrt{144} = \\pm 12$, so both $12$ and $-12$ are solutions."
@@ -800,7 +800,7 @@
       }
     },
     "hints": [
-      "What number squared gives 121?",
+      "Which numbers, when squared, give $121$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root: $x = \\pm\\sqrt{121} = \\pm 11$, so both $11$ and $-11$ are solutions."
@@ -919,7 +919,7 @@
       }
     },
     "hints": [
-      "What number squared gives 169?",
+      "Which numbers, when squared, give $169$?",
       "Take the square root of both sides — there are two solutions."
     ],
     "explanation": "Take the square root: $x = \\pm\\sqrt{169} = \\pm 13$, so both $13$ and $-13$ are solutions."

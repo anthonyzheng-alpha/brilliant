@@ -133,7 +133,7 @@
     "hints": [
       "When a line goes **down** from left to right, its slope is negative.",
       "Step 1 unit right and see how far the line falls.",
-      "A line going down to the right has a negative slope — count the fall per step right."
+      "Read the $y$ values at two gridpoints one step apart; their difference (with a negative sign for a fall) is the slope."
     ],
     "explanation": "The line drops 1 unit for every 1 unit to the right, so the slope is $m = -1$."
   },
@@ -156,7 +156,7 @@
     "hints": [
       "A downward line has a negative slope.",
       "Count the vertical change for a 1 unit step to the right.",
-      "Read two gridpoints one step apart; the drop between them is the slope (negative)."
+      "Read the $y$-values at two gridpoints one step apart; the slope is the change in $y$ (negative when the line falls), so attach a minus sign to the drop."
     ],
     "explanation": "Moving 1 unit right drops the line 2 units, so the slope is $m = -2$."
   },
@@ -313,7 +313,7 @@
     "hints": [
       "First decide the sign of the slope: this line falls to the right.",
       "Count how far it falls for one step right to get the slope $m$.",
-      "The line passes through the origin, so $b = 0$ and the equation is just $y = mx$."
+      "Check whether the line crosses the y-axis above, below, or at the origin — that determines $b$. Then combine $m$ and $b$ into $y = mx + b$."
     ],
     "explanation": "The slope is $-2$ and the y-intercept is $0$, so the equation is $y = -2x$."
   },
@@ -441,7 +441,7 @@
       }
     },
     "hints": [
-      "Compare two points that are 1 apart in $x$ to find the slope.",
+      "Slope measures how much $y$ changes when $x$ increases by 1 — look at how the plotted points rise or fall.",
       "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
@@ -785,7 +785,7 @@
     "hints": [
       "A downward line has a negative slope.",
       "Count the vertical change for a 1 unit step to the right.",
-      "Read two gridpoints one step apart; the drop between them is the slope (negative)."
+      "Read the $y$-values at two gridpoints one step apart; the slope is the change in $y$ (negative when the line falls), so attach a minus sign to the drop."
     ],
     "explanation": "Moving 1 unit right drops the line 2 units, so the slope is $m = -2$."
   },
@@ -808,7 +808,7 @@
     "hints": [
       "When a line goes down from left to right, its slope is negative.",
       "Step 1 unit right and see how far the line falls.",
-      "Count the fall per step right; the slope is negative."
+      "Count how far the line falls per 1-unit step right, then write that amount with a minus sign — that is the slope."
     ],
     "explanation": "The line drops 3 units for every 1 unit to the right, so the slope is $m = -3$."
   },
@@ -1021,7 +1021,7 @@
       }
     },
     "hints": [
-      "Compare two points that are 1 apart in $x$ to find the slope.",
+      "Slope measures how much $y$ changes when $x$ increases by 1 — look at how the plotted points rise or fall.",
       "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
@@ -1129,7 +1129,7 @@
       }
     },
     "hints": [
-      "Compare two points that are 1 apart in $x$ to find the slope.",
+      "Slope measures how much $y$ changes when $x$ increases by 1 — look at how the plotted points rise or fall.",
       "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],

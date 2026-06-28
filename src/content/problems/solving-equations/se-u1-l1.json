@@ -226,7 +226,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 8 is added to $x$, so the inverse operation you need is subtraction.",
       "Subtract 8 from both sides to leave $x$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and keep the negative sign in your answer."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 8 from both sides: $x = 3 - 8 = -5$.",
     "misconception": "When the constant is larger than the right side, the answer is negative - don't drop the negative sign."
@@ -250,7 +250,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 12 is added to $n$, so the inverse operation you need is subtraction.",
       "Subtract 12 from both sides to leave $n$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 12 from both sides: $n = 5 - 12 = -7$."
   },
@@ -293,7 +293,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 15 is added to $a$, so the inverse operation you need is subtraction.",
       "Subtract 15 from both sides to leave $a$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 15 from both sides: $a = 0 - 15 = -15$."
   },
@@ -312,7 +312,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 9 is added to $t$, so the inverse operation you need is subtraction.",
       "Subtract 9 from both sides to leave $t$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and keep the negative sign in your answer."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 9 from both sides: $t = -2 - 9 = -11$.",
     "misconception": "Subtracting 9 from a negative number makes it more negative; the answer is not positive."
@@ -502,7 +502,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 6 is subtracted from $a$, so the inverse operation you need is addition.",
       "Add 6 to both sides to isolate $a$; note the result will still be negative.",
-      "Now carry out the addition and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Add 6 to both sides: $a = -14 + 6 = -8$."
   },
@@ -750,7 +750,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 10 is added to $x$, so the inverse operation you need is subtraction.",
       "Subtract 10 from both sides to leave $x$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and keep the negative sign in your answer."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 10 from both sides: $x = 4 - 10 = -6$.",
     "misconception": "When the constant is larger than the right side, the answer is negative - don't drop the negative sign."
@@ -774,7 +774,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 9 is added to $n$, so the inverse operation you need is subtraction.",
       "Subtract 9 from both sides to leave $n$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 9 from both sides: $n = 2 - 9 = -7$."
   },
@@ -813,7 +813,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 20 is added to $a$, so the inverse operation you need is subtraction.",
       "Subtract 20 from both sides to leave $a$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and keep the negative sign in your answer."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 20 from both sides: $a = 5 - 20 = -15$.",
     "misconception": "Because 20 is larger than 5, the answer is negative; keep the negative sign."
@@ -837,7 +837,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 6 is added to $m$, so the inverse operation you need is subtraction.",
       "Subtract 6 from both sides to leave $m$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 6 from both sides: $m = -1 - 6 = -7$."
   },
@@ -959,7 +959,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 17 is added to $x$, so the inverse operation you need is subtraction.",
       "Subtract 17 from both sides to leave $x$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and keep the negative sign in your answer."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 17 from both sides: $x = 9 - 17 = -8$.",
     "misconception": "Because 17 is larger than 9, the answer is negative; keep the negative sign."
@@ -1046,7 +1046,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "Here 25 is added to $m$, so the inverse operation you need is subtraction.",
       "Subtract 25 from both sides to leave $m$ by itself; note the result will be negative.",
-      "Now carry out the subtraction and choose the negative result."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 25 from both sides: $m = 10 - 25 = -15$."
   }

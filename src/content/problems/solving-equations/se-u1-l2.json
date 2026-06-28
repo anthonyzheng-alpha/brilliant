@@ -356,7 +356,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "First add 5 to both sides: $3n = -15$.",
       "Then divide both sides by 3.",
-      "Now carry out that division and pick the negative option."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Add 5: $3n = -15$. Divide by 3: $n = -5$."
   },
@@ -399,7 +399,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "First subtract 18 from both sides: $4a = -16$.",
       "Then divide both sides by 4.",
-      "Now carry out that division and pick the negative option."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 18: $4a = -16$. Divide by 4: $a = -4$."
   },
@@ -880,7 +880,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "First subtract 4 from both sides: $3n = -15$.",
       "Then divide both sides by 3.",
-      "Now carry out that division and pick the negative option."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 4: $3n = -15$. Divide by 3: $n = -5$."
   },
@@ -923,7 +923,7 @@
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
       "First subtract 20 from both sides: $5a = -15$.",
       "Then divide both sides by 5.",
-      "Now carry out that division and pick the negative option."
+      "Now carry out that arithmetic and match your result to the options — pay attention to the sign."
     ],
     "explanation": "Subtract 20: $5a = -15$. Divide by 5: $a = -3$."
   },
