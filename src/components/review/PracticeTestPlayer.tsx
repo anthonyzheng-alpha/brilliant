@@ -366,6 +366,7 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
           {problems.map((problem, i) => {
             const correct = results[i]
             const isOpen = expanded.has(i)
+            const lessonRef = buildRelearnRef(problem, 'practice-test', saveSession)
             return (
               <li
                 key={problem.id}
@@ -382,21 +383,18 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
                 <div className="practice-test__result-prompt">
                   <RichText text={problem.prompt} />
                 </div>
-                {!correct && (() => {
-                  const relearnRef = buildRelearnRef(problem, 'practice-test', saveSession)
-                  return relearnRef ? (
-                    <p className="feedback__review-ref">
-                      Go relearn this:{' '}
-                      <Link
-                        to={relearnRef.to}
-                        className="feedback__review-link"
-                        onClick={() => relearnRef.onBeforeNavigate?.()}
-                      >
-                        {relearnRef.lessonTitle}
-                      </Link>
-                    </p>
-                  ) : null
-                })()}
+                {lessonRef && (
+                  <p className="feedback__review-ref">
+                    {correct ? 'Lesson covered:' : 'Go relearn this:'}{' '}
+                    <Link
+                      to={lessonRef.to}
+                      className="feedback__review-link"
+                      onClick={() => lessonRef.onBeforeNavigate?.()}
+                    >
+                      {lessonRef.lessonTitle}
+                    </Link>
+                  </p>
+                )}
                 <button
                   type="button"
                   className="btn btn--ghost practice-test__explain-btn"
