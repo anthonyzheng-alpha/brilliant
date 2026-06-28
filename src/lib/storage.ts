@@ -1,10 +1,12 @@
 import type {
+  AnswerValue,
   ProgressState,
   GamificationState,
   LessonVariant,
   StruggleState,
   MonsterProfile,
 } from '../types/content'
+import type { GeneratedProblem } from './ai'
 import { DEFAULT_THEME, isTheme, type Theme } from './theme'
 import { DEFAULT_COLOR, DEFAULT_OWNED } from './shop'
 
@@ -16,6 +18,7 @@ const VARIANTS_KEY = 'algebra-clone-variants'
 const DEBUG_KEY = 'algebra-clone-debug'
 const SETTINGS_KEY = 'algebra-clone-settings'
 const WELCOME_KEY = 'algebra-clone-welcome-seen'
+const OVERALL_REVIEW_SESSION_KEY = 'algebra-clone-overall-review-session'
 
 type DebugState = {
   unlockAll: boolean
@@ -167,6 +170,46 @@ export function saveVariant(lessonId: string, variant: LessonVariant): void {
   const all = readJson<Record<string, LessonVariant>>(VARIANTS_KEY, () => ({}))
   all[lessonId] = variant
   writeJson(VARIANTS_KEY, all)
+}
+
+export type OverallReviewSession = {
+  problem: GeneratedProblem
+  answer: AnswerValue
+  feedback:
+    | { kind: 'idle' }
+    | { kind: 'incorrect'; reason: string; shake?: boolean }
+    | { kind: 'correct'; explanation: string }
+  inputLocked: boolean
+  wrongLine: { slope: number; intercept: number } | null
+  attempted: number
+  correctCount: number
+  coinsEarned: number
+  correctStreak: number
+  streaks: Record<string, number>
+  mastered: string[]
+  recentPrompts: string[]
+}
+
+function readSessionJson<T>(key: string): T | null {
+  try {
+    const raw = sessionStorage.getItem(key)
+    if (!raw) return null
+    return JSON.parse(raw) as T
+  } catch {
+    return null
+  }
+}
+
+export function saveOverallReviewSession(session: OverallReviewSession): void {
+  sessionStorage.setItem(OVERALL_REVIEW_SESSION_KEY, JSON.stringify(session))
+}
+
+export function loadOverallReviewSession(): OverallReviewSession | null {
+  return readSessionJson<OverallReviewSession>(OVERALL_REVIEW_SESSION_KEY)
+}
+
+export function clearOverallReviewSession(): void {
+  sessionStorage.removeItem(OVERALL_REVIEW_SESSION_KEY)
 }
 
 export function clearAllLocalData(): void {

@@ -29,6 +29,41 @@ export function roundLabelFor(lessonId: string, roundId: string): string | undef
   return getLessonById(lessonId)?.rounds.find((r) => r.id === roundId)?.label
 }
 
+// User-facing label for the "go relearn this" recommendation. Prefers the
+// concept name from the round's mini-lesson (e.g. "Undo Multiplication") over
+// the generic difficulty band label (e.g. "Warm-up", "Mastery").
+export function reviewSectionLabelFor(
+  lessonId: string,
+  roundId: string,
+): string | undefined {
+  if (!roundId) return undefined
+  const round = getLessonById(lessonId)?.rounds.find((r) => r.id === roundId)
+  if (!round) return undefined
+  return round.miniLesson?.title ?? round.label
+}
+
+// Resolve the round to target/recommend for review. The lesson's final round is
+// a synthesis ("Putting It Together") and should never be recommended; instead
+// fall back to the basic concept (the first round that teaches a mini-lesson).
+// Keeps a valid mid-lesson round so specific weaknesses still point at their own
+// mini-lesson; only the last round (or an empty/invalid target) is remapped.
+export function resolveReviewRound(lessonId: string, preferredRoundId: string): string {
+  const lesson = getLessonById(lessonId)
+  if (!lesson || lesson.rounds.length === 0) return preferredRoundId
+  const lastId = lesson.rounds[lesson.rounds.length - 1].id
+  // Candidate "concept" rounds: every round except the final synthesis one that
+  // actually has a mini-lesson to name and link to.
+  const candidates = lesson.rounds.slice(0, -1).filter((r) => r.miniLesson)
+  if (
+    preferredRoundId &&
+    preferredRoundId !== lastId &&
+    candidates.some((r) => r.id === preferredRoundId)
+  ) {
+    return preferredRoundId
+  }
+  return candidates[0]?.id ?? lesson.rounds[0].id
+}
+
 // A single mini-lesson (round) the learner can target in a practice test.
 export type TestTarget = { lessonId: string; roundId: string }
 

@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import { PageShell } from '../components/layout/PageShell'
 import { LessonPlayer } from '../components/lesson/LessonPlayer'
 import {
@@ -20,6 +20,7 @@ import './LessonPage.css'
 
 export function LessonPage() {
   const { slug, lessonId } = useParams<{ slug: string; lessonId: string }>()
+  const [searchParams] = useSearchParams()
   const course = slug ? getCourseBySlug(slug) : undefined
   const lesson = lessonId ? getLessonById(lessonId) : undefined
 
@@ -72,6 +73,13 @@ export function LessonPage() {
 
   const resumeIndex = getResume(course.id, lesson.id)
 
+  // Deep-link from the Overall Review "go relearn this" link: open straight onto
+  // a specific round's mini-lesson rather than wherever the learner left off.
+  const roundParam = searchParams.get('round')
+  const reviewRoundId =
+    roundParam && lesson.rounds.some((r) => r.id === roundParam) ? roundParam : undefined
+  const returnTo = searchParams.get('from') === 'review' && reviewRoundId ? '/review' : undefined
+
   return (
     <PageShell>
       <Link to={`/courses/${slug}`} className="back-link">
@@ -86,6 +94,8 @@ export function LessonPage() {
         unitId={unit?.id}
         unitLessonIds={unitLessonIds}
         initialProblemIndex={resumeIndex}
+        reviewRoundId={reviewRoundId}
+        returnTo={returnTo}
       />
     </PageShell>
   )

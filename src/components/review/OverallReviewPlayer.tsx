@@ -22,8 +22,19 @@ import {
   type GeneratedProblem,
 } from '../../lib/ai'
 import { getLessonLocation } from '../../content'
-import { roundContext, roundLabelFor, pickRandom as pick } from '../../lib/reviewTargeting'
+import {
+  roundContext,
+  roundLabelFor,
+  resolveReviewRound,
+  reviewSectionLabelFor,
+  pickRandom as pick,
+} from '../../lib/reviewTargeting'
 import { saveUserStruggles, saveUserGamification } from '../../lib/syncProgress'
+import {
+  saveOverallReviewSession,
+  clearOverallReviewSession,
+  loadOverallReviewSession,
+} from '../../lib/storage'
 import '../lesson/LessonPlayer.css'
 
 type Props = {
@@ -38,6 +49,8 @@ function skillKey(lessonId: string, roundId: string, type: ProblemType): string 
 
 export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const navigate = useNavigate()
+  const pausedSessionRef = useRef(loadOverallReviewSession())
+  const pausedSession = pausedSessionRef.current
   const user = useAuthStore((s) => s.user)
   const recordAttempt = useStruggleStore((s) => s.recordAttempt)
   const getWeakSkills = useStruggleStore((s) => s.getWeakSkills)
@@ -46,31 +59,41 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   const recordActivity = useGamificationStore((s) => s.recordActivity)
   const awardCoins = useGamificationStore((s) => s.awardCoins)
 
-  const [problem, setProblem] = useState<GeneratedProblem | null>(null)
-  const [answer, setAnswer] = useState<AnswerValue | null>(null)
-  const [inputLocked, setInputLocked] = useState(false)
-  const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [attempted, setAttempted] = useState(0)
-  const [correctCount, setCorrectCount] = useState(0)
-  const [coinsEarned, setCoinsEarned] = useState(0)
+  const [problem, setProblem] = useState<GeneratedProblem | null>(pausedSession?.problem ?? null)
+  const [answer, setAnswer] = useState<AnswerValue | null>(
+    pausedSession?.answer ?? null,
+  )
+  const [inputLocked, setInputLocked] = useState(pausedSession?.inputLocked ?? false)
+  const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(
+    pausedSession?.wrongLine ?? null,
+  )
+  const [loading, setLoading] = useState(!pausedSession)
+  const [attempted, setAttempted] = useState(pausedSession?.attempted ?? 0)
+  const [correctCount, setCorrectCount] = useState(pausedSession?.correctCount ?? 0)
+  const [coinsEarned, setCoinsEarned] = useState(pausedSession?.coinsEarned ?? 0)
   const [ended, setEnded] = useState(false)
   const [feedback, setFeedback] = useState<
     | { kind: 'idle' }
     | { kind: 'incorrect'; reason: string; shake?: boolean }
     | { kind: 'correct'; explanation: string }
-  >({ kind: 'idle' })
+  >(() => {
+    if (!pausedSession) return { kind: 'idle' }
+    if (pausedSession.feedback.kind === 'incorrect') {
+      return { ...pausedSession.feedback, shake: false }
+    }
+    return pausedSession.feedback
+  })
 
   // Session-wide consecutive-correct streak that drives coin milestone bonuses
   // (separate from the per-skill streaks below; any wrong answer breaks it).
-  const correctStreakRef = useRef(0)
+  const correctStreakRef = useRef(pausedSession?.correctStreak ?? 0)
   // In-session adaptivity: per-skill correct streak + topics mastered this session.
-  const streaksRef = useRef<Record<string, number>>({})
-  const masteredRef = useRef<Set<string>>(new Set())
+  const streaksRef = useRef<Record<string, number>>(pausedSession?.streaks ?? {})
+  const masteredRef = useRef<Set<string>>(new Set(pausedSession?.mastered ?? []))
   // Prefetched next problem so latency is hidden while the learner answers.
   const nextRef = useRef<Promise<GeneratedProblem> | null>(null)
   // Normalized prompts of the last few shown problems, to avoid repeats.
-  const recentPromptsRef = useRef<string[]>([])
+  const recentPromptsRef = useRef<string[]>(pausedSession?.recentPrompts ?? [])
 
   // Choose the next generation target from current weak spots (live-updating),
   // skipping topics mastered this session; falls back to random covered topics.
@@ -113,6 +136,11 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
         problemType = pick(GENERATABLE_TYPES)
       }
     }
+
+    // Never target/recommend a lesson's final synthesis round ("Putting It
+    // Together"); remap to the basic concept so generated problems and the
+    // relearn recommendation point at a teachable mini-lesson.
+    roundId = resolveReviewRound(lessonId, roundId)
 
     const loc = getLessonLocation(lessonId)
     const recentMistakes = weakGeneratable
@@ -172,9 +200,12 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
     setFeedback({ kind: 'idle' })
   }, [])
 
-  // First problem on mount. `loading` already starts true, so we only flip it
-  // off once the async generation resolves (avoids a synchronous setState here).
+  // First problem on mount, or resume a session paused for relearn navigation.
   useEffect(() => {
+    if (pausedSession) {
+      prefetchNext()
+      return
+    }
     let active = true
     generateDistinct().then((first) => {
       if (!active) return
@@ -242,7 +273,35 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
     }
   }
 
+  const saveSession = useCallback(() => {
+    if (!problem || answer === null) return
+    saveOverallReviewSession({
+      problem,
+      answer,
+      feedback,
+      inputLocked,
+      wrongLine,
+      attempted,
+      correctCount,
+      coinsEarned,
+      correctStreak: correctStreakRef.current,
+      streaks: { ...streaksRef.current },
+      mastered: [...masteredRef.current],
+      recentPrompts: [...recentPromptsRef.current],
+    })
+  }, [
+    problem,
+    answer,
+    feedback,
+    inputLocked,
+    wrongLine,
+    attempted,
+    correctCount,
+    coinsEarned,
+  ])
+
   const handleContinue = async () => {
+    clearOverallReviewSession()
     setLoading(true)
     const promise = nextRef.current ?? generateDistinct()
     nextRef.current = null
@@ -254,6 +313,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   }
 
   const endReview = () => {
+    clearOverallReviewSession()
     setEnded(true)
   }
 
@@ -280,16 +340,19 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   }
 
   const reviewLoc = problem ? getLessonLocation(problem.reviewRef) : undefined
-  const reviewRoundLabel = problem
-    ? roundLabelFor(problem.reviewRef, problem.reviewRoundId)
+  const reviewSectionLabel = problem
+    ? reviewSectionLabelFor(problem.reviewRef, problem.reviewRoundId)
     : undefined
   const reviewRef =
     reviewLoc && reviewLoc.courseSlug
       ? {
-          to: `/courses/${reviewLoc.courseSlug}/lessons/${reviewLoc.lessonId}`,
-          lessonTitle: reviewRoundLabel
-            ? `${reviewLoc.lessonTitle} — ${reviewRoundLabel}`
+          to: problem?.reviewRoundId
+            ? `/courses/${reviewLoc.courseSlug}/lessons/${reviewLoc.lessonId}?round=${problem.reviewRoundId}&from=review`
+            : `/courses/${reviewLoc.courseSlug}/lessons/${reviewLoc.lessonId}?from=review`,
+          lessonTitle: reviewSectionLabel
+            ? `${reviewLoc.lessonTitle} — ${reviewSectionLabel}`
             : reviewLoc.lessonTitle,
+          onBeforeNavigate: saveSession,
         }
       : undefined
 

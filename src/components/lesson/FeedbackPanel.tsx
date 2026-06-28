@@ -11,7 +11,7 @@ type FeedbackState =
   | { kind: 'complete'; lessonTitle: string }
   | { kind: 'round-complete'; roundLabel: string; nextLabel: string }
 
-type ReviewRef = { to: string; lessonTitle: string }
+type ReviewRef = { to: string; lessonTitle: string; onBeforeNavigate?: () => void }
 
 type Props = {
   state: FeedbackState
@@ -54,7 +54,11 @@ export function FeedbackPanel({ state, onContinue, onRetryRound, reviewRef }: Pr
         {reviewRef && (
           <p className="feedback__review-ref">
             Go relearn this:{' '}
-            <Link to={reviewRef.to} className="feedback__review-link">
+            <Link
+              to={reviewRef.to}
+              className="feedback__review-link"
+              onClick={() => reviewRef.onBeforeNavigate?.()}
+            >
               {reviewRef.lessonTitle}
             </Link>
           </p>

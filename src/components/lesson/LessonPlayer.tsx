@@ -27,6 +27,11 @@ type Props = {
   unitId?: string
   unitLessonIds?: string[]
   initialProblemIndex?: number
+  // When set (deep-link from Overall Review), open straight onto this round's
+  // mini-lesson in review mode and start its problems at the round's first one.
+  reviewRoundId?: string
+  // When set, exiting the deep-link mini-lesson returns here instead of lesson practice.
+  returnTo?: string
 }
 
 function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
@@ -58,6 +63,8 @@ export function LessonPlayer({
   unitId,
   unitLessonIds,
   initialProblemIndex = 0,
+  reviewRoundId,
+  returnTo,
 }: Props) {
   const navigate = useNavigate()
   const user = useAuthStore((s) => s.user)
@@ -68,16 +75,23 @@ export function LessonPlayer({
   const gamification = useGamificationStore((s) => s.gamification)
   const recordAttempt = useStruggleStore((s) => s.recordAttempt)
 
+  // Deep-link target (Overall Review "go relearn this"): the round whose
+  // mini-lesson should open immediately, starting its problems at the first one.
+  const reviewRoundIdx =
+    reviewRoundId !== undefined ? lesson.rounds.findIndex((r) => r.id === reviewRoundId) : -1
+  const startIndex =
+    reviewRoundIdx >= 0 ? getRoundStartIndex(lesson, reviewRoundIdx) : initialProblemIndex
+
   // When resuming a lesson whose practice is fully done but whose test isn't
   // passed, initialProblemIndex equals problems.length (out of range). Clamp the
   // practice index to a valid value and surface the test checkpoint instead.
-  const clampedInitialIndex = Math.min(initialProblemIndex, Math.max(0, problems.length - 1))
+  const clampedInitialIndex = Math.min(startIndex, Math.max(0, problems.length - 1))
   const [problemIndex, setProblemIndex] = useState(clampedInitialIndex)
   const [answer, setAnswer] = useState<AnswerValue | null>(() =>
     problems[clampedInitialIndex] ? initialAnswer(problems[clampedInitialIndex]) : null,
   )
   const [showTestGate, setShowTestGate] = useState(
-    () => problems.length > 0 && initialProblemIndex >= problems.length,
+    () => problems.length > 0 && startIndex >= problems.length,
   )
   const [hintsRevealed, setHintsRevealed] = useState(0)
   const [feedback, setFeedback] = useState<
@@ -91,17 +105,24 @@ export function LessonPlayer({
   const [inputLocked, setInputLocked] = useState(false)
   const [showLessonTest, setShowLessonTest] = useState(false)
   const [wrongLine, setWrongLine] = useState<{ slope: number; intercept: number } | null>(null)
-  // Furthest problem the learner has reached; persisted progress never drops below this.
-  const [maxProblemIndex, setMaxProblemIndex] = useState(initialProblemIndex)
-  const maxIndexRef = useRef(initialProblemIndex)
+  // Furthest problem the learner has reached; persisted progress never drops
+  // below this. Deep-linking back to an earlier round must not regress progress,
+  // so keep the higher of the saved resume index and the deep-link start.
+  const initialMaxIndex = Math.max(initialProblemIndex, startIndex)
+  const [maxProblemIndex, setMaxProblemIndex] = useState(initialMaxIndex)
+  const maxIndexRef = useRef(initialMaxIndex)
   // Round index whose mini-lesson is currently shown (null = show problems normally).
   const [miniLessonRoundIdx, setMiniLessonRoundIdx] = useState<number | null>(() => {
+    // Deep-link review: always open the targeted round's mini-lesson, even if
+    // the learner has already seen it before.
+    if (reviewRoundIdx >= 0) return reviewRoundIdx
     const ri = getRoundIndexForProblem(lesson, initialProblemIndex)
     return roundHasUnseenMiniLesson(lesson, ri) ? ri : null
   })
   // True when the mini-lesson is shown because the learner chose to review it
-  // mid-practice (vs. the first-time gated view before a round).
-  const [isReviewing, setIsReviewing] = useState(false)
+  // mid-practice (vs. the first-time gated view before a round). Deep-link
+  // reviews also start in this mode so the "Back to problem" action is offered.
+  const [isReviewing, setIsReviewing] = useState(reviewRoundIdx >= 0)
 
   const rounds = useMemo(() => {
     let startIndex = 0
@@ -199,6 +220,10 @@ export function LessonPlayer({
   )
 
   const handleStartRound = () => {
+    if (returnTo && isReviewing) {
+      navigate(returnTo)
+      return
+    }
     if (miniLessonRoundIdx !== null) {
       markMiniLessonSeen(lesson.rounds[miniLessonRoundIdx].id)
     }
@@ -349,6 +374,7 @@ export function LessonPlayer({
           miniLesson={lesson.rounds[miniLessonRoundIdx].miniLesson!}
           onStart={handleStartRound}
           reviewMode={isReviewing}
+          startButtonLabel={returnTo && isReviewing ? 'Back to review' : undefined}
         />
       </div>
     )
