@@ -78,7 +78,15 @@ export function LessonPage() {
   const roundParam = searchParams.get('round')
   const reviewRoundId =
     roundParam && lesson.rounds.some((r) => r.id === roundParam) ? roundParam : undefined
-  const returnTo = searchParams.get('from') === 'review' && reviewRoundId ? '/review' : undefined
+  const from = searchParams.get('from')
+  const returnTo =
+    reviewRoundId && (from === 'review' || from === 'practice-test') ? '/review' : undefined
+  const returnButtonLabel =
+    from === 'practice-test'
+      ? 'Back to test results'
+      : from === 'review'
+        ? 'Back to review'
+        : undefined
 
   return (
     <PageShell>
@@ -96,6 +104,7 @@ export function LessonPage() {
         initialProblemIndex={resumeIndex}
         reviewRoundId={reviewRoundId}
         returnTo={returnTo}
+        returnButtonLabel={returnButtonLabel}
       />
     </PageShell>
   )

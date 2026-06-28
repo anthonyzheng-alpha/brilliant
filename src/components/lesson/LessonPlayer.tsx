@@ -32,6 +32,7 @@ type Props = {
   reviewRoundId?: string
   // When set, exiting the deep-link mini-lesson returns here instead of lesson practice.
   returnTo?: string
+  returnButtonLabel?: string
 }
 
 function getRoundIndexForProblem(lesson: Lesson, problemIndex: number): number {
@@ -65,6 +66,7 @@ export function LessonPlayer({
   initialProblemIndex = 0,
   reviewRoundId,
   returnTo,
+  returnButtonLabel,
 }: Props) {
   const navigate = useNavigate()
   const user = useAuthStore((s) => s.user)
@@ -374,7 +376,11 @@ export function LessonPlayer({
           miniLesson={lesson.rounds[miniLessonRoundIdx].miniLesson!}
           onStart={handleStartRound}
           reviewMode={isReviewing}
-          startButtonLabel={returnTo && isReviewing ? 'Back to review' : undefined}
+          startButtonLabel={
+            returnTo && isReviewing
+              ? (returnButtonLabel ?? 'Back to review')
+              : undefined
+          }
         />
       </div>
     )

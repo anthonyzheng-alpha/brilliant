@@ -9,7 +9,34 @@ import {
 import {
   GENERATABLE_TYPES,
   type GenerateRequest,
+  type GeneratedProblem,
 } from './ai'
+
+export type RelearnRef = {
+  to: string
+  lessonTitle: string
+  onBeforeNavigate?: () => void
+}
+
+// Build the "Go relearn this" link for Overall Review or practice test results.
+export function buildRelearnRef(
+  problem: GeneratedProblem,
+  from: 'review' | 'practice-test',
+  onBeforeNavigate?: () => void,
+): RelearnRef | undefined {
+  const loc = getLessonLocation(problem.reviewRef)
+  if (!loc?.courseSlug) return undefined
+  const roundId = resolveReviewRound(problem.reviewRef, problem.reviewRoundId)
+  const sectionLabel = reviewSectionLabelFor(problem.reviewRef, roundId)
+  const query = roundId ? `?round=${roundId}&from=${from}` : `?from=${from}`
+  return {
+    to: `/courses/${loc.courseSlug}/lessons/${loc.lessonId}${query}`,
+    lessonTitle: sectionLabel
+      ? `${loc.lessonTitle} — ${sectionLabel}`
+      : loc.lessonTitle,
+    onBeforeNavigate,
+  }
+}
 
 export function pickRandom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)]

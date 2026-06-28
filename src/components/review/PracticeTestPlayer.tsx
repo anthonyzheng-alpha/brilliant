@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useCallback, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import type { AnswerValue } from '../../types/content'
 import { RichText } from '../common/RichText'
 import { ProblemRenderer, initialAnswer } from '../problems/ProblemRenderer'
@@ -17,10 +17,16 @@ import {
 } from '../../lib/ai'
 import {
   buildTestRequests,
+  buildRelearnRef,
   getMiniLessonOptions,
   type MiniLessonOption,
   type TestTarget,
 } from '../../lib/reviewTargeting'
+import {
+  savePracticeTestSession,
+  loadPracticeTestSession,
+  clearPracticeTestSession,
+} from '../../lib/storage'
 import { saveUserGamification } from '../../lib/syncProgress'
 import '../lesson/LessonPlayer.css'
 import './PracticeTest.css'
@@ -92,6 +98,8 @@ function clampCount(value: number): number {
 
 export function PracticeTestPlayer({ coveredLessonIds }: Props) {
   const navigate = useNavigate()
+  const pausedSessionRef = useRef(loadPracticeTestSession())
+  const pausedSession = pausedSessionRef.current
   const user = useAuthStore((s) => s.user)
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
   const recordActivity = useGamificationStore((s) => s.recordActivity)
@@ -117,19 +125,21 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
     }
   }
 
-  const [phase, setPhase] = useState<Phase>('setup')
-  const [count, setCount] = useState(Math.min(DEFAULT_QUESTIONS, MAX_QUESTIONS))
+  const [phase, setPhase] = useState<Phase>(pausedSession ? 'results' : 'setup')
+  const [count, setCount] = useState(pausedSession?.count ?? Math.min(DEFAULT_QUESTIONS, MAX_QUESTIONS))
   const [selected, setSelected] = useState<Set<string>>(
-    () => new Set(options.map((o) => o.key)),
+    () => new Set(pausedSession?.selected ?? options.map((o) => o.key)),
   )
   const [generatedCount, setGeneratedCount] = useState(0)
 
-  const [problems, setProblems] = useState<GeneratedProblem[]>([])
-  const [answers, setAnswers] = useState<(AnswerValue | null)[]>([])
-  const [current, setCurrent] = useState(0)
+  const [problems, setProblems] = useState<GeneratedProblem[]>(pausedSession?.problems ?? [])
+  const [answers, setAnswers] = useState<(AnswerValue | null)[]>(pausedSession?.answers ?? [])
+  const [current, setCurrent] = useState(pausedSession?.current ?? 0)
 
-  const [results, setResults] = useState<boolean[]>([])
-  const [expanded, setExpanded] = useState<Set<number>>(new Set())
+  const [results, setResults] = useState<boolean[]>(pausedSession?.results ?? [])
+  const [expanded, setExpanded] = useState<Set<number>>(
+    () => new Set(pausedSession?.expanded ?? []),
+  )
 
   const toggleTopic = (key: string) => {
     setSelected((prev) => {
@@ -153,6 +163,7 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
   }
 
   const startTest = async () => {
+    clearPracticeTestSession()
     const targets = buildTargets()
     if (targets.length === 0) return
     setPhase('loading')
@@ -224,6 +235,7 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
   }
 
   const retake = () => {
+    clearPracticeTestSession()
     setProblems([])
     setAnswers([])
     setResults([])
@@ -231,6 +243,20 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
     setCurrent(0)
     setPhase('setup')
   }
+
+  const saveSession = useCallback(() => {
+    if (phase !== 'results' || problems.length === 0) return
+    savePracticeTestSession({
+      phase: 'results',
+      problems,
+      answers,
+      results,
+      expanded: [...expanded],
+      current,
+      count,
+      selected: [...selected],
+    })
+  }, [phase, problems, answers, results, expanded, current, count, selected])
 
   // --- Setup ---------------------------------------------------------------
   if (phase === 'setup') {
@@ -356,6 +382,21 @@ export function PracticeTestPlayer({ coveredLessonIds }: Props) {
                 <div className="practice-test__result-prompt">
                   <RichText text={problem.prompt} />
                 </div>
+                {!correct && (() => {
+                  const relearnRef = buildRelearnRef(problem, 'practice-test', saveSession)
+                  return relearnRef ? (
+                    <p className="feedback__review-ref">
+                      Go relearn this:{' '}
+                      <Link
+                        to={relearnRef.to}
+                        className="feedback__review-link"
+                        onClick={() => relearnRef.onBeforeNavigate?.()}
+                      >
+                        {relearnRef.lessonTitle}
+                      </Link>
+                    </p>
+                  ) : null
+                })()}
                 <button
                   type="button"
                   className="btn btn--ghost practice-test__explain-btn"

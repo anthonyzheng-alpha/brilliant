@@ -23,10 +23,10 @@ import {
 } from '../../lib/ai'
 import { getLessonLocation } from '../../content'
 import {
+  buildRelearnRef,
   roundContext,
   roundLabelFor,
   resolveReviewRound,
-  reviewSectionLabelFor,
   pickRandom as pick,
 } from '../../lib/reviewTargeting'
 import { saveUserStruggles, saveUserGamification } from '../../lib/syncProgress'
@@ -339,22 +339,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
     )
   }
 
-  const reviewLoc = problem ? getLessonLocation(problem.reviewRef) : undefined
-  const reviewSectionLabel = problem
-    ? reviewSectionLabelFor(problem.reviewRef, problem.reviewRoundId)
-    : undefined
-  const reviewRef =
-    reviewLoc && reviewLoc.courseSlug
-      ? {
-          to: problem?.reviewRoundId
-            ? `/courses/${reviewLoc.courseSlug}/lessons/${reviewLoc.lessonId}?round=${problem.reviewRoundId}&from=review`
-            : `/courses/${reviewLoc.courseSlug}/lessons/${reviewLoc.lessonId}?from=review`,
-          lessonTitle: reviewSectionLabel
-            ? `${reviewLoc.lessonTitle} — ${reviewSectionLabel}`
-            : reviewLoc.lessonTitle,
-          onBeforeNavigate: saveSession,
-        }
-      : undefined
+  const reviewRef = problem ? buildRelearnRef(problem, 'review', saveSession) : undefined
 
   return (
     <div className="lesson-player">

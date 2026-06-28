@@ -19,6 +19,7 @@ const DEBUG_KEY = 'algebra-clone-debug'
 const SETTINGS_KEY = 'algebra-clone-settings'
 const WELCOME_KEY = 'algebra-clone-welcome-seen'
 const OVERALL_REVIEW_SESSION_KEY = 'algebra-clone-overall-review-session'
+const PRACTICE_TEST_SESSION_KEY = 'algebra-clone-practice-test-session'
 
 type DebugState = {
   unlockAll: boolean
@@ -210,6 +211,29 @@ export function loadOverallReviewSession(): OverallReviewSession | null {
 
 export function clearOverallReviewSession(): void {
   sessionStorage.removeItem(OVERALL_REVIEW_SESSION_KEY)
+}
+
+export type PracticeTestSession = {
+  phase: 'results'
+  problems: GeneratedProblem[]
+  answers: (AnswerValue | null)[]
+  results: boolean[]
+  expanded: number[]
+  current: number
+  count: number
+  selected: string[]
+}
+
+export function savePracticeTestSession(session: PracticeTestSession): void {
+  sessionStorage.setItem(PRACTICE_TEST_SESSION_KEY, JSON.stringify(session))
+}
+
+export function loadPracticeTestSession(): PracticeTestSession | null {
+  return readSessionJson<PracticeTestSession>(PRACTICE_TEST_SESSION_KEY)
+}
+
+export function clearPracticeTestSession(): void {
+  sessionStorage.removeItem(PRACTICE_TEST_SESSION_KEY)
 }
 
 export function clearAllLocalData(): void {

@@ -4,7 +4,7 @@ import { PageShell } from '../components/layout/PageShell'
 import { OverallReviewPlayer } from '../components/review/OverallReviewPlayer'
 import { PracticeTestPlayer } from '../components/review/PracticeTestPlayer'
 import { getCoveredLessonIds, getLessonLocation } from '../content'
-import { loadOverallReviewSession } from '../lib/storage'
+import { loadOverallReviewSession, loadPracticeTestSession } from '../lib/storage'
 import { useProgressStore } from '../stores/progressStore'
 import { useStruggleStore } from '../stores/struggleStore'
 import '../components/review/PracticeTest.css'
@@ -16,9 +16,11 @@ export function OverallReviewPage() {
   const struggles = useStruggleStore((s) => s.struggles)
   const getAttemptedLessonIds = useStruggleStore((s) => s.getAttemptedLessonIds)
 
-  const [mode, setMode] = useState<ReviewMode>(() =>
-    loadOverallReviewSession() ? 'infinite' : 'choose',
-  )
+  const [mode, setMode] = useState<ReviewMode>(() => {
+    if (loadOverallReviewSession()) return 'infinite'
+    if (loadPracticeTestSession()) return 'test'
+    return 'choose'
+  })
 
   // Lessons reachable by the review: anything progress counts as covered, plus
   // anything the learner has attempted (struggle store) but may not have advanced
