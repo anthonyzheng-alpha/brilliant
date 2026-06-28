@@ -70,7 +70,7 @@ export function ProfilePage() {
             <span className="profile__coins-label">coins</span>
           </div>
           <p className="profile__hint">
-            Earn more coins by answering correctly in the Overall Review.
+            Earn more coins by answering correctly in the infinite practice feature.
           </p>
         </aside>
 

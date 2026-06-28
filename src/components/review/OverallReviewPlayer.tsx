@@ -344,7 +344,7 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
   return (
     <div className="lesson-player">
       <p className="lesson-player__review-status">
-        Overall Review · {attempted} answered · {correctCount} correct · {coinsEarned} coins
+        Infinite Practice · {attempted} answered · {correctCount} correct · {coinsEarned} coins
       </p>
 
       {loading || !problem ? (

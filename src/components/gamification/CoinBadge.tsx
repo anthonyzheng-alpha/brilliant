@@ -42,7 +42,7 @@ export function CoinBadge() {
         <div className="coin-badge__popover" role="note">
           <p className="coin-badge__popover-title">Coins</p>
           <div className="coin-info">
-            <p>Earn coins in the Overall Review:</p>
+            <p>Earn coins from the Infinite Practice feature:</p>
             <ul>
               <li>{COINS_PER_CORRECT} coins for each correct answer</li>
               <li>

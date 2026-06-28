@@ -68,7 +68,7 @@ export function StreakBadge() {
                 <li>Complete a round in a lesson</li>
                 <li>Finish a lesson</li>
                 <li>Complete a lesson review of 5 questions</li>
-                <li>Complete an overall review problem</li>
+                <li>Complete an infinite practice problem</li>
                 <li>Complete a practice test</li>
               </ul>
               <p className="streak-info__note">Miss a day and the streak resets.</p>
