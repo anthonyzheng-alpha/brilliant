@@ -209,7 +209,7 @@ function SettingsMenu() {
         </label>
         {!aiEnabled && (
           <p className="app-header__settings-warning" role="alert">
-            AI is off. The problem diversity presented by the overall review will decrease.
+            AI is off. There will be less problem diversity in the overall review.
           </p>
         )}
       </div>
