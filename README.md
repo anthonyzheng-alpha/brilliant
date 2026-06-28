@@ -11,6 +11,10 @@ npm run dev
 
 Open http://localhost:5173
 
+## Live Demo
+
+The live demo of the app can be found here: [Algebra Wizard](https://brilliant-2e832.web.app/)
+
 ## Firebase setup
 
 1. Create a Firebase project and enable **Google** sign-in.
