@@ -16,9 +16,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "What number plus 7 equals 9?",
-      "Subtract 7 from both sides: $x = 9 - 7$.",
-      "Subtract 7 from 9 and choose the matching option."
+      "Here 7 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 7 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 7 from both sides: $x = 9 - 7 = 2$."
   },
@@ -35,9 +35,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
+      "Here 5 is subtracted from $n$, so the inverse operation you need is addition.",
       "Add 5 to both sides to isolate $n$.",
-      "$n = 3 + 5$.",
-      "Add the two numbers to get your value for $n$."
+      "Now carry out the addition to find your value for $n$."
     ],
     "explanation": "Add 5 to both sides: $n = 3 + 5 = 8$.",
     "misconception": "Since 5 is subtracted from $n$, undo it by adding 5 to both sides rather than subtracting."
@@ -59,9 +59,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 4 from both sides.",
-      "$y = 10 - 4$.",
-      "Subtract 4 from 10 and choose the matching option."
+      "Here 4 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 4 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 4 from both sides: $y = 10 - 4 = 6$."
   },
@@ -78,9 +78,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 2 to both sides.",
-      "$a = 6 + 2$.",
-      "Add the two numbers to get your value for $a$."
+      "Here 2 is subtracted from $a$, so the inverse operation you need is addition.",
+      "Add 2 to both sides to isolate $a$.",
+      "Now carry out the addition to find your value for $a$."
     ],
     "explanation": "Add 2 to both sides: $a = 6 + 2 = 8$.",
     "misconception": "Since 2 is subtracted from $a$, undo it by adding 2 to both sides rather than subtracting."
@@ -98,9 +98,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 6 from both sides.",
-      "$t = 9 - 6$.",
-      "Subtract to find your value for $t$."
+      "Here 6 is added to $t$, so the inverse operation you need is subtraction.",
+      "Subtract 6 from both sides to leave $t$ by itself.",
+      "Now carry out the subtraction to find your value for $t$."
     ],
     "explanation": "Subtract 6 from both sides: $t = 9 - 6 = 3$.",
     "misconception": "Because 6 is added to $t$, subtract 6 from both sides instead of adding."
@@ -118,9 +118,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 24 from both sides.",
-      "$x = 51 - 24$.",
-      "Subtract to find your value for $x$."
+      "Here 24 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 24 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction to find your value for $x$."
     ],
     "explanation": "Subtract 24 from both sides: $x = 51 - 24 = 27$.",
     "misconception": "Since 24 is added to $x$, subtract it from both sides rather than adding."
@@ -142,9 +142,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 38 to both sides.",
-      "$n = 45 + 38$.",
-      "Add the two numbers and choose the matching option."
+      "Here 38 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 38 to both sides to isolate $n$.",
+      "Now carry out the addition and choose the matching option."
     ],
     "explanation": "Add 38 to both sides: $n = 45 + 38 = 83$."
   },
@@ -161,9 +161,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 56 from both sides.",
-      "$y = 90 - 56$.",
-      "Subtract to find your value for $y$."
+      "Here 56 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 56 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction to find your value for $y$."
     ],
     "explanation": "Subtract 56 from both sides: $y = 90 - 56 = 34$.",
     "misconception": "Since 56 is added to $y$, subtract it from both sides instead of adding."
@@ -181,9 +181,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 47 to both sides.",
-      "$a = 29 + 47$.",
-      "Add the two numbers to get your value for $a$."
+      "Here 47 is subtracted from $a$, so the inverse operation you need is addition.",
+      "Add 47 to both sides to isolate $a$.",
+      "Now carry out the addition to find your value for $a$."
     ],
     "explanation": "Add 47 to both sides: $a = 29 + 47 = 76$.",
     "misconception": "Because 47 is subtracted from $a$, undo it by adding 47 to both sides rather than subtracting."
@@ -205,9 +205,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 63 from both sides.",
-      "$t = 120 - 63$.",
-      "Subtract 63 from 120 and choose the matching option."
+      "Here 63 is added to $t$, so the inverse operation you need is subtraction.",
+      "Subtract 63 from both sides to leave $t$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 63 from both sides: $t = 120 - 63 = 57$."
   },
@@ -224,9 +224,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 8 from both sides.",
-      "$x = 3 - 8$, which is negative.",
-      "Subtract to find your value for $x$; the result is negative."
+      "Here 8 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 8 from both sides to leave $x$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and keep the negative sign in your answer."
     ],
     "explanation": "Subtract 8 from both sides: $x = 3 - 8 = -5$.",
     "misconception": "When the constant is larger than the right side, the answer is negative - don't drop the negative sign."
@@ -248,9 +248,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 12 from both sides.",
-      "$n = 5 - 12$, which is negative.",
-      "Subtract 12 from 5 and choose the negative result."
+      "Here 12 is added to $n$, so the inverse operation you need is subtraction.",
+      "Subtract 12 from both sides to leave $n$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and choose the negative result."
     ],
     "explanation": "Subtract 12 from both sides: $n = 5 - 12 = -7$."
   },
@@ -267,9 +267,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 4 to both sides.",
-      "$y = -10 + 4$.",
-      "Add 4 to $-10$ to get your value for $y$."
+      "Here 4 is subtracted from $y$, so the inverse operation you need is addition.",
+      "Add 4 to both sides to isolate $y$.",
+      "Now carry out the addition to find your value for $y$; the result stays negative."
     ],
     "explanation": "Add 4 to both sides: $y = -10 + 4 = -6$.",
     "misconception": "Add 4 to both sides; adding to a negative number moves it toward zero but it stays negative here."
@@ -291,9 +291,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 15 from both sides.",
-      "$a = 0 - 15$.",
-      "Subtract 15 from 0 and choose the negative result."
+      "Here 15 is added to $a$, so the inverse operation you need is subtraction.",
+      "Subtract 15 from both sides to leave $a$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and choose the negative result."
     ],
     "explanation": "Subtract 15 from both sides: $a = 0 - 15 = -15$."
   },
@@ -310,9 +310,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 9 from both sides.",
-      "$t = -2 - 9$.",
-      "Subtract 9 from $-2$ to get your value for $t$."
+      "Here 9 is added to $t$, so the inverse operation you need is subtraction.",
+      "Subtract 9 from both sides to leave $t$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and keep the negative sign in your answer."
     ],
     "explanation": "Subtract 9 from both sides: $t = -2 - 9 = -11$.",
     "misconception": "Subtracting 9 from a negative number makes it more negative; the answer is not positive."
@@ -330,9 +330,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 1.5 from both sides.",
-      "$x = 4 - 1.5$.",
-      "Subtract the decimals to get your value for $x$."
+      "Here 1.5 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 1.5 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $x$."
     ],
     "explanation": "Subtract 1.5 from both sides: $x = 4 - 1.5 = 2.5$.",
     "misconception": "Line up the decimal points and subtract 1.5; don't add it."
@@ -350,9 +350,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 0.5 to both sides.",
-      "$n = 2 + 0.5$.",
-      "Add the decimals to get your value for $n$."
+      "Here 0.5 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 0.5 to both sides to isolate $n$.",
+      "Now carry out the addition, lining up the decimal points, to find your value for $n$."
     ],
     "explanation": "Add 0.5 to both sides: $n = 2 + 0.5 = 2.5$.",
     "misconception": "Since 0.5 is subtracted from $n$, add it back to both sides rather than subtracting."
@@ -374,9 +374,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract $\\frac{1}{3}$ from both sides.",
-      "$a = \\frac{2}{3} - \\frac{1}{3}$.",
-      "Subtract the fractions and choose the matching option."
+      "Here $\\frac{1}{3}$ is added to $a$, so the inverse operation you need is subtraction.",
+      "Subtract $\\frac{1}{3}$ from both sides to leave $a$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract $\\frac{1}{3}$ from both sides: $a = \\frac{2}{3} - \\frac{1}{3} = \\frac{1}{3}$."
   },
@@ -393,9 +393,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 2.3 from both sides.",
-      "$y = 5.1 - 2.3$.",
-      "Subtract the decimals to get your value for $y$."
+      "Here 2.3 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 2.3 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $y$."
     ],
     "explanation": "Subtract 2.3 from both sides: $y = 5.1 - 2.3 = 2.8$.",
     "misconception": "Subtract 2.3 from 5.1 with the decimal points aligned; don't add."
@@ -413,9 +413,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 3.75 to both sides.",
-      "$t = 1.25 + 3.75$.",
-      "Add the decimals to get your value for $t$."
+      "Here 3.75 is subtracted from $t$, so the inverse operation you need is addition.",
+      "Add 3.75 to both sides to isolate $t$.",
+      "Now carry out the addition, lining up the decimal points, to find your value for $t$."
     ],
     "explanation": "Add 3.75 to both sides: $t = 1.25 + 3.75 = 5$.",
     "misconception": "Since 3.75 is subtracted from $t$, add it back to both sides instead of subtracting."
@@ -437,9 +437,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 13 from both sides.",
-      "$x = 20 - 13$.",
-      "Subtract 13 from 20 and choose the matching option."
+      "Here 13 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 13 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 13 from both sides: $x = 20 - 13 = 7$."
   },
@@ -456,9 +456,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 21 to both sides.",
-      "$n = -9 + 21$.",
-      "Add 21 to $-9$ to get your value for $n$."
+      "Here 21 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 21 to both sides to isolate $n$.",
+      "Now carry out the addition to find your value for $n$; the result is positive."
     ],
     "explanation": "Add 21 to both sides: $n = -9 + 21 = 12$.",
     "misconception": "Add 21 to both sides; $-9 + 21$ is positive, so don't leave the answer negative."
@@ -476,9 +476,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 0.6 from both sides.",
-      "$y = 1 - 0.6$.",
-      "Subtract the decimals to get your value for $y$."
+      "Here 0.6 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 0.6 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $y$."
     ],
     "explanation": "Subtract 0.6 from both sides: $y = 1 - 0.6 = 0.4$.",
     "misconception": "Subtract 0.6 from 1; the answer is a decimal less than 1, not a whole number."
@@ -500,9 +500,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 6 to both sides.",
-      "$a = -14 + 6$.",
-      "Add 6 to $-14$ and choose the negative result."
+      "Here 6 is subtracted from $a$, so the inverse operation you need is addition.",
+      "Add 6 to both sides to isolate $a$; note the result will still be negative.",
+      "Now carry out the addition and choose the negative result."
     ],
     "explanation": "Add 6 to both sides: $a = -14 + 6 = -8$."
   },
@@ -519,9 +519,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract $\\frac{1}{2}$ from both sides.",
-      "$t = 2 - \\frac{1}{2}$.",
-      "Subtract the fraction from 2 to get your value for $t$."
+      "Here $\\frac{1}{2}$ is added to $t$, so the inverse operation you need is subtraction.",
+      "Subtract $\\frac{1}{2}$ from both sides to leave $t$ by itself.",
+      "Now carry out the subtraction to find your value for $t$."
     ],
     "explanation": "Subtract $\\frac{1}{2}$ from both sides: $t = 2 - \\frac{1}{2} = \\frac{3}{2} = 1.5$.",
     "misconception": "Since $\\frac{1}{2}$ is added to $t$, subtract it from both sides rather than adding."
@@ -539,9 +539,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 3 from both sides.",
-      "$x = 8 - 3$.",
-      "Subtract to find your value for $x$."
+      "Here 3 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 3 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction to find your value for $x$."
     ],
     "explanation": "Subtract 3 from both sides: $x = 8 - 3 = 5$.",
     "misconception": "Because 3 is added to $x$, subtract 3 from both sides instead of adding."
@@ -563,9 +563,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 2 from both sides.",
-      "$m = 7 - 2$.",
-      "Subtract 2 from 7 and choose the matching option."
+      "Here 2 is added to $m$, so the inverse operation you need is subtraction.",
+      "Subtract 2 from both sides to leave $m$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 2 from both sides: $m = 7 - 2 = 5$."
   },
@@ -582,9 +582,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 4 to both sides.",
-      "$b = 2 + 4$.",
-      "Add the two numbers to get your value for $b$."
+      "Here 4 is subtracted from $b$, so the inverse operation you need is addition.",
+      "Add 4 to both sides to isolate $b$.",
+      "Now carry out the addition to find your value for $b$."
     ],
     "explanation": "Add 4 to both sides: $b = 2 + 4 = 6$.",
     "misconception": "Since 4 is subtracted from $b$, undo it by adding 4 to both sides rather than subtracting."
@@ -602,9 +602,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 5 from both sides.",
-      "$k = 12 - 5$.",
-      "Subtract to find your value for $k$."
+      "Here 5 is added to $k$, so the inverse operation you need is subtraction.",
+      "Subtract 5 from both sides to leave $k$ by itself.",
+      "Now carry out the subtraction to find your value for $k$."
     ],
     "explanation": "Subtract 5 from both sides: $k = 12 - 5 = 7$.",
     "misconception": "Because 5 is added to $k$, subtract 5 from both sides instead of adding."
@@ -626,9 +626,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 3 to both sides.",
-      "$w = 4 + 3$.",
-      "Add the two numbers and choose the matching option."
+      "Here 3 is subtracted from $w$, so the inverse operation you need is addition.",
+      "Add 3 to both sides to isolate $w$.",
+      "Now carry out the addition and choose the matching option."
     ],
     "explanation": "Add 3 to both sides: $w = 4 + 3 = 7$."
   },
@@ -645,9 +645,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 35 from both sides.",
-      "$x = 62 - 35$.",
-      "Subtract to find your value for $x$."
+      "Here 35 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 35 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction to find your value for $x$."
     ],
     "explanation": "Subtract 35 from both sides: $x = 62 - 35 = 27$.",
     "misconception": "Since 35 is added to $x$, subtract it from both sides rather than adding."
@@ -665,9 +665,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 29 to both sides.",
-      "$n = 44 + 29$.",
-      "Add the two numbers to get your value for $n$."
+      "Here 29 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 29 to both sides to isolate $n$.",
+      "Now carry out the addition to find your value for $n$."
     ],
     "explanation": "Add 29 to both sides: $n = 44 + 29 = 73$.",
     "misconception": "Because 29 is subtracted from $n$, undo it by adding 29 to both sides rather than subtracting."
@@ -689,9 +689,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 48 from both sides.",
-      "$y = 80 - 48$.",
-      "Subtract 48 from 80 and choose the matching option."
+      "Here 48 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 48 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract 48 from both sides: $y = 80 - 48 = 32$."
   },
@@ -708,9 +708,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 56 to both sides.",
-      "$a = 18 + 56$.",
-      "Add the two numbers to get your value for $a$."
+      "Here 56 is subtracted from $a$, so the inverse operation you need is addition.",
+      "Add 56 to both sides to isolate $a$.",
+      "Now carry out the addition to find your value for $a$."
     ],
     "explanation": "Add 56 to both sides: $a = 18 + 56 = 74$.",
     "misconception": "Since 56 is subtracted from $a$, undo it by adding 56 to both sides rather than subtracting."
@@ -728,9 +728,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 72 from both sides.",
-      "$t = 95 - 72$.",
-      "Subtract to find your value for $t$."
+      "Here 72 is added to $t$, so the inverse operation you need is subtraction.",
+      "Subtract 72 from both sides to leave $t$ by itself.",
+      "Now carry out the subtraction to find your value for $t$."
     ],
     "explanation": "Subtract 72 from both sides: $t = 95 - 72 = 23$.",
     "misconception": "Since 72 is added to $t$, subtract it from both sides rather than adding."
@@ -748,9 +748,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 10 from both sides.",
-      "$x = 4 - 10$, which is negative.",
-      "Subtract to find your value for $x$; the result is negative."
+      "Here 10 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 10 from both sides to leave $x$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and keep the negative sign in your answer."
     ],
     "explanation": "Subtract 10 from both sides: $x = 4 - 10 = -6$.",
     "misconception": "When the constant is larger than the right side, the answer is negative - don't drop the negative sign."
@@ -772,9 +772,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 9 from both sides.",
-      "$n = 2 - 9$, which is negative.",
-      "Subtract 9 from 2 and choose the negative result."
+      "Here 9 is added to $n$, so the inverse operation you need is subtraction.",
+      "Subtract 9 from both sides to leave $n$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and choose the negative result."
     ],
     "explanation": "Subtract 9 from both sides: $n = 2 - 9 = -7$."
   },
@@ -791,9 +791,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 3 to both sides.",
-      "$y = -8 + 3$.",
-      "Add 3 to $-8$ to get your value for $y$."
+      "Here 3 is subtracted from $y$, so the inverse operation you need is addition.",
+      "Add 3 to both sides to isolate $y$.",
+      "Now carry out the addition to find your value for $y$; the result stays negative."
     ],
     "explanation": "Add 3 to both sides: $y = -8 + 3 = -5$.",
     "misconception": "Add 3 to both sides; adding to a negative number moves it toward zero but it stays negative here."
@@ -811,9 +811,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 20 from both sides.",
-      "$a = 5 - 20$, which is negative.",
-      "Subtract to find your value for $a$; the result is negative."
+      "Here 20 is added to $a$, so the inverse operation you need is subtraction.",
+      "Subtract 20 from both sides to leave $a$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and keep the negative sign in your answer."
     ],
     "explanation": "Subtract 20 from both sides: $a = 5 - 20 = -15$.",
     "misconception": "Because 20 is larger than 5, the answer is negative; keep the negative sign."
@@ -835,9 +835,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 6 from both sides.",
-      "$m = -1 - 6$.",
-      "Subtract 6 from $-1$ and choose the negative result."
+      "Here 6 is added to $m$, so the inverse operation you need is subtraction.",
+      "Subtract 6 from both sides to leave $m$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and choose the negative result."
     ],
     "explanation": "Subtract 6 from both sides: $m = -1 - 6 = -7$."
   },
@@ -854,9 +854,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 2.5 from both sides.",
-      "$x = 6 - 2.5$.",
-      "Subtract the decimals to get your value for $x$."
+      "Here 2.5 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 2.5 from both sides to leave $x$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $x$."
     ],
     "explanation": "Subtract 2.5 from both sides: $x = 6 - 2.5 = 3.5$.",
     "misconception": "Line up the decimal points and subtract 2.5; don't add it."
@@ -874,9 +874,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 1.2 to both sides.",
-      "$n = 3 + 1.2$.",
-      "Add the decimals to get your value for $n$."
+      "Here 1.2 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 1.2 to both sides to isolate $n$.",
+      "Now carry out the addition, lining up the decimal points, to find your value for $n$."
     ],
     "explanation": "Add 1.2 to both sides: $n = 3 + 1.2 = 4.2$.",
     "misconception": "Since 1.2 is subtracted from $n$, add it back to both sides rather than subtracting."
@@ -894,9 +894,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 0.75 from both sides.",
-      "$y = 2 - 0.75$.",
-      "Subtract the decimals to get your value for $y$."
+      "Here 0.75 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 0.75 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $y$."
     ],
     "explanation": "Subtract 0.75 from both sides: $y = 2 - 0.75 = 1.25$.",
     "misconception": "Subtract 0.75 from 2 with the decimal points aligned; don't add."
@@ -918,9 +918,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract $\\frac{1}{4}$ from both sides.",
-      "$a = \\frac{3}{4} - \\frac{1}{4}$.",
-      "Subtract the fractions and choose the matching option."
+      "Here $\\frac{1}{4}$ is added to $a$, so the inverse operation you need is subtraction.",
+      "Subtract $\\frac{1}{4}$ from both sides to leave $a$ by itself.",
+      "Now carry out the subtraction and choose the matching option."
     ],
     "explanation": "Subtract $\\frac{1}{4}$ from both sides: $a = \\frac{3}{4} - \\frac{1}{4} = \\frac{2}{4} = \\frac{1}{2}$."
   },
@@ -937,9 +937,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 2.4 to both sides.",
-      "$t = 1.6 + 2.4$.",
-      "Add the decimals to get your value for $t$."
+      "Here 2.4 is subtracted from $t$, so the inverse operation you need is addition.",
+      "Add 2.4 to both sides to isolate $t$.",
+      "Now carry out the addition, lining up the decimal points, to find your value for $t$."
     ],
     "explanation": "Add 2.4 to both sides: $t = 1.6 + 2.4 = 4$.",
     "misconception": "Since 2.4 is subtracted from $t$, add it back to both sides instead of subtracting."
@@ -957,9 +957,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 17 from both sides.",
-      "$x = 9 - 17$, which is negative.",
-      "Subtract to find your value for $x$; the result is negative."
+      "Here 17 is added to $x$, so the inverse operation you need is subtraction.",
+      "Subtract 17 from both sides to leave $x$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and keep the negative sign in your answer."
     ],
     "explanation": "Subtract 17 from both sides: $x = 9 - 17 = -8$.",
     "misconception": "Because 17 is larger than 9, the answer is negative; keep the negative sign."
@@ -981,9 +981,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 18 to both sides.",
-      "$n = -5 + 18$.",
-      "Add 18 to $-5$ and choose the positive result."
+      "Here 18 is subtracted from $n$, so the inverse operation you need is addition.",
+      "Add 18 to both sides to isolate $n$; note the result will be positive.",
+      "Now carry out the addition and choose the positive result."
     ],
     "explanation": "Add 18 to both sides: $n = -5 + 18 = 13$."
   },
@@ -1000,9 +1000,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 0.8 from both sides.",
-      "$y = 1.5 - 0.8$.",
-      "Subtract the decimals to get your value for $y$."
+      "Here 0.8 is added to $y$, so the inverse operation you need is subtraction.",
+      "Subtract 0.8 from both sides to leave $y$ by itself.",
+      "Now carry out the subtraction, lining up the decimal points, to find your value for $y$."
     ],
     "explanation": "Subtract 0.8 from both sides: $y = 1.5 - 0.8 = 0.7$.",
     "misconception": "Subtract 0.8 from 1.5; the answer is a decimal less than 1, not a whole number."
@@ -1020,9 +1020,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Add 11 to both sides.",
-      "$a = -4 + 11$.",
-      "Add 11 to $-4$ to get your value for $a$."
+      "Here 11 is subtracted from $a$, so the inverse operation you need is addition.",
+      "Add 11 to both sides to isolate $a$.",
+      "Now carry out the addition to find your value for $a$; the result is positive."
     ],
     "explanation": "Add 11 to both sides: $a = -4 + 11 = 7$.",
     "misconception": "Add 11 to both sides; $-4 + 11$ is positive, so don't leave the answer negative."
@@ -1044,9 +1044,9 @@
     },
     "hints": [
       "To get the variable by itself, undo the operation attached to it by doing the inverse operation to both sides.",
-      "Subtract 25 from both sides.",
-      "$m = 10 - 25$, which is negative.",
-      "Subtract 25 from 10 and choose the negative result."
+      "Here 25 is added to $m$, so the inverse operation you need is subtraction.",
+      "Subtract 25 from both sides to leave $m$ by itself; note the result will be negative.",
+      "Now carry out the subtraction and choose the negative result."
     ],
     "explanation": "Subtract 25 from both sides: $m = 10 - 25 = -15$."
   }

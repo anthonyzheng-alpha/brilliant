@@ -961,7 +961,7 @@
     "hints": [
       "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 3x$ into $x + y = 20$.",
-      "$x + 3x = 20$, so $4x = 20$ and $x = 5$."
+      "$x + 3x = 20$, so $4x = 20$. Solve for $x$, then use $y = 3x$ to find $y$."
     ],
     "explanation": "Substitute: $4x = 20$, so $x = 5$. Then $y = 3 \\times 5 = 15$."
   },

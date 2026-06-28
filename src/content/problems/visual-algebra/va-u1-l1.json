@@ -219,7 +219,7 @@
     },
     "hints": [
       "Substitute $x = 2$ into $y = -2x + 5$.",
-      "$y = -2(2) + 5 = -4 + 5$.",
+      "$y = -2(2) + 5$ — now do the multiplication first, then add.",
       "Finish the arithmetic from the previous step and enter that value."
     ],
     "explanation": "Substituting $x = 2$: $y = -2(2) + 5 = -4 + 5 = 1$.",
@@ -570,7 +570,7 @@
     },
     "hints": [
       "Substitute $x = 4$ into $y = \\frac{1}{2}x + 3$.",
-      "$y = \\frac{1}{2}(4) + 3 = 2 + 3$.",
+      "$y = \\frac{1}{2}(4) + 3$ — now do the multiplication first, then add.",
       "Complete the calculation from the previous step and enter the result."
     ],
     "explanation": "Substituting $x = 4$: $y = \\frac{1}{2}(4) + 3 = 2 + 3 = 5$.",
@@ -626,7 +626,7 @@
     },
     "hints": [
       "Substitute $x = 6$ into $y = \\frac{1}{3}x + 2$.",
-      "$y = \\frac{1}{3}(6) + 2 = 2 + 2$.",
+      "$y = \\frac{1}{3}(6) + 2$ — now do the multiplication first, then add.",
       "Finish the arithmetic from the previous step and enter that value."
     ],
     "explanation": "Substituting $x = 6$: $y = \\frac{1}{3}(6) + 2 = 2 + 2 = 4$.",
@@ -645,7 +645,7 @@
     },
     "hints": [
       "Substitute $x = 4$ into $y = \\frac{3}{2}x - 1$.",
-      "$y = \\frac{3}{2}(4) - 1 = 6 - 1$.",
+      "$y = \\frac{3}{2}(4) - 1$ — now do the multiplication first, then subtract.",
       "Complete the calculation from the previous step and enter the result."
     ],
     "explanation": "Substituting $x = 4$: $y = \\frac{3}{2}(4) - 1 = 6 - 1 = 5$.",
@@ -871,7 +871,7 @@
     },
     "hints": [
       "Substitute $x = 1$ into $y = -3x + 2$.",
-      "$y = -3(1) + 2 = -3 + 2$.",
+      "$y = -3(1) + 2$ — now do the multiplication first, then add.",
       "Finish the arithmetic from the previous step and enter that value."
     ],
     "explanation": "Substituting $x = 1$: $y = -3(1) + 2 = -3 + 2 = -1$.",
@@ -1222,7 +1222,7 @@
     },
     "hints": [
       "Substitute $x = 6$ into $y = \\frac{1}{2}x + 1$.",
-      "$y = \\frac{1}{2}(6) + 1 = 3 + 1$.",
+      "$y = \\frac{1}{2}(6) + 1$ — now do the multiplication first, then add.",
       "Complete the calculation from the previous step and enter the result."
     ],
     "explanation": "Substituting $x = 6$: $y = \\frac{1}{2}(6) + 1 = 3 + 1 = 4$.",
@@ -1278,7 +1278,7 @@
     },
     "hints": [
       "Substitute $x = 8$ into $y = \\frac{1}{4}x + 2$.",
-      "$y = \\frac{1}{4}(8) + 2 = 2 + 2$.",
+      "$y = \\frac{1}{4}(8) + 2$ — now do the multiplication first, then add.",
       "Finish the arithmetic from the previous step and enter that value."
     ],
     "explanation": "Substituting $x = 8$: $y = \\frac{1}{4}(8) + 2 = 2 + 2 = 4$.",
@@ -1297,7 +1297,7 @@
     },
     "hints": [
       "Substitute $x = 6$ into $y = \\frac{2}{3}x + 1$.",
-      "$y = \\frac{2}{3}(6) + 1 = 4 + 1$.",
+      "$y = \\frac{2}{3}(6) + 1$ — now do the multiplication first, then add.",
       "Complete the calculation from the previous step and enter the result."
     ],
     "explanation": "Substituting $x = 6$: $y = \\frac{2}{3}(6) + 1 = 4 + 1 = 5$.",

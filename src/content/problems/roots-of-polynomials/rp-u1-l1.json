@@ -10,7 +10,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x - 2 = 0$ or $x - 5 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = 2$ or $x = 5$.",
     "misconception": "The root of $(x-2)$ is $+2$, not $-2$ - it is the value that makes the factor zero."
@@ -26,7 +26,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x - 1 = 0$ or $x - 4 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = 1$ or $x = 4$.",
     "misconception": "The root of $(x-4)$ is $+4$, not $-4$ - it is the value that makes the factor zero."
@@ -42,7 +42,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x + 3 = 0$ or $x - 2 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = -3$ or $x = 2$.",
     "misconception": "The root of $(x+3)$ is $-3$ - flip the sign of the number inside the factor."
@@ -58,7 +58,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x + 1 = 0$ or $x + 6 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = -1$ or $x = -6$.",
     "misconception": "Both factors add a number, so both roots are negative."
@@ -74,7 +74,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x - 3 = 0$ or $x + 7 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = 3$ or $x = -7$.",
     "misconception": "The root of $(x+7)$ is $-7$ - flip the sign of the number inside the factor."
@@ -129,7 +129,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x + 5 = 0$ or $x - 5 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = -5$ or $x = 5$.",
     "misconception": "The two roots are opposites here, one negative and one positive."
@@ -168,7 +168,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x - 6 = 0$ or $x - 3 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = 6$ or $x = 3$.",
     "misconception": "The root of $(x-6)$ is $+6$ - it is the value that makes the factor zero."
@@ -343,7 +343,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -5$, $c = 6$.",
-      "$x = \\dfrac{5 \\pm \\sqrt{25 - 24}}{2} = \\dfrac{5 \\pm 1}{2}$."
+      "Substitute $a=1, b=-5, c=6$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{5 \\pm \\sqrt{1}}{2} = \\dfrac{5 \\pm 1}{2}$, giving $x = 3$ and $x = 2$.",
     "misconception": "$-b$ means $-(-5) = +5$ - watch the sign when $b$ is negative."
@@ -358,7 +358,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 3$, $c = -10$.",
-      "$x = \\dfrac{-3 \\pm \\sqrt{9 + 40}}{2} = \\dfrac{-3 \\pm 7}{2}$."
+      "Substitute $a=1, b=3, c=-10$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-3 \\pm \\sqrt{49}}{2} = \\dfrac{-3 \\pm 7}{2}$, giving $x = 2$ and $x = -5$.",
     "misconception": "$-4ac = -4(1)(-10) = +40$ - two negatives make the term positive."
@@ -373,7 +373,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -6$, $c = 8$.",
-      "$x = \\dfrac{6 \\pm \\sqrt{36 - 32}}{2} = \\dfrac{6 \\pm 2}{2}$."
+      "Substitute $a=1, b=-6, c=8$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{6 \\pm \\sqrt{4}}{2} = \\dfrac{6 \\pm 2}{2}$, giving $x = 4$ and $x = 2$.",
     "misconception": "$-b$ means $-(-6) = +6$ - watch the sign when $b$ is negative."
@@ -388,7 +388,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 1$, $c = -12$.",
-      "$x = \\dfrac{-1 \\pm \\sqrt{1 + 48}}{2} = \\dfrac{-1 \\pm 7}{2}$."
+      "Substitute $a=1, b=1, c=-12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-1 \\pm \\sqrt{49}}{2} = \\dfrac{-1 \\pm 7}{2}$, giving $x = 3$ and $x = -4$.",
     "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
@@ -403,7 +403,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -2$, $c = -8$.",
-      "$x = \\dfrac{2 \\pm \\sqrt{4 + 32}}{2} = \\dfrac{2 \\pm 6}{2}$."
+      "Substitute $a=1, b=-2, c=-8$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{2 \\pm \\sqrt{36}}{2} = \\dfrac{2 \\pm 6}{2}$, giving $x = 4$ and $x = -2$.",
     "misconception": "$-4ac = -4(1)(-8) = +32$ - two negatives make the term positive."
@@ -418,7 +418,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -7$, $c = 12$.",
-      "$x = \\dfrac{7 \\pm \\sqrt{49 - 48}}{2} = \\dfrac{7 \\pm 1}{2}$."
+      "Substitute $a=1, b=-7, c=12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{7 \\pm \\sqrt{1}}{2} = \\dfrac{7 \\pm 1}{2}$, giving $x = 4$ and $x = 3$.",
     "misconception": "$-b$ means $-(-7) = +7$ - watch the sign when $b$ is negative."
@@ -433,7 +433,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 8$, $c = 15$.",
-      "$x = \\dfrac{-8 \\pm \\sqrt{64 - 60}}{2} = \\dfrac{-8 \\pm 2}{2}$."
+      "Substitute $a=1, b=8, c=15$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-8 \\pm \\sqrt{4}}{2} = \\dfrac{-8 \\pm 2}{2}$, giving $x = -3$ and $x = -5$.",
     "misconception": "Divide the entire numerator by $2a$, not just part of it."
@@ -448,7 +448,7 @@
     },
     "hints": [
       "Here $a = 2$, $b = -7$, $c = 3$, so the denominator is $2a = 4$.",
-      "$x = \\dfrac{7 \\pm \\sqrt{49 - 24}}{4} = \\dfrac{7 \\pm 5}{4}$."
+      "Substitute $a=2, b=-7, c=3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{7 \\pm \\sqrt{25}}{4} = \\dfrac{7 \\pm 5}{4}$, giving $x = 3$ and $x = \\tfrac{1}{2}$.",
     "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
@@ -463,7 +463,7 @@
     },
     "hints": [
       "Here $a = 2$, $b = 5$, $c = -3$, so the denominator is $2a = 4$.",
-      "$x = \\dfrac{-5 \\pm \\sqrt{25 + 24}}{4} = \\dfrac{-5 \\pm 7}{4}$."
+      "Substitute $a=2, b=5, c=-3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-5 \\pm \\sqrt{49}}{4} = \\dfrac{-5 \\pm 7}{4}$, giving $x = \\tfrac{1}{2}$ and $x = -3$.",
     "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
@@ -478,7 +478,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -4$, $c = -12$.",
-      "$x = \\dfrac{4 \\pm \\sqrt{16 + 48}}{2} = \\dfrac{4 \\pm 8}{2}$."
+      "Substitute $a=1, b=-4, c=-12$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{4 \\pm \\sqrt{64}}{2} = \\dfrac{4 \\pm 8}{2}$, giving $x = 6$ and $x = -2$.",
     "misconception": "$-4ac = -4(1)(-12) = +48$ - two negatives make the term positive."
@@ -493,7 +493,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 5$, $c = 6$.",
-      "Compute $5^2 - 4(1)(6)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 25 - 24 = 1$.",
     "misconception": "Square $b$ first, then subtract $4ac$ - do not subtract before squaring."
@@ -552,7 +552,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -3$, $c = -4$.",
-      "Compute $(-3)^2 - 4(1)(-4)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 9 - (-16) = 9 + 16 = 25$.",
     "misconception": "$-4ac = -4(1)(-4) = +16$ - subtracting a negative adds."
@@ -589,7 +589,7 @@
     },
     "hints": [
       "Here $a = 2$, $b = 4$, $c = 1$.",
-      "Compute $4^2 - 4(2)(1)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 8 = 8$.",
     "misconception": "Use $a = 2$ in $4ac$, giving $4(2)(1) = 8$, not $4$."
@@ -626,7 +626,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 7$, $c = 10$.",
-      "Compute $7^2 - 4(1)(10)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 49 - 40 = 9$.",
     "misconception": "Square $b$ first, then subtract $4ac$."
@@ -663,7 +663,7 @@
     },
     "hints": [
       "Here $a = 3$, $b = -2$, $c = -1$.",
-      "Compute $(-2)^2 - 4(3)(-1)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 4 - (-12) = 4 + 12 = 16$.",
     "misconception": "$-4ac = -4(3)(-1) = +12$ - subtracting a negative adds."
@@ -679,7 +679,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "Set each factor to zero: $x - 7 = 0$ or $x + 2 = 0$."
+      "Each factor, set equal to zero, gives one root - what value makes each factor zero?"
     ],
     "explanation": "Setting each factor to zero gives $x = 7$ or $x = -2$.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -710,7 +710,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = 6$, $c = 5$.",
-      "$x = \\dfrac{-6 \\pm \\sqrt{36 - 20}}{2} = \\dfrac{-6 \\pm 4}{2}$."
+      "Substitute $a=1, b=6, c=5$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{-6 \\pm \\sqrt{16}}{2} = \\dfrac{-6 \\pm 4}{2}$, giving $x = -1$ and $x = -5$.",
     "misconception": "Divide the whole numerator by $2a$, not just the $\\pm\\sqrt{\\;}$ part."
@@ -802,7 +802,7 @@
     },
     "hints": [
       "Here $a = 2$, $b = -5$, $c = -3$, so the denominator is $2a = 4$.",
-      "$x = \\dfrac{5 \\pm \\sqrt{25 + 24}}{4} = \\dfrac{5 \\pm 7}{4}$."
+      "Substitute $a=2, b=-5, c=-3$ into $x = \\dfrac{-b \\pm \\sqrt{b^2-4ac}}{2a}$."
     ],
     "explanation": "$x = \\dfrac{5 \\pm \\sqrt{49}}{4} = \\dfrac{5 \\pm 7}{4}$, giving $x = 3$ and $x = -\\tfrac{1}{2}$.",
     "misconception": "When $a \\neq 1$ the denominator is $2a$, here $4$, not $2$."
@@ -817,7 +817,7 @@
     },
     "hints": [
       "Here $a = 1$, $b = -4$, $c = 4$.",
-      "Compute $(-4)^2 - 4(1)(4)$."
+      "Square $b$, then subtract $4ac$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 16 = 0$, which signals one repeated root.",
     "misconception": "A discriminant of $0$ is valid - it means the quadratic is a perfect square."
