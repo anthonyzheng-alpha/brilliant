@@ -17,12 +17,39 @@ type Props = {
   state: FeedbackState
   onContinue: () => void
   onRetryRound?: () => void
-  // When set, an incorrect answer points the learner to a lesson to relearn,
-  // instead of relying on hints (used by the Overall Review).
+  // When set, points the learner to a lesson mini-lesson (Overall Review).
   reviewRef?: ReviewRef
+  reviewRefPrefix?: string
 }
 
-export function FeedbackPanel({ state, onContinue, onRetryRound, reviewRef }: Props) {
+function LessonLinkRow({
+  reviewRef,
+  reviewRefPrefix,
+}: {
+  reviewRef: ReviewRef
+  reviewRefPrefix?: string
+}) {
+  return (
+    <p className="feedback__review-ref">
+      {reviewRefPrefix ?? 'Go relearn this:'}{' '}
+      <Link
+        to={reviewRef.to}
+        className="feedback__review-link"
+        onClick={() => reviewRef.onBeforeNavigate?.()}
+      >
+        {reviewRef.lessonTitle}
+      </Link>
+    </p>
+  )
+}
+
+export function FeedbackPanel({
+  state,
+  onContinue,
+  onRetryRound,
+  reviewRef,
+  reviewRefPrefix,
+}: Props) {
   if (state.kind === 'idle') return null
 
   if (state.kind === 'round-complete') {
@@ -52,16 +79,7 @@ export function FeedbackPanel({ state, onContinue, onRetryRound, reviewRef }: Pr
           <RichText text={state.reason} />
         </p>
         {reviewRef && (
-          <p className="feedback__review-ref">
-            Go relearn this:{' '}
-            <Link
-              to={reviewRef.to}
-              className="feedback__review-link"
-              onClick={() => reviewRef.onBeforeNavigate?.()}
-            >
-              {reviewRef.lessonTitle}
-            </Link>
-          </p>
+          <LessonLinkRow reviewRef={reviewRef} reviewRefPrefix={reviewRefPrefix} />
         )}
       </div>
     )
@@ -81,6 +99,9 @@ export function FeedbackPanel({ state, onContinue, onRetryRound, reviewRef }: Pr
         <p className="feedback__body">
           <RichText text={state.explanation} />
         </p>
+        {reviewRef && (
+          <LessonLinkRow reviewRef={reviewRef} reviewRefPrefix={reviewRefPrefix} />
+        )}
         <button type="button" className="btn btn--primary" onClick={onContinue}>
           Continue
         </button>

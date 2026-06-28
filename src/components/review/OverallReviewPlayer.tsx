@@ -393,7 +393,14 @@ export function OverallReviewPlayer({ coveredLessonIds }: Props) {
               <FeedbackPanel
                 state={feedback}
                 onContinue={handleContinue}
-                reviewRef={feedback.kind === 'incorrect' ? reviewRef : undefined}
+                reviewRef={
+                  feedback.kind === 'incorrect' || feedback.kind === 'correct'
+                    ? reviewRef
+                    : undefined
+                }
+                reviewRefPrefix={
+                  feedback.kind === 'correct' ? 'Lesson covered:' : 'Go relearn this:'
+                }
               />
             )}
           </div>

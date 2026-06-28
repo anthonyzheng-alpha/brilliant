@@ -210,6 +210,10 @@
   color: var(--text);
 }
 
+.feedback--correct .feedback__review-ref {
+  margin-bottom: 0.75rem;
+}
+
 .feedback__review-link {
   font-weight: 600;
   color: var(--accent, #2563eb);
