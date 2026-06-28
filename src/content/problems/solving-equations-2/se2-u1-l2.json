@@ -11,6 +11,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Get the variable on one side: subtract $x$ from both sides.",
       "$2x + 2 = 10$.",
       "Subtract 2, then divide by 2."
@@ -30,6 +31,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $2x$ from both sides.",
       "$3x = 9$.",
       "Divide both sides by 3."
@@ -48,6 +50,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $2x$ from both sides.",
       "$2x - 3 = 7$.",
       "Add 3, then divide by 2."
@@ -70,6 +73,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $3x$ from both sides.",
       "$3x = 12$.",
       "Divide both sides by 3."
@@ -88,6 +92,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $3x$ from both sides.",
       "$4x - 5 = 11$.",
       "Add 5, then divide by 4."
@@ -106,6 +111,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $2x$ from both sides.",
       "$8 = 3x - 1$.",
       "Add 1, then divide by 3."
@@ -124,6 +130,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $5x$ from both sides.",
       "$3x = 15$.",
       "Divide both sides by 3."
@@ -142,6 +149,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $4x$ from both sides.",
       "$5x - 4 = 16$.",
       "Add 4, then divide by 5."
@@ -164,6 +172,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $4x$ from both sides.",
       "$6x + 1 = 19$.",
       "Subtract 1, then divide by 6."
@@ -182,6 +191,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $2x$ from both sides.",
       "$4x - 2 = 14$.",
       "Add 2, then divide by 4."
@@ -204,6 +214,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x + 1$ into $x + y = 5$.",
       "$x + (x + 1) = 5$, so $2x + 1 = 5$.",
       "Solve for $x$, then find $y$."
@@ -226,6 +237,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x + 2$ into $x + y = 8$.",
       "$x + (x + 2) = 8$, so $2x + 2 = 8$.",
       "Solve for $x$, then find $y$."
@@ -244,6 +256,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 2x$ into $x + y = 12$.",
       "$x + 2x = 12$, so $3x = 12$.",
       "Divide both sides by 3."
@@ -266,6 +279,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x - 1$ into $x + y = 7$.",
       "$x + (x - 1) = 7$, so $2x - 1 = 7$.",
       "Solve for $x$, then find $y$."
@@ -284,6 +298,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 3x$ into $x + y = 16$.",
       "$x + 3x = 16$, so $4x = 16$.",
       "Divide both sides by 4."
@@ -306,6 +321,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $x = y + 3$ into $x + y = 9$.",
       "$(y + 3) + y = 9$, so $2y + 3 = 9$.",
       "Solve for $y$, then find $x$."
@@ -324,6 +340,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x + 4$ into $x + y = 10$.",
       "$x + (x + 4) = 10$, so $2x + 4 = 10$.",
       "Subtract 4, then divide by 2."
@@ -346,6 +363,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 4x$ into $x + y = 15$.",
       "$x + 4x = 15$, so $5x = 15$.",
       "Divide both sides by 5, then find $y$."
@@ -364,6 +382,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $x = 2y$ into $x + y = 18$.",
       "$2y + y = 18$, so $3y = 18$.",
       "Divide both sides by 3."
@@ -386,6 +405,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x + 5$ into $x + y = 11$.",
       "$x + (x + 5) = 11$, so $2x + 5 = 11$.",
       "Subtract 5, then divide by 2."
@@ -404,6 +424,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$2x = 12$.",
       "Divide both sides by 2."
@@ -423,6 +444,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$2x = 10$.",
       "Divide both sides by 2."
@@ -445,6 +467,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "Substitute back to find $y$."
     ],
@@ -462,6 +485,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $x$.",
       "$2y = 10$.",
       "Divide both sides by 2."
@@ -480,6 +504,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$2x = 10$.",
       "Divide both sides by 2."
@@ -502,6 +527,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "Substitute back to find $y$."
     ],
@@ -519,6 +545,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$3x = 15$.",
       "Divide both sides by 3."
@@ -537,6 +564,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$2x = 14$.",
       "Divide both sides by 2."
@@ -559,6 +587,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "$x - y = 0$ means $x = y$.",
       "Add the equations: $2x = 6$.",
       "Divide both sides by 2."
@@ -577,6 +606,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $x$.",
       "$2y = 14$.",
       "Divide both sides by 2."
@@ -599,6 +629,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first.",
       "Substitute back to find $y$."
     ],
@@ -616,6 +647,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first.",
       "$(3x + y) - (x + y) = 14 - 8$, so $2x = 6$.",
       "Divide both sides by 2."
@@ -638,6 +670,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $x = 3$ into the first equation.",
       "$6 + 3y = 12$, so $3y = 6$.",
       "Divide both sides by 3."
@@ -656,6 +689,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$3x = 12$.",
       "Divide both sides by 3."
@@ -678,6 +712,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $y$.",
       "$(3x + 2y) - (x + 2y) = 16 - 8$, so $2x = 8$.",
       "Divide by 2, then find $y$."
@@ -696,6 +731,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first.",
       "$(4x + y) - (x + y) = 18 - 9$, so $3x = 9$.",
       "Divide both sides by 3."
@@ -718,6 +754,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $x$.",
       "$(x + 3y) - (x + y) = 10 - 6$, so $2y = 4$.",
       "Divide by 2, then find $x$."
@@ -736,6 +773,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 3$ into the first equation.",
       "$2x + 3 = 9$.",
       "Subtract 3, then divide by 2."
@@ -758,6 +796,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$(3x - y) + (x + y) = 5 + 7$, so $4x = 12$.",
       "Divide by 4, then find $y$."
@@ -776,6 +815,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $y$.",
       "$(5x + 2y) - (x + 2y) = 19 - 7$, so $4x = 12$.",
       "Divide both sides by 4."
@@ -798,6 +838,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 2x$ into $x + y = 9$.",
       "$x + 2x = 9$, so $3x = 9$.",
       "Divide by 3, then find $y$."
@@ -816,6 +857,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$2x = 16$.",
       "Divide both sides by 2."
@@ -834,6 +876,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $5x$ from both sides.",
       "$2x - 4 = 8$.",
       "Add 4, then divide by 2."
@@ -856,6 +899,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = x + 6$ into $x + y = 14$.",
       "$x + (x + 6) = 14$, so $2x + 6 = 14$.",
       "Subtract 6, then divide by 2."
@@ -874,6 +918,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Subtract the second equation from the first to eliminate $y$.",
       "$(2x + y) - (x + y) = 12 - 7$.",
       "Simplify the left side: the $y$ terms cancel, leaving $x$ on its own."
@@ -896,6 +941,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "Substitute back to find $y$."
     ],
@@ -913,6 +959,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $y = 3x$ into $x + y = 20$.",
       "$x + 3x = 20$, so $4x = 20$ and $x = 5$."
     ],
@@ -930,6 +977,7 @@
       }
     },
     "hints": [
+      "First gather the variable terms on one side and the constant terms on the other, then isolate the variable.",
       "Subtract $4x$ from both sides.",
       "$6 = 2x - 4$.",
       "Add 4, then divide by 2."
@@ -952,6 +1000,7 @@
       }
     },
     "hints": [
+      "Line up the two equations and combine them so one variable cancels, leaving a single-variable equation to solve.",
       "Add the two equations to eliminate $y$.",
       "$(2x + y) + (x - y) = 8 + 1$, so $3x = 9$.",
       "Divide by 3, then find $y$."
@@ -970,6 +1019,7 @@
       }
     },
     "hints": [
+      "When one equation gives a variable in terms of the other, replace it in the second equation to get a single-variable equation.",
       "Substitute $x = 4$ into $x + 2y = 12$.",
       "$4 + 2y = 12$, so $2y = 8$.",
       "Divide both sides by 2."

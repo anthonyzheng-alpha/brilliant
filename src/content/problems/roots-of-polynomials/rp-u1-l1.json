@@ -97,7 +97,7 @@
     },
     "hints": [
       "Set each factor equal to zero.",
-      "$x - 4 = 0$ gives $x = 4$; $x + 2 = 0$ gives $x = -2$."
+      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
     ],
     "explanation": "The roots are $x = 4$ and $x = -2$, so $x = 4$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -113,7 +113,7 @@
     },
     "hints": [
       "A product is zero when one of its factors is zero.",
-      "The factor $x$ gives the root $x = 0$; the factor $x - 7$ gives $x = 7$."
+      "Set each factor equal to zero and solve; the lone $x$ factor also gives a root, so don't skip it."
     ],
     "explanation": "Setting each factor to zero gives $x = 0$ or $x = 7$.",
     "misconception": "A lone $x$ factor contributes the root $0$ - do not skip it."
@@ -152,7 +152,7 @@
     },
     "hints": [
       "Set each factor equal to zero.",
-      "$x + 8 = 0$ gives $x = -8$; $x - 1 = 0$ gives $x = 1$."
+      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
     ],
     "explanation": "The roots are $x = -8$ and $x = 1$, so $x = -8$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -184,7 +184,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $10$ and add to $-7$.",
-      "Those numbers are $-2$ and $-5$, so it factors as $(x-2)(x-5)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 7x + 10 = (x-2)(x-5)$, so the roots are $x = 2$ and $x = 5$.",
     "misconception": "After factoring, read the root by flipping the sign inside each factor."
@@ -200,7 +200,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $12$ and add to $7$.",
-      "Those numbers are $3$ and $4$, so it factors as $(x+3)(x+4)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 7x + 12 = (x+3)(x+4)$, so the roots are $x = -3$ and $x = -4$.",
     "misconception": "Positive constant and positive middle term means both roots are negative."
@@ -216,7 +216,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $-12$ and add to $-1$.",
-      "Those numbers are $-4$ and $3$, so it factors as $(x-4)(x+3)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - x - 12 = (x-4)(x+3)$, so the roots are $x = 4$ and $x = -3$.",
     "misconception": "A negative constant means the two roots have opposite signs."
@@ -232,7 +232,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $-15$ and add to $2$.",
-      "Those numbers are $5$ and $-3$, so it factors as $(x+5)(x-3)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 2x - 15 = (x+5)(x-3)$, so the roots are $x = -5$ and $x = 3$.",
     "misconception": "A negative constant means the two roots have opposite signs."
@@ -248,7 +248,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $20$ and add to $-9$.",
-      "Those numbers are $-4$ and $-5$, so it factors as $(x-4)(x-5)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 9x + 20 = (x-4)(x-5)$, so the roots are $x = 4$ and $x = 5$.",
     "misconception": "Positive constant with a negative middle term means both roots are positive."
@@ -264,7 +264,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $-6$ and add to $1$.",
-      "Those numbers are $3$ and $-2$, so it factors as $(x+3)(x-2)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + x - 6 = (x+3)(x-2)$, so the roots are $x = -3$ and $x = 2$.",
     "misconception": "A negative constant means the two roots have opposite signs."
@@ -280,7 +280,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $-5$ and add to $-4$.",
-      "Those numbers are $-5$ and $1$, so it factors as $(x-5)(x+1)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 4x - 5 = (x-5)(x+1)$, so the roots are $x = 5$ and $x = -1$.",
     "misconception": "A negative constant means the two roots have opposite signs."
@@ -296,7 +296,7 @@
     },
     "hints": [
       "This is a difference of squares with no middle term.",
-      "$x^2 - 9 = (x-3)(x+3)$."
+      "Write it as two binomials that differ only by a sign, then set each factor equal to zero."
     ],
     "explanation": "$x^2 - 9 = (x-3)(x+3)$, so the roots are $x = 3$ and $x = -3$.",
     "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
@@ -312,7 +312,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $8$ and add to $6$.",
-      "Those numbers are $2$ and $4$, so it factors as $(x+2)(x+4)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 6x + 8 = (x+2)(x+4)$, so the roots are $x = -2$ and $x = -4$.",
     "misconception": "Positive constant and positive middle term means both roots are negative."
@@ -328,7 +328,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $15$ and add to $-8$.",
-      "Those numbers are $-3$ and $-5$, so it factors as $(x-3)(x-5)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 8x + 15 = (x-3)(x-5)$, so the roots are $x = 3$ and $x = 5$.",
     "misconception": "Positive constant with a negative middle term means both roots are positive."
@@ -695,7 +695,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $-15$ and add to $-2$.",
-      "Those numbers are $-5$ and $3$, so it factors as $(x-5)(x+3)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 2x - 15 = (x-5)(x+3)$, so the roots are $x = 5$ and $x = -3$.",
     "misconception": "A negative constant means the two roots have opposite signs."
@@ -748,7 +748,7 @@
     },
     "hints": [
       "This is a difference of squares with no middle term.",
-      "$x^2 - 16 = (x-4)(x+4)$."
+      "Write it as two binomials that differ only by a sign, then set each factor equal to zero."
     ],
     "explanation": "$x^2 - 16 = (x-4)(x+4)$, so the roots are $x = 4$ and $x = -4$.",
     "misconception": "A difference of squares has two opposite roots, $+\\sqrt{c}$ and $-\\sqrt{c}$."
@@ -771,7 +771,7 @@
     },
     "hints": [
       "Set each factor equal to zero.",
-      "$x + 9 = 0$ gives $x = -9$; $x - 4 = 0$ gives $x = 4$."
+      "Solve each little equation; the value that makes a factor zero is a root, so flip the sign of the number inside."
     ],
     "explanation": "The roots are $x = -9$ and $x = 4$, so $x = -9$ is correct.",
     "misconception": "Flip the sign of the number inside each factor to read off its root."
@@ -787,7 +787,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $6$ and add to $5$.",
-      "Those numbers are $2$ and $3$, so it factors as $(x+2)(x+3)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$, so the roots are $x = -2$ and $x = -3$.",
     "misconception": "Positive constant and positive middle term means both roots are negative."
@@ -833,7 +833,7 @@
     },
     "hints": [
       "Find two numbers that multiply to $12$ and add to $-7$.",
-      "Those numbers are $-3$ and $-4$, so it factors as $(x-3)(x-4)$."
+      "Once you have those two numbers, form the factors and set each one equal to zero to find the roots."
     ],
     "explanation": "$x^2 - 7x + 12 = (x-3)(x-4)$, so the roots are $x = 3$ and $x = 4$.",
     "misconception": "Positive constant with a negative middle term means both roots are positive."

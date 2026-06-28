@@ -370,7 +370,7 @@
     },
     "hints": [
       "Slope is how much $y$ changes when $x$ increases by 1.",
-      "From $(0, 1)$ to $(1, 3)$, $y$ rises by 2, so $m = 2$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 2 units per 1 unit right, so $m = 2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = 2x + 1$.",
@@ -406,7 +406,7 @@
     },
     "hints": [
       "The points go down as $x$ increases, so the slope is negative.",
-      "From $(0, 3)$ to $(1, 2)$, $y$ falls by 1, so $m = -1$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 1 unit per 1 unit right, so $m = -1$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -x + 3$.",
@@ -442,7 +442,7 @@
     },
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
-      "From $(0, -2)$ to $(1, 1)$, $y$ rises by 3, so $m = 3$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 3 units per 1 unit right, so $m = 3$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = 3x - 2$.",
@@ -478,7 +478,7 @@
     },
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
-      "From $(0, 1)$ to $(1, -1)$, $y$ falls by 2, so $m = -2$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 2 units per 1 unit right, so $m = -2$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = -2x + 1$.",
@@ -514,7 +514,7 @@
     },
     "hints": [
       "Find how much $y$ changes for each 1 step right.",
-      "From $(0, -2)$ to $(1, -1)$, $y$ rises by 1, so $m = 1$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 1 unit per 1 unit right, so $m = 1$. The y-intercept is $(0, -2)$, so $b = -2$ and $y = x - 2$.",
@@ -551,7 +551,7 @@
     },
     "hints": [
       "When $y$ rises slowly, the slope is a fraction less than 1.",
-      "From $(0, 1)$ to $(2, 2)$, $y$ rises 1 over a run of 2, so $m = \\frac{1}{2} = 0.5$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = \\frac{1}{2}x + 1$.",
@@ -607,7 +607,7 @@
     },
     "hints": [
       "The points slowly fall, so the slope is a small negative fraction.",
-      "From $(0, 2)$ to $(2, 1)$, $y$ falls 1 over a run of 2, so $m = -\\frac{1}{2} = -0.5$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line falls 1 unit for every 2 units right, so $m = -\\frac{1}{2} = -0.5$. The y-intercept is $(0, 2)$, so $b = 2$ and $y = -\\frac{1}{2}x + 2$.",
@@ -1022,7 +1022,7 @@
     },
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
-      "From $(0, -1)$ to $(1, 1)$, $y$ rises by 2, so $m = 2$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 2 units per 1 unit right, so $m = 2$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = 2x - 1$.",
@@ -1058,7 +1058,7 @@
     },
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
-      "From $(0, 3)$ to $(1, 1)$, $y$ falls by 2, so $m = -2$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 2 units per 1 unit right, so $m = -2$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -2x + 3$.",
@@ -1094,7 +1094,7 @@
     },
     "hints": [
       "Find how much $y$ changes for each 1 step right.",
-      "From $(0, 2)$ to $(1, 3)$, $y$ rises by 1, so $m = 1$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 1 unit per 1 unit right, so $m = 1$. The y-intercept is $(0, 2)$, so $b = 2$ and $y = x + 2$.",
@@ -1130,7 +1130,7 @@
     },
     "hints": [
       "Compare two points that are 1 apart in $x$ to find the slope.",
-      "From $(0, 1)$ to $(1, 4)$, $y$ rises by 3, so $m = 3$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points rise 3 units per 1 unit right, so $m = 3$. The y-intercept is $(0, 1)$, so $b = 1$ and $y = 3x + 1$.",
@@ -1166,7 +1166,7 @@
     },
     "hints": [
       "The points fall as $x$ increases, so expect a negative slope.",
-      "From $(0, -1)$ to $(1, -2)$, $y$ falls by 1, so $m = -1$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have $m$; now read the value where $x = 0$ to get the y-intercept $b$, then enter both."
     ],
     "explanation": "The points fall 1 unit per 1 unit right, so $m = -1$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = -x - 1$.",
@@ -1203,7 +1203,7 @@
     },
     "hints": [
       "When $y$ rises slowly, the slope is a fraction less than 1.",
-      "From $(0, -1)$ to $(2, 0)$, $y$ rises 1 over a run of 2, so $m = \\frac{1}{2} = 0.5$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line rises 1 unit for every 2 units right, so $m = \\frac{1}{2} = 0.5$. The y-intercept is $(0, -1)$, so $b = -1$ and $y = \\frac{1}{2}x - 1$.",
@@ -1259,7 +1259,7 @@
     },
     "hints": [
       "The points slowly fall, so the slope is a small negative fraction.",
-      "From $(0, 3)$ to $(2, 2)$, $y$ falls 1 over a run of 2, so $m = -\\frac{1}{2} = -0.5$.",
+      "Pick two points that are one step apart in $x$ and compare their $y$ values; that difference is the slope $m$.",
       "You already have the fractional slope $m$; now read the value where $x = 0$ to get $b$, then enter both."
     ],
     "explanation": "The line falls 1 unit for every 2 units right, so $m = -\\frac{1}{2} = -0.5$. The y-intercept is $(0, 3)$, so $b = 3$ and $y = -\\frac{1}{2}x + 3$.",
