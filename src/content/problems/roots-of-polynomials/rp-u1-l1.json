@@ -486,14 +486,14 @@
   {
     "id": "rp-u1-l1-r4-p1",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 + 5x + 6 = 0$.",
+    "prompt": "Compute the discriminant of $x^2 + 5x + 6 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 1 } }
     },
     "hints": [
       "Here $a = 1$, $b = 5$, $c = 6$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 25 - 24 = 1$.",
     "misconception": "Square $b$ first, then subtract $4ac$ - do not subtract before squaring."
@@ -514,8 +514,8 @@
       }
     },
     "hints": [
-      "Check the sign of $b^2 - 4ac$.",
-      "$(-4)^2 - 4(1)(7) = 16 - 28$."
+      "Identify $a$, $b$, and $c$ from the quadratic.",
+      "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $16 - 28 = -12$. A negative discriminant means no real roots.",
     "misconception": "A negative discriminant means no real solutions, not one."
@@ -536,8 +536,8 @@
       }
     },
     "hints": [
-      "Check the sign of $b^2 - 4ac$.",
-      "Compute $b^2 - 4ac$ using $a = 1$, $b = -6$, $c = 9$ — square $b$ first, then subtract $4ac$.",
+      "Identify $a$, $b$, and $c$ from the quadratic.",
+      "Compute the discriminant using those coefficients.",
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $36 - 36 = 0$, so there is exactly one (repeated) real root.",
@@ -546,14 +546,14 @@
   {
     "id": "rp-u1-l1-r4-p4",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 - 3x - 4 = 0$.",
+    "prompt": "Compute the discriminant of $x^2 - 3x - 4 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 25 } }
     },
     "hints": [
       "Here $a = 1$, $b = -3$, $c = -4$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 9 - (-16) = 9 + 16 = 25$.",
     "misconception": "$-4ac = -4(1)(-4) = +16$ - subtracting a negative adds."
@@ -574,8 +574,8 @@
       }
     },
     "hints": [
-      "Check the sign of $b^2 - 4ac$.",
-      "$1^2 - 4(1)(1) = 1 - 4$."
+      "Identify $a$, $b$, and $c$ from the quadratic.",
+      "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $1 - 4 = -3$. A negative discriminant means no real roots.",
     "misconception": "A negative discriminant means no real solutions."
@@ -583,14 +583,14 @@
   {
     "id": "rp-u1-l1-r4-p6",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $2x^2 + 4x + 1 = 0$.",
+    "prompt": "Compute the discriminant of $2x^2 + 4x + 1 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 8 } }
     },
     "hints": [
       "Here $a = 2$, $b = 4$, $c = 1$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 8 = 8$.",
     "misconception": "Use $a = 2$ in $4ac$, giving $4(2)(1) = 8$, not $4$."
@@ -611,8 +611,8 @@
       }
     },
     "hints": [
-      "Check the sign of $b^2 - 4ac$.",
-      "Compute $b^2 - 4ac$ using $a = 1$, $b = -10$, $c = 25$ — square $b$ first, then subtract $4ac$.",
+      "Identify $a$, $b$, and $c$ from the quadratic.",
+      "Compute the discriminant using those coefficients.",
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $100 - 100 = 0$, so there is exactly one (repeated) real root.",
@@ -621,14 +621,14 @@
   {
     "id": "rp-u1-l1-r4-p8",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 + 7x + 10 = 0$.",
+    "prompt": "Compute the discriminant of $x^2 + 7x + 10 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 9 } }
     },
     "hints": [
       "Here $a = 1$, $b = 7$, $c = 10$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 49 - 40 = 9$.",
     "misconception": "Square $b$ first, then subtract $4ac$."
@@ -649,8 +649,8 @@
       }
     },
     "hints": [
-      "Compute the discriminant $b^2 - 4ac$ and check its sign.",
-      "Compute $b^2 - 4ac$ using $a = 1$, $b = 4$, $c = 4$ — square $b$ first, then subtract $4ac$.",
+      "Compute the discriminant and check its sign.",
+      "Compute the discriminant using those coefficients.",
       "Compare the discriminant to zero: positive means two distinct roots, zero means one repeated root, negative means no real roots."
     ],
     "explanation": "The discriminant is $0$, so $x^2 + 4x + 4 = (x+2)^2$ has the single repeated root $x = -2$.",
@@ -659,14 +659,14 @@
   {
     "id": "rp-u1-l1-r4-p10",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $3x^2 - 2x - 1 = 0$.",
+    "prompt": "Compute the discriminant of $3x^2 - 2x - 1 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 16 } }
     },
     "hints": [
       "Here $a = 3$, $b = -2$, $c = -1$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 4 - (-12) = 4 + 12 = 16$.",
     "misconception": "$-4ac = -4(3)(-1) = +12$ - subtracting a negative adds."
@@ -734,8 +734,8 @@
       }
     },
     "hints": [
-      "Check the sign of $b^2 - 4ac$.",
-      "$3^2 - 4(1)(4) = 9 - 16$."
+      "Identify $a$, $b$, and $c$ from the quadratic.",
+      "Evaluate the discriminant with these coefficients."
     ],
     "explanation": "The discriminant is $9 - 16 = -7$. A negative discriminant means no real roots.",
     "misconception": "A negative discriminant means no real solutions."
@@ -813,14 +813,14 @@
   {
     "id": "rp-u1-l1-r5-p9",
     "type": "numeric",
-    "prompt": "Compute the discriminant $b^2 - 4ac$ of $x^2 - 4x + 4 = 0$.",
+    "prompt": "Compute the discriminant of $x^2 - 4x + 4 = 0$.",
     "interaction": {
       "type": "numeric",
       "data": { "placeholder": "Discriminant", "validation": { "type": "numeric", "value": 0 } }
     },
     "hints": [
       "Here $a = 1$, $b = -4$, $c = 4$.",
-      "Square $b$, then subtract $4ac$."
+      "Compute the discriminant using $a$, $b$, and $c$."
     ],
     "explanation": "$b^2 - 4ac = 16 - 16 = 0$, which signals one repeated root.",
     "misconception": "A discriminant of $0$ is valid - it means the quadratic is a perfect square."
