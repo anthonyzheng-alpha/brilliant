@@ -26,7 +26,7 @@ type Props = {
 
 const TEST_QUESTIONS = 5
 
-type Phase = 'loading' | 'taking' | 'failed'
+type Phase = 'loading' | 'taking'
 
 export function LessonTest({ lesson, onPass, onExit }: Props) {
   const aiEnabled = useSettingsStore((s) => s.aiEnabled)
@@ -34,6 +34,7 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
   const user = useAuthStore((s) => s.user)
 
   const [phase, setPhase] = useState<Phase>('loading')
+  const [testFailed, setTestFailed] = useState(false)
   const [generatedCount, setGeneratedCount] = useState(0)
   const [problems, setProblems] = useState<GeneratedProblem[]>([])
   const [index, setIndex] = useState(0)
@@ -80,6 +81,7 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
     setInputLocked(false)
     setWrongLine(null)
     setFeedback({ kind: 'idle' })
+    setTestFailed(false)
     setPhase('taking')
   }, [lesson, aiEnabled])
 
@@ -108,6 +110,7 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
       setInputLocked(true)
       setFeedback({ kind: 'correct', explanation: problem.explanation })
     } else {
+      setInputLocked(true)
       setWrongLine(resolveWrongLine(problem, answer))
       setFeedback({
         kind: 'incorrect',
@@ -115,7 +118,10 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
         title: resolveIncorrectFeedbackTitle(problem, answer),
         shake: true,
       })
-      setTimeout(() => setPhase('failed'), 600)
+      setTimeout(() => {
+        setFeedback((f) => (f.kind === 'incorrect' ? { ...f, shake: false } : f))
+        setTestFailed(true)
+      }, 600)
     }
   }
 
@@ -139,30 +145,6 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
           <p className="lesson-player__prompt">
             Preparing your lesson test… {generatedCount} of {TEST_QUESTIONS} questions ready
           </p>
-        </div>
-      </div>
-    )
-  }
-
-  if (phase === 'failed') {
-    return (
-      <div className="lesson-player__layout">
-        <div className="lesson-player__main">
-          <div className="feedback feedback--incorrect">
-            <p className="feedback__title">Not quite</p>
-            <p className="feedback__body">
-              You need all {TEST_QUESTIONS} questions correct to finish this lesson. Try again with a
-              fresh set.
-            </p>
-            <div className="feedback__actions">
-              <button type="button" className="btn btn--primary" onClick={() => void generate()}>
-                Retry test
-              </button>
-              <button type="button" className="btn btn--ghost" onClick={onExit}>
-                Back to course
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     )
@@ -201,7 +183,7 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
             disabled={inputLocked}
           />
 
-          {feedback.kind !== 'correct' && (
+          {feedback.kind !== 'correct' && !testFailed && (
             <div className="lesson-player__actions">
               <button
                 type="button"
@@ -211,6 +193,24 @@ export function LessonTest({ lesson, onPass, onExit }: Props) {
               >
                 Check
               </button>
+            </div>
+          )}
+
+          {testFailed && (
+            <div className="feedback feedback--incorrect">
+              <p className="feedback__title">Not quite</p>
+              <p className="feedback__body">
+                You need all {TEST_QUESTIONS} questions correct to finish this lesson. Try again with a
+                fresh set.
+              </p>
+              <div className="feedback__actions">
+                <button type="button" className="btn btn--primary" onClick={() => void generate()}>
+                  Retry test
+                </button>
+                <button type="button" className="btn btn--ghost" onClick={onExit}>
+                  Back to course
+                </button>
+              </div>
             </div>
           )}
         </div>
